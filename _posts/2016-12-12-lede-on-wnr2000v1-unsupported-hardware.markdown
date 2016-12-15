@@ -14,9 +14,9 @@ Among the most popular are [DD-WRT](http://www.dd-wrt.com/), [Tomato/USB](http:/
 Why OpenWRT/LEDE?
 ---
 
- OpenWRT, unlike everyone else, didn't strive to be simple initially. It was a fully-featured distro on a router, so it has everything imaginable, and it runs on practically everything. It might have been a good thing, I don't know -- but when I tried out years ago, it was clunky and unintuitive. As time goes by, I have to say that initial impression of mine is no longer valid. 
+OpenWRT, unlike everyone else, didn't strive to be simple initially. It was a fully-featured distro on a router, so it has everything imaginable, and it runs on practically everything. It might have been a good thing, I don't know -- but when I tried out years ago, it was clunky and unintuitive. As time goes by, I have to say that initial impression of mine is no longer valid. 
 
- OpenWRT is now an excellent choice lately when it comes to the software I really, really like and the intuitiveness has been solved for the most part. Some developers have switched to a new branch called LEDE, with the hope of better control on the code. Either way, *I have nothing but good things to say about the OpenWRT/LEDE project*. Among my favorite features about the project is stability. You can check out the latest trunk build of any router model at any time and be relatively confident that it works. I also like new advancements and algorithms being investigated and added every day by project contributors, such as anti-buffer bloat. What is buffer bloat? I have here is an excellent explanation for layman people, like me: [Bufferbloat - A plumber's view](https://www.youtube.com/watch?v=lQNSab8eCQ4}). In my case, those clever algorithms helped me a lot on my slow 5Mbps connection that is shared between roommates.
+OpenWRT is now an excellent choice lately when it comes to the software I really, really like and the intuitiveness has been solved for the most part. Some developers have switched to a new branch called LEDE, with the hope of better control on the code. Either way, *I have nothing but good things to say about the OpenWRT/LEDE project*. Among my favorite features about the project is stability. You can check out the latest trunk build of any router model at any time and be relatively confident that it works. I also like new advancements and algorithms being investigated and added every day by project contributors, such as anti-buffer bloat. What is buffer bloat? I have here is an excellent explanation for layman people, like me: [Bufferbloat - A plumber's view](https://www.youtube.com/watch?v=lQNSab8eCQ4}). In my case, those clever algorithms helped me a lot on my slow 5Mbps connection that is shared between roommates.
 
 <amp-youtube
         layout="responsive"
@@ -28,6 +28,8 @@ WRN2000v1
 ---
 
 Last weekend, my friend Andrew asked me to look at his router, an old WRN2000v1 he scrapped from another friend he intended to be a range extender. He [couldn't find a DD-WRT build](http://www.dd-wrt.com/wiki/index.php/Netgear_WNR2000V2) and was wondering if I could take a look. I, naturally, immediately suggest him to check out LEDE/OpenWRT. However, it is apparent that is is a [hard case](https://wiki.openwrt.org/toh/netgear/wnr2000). It is a relatively obscure router that no one cared about, especially now when it is 6 year old. I doubt even then it was that well supported. So I decided to take on the challenge of getting something decent on it.
+
+![Throw more money at it?]({{site.baseurl}}/assets/posts-images/throw_money_at_it.jpg)
 
 First, I thought it was possible to load the firmware on it with a regular firmware upgrade and it turned out that I was wrong. Even the `telnetenable` script [mentioned in the wiki](https://wiki.openwrt.org/toh/netgear/wnr2000#flashing_modified_u-boot_and_pre-built_openwrt_on_wnr2000v1) doesn't work, for one reason or another, on our machine. So naturally I had to go home and get my good ole USB-to-TTL adapter -- one of the indispensable tools in my firmware tinkering toolbox. 
 
