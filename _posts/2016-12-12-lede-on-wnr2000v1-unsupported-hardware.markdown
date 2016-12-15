@@ -1,6 +1,7 @@
 ---
-layout : "post"
-title : "Notes on getting LEDE/OpenWRT to work on WNR2000V1"
+layout: post
+title: Notes on getting LEDE/OpenWRT to work on WNR2000V1
+published: true
 ---
 
 State of the Union regarding custom firmwares for home routers
@@ -149,7 +150,7 @@ One nifty thing about the newer LEDE/OpenWRT releases is that we only have to te
 
 ![U-boot should look like this once you have set up everything correctly](/assets/posts-images/uboot2.png)
 
-That's it... After about 24 hours, I was able to get LEDE to work wonderfully on my router. Looking back, there wasn't anything super-tricky, but there were a lot of things that got in the way. I hope my [pull request to LEDE](https://github.com/lede-project/source/pull/609) will be accepted and we will all see official support of LEDE for the WNR2000v1 board soon. **Edit 12/14/2016: [Now the board support is mainlined](https://github.com/lede-project/source/pull/611).** 
+That's it... After about 24 hours, I was able to get LEDE to work wonderfully on my router. Looking back, there wasn't anything super-tricky, but there were a lot of things that got in the way. I hope my [pull request to LEDE](https://github.com/lede-project/source/pull/609) will be accepted and we will all see official support of LEDE for the WNR2000v1 board soon. **Edit 12/14/2016: [Now the board support is mainlined](https://github.com/lede-project/source/pull/611).**  If you need really detailed installation instructions, head to [The wiki](wiki.openwrt.org/toh/netgear/wnr2000) for more how-to information.
 
 ![LEDE up and running on my board](/assets/posts-images/2000v1bootup.png)
 
@@ -158,7 +159,7 @@ So that was not too hard! I hope this will inspire some of you to go ahead and p
 
 **Notes**:
 
-- Don't try to upgrade from stock firmware with the factory image, this will make the router unable to boot. The factory image will flash over the stock control panel and will also flash over the emergency TFTP interface, but *it won't boot.* I don't know why. There is an integrity check, but I sort of gave up after a day now -- it took me too much time and it is sort of a diminishing return.
+- Don't try to upgrade from stock firmware with the factory image, this will make the router unable to boot. The factory image will flash over the stock control panel and will also flash over the emergency TFTP interface, but *it won't boot.* I know why, but I don't know how to fix it. There is an integrity check, but I sort of gave up after a day now -- it took me too much time and it is sort of a diminishing return.
 - I figured out the reason that u-boot said that it see `bad magic` is that it expects the raw squashfs image instead of the squashfs filesystem with a magic number, unlike every other model in the WNR2000 series.
 - The reason why we want to load the uImage at `0xbf2b0000` instead of `0xbf2a0000` (default for many devices) is that only then we have enough erase blocks for the `rootfs_data` partition (firmware settings). If we burn uImage at 0xbf2a0000, we won't be able to save any setting.
 - It is still now impossible to upgrade via sysupgrade image.
