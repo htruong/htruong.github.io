@@ -1,0 +1,84 @@
+# Site wide configuration
+
+title:            tnhh.net
+locale:           en_US
+domain:           tnhh.net
+url:              http://www.tnhh.net
+ampurl:           //cdn.ampproject.org/c/www.tnhh.net
+ampcdnhost:       cdn.ampproject.org
+ampcdnurl:        /c/www.tnhh.net
+permaurl:         http://www.tnhh.net
+logo:             /images/logo.png
+logo_h:           60
+logo_w:           151
+plugins_dir:  ./_plugins
+
+# Jekyll configuration
+
+permalink:   /posts/:title.html
+markdown:    kramdown
+highlighter: rouge
+sass:
+  sass_dir: _sass
+  style: compressed
+gems:
+  - jekyll-sitemap
+  - jekyll-gist
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+
+# Octopress
+
+# Default extensions
+post_ext: md
+page_ext: md
+
+# Found in _templates/
+post_layout: post
+page_layout: page
+
+# Format titles with titlecase?
+titlecase: true
+
+
+# Site owner
+owner:
+  name: Huan Truong
+  avatar: bio-photo.jpg
+  bio: "Jack of all trades"
+  email: webreg@tnhh.net
+  disqus-shortname:
+  twitter: huant
+  facebook: #username
+  google:
+    plus: #username
+    analytics:
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github: htruong
+  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+  linkedin: #username
+  xing: #username
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: #username
+  codepen: #username
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]

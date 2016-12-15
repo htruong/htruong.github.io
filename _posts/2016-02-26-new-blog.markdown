@@ -1,0 +1,11 @@
+---
+layout : "post"
+title : "New blog"
+---
+
+
+I'm finally migrating my blog to Jekyll and github pages. As my previous setup -- oryza -- was inspired by jekyll, so the move wasn't horrible and only took a day. I now don't depend on my raspberry pi/oryza daemon working correctly all the times anymore, which is a good thing.
+
+I also have an amp version of each blog post. Send me an email if you find  breakages.
+
+I am also planning to blog more often, so stay tuned for future updates.

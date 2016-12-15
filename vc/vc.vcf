@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Huan Truong
+N:Truong;Huan;;;
+EMAIL;TYPE=INTERNET;TYPE=WORK:htruong@tnhh.net
+X-GTALK:huant@tnhh.net
+TEL;TYPE=CELL:+1 858-848-7635
+TITLE:Eccentric Graduate Student
+BDAY:1987-08-02
+item1.URL:http\://tnhh.net
+item1.X-ABLabel:_$!<HomePage>!$_
+END:VCARD
