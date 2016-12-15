@@ -29,8 +29,6 @@ WRN2000v1
 
 Last weekend, my friend Andrew asked me to look at his router, an old WRN2000v1 he scrapped from another friend he intended to be a range extender. He [couldn't find a DD-WRT build](http://www.dd-wrt.com/wiki/index.php/Netgear_WNR2000V2) and was wondering if I could take a look. I, naturally, immediately suggest him to check out LEDE/OpenWRT. However, it is apparent that is is a [hard case](https://wiki.openwrt.org/toh/netgear/wnr2000). It is a relatively obscure router that no one cared about, especially now when it is 6 year old. I doubt even then it was that well supported. So I decided to take on the challenge of getting something decent on it.
 
-![Throw more money at it?]({{site.baseurl}}/assets/posts-images/throw_money_at_it.jpg)
-
 First, I thought it was possible to load the firmware on it with a regular firmware upgrade and it turned out that I was wrong. Even the `telnetenable` script [mentioned in the wiki](https://wiki.openwrt.org/toh/netgear/wnr2000#flashing_modified_u-boot_and_pre-built_openwrt_on_wnr2000v1) doesn't work, for one reason or another, on our machine. So naturally I had to go home and get my good ole USB-to-TTL adapter -- one of the indispensable tools in my firmware tinkering toolbox. 
 
 ![The WNR2000v1 board with TTL cables hooked up](/assets/posts-images/2000v1board.jpg)
