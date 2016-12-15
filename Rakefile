@@ -35,4 +35,4 @@ task :publish => [:generate] do
 
     Dir.chdir pwd
   end
-end]
+end
