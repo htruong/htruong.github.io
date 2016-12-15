@@ -1,6 +1,4 @@
-[
-
-  qrequire "rubygems"
+require "rubygems"
 require "tmpdir"
 
 require "bundler/setup"
