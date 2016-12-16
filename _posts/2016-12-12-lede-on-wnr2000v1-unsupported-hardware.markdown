@@ -1,13 +1,10 @@
 ---
 layout: post
-title: Notes on getting LEDE/OpenWRT to work on WNR2000V1
+title: Notes on getting LEDE/OpenWRT to work on the Netgear WNR2000V1 router
 published: true
 ---
 
-State of the Union regarding custom firmwares for home routers
----
-
-Custom firmwares are no strangers to home networking enthusiasts. They offer several advantages compared to stock firmwares in many cases: Security, stabilizability, performance, and features -- all long after manufacturers abandon the routers. Last but not least, custom firmwares standardize different brands of routers. Once you have your favorite firmware flashed, you don't have to deal with specific vendor-related settings, jargons, proprietary implementations and quirks. 
+**The State of the Union regarding custom firmwares for home routers**: Custom firmwares are no strangers to home networking enthusiasts. They offer several advantages compared to stock firmwares in many cases: Security, stabilizability, performance, and features -- all long after manufacturers abandon the routers. Last but not least, custom firmwares standardize different brands of routers. Once you have your favorite firmware flashed, you don't have to deal with specific vendor-related settings, jargons, proprietary implementations and quirks. 
 
 Among the most popular are [DD-WRT](http://www.dd-wrt.com/), [Tomato/USB](http://www.polarcloud.com/tomato) and its variants, lastly, [OpenWRT](https://openwrt.org/) and its variants (they have a new fork called [LEDE](https://lede-project.org), but more to that later). DD-WRT might be the most popular choice among those. 
 
