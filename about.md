@@ -9,10 +9,4 @@ I'm currently doing my PhD at [Informatics Institute](http://muii.missouri.edu/)
 
 _Links_: [My resume](/cv.pdf) / [My Phone/Email/Vcard](/vc) / [twitter @huant](https://twitter.com/huant).
 
-### Interests
-
-- **Bioinformatics**: Big data, high performance computing, metagenomics, molecular evolution.
-- **Informatics and linguistics**: Cryptography, privacy and security, natural language processing.
-- **Novel architectures**: Embedded processors (MSP, AVR, ARM), heterogeneous parallel systems (NVidia CUDA), embedded software development, [electronics and circuits](https://verify.edxonline.org/cert/e8322a7ae5cb463496f1ab2414c19596).
-- **Education**: Trends and new opportunities that enable global life-long learning.
 
