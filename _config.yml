@@ -4,8 +4,8 @@ title:            tnhh.net
 locale:           en_US
 domain:           tnhh.net
 url:              http://www.tnhh.net
-ampurl:           //www-tnhh-net.cdn.ampproject.org/c/www.tnhh.net
-ampcdnhost:       www-tnhh-net.cdn.ampproject.org
+ampurl:           //cdn.ampproject.org/c/www.tnhh.net
+ampcdnhost:       cdn.ampproject.org
 ampcdnurl:        /c/www.tnhh.net
 permaurl:         http://www.tnhh.net
 logo:             /images/logo.png
