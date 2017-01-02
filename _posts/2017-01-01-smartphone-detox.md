@@ -21,7 +21,7 @@ In 2016,  I would not turn on Facebook messenger notifications, and I think many
 
 I might have just had a bad year, but I know [I might be not the only person on Earth feeling that way](https://ma.ttias.be/stop-watching-news/). In the last days of 2016, I decided to get rid of my smartphone for a Palm Treo. It was my dream in 2006 (I had a Palm Centro in 2008, when I entered college). That phone doesn't have wi-fi or data, so my only mean of communication is calling and texting.
 
-![Treo](/assets/post-images/palmtreo.jpg)
+![Treo](/assets/posts-images/palmtreo.jpg)
 
 I would get lost going to my friend's place because I wouldn't remember the route. I would go to shops and disappointedly find out that they are closed, that I otherwise would know. I would have to call friends when normally I would just send them a message. I would miss out on things my friends talked about on Facebook, and some will be annoyed at me for being unresponsive.
 
