@@ -26,7 +26,6 @@ task :publish => [:generate] do
     #pwd = Dir.pwd
     system "git checkout master" or exit
     system "rsync -av _site/ ."
-    system "rm -rf _site/"
 
     system "touch .nojekyll"
     system "git add ."
