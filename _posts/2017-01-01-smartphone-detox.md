@@ -30,4 +30,4 @@ I would get lost going to my friend's place because I wouldn't remember the rout
 
 But I feel like I learned something when I navigated by my instinct and made mistakes that took me 30 minutes on a route that would have otherwise taken me 15 minutes if I navigated by Google Maps. I also saw myself trying when I went ice skating at the end of the year with my friends, I was the last one still struggling until I was very sore. All of my friends quitted before me and went playing with their phones and posted pictures of them on Facebook. I don't think I can claim that I was good or know better than anyone, but I think there is some light at the end of the tunnel when my mind becomes so bored that I had to do something about it. I feel a new sense of freedom.
 
-I will sell my Pixel phone.
+I will get rid of the most advanced phone, the Pixel.
