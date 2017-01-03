@@ -21,13 +21,13 @@ end
 desc "Generate and publish blog to gh-pages"
 task :publish => [:generate] do
   Dir.mktmpdir do |tmp|
-    cp_r "_site/.", tmp
+    system "rsync -a .site/ #{tmp}"
 
     #pwd = Dir.pwd
     system "git checkout master" or exit
 
     system "touch .nojekyll"
-    cp_r "#{tmp}/_site/.", "."
+    system "rsync #{tmp}/ ."
     system "git add ."
     message = "Site updated at #{Time.now.utc}"
     #system "git commit -m #{message.inspect}"
