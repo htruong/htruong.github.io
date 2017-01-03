@@ -27,7 +27,7 @@ HTML, no dynamic back-end needed.
 
 So how does it fare out? Very decently. RAM usage has increased 0MB! 
 
-![](https://i.imgur.com/Azl9jxV.png)
+![](/assets/posts-images/streamingpi1.png)
 
 Of course the front-end works with Chrome on desktop. What's also
 amazing is that if you have Chrome on your phone, it can stream to the
@@ -35,7 +35,7 @@ background with automatic track change too.
 
 So no, there isn't an app for that, it _just works_! O' glory 8-bit music on my phone)!
 
-![](https://i.imgur.com/pP5Ya20.png)
+![](/assets/posts-images/streamingpi2.png)
 
 <amp-youtube
         layout="responsive"
