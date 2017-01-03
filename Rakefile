@@ -27,7 +27,7 @@ task :publish => [:generate] do
     system "git checkout master" or exit
 
     system "touch .nojekyll"
-    cp_r "#{tmp}/.", "."
+    cp_r "#{tmp}/_site/.", "."
     system "git add ."
     message = "Site updated at #{Time.now.utc}"
     system "git commit -m #{message.inspect}"
