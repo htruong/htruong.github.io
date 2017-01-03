@@ -21,7 +21,7 @@ end
 desc "Generate and publish blog to gh-pages"
 task :publish => [:generate] do
   Dir.mktmpdir do |tmp|
-    system "rsync -a .site/ #{tmp}"
+    system "rsync -a _site/ #{tmp}"
 
     #pwd = Dir.pwd
     system "git checkout master" or exit
