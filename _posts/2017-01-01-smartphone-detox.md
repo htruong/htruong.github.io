@@ -15,7 +15,11 @@ Maybe my neighbor is right after all. I spent in weekends of 2016 making random 
 
 Other days when not traveling, I would spend hours laying in bed doing nothing but looking at the phone. There were days that I regretted I lived it that way. I felt worn out going to bed, days after days. 
 
-![Treo](/assets/posts-images/burgerday.jpg)
+![](/assets/posts-images/burger1.png)
+![](/assets/posts-images/burger2.png)
+![](/assets/posts-images/burger3.png)
+![](/assets/posts-images/burger4.png)
+![](/assets/posts-images/burger5.png)
 
 In 2016,  I did not turn on Facebook messenger notifications, and I think many of my friends did the same.  People would let messages go by and not read any, then leave without saying a word. Emails are being ignored, some people no longer RSVP to invites. I see that behavior being way more prominent in 2016 than any previous year. It seems hard to get people to be excited.
 
