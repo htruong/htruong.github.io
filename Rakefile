@@ -24,7 +24,7 @@ task :publish => [:generate] do
     cp_r "_site/.", tmp
 
     #pwd = Dir.pwd
-    system "git checkout master"
+    system "git checkout master" or exit
 
     system "touch .nojekyll"
     cp_r "#{tmp}/.", "."
