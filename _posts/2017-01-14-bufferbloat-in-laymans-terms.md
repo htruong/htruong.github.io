@@ -33,7 +33,11 @@ If you suffer the problem, the easiest way to tell is to do a speed test while h
 
 ### Short version of what you need to do:
 
-OpenWRT/LEDE has algorithms that help you combat the latency. Buy a router that supports OpenWRT/LEDE. **The exact model matters** -- [buy one that is listed here](https://lede-project.org/toh/views/toh_available_864), don't go to Wal-mart or BestBuy and buy a random model and then complain that it doesn't work. If you have less than a 100Mbps connection, then an old Netgear WNDR 3800 for $20 will do the job fine, and I recommend it. Reprogram (or "flash") the router with OpenWRT/LEDE (I personally recommend LEDE). 
+OpenWRT or LEDE is the software programs that you can install to replace the "bad" software that is installed on your router. It is free and open-source and I am among thousands of programmers contributed to it to make a really, really good piece of software. It is very smart and friendly, although getting it to work on your router could be somewhat hard if you have never done it before.
+
+OpenWRT/LEDE has algorithms that help you combat the latency.
+
+First you need to buy a router that supports OpenWRT/LEDE. **The exact model matters** -- [buy one that is listed here](https://lede-project.org/toh/views/toh_available_864), don't go to Wal-mart or BestBuy and buy a random model and then complain that it doesn't work. If you have less than a 100Mbps connection, then an old Netgear WNDR 3800 for $20 will do the job fine, and I recommend it. Reprogram (or "flash") the router with OpenWRT/LEDE (I personally recommend LEDE). 
 
 After you have all those done, go to the control panel, go to System>Software, then install the `sqm-scripts`, `sqm-scripts-extra` and `luci-app-sqm` packages so that it shows up as a setting opention in your control panel, like so:
 
