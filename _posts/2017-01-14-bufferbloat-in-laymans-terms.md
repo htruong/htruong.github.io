@@ -34,7 +34,13 @@ For anyone who managed to read this far -- you might think that there are far be
 
 To remedy that problem, newer and fancier queueing algorithms are much better at controlling the queues, for example, they know how to allow people to drop out of the line after waiting for some time. All in all, you can see this becoming a queue problem rather than the scanning the barcode problem. Think of a having a good algorithm as hiring smart people that handle the queue and tell people where to queue, rather than spending money hiring faster people and buying expensive machines to scan stuff.
 
-The easiest way to tell if you have bufferbloat is to do a speed test while having a ping window open -- you can ping any "website" (more technically, IP address), for example, `ping -t google.com`. You'll see a much smaller ping than when you do with a speed test going on. It means that the small pings are lagging while a big transfer is going on.
+The easiest way to tell if you have bufferbloat is to do a speed test while having a ping window open -- you can ping any "website" (more technically, IP address), for example, `ping -t google.com`. If you see a much smaller ping than when you do with a speed test going on, then you have it. It means that the small pings are lagging while a big transfer is going on. As you can see here my pings took a 400ms hike in lags when there was an upload job going on vs. a 30ms when the upload job is done:
+
+<amp-gfycat data-gfyid="VibrantWetDogfish"
+  width="640"
+  height="360"
+  layout="responsive">
+</amp-gfycat>
 
 ### Come on, don't just preach.
 
@@ -56,7 +62,13 @@ Go to speedtest.net to record your internet connection speed (upload and downloa
 
 ![Close](/assets/posts-images/bufferbloat3.png)
 
-Do the same speed test with the ping window open. If the ping figure stays low as if nothing happens, then you're good to go. 
+Do the same speed test with the ping window open. If the ping figure stays low as if nothing happens even when you speedtest, then you're good to go. 
+
+<amp-gfycat data-gfyid="ScentedSpiritedAmericanbadger"
+  width="640"
+  height="360"
+  layout="responsive">
+</amp-gfycat>
 
 All you have left to do is to celebrate it, thank me and buy me a beer.
 
