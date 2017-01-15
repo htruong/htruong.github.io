@@ -6,9 +6,9 @@ title: 'Bufferbloat in layman''s terms and router hacking, 101'
 
 Because my post about LEDE/OpenWRT was pretty popular among searches on Google, I think I could as well make a layman's version about this topic.
 
-## What is bufferbloat, why is it bad? Why does your game lag? Why my "internets" suck so much?
+## What is bufferbloat, why is it bad? Why does my game lag? Why do my "internets" suck so much?
 
-Bufferbloat is the problem where one intensive traffic user or program (for example, BitTorrent or Netflix) makes every other user and program miserable. You probably have suffered it at least once: your game lagged like crazy or your web page decided not to load when you or your roommate have a download or BitTorrent happening in the background. I used to think that it is normal to have a game lagging when I download something via BitTorrent because of the number of connections that it makes. It turned out that we all don't have to suffer that.
+Bufferbloat is the problem where one intensive traffic user or program (for example, BitTorrent or Netflix) makes every other user and program miserable. You probably have suffered it at least once: your game lagged like crazy or your web page decided not to load when you or your roommate had a download or BitTorrent happening in the background. I used to think that it is normal to have a game lagging when I download something via BitTorrent because of the number of connections that it makes. It turned out that we all don't have to suffer that.
 
 An analogy is like the time you went to a supermarket/Wal-mart to buy a pen, and had to wait 15 minutes to check out the pen because all the checkout lanes have queues of people with carts full of stuff in front of you. 
 
@@ -16,7 +16,7 @@ In many ways, games and voice chat need stuff delivered quickly and can be thoug
 
 ![Install the software](/assets/posts-images/Simpsons-Express-Line.jpg)
 
-## Is your internet connection not fast enough?
+## Is my internet connection not fast enough?
 
 You will probably conclude that your connection is not fast enough -- and that's a good misconception that your ISP hope you to have so you will buy a faster internet package from them. Just fucking throw more money at the problem.
 
@@ -24,21 +24,21 @@ You will probably conclude that your connection is not fast enough -- and that's
 
 Sadly, it is *often a misguided idea*. Here, throughput is mistaken for latency. Latency can be thought of as the time you have to wait before you check out your pen, and throughput is how fast you can walk out with your pen once you start checking out. They are somewhat related, but not quite the same thing. Hiring better people that can check out stuff much faster will help remedy the problem. For example, think of hiring faster people that can scan stuff twice as fast will help to reduce the wait time for you to check out the pen from 15 minutes to, say, 8 minutes. If you have machines that can tell how much the bill is without scanning anything, then the wait time will be much faster, but they are an expensive solution (that's what we have with a gigabit fiber optics connection). In other words, you don't want your grandma working in the checkout line (56k dial-up connections suck for sure), but hiring Amazon to tag every item so that everything automatically checks out itself is overkill (having a twice-as-fast connection won't solve your problem).
 
-**Usually people get upset about how long they have to queue instead of how fast can they check stuff out.** The same thing happens to the internet, programs and people often get upset about latency instead of throughput. Too bad, your router shoves everyone into the same queue.
+**Usually people get upset about how long they have to queue instead of how fast they can check stuff out.** The same thing happens to the internet, programs and people often get upset about latency instead of throughput.
 
 In games and voice chat, all that matters is latency.  Slower connections do not mean higher latency. In fact, Skype voice calls many games such as StarCraft and Half-life: Counter Strike worked fantastically, and probably still do with a dial-up or 2.5G connection (that is, literally, 100x slower than your typical connection). 
 
 Better throughput only helps when you check out many items very often, i.e. download lots of movies. Streaming movies doesn't count -- it only counts if your connection is slower than what the streaming requires which is often a low bar to pass (Netflix only requires 5Mbps for Full HD). It works the same way in real life, as long as the salesperson can check out faster than people can buy stuff, which is often the case, then hiring faster salespersons won't make the queues go away. If your internet connection is faster than what you need that and it still sucks, then you probably suffer from the same problem.
 
-For anyone who managed to read this far -- you might think that there are far better solutions than spending a crazy amount of money hiring faster checkout people. That is correct. If you just have a lane that says "express checkout" for people with 5 items or less and another that says "bulk checkout" for people with 100 items or more, then we have solved the problem of the person with the full cart making the people with just a pen wait. In other words, allocating queues differently without having to hiring faster people is a better solution here. That was what earlier algorithms tried to do - if you classify yourself as express checkout, then you don't have to wait in the normal lines. The problem was that programs aren't good at classifying themselves (sometimes they don't know beforehand how many items they have in their cart, in real life, people keep buying snack bars on the way out), and it is not clear from the start how many types of lines we should have, and the system is easy to abuse, because everyone wants to be in the express line. 
+For anyone who managed to read this far -- you might think that there are far better solutions than spending money hiring faster checkout people. That is correct. If you just have a lane that says "express checkout" for people with 5 items or less and another that says "bulk checkout" for people with 100 items or more, then we have solved the problem of the person with the full cart making the people with just a pen wait. In other words, allocating queues differently without having to hiring faster people is a better solution here. That was what earlier algorithms tried to do - if you classify yourself as express checkout, then you don't have to wait in the normal lines. The problem was that programs aren't good at classifying themselves (sometimes they don't know beforehand how many items they have in their cart, in real life, people keep buying snack bars on the way out), and it is not clear from the start how many types of lines we should have, and the system is easy to abuse, because everyone wants to be in the express line. 
 
 To remedy that problem, newer and fancier queueing algorithms are much better at controlling the queues, for example, they know how to allow people to drop out of the line after waiting for some time. All in all, you can see this becoming a queue problem rather than the scanning the barcode problem. Think of a having a good algorithm as hiring smart people that handle the queue and tell people where to queue, rather than spending money hiring faster people and buying expensive machines to scan stuff.
 
 The easiest way to tell if you have bufferbloat is to do a speed test while having a ping window open -- you can ping any "website" (more technically, IP address), for example, `ping -t google.com`. You'll see a much smaller ping than when you do with a speed test going on. It means that the small pings are lagging while a big transfer is going on.
 
-### Short version of what you need to do:
+### Come on, don't just preach.
 
-So you probably are able to come up with a conclusion something like instead of spending money on a faster connection, you should have something that handles the queue efficiently. Bing bing bing! You're correct.
+So you think instead of spending money on a faster connection, you should have something that handles the queue efficiently. Bing bing bing! You're absolutely correct.
 
 Do you need a gaming router, though? No, by "good," I don't mean expensive, and expensive "gaming routers" often weasel words for routers with marked up prices.  Good means it can be "hacked" to run good software, such as OpenWRT and LEDE (for a more technically inclined audience, you might have heard of DD-WRT and Tomato formware, they are the same breed, just that OpenWRT/LEDE are more technically flexible and advanced.)
 
