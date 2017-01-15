@@ -8,7 +8,7 @@ Because my post about LEDE/OpenWRT was pretty popular among searches on Google, 
 
 Bufferbloat is the problem where one intensive traffic user or program (for example, BitTorrent or Netflix) makes every other user and program miserable. You probably have suffered it at least once: your game lagged like crazy or your web page decided not to load when you or your roommate have a download or BitTorrent happening in the background. I used to think that it is normal to have a game lagging when I download something via BitTorrent because of the number of connections that it makes, but it turned out that we all don't have to suffer that.
 
-Another analogy is like you went to a supermarket/Wal-mart to buy a pen, and had to wait 15 minutes to check out the pen because all the checkout lanes have queues of people with carts full of stuff is in front of you. 
+An analogy is like the time you went to a supermarket/Wal-mart to buy a pen, and had to wait 15 minutes to check out the pen because all the checkout lanes have queues of people with carts full of stuff in front of you. 
 
 It doesn't take much to tell everyone you're firing in a certain direction in a game, while it takes a lot of the bandwidth to transfer a scene from a movie. In many ways, games and voice chat need stuff delivered quickly and can be thought of as people needing to check out pens as quickly as possible. Programs streaming movies or downloading data could also be thought of as the people with big carts that need to be checked out - and they don't care as much about the time they have to wait.
 
