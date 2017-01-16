@@ -28,12 +28,6 @@ Sadly, it is *often a misguided idea*. Here, throughput is mistaken for latency.
 
 Contrary to popular beliefs, a good gaming experience doesn't require lots of bandwidth. This is because it doesn't take much bandwidth for the computers to communicate information, such as I'm firing from the position 100,100, with an angle of 30 degree to the north. It takes 3 bytes to do so, when your pre-historic 56K modem can transfer freaking 56,000 bytes a second. In games and voice chat, all that matters is latency. Slower connections do not mean higher latency. In fact, Skype voice calls many games such as StarCraft and Half-life: Counter Strike worked fantastically, and probably still do with a dial-up connection (that is, literally, 100x slower than your typical connection). 
 
-## *So you're trying to tell me that what determines my internet speed isn't the internet speed?* 
-
-As a person from Vietnam, I can tell that having a Ferrari in Hanoi doesn't make you go fast. Hard pill to swallow much?
-
-![Hanoi](/assets/posts-images/rXlHVjf.jpg)
-
 Better throughput only helps when you check out many items very often, i.e. download lots of movies. Streaming movies doesn't count -- it only counts if your connection is slower than what the streaming requires which is often a low bar to pass (Netflix only requires 5Mbps for Full HD). It works the same way in real life, as long as the salesperson can check out faster than people can buy stuff, which is often the case, then hiring faster salespersons won't make the queues go away. If your internet connection is faster than what you need and it still sucks, then you probably suffer from the same problem.
 
 For anyone who managed to read this far -- you might think that there are far better solutions than spending money hiring faster checkout people: Correct. If you just have a lane that says "express checkout" for people with 5 items or less and another that says "bulk checkout" for people with 100 items or more, then we have solved the problem of the person with the full cart making the people with just a pen wait. In other words, allocating queues differently without having to hiring faster people is a better solution here. That was what earlier algorithms tried to do - if you classify yourself as express checkout, then you don't have to wait in the normal lines. The problem was that programs aren't good at classifying themselves (sometimes they don't know beforehand how many items they have in their cart, in real life, people keep buying snack bars on the way out), and it is not clear from the start how many types of lines we should have, and the system is easy to abuse, because everyone wants to be in the express line. 
@@ -79,4 +73,13 @@ Do the same speed test with the ping window open. If the ping figure stays low a
 All you have left to do is to celebrate it, thank me and buy me a beer. Or fire up some Counter-strike: Global Offensive and murder someone. My gamers friends had an eye-opening experience when I showed them my 30ms ping with Bittorrent downloads in the background.
 
 
+### Bonus question: *So you're making this long post to tell me that what determines my internet speed isn't the internet speed?* I'm not convinced -- I built my own PC!
+
+Your download/upload bandwidth is the new [e-peen - Warning NSFW](http://www.urbandictionary.com/define.php?term=e-penis) - it's literally defined there. Your speed on the streets of Hanoi doesn't depend on how many engines your car has, either. Get over it.
+
+![Streets of Hanoi](/assets/posts-images/rXlHVjf.jpg)
+
+
+
 PS: There are concerns that the FCC don't want you to modify your routers. As I am not a US citizen, I can't say much, but I'm sure you can help spreading the words on why not being able to put custom software on your router is bad.
+
