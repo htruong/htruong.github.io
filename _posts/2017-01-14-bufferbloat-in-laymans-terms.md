@@ -4,7 +4,7 @@ title: 'Bufferbloat in layman''s terms and router hacking, 101'
 ---
 
 
-TL,DR: If you play games or do voice/video chat, then latency, not bandwidth, is what you need to pay attention to. If the connection to your router is consistently good, yet your internet seems slow at unpredictable times, then you have the symptom so-called bufferbloat. You will need to setup a thing called Smart-Queue-Management on your router. You will have to install a third-party open source firmware on it called LEDE, because no router on the mass market now has it installed by default.
+TL,DR: If you play games or do voice/video chat, then the latency figure is what you need to pay attention to instead of the bandwidth figure. If the connection to your router is consistently good, yet your internet seems slow at unpredictable times, then you might have the symptom so-called bufferbloat. You will need to setup a thing called Smart-Queue-Management on your router. You will have to install a third-party open source software called LEDE, because no router on the mass market right now has it installed by default.
 
 ## What is bufferbloat, why is it bad? Why does my game lag? Why do my "internets" suck so much?
 
@@ -73,9 +73,9 @@ Do the same speed test with the ping window open. If the ping figure stays low a
 All you have left to do is to celebrate it, thank me and buy me a beer. Or fire up some Counter-strike: Global Offensive and murder someone. My gamers friends had an eye-opening experience when I showed them my 30ms ping with Bittorrent downloads in the background.
 
 
-### Bonus question: *So you're making this long post to tell me that what determines my internet speed isn't the internet speed?* I'm not convinced -- I built my own PC!
+### Bonus question: *So you're making this long post to tell me that what determines my internet speed isn't the internet speed?* You're preaching voodoo -- I built my own PC!
 
-Your download/upload bandwidth is the new [e-peen - Warning NSFW](http://www.urbandictionary.com/define.php?term=e-penis) - it's literally defined there. Your speed on the streets of Hanoi doesn't depend on how many engines your car has, either. Get over it.
+Your download/upload bandwidth is the new [e-peen - Warning NSFW](http://www.urbandictionary.com/define.php?term=e-penis) - it's literally the top definition there right now. As a former Hanoian, I think your speed on the streets of Hanoi doesn't depend on how many engines your car has, either.
 
 ![Streets of Hanoi](/assets/posts-images/rXlHVjf.jpg)
 
