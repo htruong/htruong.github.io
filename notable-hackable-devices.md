@@ -1,8 +1,12 @@
+layout: page
+hidetitle: true
+---
+
 # Huan's big, growing list of notable hackable devices
 
 Here I try to maintain a list of consumer devices that are ubiquitous, cheap and have significant hacking values, many accidentally and unintended by the manufacturers. I tried to list all the devices that are still somewhat relevant to 2017 (i.e. still somewhat useful), instead of just being historically interesting.
 
-The advent of custom firmwares have pushed the capabilities and use cases of those devices to far beyond their intended original use, and make them extremely attractive for makers worldwide. 
+The advent of custom firmwares have pushed the capabilities and use cases of those devices to far beyond their intended original use, extending their life way beyond their official support lifetime.
 
 If you have suggestions to make this page better, please email to htruong@tnhh.net.
 
@@ -33,7 +37,7 @@ It was designed to run Windows Mobile 6 but it runs _everything_. So, if you wan
 
 ### Other notable devices
 
-Nokia N900, OnePlus One, HP Touchpad, iPhones.
+Nokia N900, OnePlus One, HP Touchpad, iPhones, Motorola Droid.
 
 ## Routers
 
@@ -43,7 +47,7 @@ The router that started it all. It was sued for violating the GPLv2 license. Lin
 
 ### Netgear WNDR3800 (2011)
 
-The router that is "just good enough." Runs every pioneering open-source firmwares ever and is still good being a six-year-old device.
+The router that is "just good enough" and "just works" for most people. Runs every pioneering open-source firmwares ever and is still good being a six-year-old device.
 
 ## Game Consoles & Handhelds
 
@@ -61,17 +65,17 @@ Sony PSP, Nintendo Wii, Nintendo DS/2DS/3DS, Microsoft XBox 360, Microsoft Kinec
 
 ## Development boards
 
+### Expressif ESP8266 (201?)
+
+It is less-than-$5 cheap, it has wifi and it is an Arduino. Now we're talking real values. My memory about this module is murky, but I think it was intended to be a dumb WiFi module initially, but people hacked Nodejs and Arduino later on to make it a microcontroller with WiFi built-in.
+
 ### Raspberry Pi 3 (2016)
 
 Tried-and-true device for millions of makers worldwide, the Raspberry Pi 3 is the definite device to have if you want to start hacking. It does everything and runs everything.
 
 ### Arduino Uno (2010)
 
-If you want to start with microcontrollers, just start with this one. It has the largest fanbase and developer community, and you could always find a project worth working on with the Arduino.
-
-### Expressif ESP8266 (201?)
-
-It is less-than-$5 cheap, it has wifi and it is an Arduino. Now we're talking real values. My memory about this module is murky, but I think it was intended to be a dumb WiFi module initially, but people hacked Nodejs and Arduino later on to make it a microcontroller with WiFi built-in.
+If you want to start with microcontrollers, just start with this one. It has a huge fanbase and developer community, and you could always find a project worth working on with the Arduino.
 
 ### Notable devices
 
