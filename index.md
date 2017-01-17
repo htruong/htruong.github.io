@@ -1,5 +1,5 @@
 ---
 layout: post-index
-title: All Posts
+title: Latest blog entries
 excerpt: "A List of Posts"
 ---
