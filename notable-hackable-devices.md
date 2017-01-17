@@ -8,11 +8,11 @@ The advent of custom firmwares have pushed the capabilities and use cases of tho
 
 ### Acer Chromebook C720 (2013)
 
-This laptop is cheap, runs cool, the battery lasts forever, and it runs every operating system ever. You can flash [coreboot](https://mrchromebox.tech/), an open-source UEFI BIOS for it and it will run Linux, Windows, and even macOS. It is also extremely easy to open up. Virtually unbrickable.
+This laptop is cheap, runs cool, the battery lasts forever, and it runs every operating system ever. You can flash [coreboot](https://mrchromebox.tech/), an open-source UEFI BIOS for it and it will run Linux, Windows flawlessly, and even macOS. It is also extremely easy to open up. Virtually unbrickable.
 
 ### Thinkpad X200 (2009)
 
-For the fans of truly freedom BIOS. It runs [libreboot](https://libreboot.org/docs/hcl/x200.html) which has no binary blobs and it seems like the Management Engine can be partially disabled.
+For the fans of truly-free BIOS. It runs [libreboot](https://libreboot.org/docs/hcl/x200.html) which has no binary blobs and it seems like the Management Engine can be partially disabled.
 
 ### Other notable devices
 
@@ -26,11 +26,11 @@ Supported by many third-party, obscure, crazy mobile OS projects, including Ubun
 
 ### HTC HD2 (2009)
 
-If you want a phone that runs _everything_, then buy the HD2. It is historic in terms of age in the ever-evolving mobile world, but seems like this phone is the only phone that ages like wine.
+If you want a phone that runs _everything_, then buy the HD2. It is pre-historic in terms of age in the ever-evolving mobile world, but seems like this phone is the only phone that ages like wine.
 
 ### Other notable devices
 
-Nokia N900, OnePlus One, HP Touchpad.
+Nokia N900, OnePlus One, HP Touchpad, iPhones.
 
 ## Routers
 
@@ -42,11 +42,25 @@ The router that started it all. It runs Linux and was sued for violating the GPL
 
 The router that is "just good enough." Runs every pioneering open-source firmware ever and is still good being a six-year-old device.
 
+## Game Consoles & Handhelds
+
+### Sony PS3 (2006)
+
+The PS3 was advertised as a console that can run Linux, and [could do some serious computing](PlayStation 3 cluster). Then Sony removed the functionality. Then people got mad and added it back again. Then some guy by the name Geohot got sued and [made a video for it](https://www.youtube.com/watch?v=9iUvuaChDEg). 
+
+### Microsoft Original Xbox (2001)
+
+The Original XBox is a x86 PC in disguise and has [a book dedicated to hacking it](http://hackingthexbox.com/). Even being a 16 year old system, it is probably still one of the best cheap readymade systems that you could buy for retro emulation. The Raspberry Pi is also a good emulation system, except for the cumbersome controller set-up.
+
+### Other notable devices
+
+Sony PSP, Nintendo Wii, Nintendo DS/2DS/3DS, Microsoft XBox 360, Microsoft Xbox Kinect
+
 ## Development boards
 
 ### Raspberry Pi 3 (2016)
 
-Tried-and-true device for millions of makers worldwide, the Raspberry Pi 3 is the definite device to have if you want to start hacking.
+Tried-and-true device for millions of makers worldwide, the Raspberry Pi 3 is the definite device to have if you want to start hacking. It does everything and runs everything.
 
 ### Arduino Uno (2010)
 
@@ -58,12 +72,11 @@ If you want to start with microcontrollers, just start with this one.
 
 The small SD-card that runs Linux. It even has [a wiki](http://magiclantern.wikia.com/wiki/Eye-Fi) dedicated to hacking it.
 
-### Canon T-cameras
+### Canon cameras
 
-They have an [open source firmware](http://www.magiclantern.fm) that adds tons of features to the cameras, such as interval shots and finer manual controls.
+They have an [open source firmware](http://www.magiclantern.fm) that adds tons of features to the cameras, such as interval shots and finer manual controls. If you have a point-and-shoot, [there is a firmware for it](http://chdk.wikia.com/), too.
 
 ### SanDisk Sansa Clip (2007)
 
-It has a SD card slot and runs Rockbox, an open-source firmware that allows your player to play every audio format imaginable. Also, who knows that [your MP3 player can run Doom](https://www.rockbox.org/)?
-
+It has a SD card slot and runs Rockbox, an open-source firmware that allows your player to play every audio format imaginable. Also, who knows that [your MP3 player can run Doom](https://www.rockbox.org/)? No wireless. More space than a Nomad. Not too lame.
 
