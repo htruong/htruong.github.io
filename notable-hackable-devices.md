@@ -1,5 +1,7 @@
-layout: page
-hidetitle: true
+---
+layout : "page"
+title : "The Big, Growing List of Notable Hackable Devices"
+hidetitle : true
 ---
 
 # Huan's big, growing list of notable hackable devices
