@@ -4,8 +4,6 @@ title : "The Big, Growing List of Notable Hackable Devices"
 hidetitle : true
 ---
 
-# Huan's big, growing list of notable hackable devices
-
 Here I try to maintain a list of consumer devices that are ubiquitous, cheap and have significant hacking values, many accidentally and unintended by the manufacturers. I tried to list all the devices that are still somewhat relevant to 2017 (i.e. still somewhat useful), instead of just being historically interesting.
 
 The advent of custom firmwares have pushed the capabilities and use cases of those devices to far beyond their intended original use, extending their life way beyond their official support lifetime.
