@@ -1,8 +1,11 @@
 # Huan's big, growing list of notable hackable devices
 
-Here I try to maintain a list of consumer devices that are ubiquitous and have significant hacking values, many accidentally and unintended by the manufacturers. I tried to list all the devices that are still somewhat relevant to the modern times (i.e. still somewhat useful), instead of just being historically interesting.
+Here I try to maintain a list of consumer devices that are ubiquitous, cheap and have significant hacking values, many accidentally and unintended by the manufacturers. I tried to list all the devices that are still somewhat relevant to 2017 (i.e. still somewhat useful), instead of just being historically interesting.
 
-The advent of custom firmwares have pushed the capabilities and use cases of those devices to far beyond their intended original use, and make them ridiculously attractive for makers worldwide. 
+The advent of custom firmwares have pushed the capabilities and use cases of those devices to far beyond their intended original use, and make them extremely attractive for makers worldwide. 
+
+If you have suggestions to make this page better, please email to htruong@tnhh.net.
+
 
 ## Laptops
 
@@ -20,13 +23,13 @@ For the fans of truly-free BIOS. It runs [libreboot](https://libreboot.org/docs/
 
 ## Smartphones and Tablets
 
-### Google Nexus 5 (2013)
+### Google Nexus 5 (2013) and Google Nexus 7 (2013)
 
 Supported by many third-party, obscure, crazy mobile OS projects, including Ubuntu Touch, Maru OS, Mobile Plasma. Of course, it is still powerful enough to run the latest version of Android as well.
 
 ### HTC HD2 (2009)
 
-If you want a phone that runs _everything_, then buy the HD2. It is pre-historic in terms of age in the ever-evolving mobile world, but seems like this phone is the only phone that ages like wine.
+It was designed to run Windows Mobile 6 but it runs _everything_. So, if you want a phone that runs _everything_, then get the HD2. It is pre-historic in terms of age in the ever-evolving mobile world, but seems like this phone is the only phone that ages like wine. 
 
 ### Other notable devices
 
@@ -36,11 +39,11 @@ Nokia N900, OnePlus One, HP Touchpad, iPhones.
 
 ### Linksys WRT54G (2002)
 
-The router that started it all. It runs Linux and was sued for violating the GPLv2 license. Linksys had to publish the source code for the router, and the rest was history. It is still now being used and trusted by many many people, 15 years after its first release. It can run mesh network, has a huge ham fanbase, and has interchangable antennas. What's not to like?
+The router that started it all. It was sued for violating the GPLv2 license. Linksys had to publish the source code for the router, and the rest was history. It is still now being used and trusted by many many people, 15 years after its first release. It can run mesh network, has a huge ham fanbase, and has interchangable antennas. What's not to like?
 
 ### Netgear WNDR3800 (2011)
 
-The router that is "just good enough." Runs every pioneering open-source firmware ever and is still good being a six-year-old device.
+The router that is "just good enough." Runs every pioneering open-source firmwares ever and is still good being a six-year-old device.
 
 ## Game Consoles & Handhelds
 
@@ -54,7 +57,7 @@ The Original XBox is a x86 PC in disguise and has [a book dedicated to hacking i
 
 ### Other notable devices
 
-Sony PSP, Nintendo Wii, Nintendo DS/2DS/3DS, Microsoft XBox 360, Microsoft Xbox Kinect
+Sony PSP, Nintendo Wii, Nintendo DS/2DS/3DS, Microsoft XBox 360, Microsoft Kinect.
 
 ## Development boards
 
@@ -64,11 +67,19 @@ Tried-and-true device for millions of makers worldwide, the Raspberry Pi 3 is th
 
 ### Arduino Uno (2010)
 
-If you want to start with microcontrollers, just start with this one.
+If you want to start with microcontrollers, just start with this one. It has the largest fanbase and developer community, and you could always find a project worth working on with the Arduino.
+
+### Expressif ESP8266 (201?)
+
+It is less-than-$5 cheap, it has wifi and it is an Arduino. Now we're talking real values. My memory about this module is murky, but I think it was intended to be a dumb WiFi module initially, but people hacked Nodejs and Arduino later on to make it a microcontroller with WiFi built-in.
+
+### Notable devices
+
+Other Arduinos, Teensy, Expressif ESP32, Raspberry Pi Zero.
 
 ## Miscleneaous devices
 
-### Eye-Fi SD cards
+### Eye-Fi SD cards (?)
 
 The small SD-card that runs Linux. It even has [a wiki](http://magiclantern.wikia.com/wiki/Eye-Fi) dedicated to hacking it.
 
