@@ -248,7 +248,7 @@
             layout="responsive"
             sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms"
             resizable
-            src="{{site.owner.disqus-amp-iframe}}?shortname={{site.owner.disqus-shortname}}&url={{ page.canonical_url | prepend: site.baseurl | prepend: site.url }}&identifier={{page.id}}">
+            src="{{site.owner.disqus-amp-iframe}}?shortname={{site.owner.disqus-shortname}}&url={{ page.canonical_url | prepend: site.baseurl | prepend: site.url }}&identifier={{page.canonical_url}}">
 <div overflow tabindex=0 role=button aria-label="Read more">Read comments</div>
 </amp-iframe>
 {% endif %}
