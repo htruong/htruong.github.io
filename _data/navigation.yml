@@ -1,10 +1,10 @@
 # Site navigation links
 
 - title: Projects
-  url: /projects.html
+  url: /projects
 
 - title: Hackable devices
-  url: /notable-hackable-devices.html
+  url: /notable-hackable-devices
 
 - title: About
-  url: /about.html
+  url: /about

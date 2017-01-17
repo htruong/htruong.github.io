@@ -4,8 +4,8 @@ title:            tnhh.net
 locale:           en_US
 domain:           tnhh.net
 url:              http://www.tnhh.net
-ampurl:           //cdn.ampproject.org/c/www.tnhh.net
-ampcdnhost:       cdn.ampproject.org
+ampurl:           //www-tnhh-net.cdn.ampproject.org/c/www.tnhh.net
+ampcdnhost:       www-tnhh-net.cdn.ampproject.org
 ampcdnurl:        /c/www.tnhh.net
 permaurl:         http://www.tnhh.net
 logo:             /images/logo.png
@@ -46,6 +46,12 @@ page_layout: page
 # Format titles with titlecase?
 titlecase: true
 
+defaults:
+-   
+  scope:
+    type: pages
+  values:
+    permalink: /:path/:basename:output_ext
 
 # Site owner
 owner:
