@@ -1,6 +1,7 @@
 ---
 published: true
 title: 'Bufferbloat in layman''s terms and router hacking, 101'
+layout : "post"
 ---
 
 

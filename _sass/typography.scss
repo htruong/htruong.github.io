@@ -35,6 +35,9 @@ h6 {
 a {
 	/*text-decoration: none;*/
 	color: $link-color;
+	&.nounderline {
+		text-decoration: none;
+	}
 	&:visited {
 		color: $linkcolorvisited;
 	}

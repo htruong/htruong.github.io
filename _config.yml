@@ -53,7 +53,8 @@ owner:
   avatar: bio-photo.jpg
   bio: "Jack of all trades"
   email: webreg@tnhh.net
-  disqus-shortname:
+  disqus-shortname: tnhh
+  disqus-amp-iframe: https://cdn.rawgit.com/htruong/htruong.github.io/master/disqus_amp.html
   twitter: huant
   facebook: #username
   google:

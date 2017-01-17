@@ -2,6 +2,7 @@
 layout : "page"
 title : "The Big, Growing List of Notable Hackable Devices"
 hidetitle : true
+comments: true
 ---
 
 Here I try to maintain a list of consumer devices that are ubiquitous, cheap and have significant hacking values, many accidentally and unintended by the manufacturers. I tried to list all the devices that are still somewhat relevant to 2017 (i.e. still somewhat useful), instead of just being historically interesting.

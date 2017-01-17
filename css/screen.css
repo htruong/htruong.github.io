@@ -700,3 +700,7 @@ h6 { font-size: 1em; }
   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
   -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
   }
+
+a.nounderline {
+  text-decoration: none;
+}
