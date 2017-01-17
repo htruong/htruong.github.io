@@ -1,0 +1,69 @@
+# Huan's big, growing list of notable hackable devices
+
+Here I try to maintain a list of consumer devices that are ubiquitous and have significant hacking values, many accidentally and unintended by the manufacturers. I tried to list all the devices that are still somewhat relevant to the modern times (i.e. still somewhat useful), instead of just being historically interesting.
+
+The advent of custom firmwares have pushed the capabilities and use cases of those devices to far beyond their intended original use, and make them ridiculously attractive for makers worldwide. 
+
+## Laptops
+
+### Acer Chromebook C720 (2013)
+
+This laptop is cheap, runs cool, the battery lasts forever, and it runs every operating system ever. You can flash [coreboot](https://mrchromebox.tech/), an open-source UEFI BIOS for it and it will run Linux, Windows, and even macOS. It is also extremely easy to open up. Virtually unbrickable.
+
+### Thinkpad X200 (2009)
+
+For the fans of truly freedom BIOS. It runs [libreboot](https://libreboot.org/docs/hcl/x200.html) which has no binary blobs and it seems like the Management Engine can be partially disabled.
+
+### Other notable devices
+
+[Other Thinkpads](https://libreboot.org/docs/hcl/), [Other Chromebooks](https://www.reddit.com/r/chrultrabook/).
+
+## Smartphones and Tablets
+
+### Google Nexus 5 (2013)
+
+Supported by many third-party, obscure, crazy mobile OS projects, including Ubuntu Touch, Maru OS, Mobile Plasma. Of course, it is still powerful enough to run the latest version of Android as well.
+
+### HTC HD2 (2009)
+
+If you want a phone that runs _everything_, then buy the HD2. It is historic in terms of age in the ever-evolving mobile world, but seems like this phone is the only phone that ages like wine.
+
+### Other notable devices
+
+Nokia N900, OnePlus One, HP Touchpad.
+
+## Routers
+
+### Linksys WRT54G (2002)
+
+The router that started it all. It runs Linux and was sued for violating the GPLv2 license. Linksys had to publish the source code for the router, and the rest was history. It is still now being used and trusted by many many people, 15 years after its first release. It can run mesh network, has a huge ham fanbase, and has interchangable antennas. What's not to like?
+
+### Netgear WNDR3800 (2011)
+
+The router that is "just good enough." Runs every pioneering open-source firmware ever and is still good being a six-year-old device.
+
+## Development boards
+
+### Raspberry Pi 3 (2016)
+
+Tried-and-true device for millions of makers worldwide, the Raspberry Pi 3 is the definite device to have if you want to start hacking.
+
+### Arduino Uno (2010)
+
+If you want to start with microcontrollers, just start with this one.
+
+## Miscleneaous devices
+
+### Eye-Fi SD cards
+
+The small SD-card that runs Linux. It even has [a wiki](http://magiclantern.wikia.com/wiki/Eye-Fi) dedicated to hacking it.
+
+### Canon T-cameras
+
+They have an [open source firmware](http://www.magiclantern.fm) that adds tons of features to the cameras, such as interval shots and finer manual controls.
+
+### SanDisk Sansa Clip (2007)
+
+It has a SD card slot and runs Rockbox, an open-source firmware that allows your player to play every audio format imaginable. Also, who knows that [your MP3 player can run Doom](https://www.rockbox.org/)?
+
+
