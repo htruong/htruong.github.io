@@ -9,8 +9,6 @@ Here I try to maintain a list of consumer devices that are ubiquitous, cheap and
 
 The advent of custom firmwares have pushed the capabilities and use cases of those devices to far beyond their intended original use, extending their life way beyond their official support lifetime.
 
-If you have suggestions to make this page better, please email to htruong@tnhh.net.
-
 
 ## Laptops
 
@@ -38,7 +36,11 @@ It was designed to run Windows Mobile 6 but it runs _everything_. So, if you wan
 
 ### Other notable devices
 
-Nokia N900, OnePlus One, HP Touchpad, iPhones, Motorola Droid.
+- Nokia N900: No longer available, and hardware is outdated.
+- OnePlus One: Good but not crazily good.
+- HP Touchpad: No longer available, and hardware is outdated. But it was phenomenal years ago.
+- iPhones: Can jailbreak but you can't generally update them.
+- Motorola Droid: No longer available, and hardware is outdated.
 
 ## Routers
 
@@ -49,6 +51,10 @@ The router that started it all. It was sued for violating the GPLv2 license. Lin
 ### Netgear WNDR3800 (2011)
 
 The router that is "just good enough" and "just works" for most people. Runs every pioneering open-source firmwares ever and is still good being a six-year-old device.
+
+### Other notable devices
+
+- Everything that is supported by LEDE/OpenWRT.
 
 ## Game Consoles & Handhelds
 
@@ -62,7 +68,10 @@ The Original XBox is a x86 PC in disguise and has [a book dedicated to hacking i
 
 ### Other notable devices
 
-Sony PSP, Nintendo Wii, Nintendo DS/2DS/3DS, Microsoft XBox 360, Microsoft Kinect.
+- Sony PSP: Hackable.
+- Nintendo Wii: Hackable and has cool games, but hardware was meh.
+- Nintendo DS/2DS/3DS: Hackable.
+- Microsoft XBox 360, Microsoft Kinect: Good support from Microsoft but limited applications.
 
 ## Development boards
 
@@ -78,9 +87,13 @@ Tried-and-true device for millions of makers worldwide, the Raspberry Pi 3 is th
 
 If you want to start with microcontrollers, just start with this one. It has a huge fanbase and developer community, and you could always find a project worth working on with the Arduino.
 
-### Notable devices
+### Other notable devices
 
-Other Arduinos, Teensy, Expressif ESP32, Raspberry Pi Zero.
+- Other Arduinos, esp. the Arduino Micro: They are just as good.
+- Teensy: Good and small, but nothing impressive.
+- Expressif ESP32: Designed to be good, but not as crazy of a hack as ESP8266 was.
+- Raspberry Pi Zero: Good choice if you want a cheap device that does something.
+- [HC-05 and HC-06 Bluetooth modules](https://www.youtube.com/watch?v=BBqsVKMYz1I).
 
 ## Miscleneaous devices
 
@@ -94,5 +107,10 @@ They have an [open source firmware](http://www.magiclantern.fm) that adds tons o
 
 ### SanDisk Sansa Clip (2007)
 
-It has a SD card slot and runs Rockbox, an open-source firmware that allows your player to play every audio format imaginable. Also, who knows that [your MP3 player can run Doom](https://www.rockbox.org/)? No wireless. More space than a Nomad. Not too lame.
+It would have been otherwise a "no wireless, less space than a Nomad" device otherwise, but Rockbox transformed all that. Rockbox is an open-source firmware that allows your player to play every audio format imaginable. Also, who knows that [your MP3 player can run Doom now](https://www.rockbox.org/)?
+
+### Other notable devices
+
+- Chumby/Insignia Infocast 3: Good but outdated hardware, and it is no longer available.
+- Everything supported by Rockbox: Could be dicey.
 
