@@ -25,3 +25,7 @@ This is really crazily great. Words can’t describe how excited I am now.
 ![Screenshot 2](/assets/posts-images/sophia2.jpg)
 
 ![Screenshot 3](/assets/posts-images/sophia3.jpg)
+
+## Update on 2017-02-09: <a name="privacy">Privacy Policy</a>
+
+According to the new Google Play Privacy Policy, I will have to declare the app privacy policy. The app needs the READ_CONTACTS permission to suggest potential contact matches for the typing words. The list of contacts is never transmitted outside of the app to any server online. I do not collect, store or handle any of the user data. 
