@@ -19,12 +19,13 @@ I started writing code since I had my first computer when I was 13 years old. Li
 
 **The 3 AM rule**: If I am willing to stay up until 3 AM to do something then I really like it. If I am not, then whatever it is, I don't like it enough. *Doing what I like has so much more potentials than doing what I think is noble.* 
 
-**People**: People are people. Some will envy me, some will use me, some will think I am a joke, most will think I am weird. It is better to bury my head in the sand and continute working on what I like.
-
 **Networking**: Not my thing, I just give up pretending that I'm comfortabe with face-to-face meetings and introducing myself to people at places -- I hate it. But I can send emails to people. To me, emailing is the best way to know and communicate with people.
 
 **Being consistent**: Writing code and getting things done is like depositing money in the bank. Being consistent is much more important than being clever or heroic.
 
-**Developing a taste**: Humiliating and be rude to other people is never a good idea. However, to me, it is easy to say some uplifting bullshit about just anything. Having a taste on what's good, the style I appreciate, and having meaningful feedback is harder. I feel the education system in the USA tends to favor the uplifting bullshit feels good approach -- and now I found out that it is not my style.
+**Developing a taste**: Humiliating other people is never a good idea. However, to me, it is easy to say some uplifting bullshit about just anything. Having a taste on what's good, the style I appreciate, and having meaningful feedback is harder. I feel the education system in the USA tends to favor the uplifting bullshit feels good approach -- and now I found out that it is not my style.
+
+All in all, I found out that many people will perceive that programmers are smart, weird, and clumsy in social settings. Most of it turns out to be quite true for me and it is easy to be let down by real life issues. For me, what helped the most was to ignore the flops and burying my head in the sand. It is always important to keep going with a big warm heart, keep smiling, and be optimistic. 
+
 
 
