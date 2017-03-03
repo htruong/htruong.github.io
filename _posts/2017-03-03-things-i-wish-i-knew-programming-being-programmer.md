@@ -1,8 +1,8 @@
 ---
 published: true
+layout: post
+title: Things I wish I knew about programming and becoming a professional programmer
 ---
-## Things I wish I knew about programming and becoming a professional programmer
-
 I started writing code since I had my first computer when I was 13 years old. Little did I know I am still doing it 15 years later. Here at 30, those are the things that I wish I knew.
 
 **Writing**: Most people won't read my code, but many people want to know what my code does. I should spend more time writing to explain what I want to get done **and why**, rather than throwing the code out there or explaining what's so clever about the code. Having the repository and publishing the code doesn't mean shit if no one knows what it does.
