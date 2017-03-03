@@ -21,10 +21,10 @@ I started writing code since I had my first computer when I was 13 years old. Li
 
 **People**: People are people. Some will envy me, some will use me, some will think I am a joke, most will think I am weird. It is better to bury my head in the sand and continute working on what I like.
 
-**Networking**: Not my thing, I don't feel comfortable pretend that I'm friendly face-to-face. But I can send emails to people. To me, emailing is the best way to know and communicate with people.
+**Networking**: Not my thing, I just give up pretending that I'm comfortabe with face-to-face meetings and introducing myself to people at places -- I hate it. But I can send emails to people. To me, emailing is the best way to know and communicate with people.
 
 **Being consistent**: Writing code and getting things done is like depositing money in the bank. Being consistent is much more important than being clever or heroic.
 
-**Developing a taste**: Humiliating other people is never a good idea, but to me, it is easy to say some uplifting bullshit about just anything. Having a taste on what's good, the style I appreciate, and having meaningful feedback is harder. The education system in the USA tends to favor the uplifting bullshit feels good approach -- and now I found out that it does me no good.
+**Developing a taste**: Humiliating and be rude to other people is never a good idea. However, to me, it is easy to say some uplifting bullshit about just anything. Having a taste on what's good, the style I appreciate, and having meaningful feedback is harder. I feel the education system in the USA tends to favor the uplifting bullshit feels good approach -- and now I found out that it is not my style.
 
 
