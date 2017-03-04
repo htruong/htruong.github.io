@@ -25,6 +25,6 @@ I started writing code since I had my first computer when I was 13 years old. Li
 
 **Developing a taste**: Having a taste on what is good, the style I truly appreciate, and giving meaningful feedback is hard.
 
-**Stay humble**: I found out that many people will perceive that programmers are smart, weird, and clumsy in social settings. I think those impressions are not unfounded -- but being smart doesn't mean that people like me being a smarty pant, which I tended to do a lot. 
+**Staying humble**: I found out that many people will perceive that programmers are smart, weird, and clumsy in social settings. I think those impressions are not unfounded -- but being smart doesn't mean that people like me being a smarty pant, which I tended to do a lot. 
 
-It is okay to **flop.** There were and will be flops -- *and a lot of embarassing moments.* What helped the most was to ignore the flops and burying my head in the sand and keep going. It is always important to keep going with a big warm heart, a smile, and be optimistic. And that is not easy at all.
+Finally, it is okay to **flop.** There were and will be flops -- *and a lot of embarassing moments.* What helped the most was to ignore the flops and burying my head in the sand and keep going. It is always important to keep going with a big warm heart, a smile, and be optimistic. And that is not easy at all.
