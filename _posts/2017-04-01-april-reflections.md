@@ -1,6 +1,7 @@
 ---
 published: true
 title: 'Reflections on my trip to the Google campus, and other unimportant stuff'
+layout: post
 ---
 I went to Google last week for an on-site interview and have just heard back that I failed fair and square. I learned quite a bit of what a company like them looked for so hopefully I will look more intelligent in the future. This was my first interview with a big company and missteps were to be expected and there is no shame to fail. If you're curious about the interview itself, what I can say are:
 
