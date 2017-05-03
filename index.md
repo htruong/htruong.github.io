@@ -1,5 +1,6 @@
 ---
 layout: post-index
-title: Latest blog entries
-excerpt: "A List of Posts"
+title: Blog
+excerpt: A List of Posts
+published: true
 ---
