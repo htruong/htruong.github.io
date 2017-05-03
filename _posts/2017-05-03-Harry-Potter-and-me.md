@@ -3,7 +3,11 @@ published: true
 title: Harry Potter and The Little Indie Translation
 layout: post
 ---
-Reading [How Three Kids With No Experience Beat Square And Translated Final Fantasy V Into English](http://kotaku.com/how-three-kids-beat-the-odds-and-translated-final-fanta-1794628286) brings back memories. I did something similar with the Harry Potter series: beat the publisher to translating the book. Doing that, strangely, was the one event that shaped my life in ways I couldn't imagine in my wildest dream.
+Reading [How Three Kids With No Experience Beat Square And Translated Final Fantasy V Into English](http://kotaku.com/how-three-kids-beat-the-odds-and-translated-final-fanta-1794628286) brings back my memories. 
+
+>The whole process helped her launch a career in the video game industry. To this day, she puts Final Fantasy V on her resume, and she says without the project, she wouldn’t have learned reverse-engineering.
+
+I did something similar with the Harry Potter series: beat the publisher to translating the book. Although I don't put translating Harry Potter on my resume, I have to admit that doing that silly event, strangely, was the one event that shaped my life. It did in ways I couldn't imagine in my wildest dream.
 
 I discovered Harry Potter series up until Book 4, _The Globet of Fire_, by renting books from a bookstore when I was 15. At that time, many Vietnamese kids were all eager for book 5 to come out. Except for when Book 5, _The Order of the Phoenix came_, we had to wait for it. We would have to wait for the "blessed" translator (Ly Lan) and the publisher to translate and churn out the whole book when a new book comes, and with all the proofreading it would take about 4-6 months. I decided that was too long and started posting on a quite popular forum my indie translation. Shortly after that I moved my work to my personal website. Being a 16-year-old having a summer break at that time, I had nothing better to do. My timetable was something like stay up all night to translate half a chapter, post the new translation, go to bed at 6 AM, wake up at 11 AM, the next day rinse and repeat. People loved it and many started contacting me to help with the translation. We had a huge following to the point that I had to do nothing but just organizing and assigning who-does-what and then proofread it with my 16-year-old brain, but mostly we flew under the radar and it was easy. 
 
