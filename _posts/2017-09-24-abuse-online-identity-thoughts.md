@@ -1,8 +1,8 @@
 ---
 published: true
 layout: post
+title: Thoughts on service abuse prevention by phone numbers
 ---
-## Thoughts on service abuse prevention by phone numbers
 
 Lately, I see a trend in services requiring users verifying phone numbers to register, such as Gmail. Giving Google (and many other services that do it) the benefit of the doubt, I think the requirement is because that phone numbers seem to be a pretty good proxy to prevent service abuse that is also free for the user. Phone numbers are a limited resource. An abusive person can't easily/cheaply get a lot of new numbers once their numbers are banned. 
 
