@@ -4,8 +4,8 @@ title:            The Pensieve
 locale:           en_US
 domain:           tnhh.net
 url:              https://www.tnhh.net
-ampurl:           //cdn.ampproject.org/c/www.tnhh.net
-ampcdnhost:       cdn.ampproject.org
+ampurl:           //www-tnhh-net.cdn.ampproject.org/c/www.tnhh.net
+ampcdnhost:       www-tnhh-net.cdn.ampproject.org
 ampcdnurl:        /c/www.tnhh.net
 permaurl:         https://www.tnhh.net
 logo:             /images/logo.png
