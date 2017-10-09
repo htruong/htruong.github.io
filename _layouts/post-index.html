@@ -45,7 +45,7 @@
         {% if post.link %}
           <p>{{ post.date | date: '%m/%Y' }}: <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> <a href="{{ post.link }}" target="_blank" title="{{ post.title }}"><i class="fa fa-link"></i></a></p>
         {% else %}
-          <p>{{ post.date | date: '%m/%Y' }}: <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></p>
+          <p>{{ post.date | date: '%m/%Y' }}: <a href="/mobile{{ post.url }}">{{ post.title }}</a> [<a href="{{ post.url }}">alt</a>]</p>
         {% endif %}
       </article>
     {% endfor %}
