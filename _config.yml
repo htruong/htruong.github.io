@@ -3,11 +3,11 @@
 title:            The Pensieve
 locale:           en_US
 domain:           tnhh.net
-url:              http://www.tnhh.net
+url:              https://www.tnhh.net
 ampurl:           //cdn.ampproject.org/c/www.tnhh.net
 ampcdnhost:       cdn.ampproject.org
 ampcdnurl:        /c/www.tnhh.net
-permaurl:         http://www.tnhh.net
+permaurl:         https://www.tnhh.net
 logo:             /images/logo.png
 logo_h:           60
 logo_w:           151
