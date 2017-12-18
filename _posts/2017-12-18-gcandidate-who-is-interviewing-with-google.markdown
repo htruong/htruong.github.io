@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: "First security bug bounty: Knowing who is interviewing with Google, and snatched their *Gcandidate.com* domain"
+title: "First security bug bounty: Knowing who is interviewing with Google and snatched their domain"
 ---
 
 My first bug bounty with Google is totally an accident while I was interviewed for their software engineering job this March. 
