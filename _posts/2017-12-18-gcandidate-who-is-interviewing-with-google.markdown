@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: First security bug bounty: Knowing who is interviewing with Google, and snatched their domain *gcandidate.com*
+title: "First security bug bounty: Knowing who is interviewing with Google, and snatched their *Gcandidate.com* domain"
 ---
 
 My first bug bounty with Google is totally an accident while I was interviewed for their software engineering job this March. 
@@ -50,4 +50,4 @@ Timeline:
 - 12/06/2017: Domain is transferred back to Google
 
 
-*Plug: I am looking for a job in the US and worldwide in August 2018 after finishing my postdoc at NCSU. If you are or you know someone who is looking for a passionate engineer who is experienced in interdisciplinary science research, high-performance software engineering and embedded hardware knowledge with security in mind to hack novel problems and can sponsor a h1b visa, please feel free to connect. [My resume (PDF_)](/resume.pdf).*
+*Plug: I am looking for a job in the US and worldwide in August 2018 after finishing my postdoc at NCSU. If you are or you know someone who is looking for a passionate engineer who is experienced in interdisciplinary science research, high-performance software engineering and embedded hardware knowledge with security in mind to hack novel problems and can sponsor a h1b visa, please feel free to connect. [My resume (PDF)](/resume.pdf).*
