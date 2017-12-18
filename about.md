@@ -9,12 +9,11 @@ I'd like to think of myself as a cyberpunk and a relatively liberal person. I'm 
 
 I've been working or studying at the following places:
 
-- VN: [Academy of Cryptographic Engineering](http://actvn.edu.vn/) - Dropped out :^), 2005
 - VN: [Rossmap Simulation Software](http://rossmap.com.vn/) - Head of Software, 2006 - 2007
 - MO: [Truman State University](http://www.truman.edu/) - BSc, 2008 - 2011; Web dev, 2012
 - PA: [Human-Computer Interaction Institute, Carnegie Mellon University](http://www.cmu.edu/) - Undergrad intern, 2011
-- MO+NC: [Evolutionary Systems lab](http://www4.ncsu.edu/~gconant/), [University of Missouri](http://www.mizzou.edu/) [Informatics Institute](http://muii.missouri.edu/) - PhD student, 2012 - Now
 - SG: [The Genome Institute](http://www.a-star.edu.sg/gis) - Intern, 2015
+- MO+NC: [Evolutionary Systems lab](http://www4.ncsu.edu/~gconant/), [University of Missouri](http://www.mizzou.edu/) [Informatics Institute](http://muii.missouri.edu/) - PhD student, 2012 - Now
 
 More about me:
 
