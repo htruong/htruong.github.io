@@ -33,6 +33,8 @@ In the past week I tried to contact Concur security to suggest them to add CAPTC
 
 The domain is theirs now, my dream of rickrolling their candidates remains a dream. But the dream of having my first vulnerability discovery is no longer one.
 
+Disclaimer: In the finding of the security bug, I accessed a single (other) candidate record, destroyed the data and not to use this data for anything else but to demonstrate the bug.
+
 Timeline:
 
 - 07/31/2017: Registered prank domain
