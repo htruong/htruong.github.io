@@ -27,13 +27,17 @@ Last week, I got another email from Concur and began to get annoyed. So I re-rea
 
 Upon inspection of the email I've got, I became very suspicious that Google recruiters create accounts with the default passwords being 'fixed_prefix'+ numbers, which I was able to confirm later. **Hmmmmmmm?** The default password is essentially useless. The only information you ever need to login to candidates' Concur pages, provided they haven't changed the default passwords, is just the account number. I myself didn't change my default password until the last day I need to book the flight. I do occasionally have account numbers, because people occasionally forget their password and occasionally mess up and request password resets the wrong way. At that point I knew I had a legitimate (however hard to exploit) bug in hand. 
 
-Upon further investigation, I've also found out that Concur doesn't have a CAPTCHA system to prevent people from spamming their login page. You can exploit even without being able to monitor the emails to gcandidate.com domain. Given you know how the default passwords are determined, you can write a [GUI interface using Visual Basic](https://www.youtube.com/watch?v=hkDD03yeLnU) to brute force the login page with random, fixed length ID numbers. I also think that the account IDs are assigned sequentially, making it unnecessary to brute force. Testing that would require poking around with Concur. I felt really uncomfortable doing that, so I ultimately decided to not try. So, if you want to know who are interviewing with Google, that'd be enough for you to get to a lot of profiles. 
+Upon further investigation, I've also found out that Concur didn't have a CAPTCHA system to prevent people from spamming their login page. You can exploit even without being able to monitor the emails to gcandidate.com domain. Given you know how the default passwords are determined, you can write a [GUI interface using Visual Basic](https://www.youtube.com/watch?v=hkDD03yeLnU) to brute force the login page with random, fixed length ID numbers. I also think that the account IDs are assigned sequentially, making it unnecessary to brute force. Testing that would require poking around with Concur. Unfortunately I did not know their ethical security testing at the time, so I ultimately decided to not try. In any case, if you want to know who are interviewing with Google, that'd be enough for you to get to a lot of profiles. 
 
-In the past week I tried to contact Concur security to suggest them to add CAPTCHAs for failed logins (or some other solution). Technically, it is not a security problem by itself, it just makes Google's mistake much easier to exploit. I was impressed with how responsive Google security was. I was unable to get any response from Concur -- however, I was informed that Concur has worked with Google to fix the problem.
+In the past week I tried to contact Concur security to suggest them to add CAPTCHAs for failed logins (or some other solution). Technically, it is not a security problem by itself, it just makes Google's mistake much easier to exploit. 
+
+In overall, I was impressed with how responsive Google security was. I was also informed that Concur has worked with Google to fix the problem.
 
 The domain is theirs now, my dream of rickrolling their candidates remains a dream. But the dream of having my first vulnerability discovery is no longer one.
 
-Disclaimer: In the finding of the security bug, I accessed a single (other) candidate record, destroyed the data and not to use this data for anything else but to demonstrate the bug.
+Disclosure: During the discovery of the security bug, I accessed a single (other) candidate record, destroyed the data and not to use this data for anything else but to demonstrate the bug.
+
+Edit: I had an exchange with Concur security after the blog post is published. I was offered a line to communicate and was also informed that Concur has an official security research reward program at [Bugcrowd](https://bugcrowd.com/concur). Kudos to Concur!
 
 Timeline:
 
@@ -45,11 +49,10 @@ Timeline:
 - 11/28/2017: "Seems like Concur's fault. They are not us."
 - 11/28/2017: Provided more justifications that is actually Google's fault
 - 11/28/2017: "Nice catch" (accepted) from Google
-- 11/28/2017: Contacted Concur via Twitter/Got response "Contact us via online form"/Contacted via the online form/No replies
-- 11/30/2017: Asked Concur again via Twitter - No replies
+- 11/28/2017: Contacted Concur via Twitter/Got response "Contact us via online form"/Contacted via the online form
 - 12/05/2017: Bounty decided ($500). Issue fixed. Google asked me nicely for the domain
 - 12/06/2017: "If you are planning to blog about it, we are happy to review a draft and give you feedback."
 - 12/06/2017: Domain is transferred back to Google
-
+- 12/20/2017: Concur security got in touch and assured me that improvements will be implemented on their side as well
 
 *Plug: I am looking for a job in the US and worldwide in August 2018 after finishing my postdoc at NCSU. If you are or you know someone who is looking for a passionate engineer who is experienced in interdisciplinary science research, high-performance software engineering and embedded hardware knowledge with security in mind to hack novel problems and can sponsor a h1b visa, please feel free to connect. [My resume (PDF)](/resume.pdf).*
