@@ -1,3 +1,0 @@
----
-layout: disqus_amp
----
