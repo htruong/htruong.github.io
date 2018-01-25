@@ -5,7 +5,9 @@ hidetitle : true
 comments: true
 ---
 
-Here I try to maintain a list of consumer devices that are ubiquitous, cheap and have significant hacking values, many accidentally and unintended by the manufacturers. I tried to list all the devices that are still somewhat relevant to 2017 (i.e. still somewhat useful), instead of just being historically interesting.
+*Last revised: January 2018*
+
+Here I try to maintain a list of consumer devices that are ubiquitous, cheap and have significant hacking values, many accidentally and unintended by the manufacturers. I tried to list all the devices that are still somewhat relevant to 2018 (i.e. still somewhat useful), instead of just being historically interesting.
 
 The advent of custom firmwares have pushed the capabilities and use cases of those devices to far beyond their intended original use, extending their life way beyond their official support lifetime.
 
@@ -21,9 +23,11 @@ This laptop is cheap, runs cool, the battery lasts forever, and it runs every op
 
 For the fans of truly-free BIOS. It runs [libreboot](https://libreboot.org/docs/hcl/x200.html) which has no binary blobs and it seems like the Management Engine can be partially disabled.
 
-### Other notable devices
+### The rest and resources
 
-[Other Thinkpads](https://libreboot.org/docs/hcl/), [Other Chromebooks](https://www.reddit.com/r/chrultrabook/).
+- [Other Thinkpads](https://libreboot.org/docs/hcl/)
+- [Other Chromebooks](https://www.reddit.com/r/chrultrabook/). 
+- **Where to learn more**: Search for Coreboot, GalliumOS, chrultrabook
 
 ## Smartphones and Tablets
 
@@ -35,13 +39,14 @@ Supported by many third-party, obscure, crazy mobile OS projects, including Ubun
 
 It was designed to run Windows Mobile 6 but it runs _everything_. So, if you want a phone that runs _everything_, then get the HD2. It is pre-historic in terms of age in the ever-evolving mobile world, but seems like this phone is the only phone that ages like wine. 
 
-### Other notable devices
+### The rest and resources
 
 - Nokia N900: No longer available, and hardware is outdated.
 - OnePlus One: Good but not crazily good.
 - HP Touchpad: No longer available, and hardware is outdated. But it was phenomenal years ago.
 - iPhones: Can jailbreak but you can't generally update them.
 - Motorola Droid: No longer available, and hardware is outdated.
+- **Where to learn more**: XDA-developers 
 
 ## Routers
 
@@ -53,9 +58,11 @@ The router that started it all. It was sued for violating the GPLv2 license. Lin
 
 The router that is "just good enough" and "just works" for most people. Runs every pioneering open-source firmwares ever and is still good being a six-year-old device.
 
-### Other notable devices
+### The rest and resources
 
 - Everything that is supported by LEDE/OpenWRT.
+- **Where to learn more**: Search for LEDE, OpenWRT, wikidevi, hackaday
+
 
 ## Game Consoles & Handhelds
 
@@ -73,6 +80,7 @@ The Original XBox is a x86 PC in disguise and has [a book dedicated to hacking i
 - Nintendo Wii: Hackable and has cool games, but hardware was meh.
 - Nintendo DS/2DS/3DS: Hackable.
 - Microsoft XBox 360, Microsoft Kinect: Good support from Microsoft but limited applications.
+- **Where to learn more**: Ben Heck show, There isn't a central location afaik, just search *how to jailbreak yourgameconsolemodel*
 
 ## Development boards
 
@@ -88,13 +96,14 @@ Tried-and-true device for millions of makers worldwide, the Raspberry Pi 3 is th
 
 If you want to start with microcontrollers, just start with this one. It has a huge fanbase and developer community, and you could always find a project worth working on with the Arduino.
 
-### Other notable devices
+### The rest and resources
 
 - Other Arduinos, esp. the Arduino Micro: They are just as good.
 - Teensy: Good and small, but nothing impressive.
 - Expressif ESP32: Designed to be good, but not as crazy of a hack as ESP8266 was.
 - Raspberry Pi Zero: Good choice if you want a cheap device that does something.
 - [HC-05 and HC-06 Bluetooth modules](https://www.youtube.com/watch?v=BBqsVKMYz1I).
+- **Where to learn more**: Hackaday, eevblog, [reddit](http://reddit.com/r/raspberry_pi)
 
 ## Miscleneaous devices
 
@@ -110,11 +119,18 @@ They have an [open source firmware](http://www.magiclantern.fm) that adds tons o
 
 It would have been otherwise a "no wireless, less space than a Nomad" device otherwise, but Rockbox transformed all that. Rockbox is an open-source firmware that allows your player to play every audio format imaginable. Also, who knows that [your MP3 player can run Doom now](https://www.rockbox.org/)?
 
-### Other notable devices
+### The rest and resources
 
 - Chumby/Insignia Infocast 3: Good but outdated hardware, and it is no longer available.
 - Everything supported by Rockbox: Could be dicey.
+- **Where to learn more**: Hackaday, rockbox wiki, other wikis.
 
-## My personal favorite
 
-- The **Raspberry Pi Zero W**: It's good enough, easy enough, cheap enough, versatile enough for many applications. It enables me to do a lot of things that I would otherwise not bothered to do. 
+## My personal gear
+
+I tend to think that a more popular/widely supported device is often worth much more than a more performant but less widely supported. The amount of time you'll have to spend figure stuff out like toolchains and such can be much better spent optimizing the software, given the hardware can meet it.
+
+- I have a lot of **Raspberry Pi Zero W**s: The Pi Zero W is good enough, easy enough, cheap enough, versatile enough for many applications. It enables me to do a lot of things that I would otherwise not bothered to do.
+- **Arduino Uno** for certain applications, especially considering robotics. It is well supported, predictable, easy to transfer, easy to debug.
+- **Dell Chromebook 13** for personal laptop. It runs coreboot without the main ME modules.
+- **Netgear R6100** for my home WiFi router. It's fast, cheap and has plenty of RAM and NAND storage.
