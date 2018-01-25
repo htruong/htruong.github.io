@@ -10,6 +10,7 @@ Here I try to maintain a list of consumer devices that are ubiquitous, cheap and
 The advent of custom firmwares have pushed the capabilities and use cases of those devices to far beyond their intended original use, extending their life way beyond their official support lifetime.
 
 
+
 ## Laptops
 
 ### Acer Chromebook C720 (2013)
@@ -114,3 +115,6 @@ It would have been otherwise a "no wireless, less space than a Nomad" device oth
 - Chumby/Insignia Infocast 3: Good but outdated hardware, and it is no longer available.
 - Everything supported by Rockbox: Could be dicey.
 
+## My personal favorite
+
+- The **Raspberry Pi Zero W**: It's good enough, easy enough, cheap enough, versatile enough for many applications. It enables me to do a lot of things that I would otherwise not bothered to do. 
