@@ -29,6 +29,6 @@ Now you have a couple of options. You can ask Chad to stop doing speculative che
 When it comes to computers, Stacy and Rosy are programs running on your computer and your phone. Chad is your hard-working, naive, but always truthful CPU ;^). Let’s say Stacy is Tinder and Rosy is Facebook -- you don’t want Facebook to know your Netflix-and-chill schedule on Tinder because they may splash some Black Mirror ads to your face, and you hate Netflix’s Black Mirror series. In reality though, the details of what you’re able to peek in is different, but the spirit stays the same: Even though the idea of speculatively doing something seems great, but you can exploit it in subtle ways.
 
 
-Hope that explains it well enough for you. [Here is another layman attempt and you might find it useful]( https://twitter.com/securelyfitz/status/949004862968143873). If you enjoy my explanation of Spectre and Meltdown, you might also enjoy [my explanation of Bufferbloat](https://www-tnhh-net.cdn.ampproject.org/c/www.tnhh.net/mobile/posts/bufferbloat-in-laymans-terms.html). 
+Hope that explains it well enough for you. [Here is another layman attempt and you might find it useful]( https://twitter.com/securelyfitz/status/949004862968143873). If you enjoy my explanation of Spectre and Meltdown, you might also enjoy [my explanation of Bufferbloat](https://www.tnhh.net/posts/bufferbloat-in-laymans-terms.html). 
 
 _Special thanks to Don and Joe for having a look at my post before it is published._
