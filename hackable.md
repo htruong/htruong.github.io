@@ -7,7 +7,7 @@ comments: true
 
 *Last revised: January 2018*
 
-Here I try to maintain a list of consumer devices that are ubiquitous, cheap and have significant hacking values, many accidentally and unintended by the manufacturers. I tried to list all the devices that are still somewhat relevant to 2018 (i.e. still somewhat useful), instead of just being historically interesting.
+Here I try to maintain a list of consumer devices that are ubiquitous, cheap and have significant hacking values, many accidentally and unintended by the manufacturers. I tried to list all the devices that are still somewhat relevant to 2018 (i.e. still somewhat fun and useful), instead of just being historically interesting.
 
 The advent of custom firmwares have pushed the capabilities and use cases of those devices to far beyond their intended original use, extending their life way beyond their official support lifetime.
 
@@ -31,6 +31,8 @@ For the fans of truly-free BIOS. It runs [libreboot](https://libreboot.org/docs/
 
 
 ## Routers
+
+Routers are the exception to the norm. Most of the routers available on the market since 2002 seem to be capable of running custom firmwares and they usually don't have any protection against doing so. They make fantastic embedded Linux devices before Single Board Computers (SBC) such as the Raspberry Pi become mainstream.
 
 ### Linksys WRT54G (2002)
 
@@ -57,7 +59,8 @@ The Original XBox is a x86 PC in disguise and has [a book dedicated to hacking i
 - Nintendo Wii: Hackable and has cool games, but hardware was meh.
 - Nintendo DS/2DS/3DS: Hackable.
 - Microsoft XBox 360, Microsoft Kinect: Good support from Microsoft but limited applications.
-- **Where to learn more**: Ben Heck show, There isn't a central location afaik, just search *how to jailbreak yourgameconsolemodel*
+- Nintendo NES/SNES minis: You can add more games and if you just need a console to play some NES/SNES games that you like, then you should have a look at them.
+- **Where to learn more**: Ben Heck show. There isn't a central location for game console hacks afaik, just search *how to jailbreak yourgameconsolemodel*
 
 ## Development boards
 
@@ -84,7 +87,7 @@ If you want to start with microcontrollers, just start with this one. It has a h
 
 ## Smartphones and Tablets
 
-I am quite reluctant to write about smartphones because there is a new phone released every day. So of course this will be outdated.
+I am quite reluctant to write about smartphones because there is a new phone released every day. So of course this is outdated the moment you read it.
 
 ### Google Nexus 5 (2013) and Google Nexus 7 (2013)
 
@@ -129,9 +132,9 @@ It would have been otherwise a "no wireless, less space than a Nomad" device oth
 
 ## My personal gear
 
-I tend to think that a more popular/widely supported device is often worth much more than a more performant but less widely supported. The amount of time you'll have to spend figure stuff out like toolchains and such can be much better spent optimizing the software, given the hardware can meet it.
+As I get older, I tend to choose a more popular/widely supported device over a more performant but less widely supported device when it comes to firmware hacking. The amount of time I have to spend figure stuff out like toolchains and such can be much better spent optimizing the software, given the hardware can meet it.
 
-- I have a lot of **Raspberry Pi Zero W**s: The Pi Zero W is good enough, easy enough, cheap enough, versatile enough for many applications. It enables me to do a lot of things that I would otherwise not bothered to do.
+- I have a lot of **Raspberry Pi Zero W**s: It is slow, it might be unreliable, its one USB port is picky, the built-in audio is bad, it has some proprietary blobs, but who cares? The Pi Zero W is good enough, easy enough, cheap enough, versatile enough for many applications. It enables me to do a lot of things that I would otherwise not bothered to do. It is probably my favorite device of all times to hack on.
 - **Arduino Uno** for certain applications, especially considering robotics. It is well supported, predictable, easy to transfer, easy to debug. I personally have the *Electron Asset tracker* and I haven't seen a board that is so well designed, documented and polished.
 - **Dell Chromebook 13** for personal laptop. It runs coreboot without the main ME modules.
 - **Netgear R6100** for my home WiFi router. It's fast, cheap and has plenty of RAM and NAND storage.
