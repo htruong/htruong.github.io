@@ -29,24 +29,6 @@ For the fans of truly-free BIOS. It runs [libreboot](https://libreboot.org/docs/
 - [Other Chromebooks](https://www.reddit.com/r/chrultrabook/). 
 - **Where to learn more**: Search for Coreboot, GalliumOS, chrultrabook
 
-## Smartphones and Tablets
-
-### Google Nexus 5 (2013) and Google Nexus 7 (2013)
-
-Supported by many third-party, obscure, crazy mobile OS projects, including Ubuntu Touch, Maru OS, Mobile Plasma. Of course, it is still powerful enough to run the latest version of Android as well.
-
-### HTC HD2 (2009)
-
-It was designed to run Windows Mobile 6 but it runs _everything_. So, if you want a phone that runs _everything_, then get the HD2. It is pre-historic in terms of age in the ever-evolving mobile world, but seems like this phone is the only phone that ages like wine. 
-
-### The rest and resources
-
-- Nokia N900: No longer available, and hardware is outdated.
-- OnePlus One: Good but not crazily good.
-- HP Touchpad: No longer available, and hardware is outdated. But it was phenomenal years ago.
-- iPhones: Can jailbreak but you can't generally update them.
-- Motorola Droid: No longer available, and hardware is outdated.
-- **Where to learn more**: XDA-developers 
 
 ## Routers
 
@@ -98,7 +80,30 @@ If you want to start with microcontrollers, just start with this one. It has a h
 - Expressif ESP32: Designed to be good, but not as crazy of a hack as ESP8266 was.
 - Raspberry Pi Zero W: Good choice if you want a cheap Raspberry Pi.
 - [HC-05 and HC-06 Bluetooth modules](https://www.youtube.com/watch?v=BBqsVKMYz1I).
-- **Where to learn more**: Hackaday, eevblog, [reddit](http://reddit.com/r/raspberry_pi)
+- **Where to learn more**: Hackaday, eevblog, [reddit](http://reddit.com/r/raspberry_pi), search for single board computers
+
+## Smartphones and Tablets
+
+I am quite reluctant to write about smartphones because there is a new phone released every day. So of course this will be outdated.
+
+### Google Nexus 5 (2013) and Google Nexus 7 (2013)
+
+Supported by many third-party, obscure, crazy mobile OS projects, including Ubuntu Touch, Maru OS, Mobile Plasma. Of course, it is still powerful enough to run the latest version of Android as well.
+
+### HTC HD2 (2009)
+
+It was designed to run Windows Mobile 6 but it runs _everything_. So, if you want a phone that runs _everything_, then get the HD2. It is pre-historic in terms of age in the ever-evolving mobile world, but seems like this phone is just too good to not be mentioned. 
+
+### The rest and resources
+
+- Nokia N900: No longer available, and hardware is outdated.
+- OnePlus One: Good but not crazily good. Has/had an active development community.
+- Fairphone: Seems like the only phone that is designed to be opened up. So that's only fair to include them in here.
+- HP Touchpad: No longer available, and hardware is outdated. But it was phenomenal years ago.
+- iPhones: Can jailbreak but you can't generally update them.
+- Motorola Droid: No longer available, and hardware is outdated.
+- **Where to learn more**: XDA-developers 
+
 
 ## Miscleneaous devices
 
@@ -114,7 +119,6 @@ They have an [open source firmware](http://www.magiclantern.fm) that adds tons o
 
 It would have been otherwise a "no wireless, less space than a Nomad" device otherwise, but Rockbox transformed all that. Rockbox is an open-source firmware that allows your player to play every audio format imaginable. Also, who knows that [your MP3 player can run Doom now](https://www.rockbox.org/)?
 
-
 ### The rest and resources
 
 - Other than Canon, [Nikon cameras](https://nikonhacker.com/), and [Sony cameras](https://github.com/ma1co/OpenMemories-Tweak) all have models that are hackable. 
@@ -128,6 +132,6 @@ It would have been otherwise a "no wireless, less space than a Nomad" device oth
 I tend to think that a more popular/widely supported device is often worth much more than a more performant but less widely supported. The amount of time you'll have to spend figure stuff out like toolchains and such can be much better spent optimizing the software, given the hardware can meet it.
 
 - I have a lot of **Raspberry Pi Zero W**s: The Pi Zero W is good enough, easy enough, cheap enough, versatile enough for many applications. It enables me to do a lot of things that I would otherwise not bothered to do.
-- **Arduino Uno** for certain applications, especially considering robotics. It is well supported, predictable, easy to transfer, easy to debug.
+- **Arduino Uno** for certain applications, especially considering robotics. It is well supported, predictable, easy to transfer, easy to debug. I personally have the *Electron Asset tracker* and I haven't seen a board that is so well designed, documented and polished.
 - **Dell Chromebook 13** for personal laptop. It runs coreboot without the main ME modules.
 - **Netgear R6100** for my home WiFi router. It's fast, cheap and has plenty of RAM and NAND storage.
