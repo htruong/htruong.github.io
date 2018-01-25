@@ -54,15 +54,10 @@ It was designed to run Windows Mobile 6 but it runs _everything_. So, if you wan
 
 The router that started it all. It was sued for violating the GPLv2 license. Linksys had to publish the source code for the router, and the rest was history. It is still now being used and trusted by many many people, 15 years after its first release. It can run mesh network, has a huge ham fanbase, and has interchangable antennas. What's not to like?
 
-### Netgear WNDR3800 (2011)
-
-The router that is "just good enough" and "just works" for most people. Runs every pioneering open-source firmwares ever and is still good being a six-year-old device.
-
 ### The rest and resources
 
-- Everything that is supported by LEDE/OpenWRT.
-- **Where to learn more**: Search for LEDE, OpenWRT, wikidevi, hackaday
-
+- Everything that is supported by LEDE/OpenWRT. ASUS, Linksys, Netgear routers are notorously good about this.
+- **Where to learn more**: Search for LEDE, OpenWRT, wikidevi, hackaday, ASUS merlin, tomato and derrivatives, Gargoyle-router.
 
 ## Game Consoles & Handhelds
 
@@ -76,7 +71,7 @@ The Original XBox is a x86 PC in disguise and has [a book dedicated to hacking i
 
 ### Other notable devices
 
-- Sony PSP: Hackable.
+- Sony PSP: Really good contender if you want a retro portable device.
 - Nintendo Wii: Hackable and has cool games, but hardware was meh.
 - Nintendo DS/2DS/3DS: Hackable.
 - Microsoft XBox 360, Microsoft Kinect: Good support from Microsoft but limited applications.
@@ -99,9 +94,9 @@ If you want to start with microcontrollers, just start with this one. It has a h
 ### The rest and resources
 
 - Other Arduinos, esp. the Arduino Micro: They are just as good.
-- Teensy: Good and small, but nothing impressive.
+- Teensy: Good and small.
 - Expressif ESP32: Designed to be good, but not as crazy of a hack as ESP8266 was.
-- Raspberry Pi Zero: Good choice if you want a cheap device that does something.
+- Raspberry Pi Zero W: Good choice if you want a cheap Raspberry Pi.
 - [HC-05 and HC-06 Bluetooth modules](https://www.youtube.com/watch?v=BBqsVKMYz1I).
 - **Where to learn more**: Hackaday, eevblog, [reddit](http://reddit.com/r/raspberry_pi)
 
@@ -119,12 +114,14 @@ They have an [open source firmware](http://www.magiclantern.fm) that adds tons o
 
 It would have been otherwise a "no wireless, less space than a Nomad" device otherwise, but Rockbox transformed all that. Rockbox is an open-source firmware that allows your player to play every audio format imaginable. Also, who knows that [your MP3 player can run Doom now](https://www.rockbox.org/)?
 
+
 ### The rest and resources
 
-- Chumby/Insignia Infocast 3: Good but outdated hardware, and it is no longer available.
+- Other than Canon, [Nikon cameras](https://nikonhacker.com/), and [Sony cameras](https://github.com/ma1co/OpenMemories-Tweak) all have models that are hackable. 
+- TI Calculators: They are expensive brand new but seems a pretty fun target if you find one at Goodwill or a garage sale for a cheap price. They aren't fancy by today's standards in terms of hardware, but apparently there are active communities to hack them.   
+- Chumby/Insignia Infocast 3: Good but outdated hardware, and it is no longer available. I have a lot of fond memories and good things to say about the Chumby. bunnie is a great person.
 - Everything supported by Rockbox: Could be dicey.
 - **Where to learn more**: Hackaday, rockbox wiki, other wikis.
-
 
 ## My personal gear
 
