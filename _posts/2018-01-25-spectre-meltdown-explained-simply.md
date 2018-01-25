@@ -3,8 +3,7 @@ layout: post
 title: Spectre and Meltdown attack explained, simply, for non-programmers
 ---
 
-I have seen a lot of discussions online about the Spectre and Meltdown attack. They opened a profoundly new way to think about computer architecture. However, the first time I talked about that idea to my parents, the only feedback I've got was confusion - it was over their head. I've finally figured out a way to convey the idea so my mom who is 63-year old could understand and I received a nod, so I think it passes the dummy test. If you're really a programmer though, you should read [the raspberry pi blog instead](https://www.raspberrypi.org/blog/why-raspberry-pi-isnt-vulnerable-to-spectre-or-meltdown/). 
-
+I have seen a lot of discussions online about the Spectre and Meltdown attack. They opened a profoundly new way to think about computer architecture. However, it's a really hard concept to gasp even for a person who knows basic programming. The first time I talked about that idea to my parents, the only feedback I've got was confusion. I've finally figured out a way to convey the idea so my mom who is 63-year old could understand and I received a nod, so I think it passes the dummy test. I hope that might help you explain it to people who aren't savvy, too.  If you're really a programmer though, you should read [the raspberry pi blog instead](https://www.raspberrypi.org/blog/why-raspberry-pi-isnt-vulnerable-to-spectre-or-meltdown/). 
 
 Let's get back to the future -- you're the heir of a family convenience store in the 80s. Stuff is quite low-tech, you don't have that fancy barcode system, you check out stuff by looking up the price of each item in your book and enter the amount to a calculator-printer. That process takes some time, but all is well. Something like this:
 
