@@ -101,9 +101,9 @@ It was designed to run Windows Mobile 6 but it runs _everything_. So, if you wan
 
 - Nokia N900: No longer available, and hardware is outdated.
 - OnePlus One: Good but not crazily good. Has/had an active development community.
-- Fairphone: Seems like the only phone that is designed to be opened up. So that's only fair to include them in here.
+- Fairphone 2: Seems like it is the only phone that is designed to be opened up. So that's only fair to include them in here.
 - HP Touchpad: No longer available, and hardware is outdated. But it was phenomenal years ago.
-- iPhones: Can jailbreak but you can't generally update them.
+- iPhones: Can jailbreak but once jailbroken, you can't generally upgrade or downgrade them. iPhone 4 can be hacked to run every iOS that it supports via a bootloader exploit.
 - Motorola Droid: No longer available, and hardware is outdated.
 - **Where to learn more**: XDA-developers 
 
