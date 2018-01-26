@@ -11,7 +11,7 @@ Here I try to maintain a list of consumer devices that are ubiquitous, cheap and
 
 The advent of custom firmwares have pushed the capabilities and use cases of those devices to far beyond their intended original use, extending their life way beyond their official support lifetime.
 
-
+If you are a student with limited budget to spend on hobbies and want to start working on embedded devices, many of the devices here are great starting devices: That's how I started out.
 
 ## Laptops
 
@@ -70,7 +70,7 @@ It is less-than-$5 cheap, it has wifi and it is an Arduino. Now we're talking re
 
 ### Raspberry Pi 3 (2016)
 
-Tried-and-true device for millions of makers worldwide, the Raspberry Pi 3 is the definite device to have if you want to start hacking. It does everything and runs everything.
+It is the gateway drug to hardware hacking. Tried-and-true device for millions of makers worldwide, the Raspberry Pi 3 is the definite device to have if you want to start hacking. It does everything and runs everything.
 
 ### Arduino Uno (2010)
 
@@ -126,7 +126,7 @@ It would have been otherwise a "no wireless, less space than a Nomad" device oth
 
 - Other than Canon, [Nikon cameras](https://nikonhacker.com/), and [Sony cameras](https://github.com/ma1co/OpenMemories-Tweak) all have models that are hackable. 
 - TI Calculators: They are expensive brand new but seems a pretty fun target if you find one at Goodwill or a garage sale for a cheap price. They aren't fancy by today's standards in terms of hardware, but apparently there are active communities to hack them.   
-- Chumby/Insignia Infocast 3: Good but outdated hardware, and it is no longer available. I have a lot of fond memories and good things to say about the Chumby. bunnie is a great person.
+- Chumby/Insignia Infocast 3: Good but outdated hardware, and it is no longer available. I have a lot of fond memories and good things to say about the Chumby. bunnie -- the Chumby's creator, designed it to be hackable and he cares about your freedom too.
 - Everything supported by Rockbox: Could be dicey.
 - **Where to learn more**: Hackaday, rockbox wiki, other wikis.
 
