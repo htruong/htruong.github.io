@@ -138,3 +138,4 @@ As I get older, I tend to choose a more popular/widely supported device over a m
 - **Arduino Uno** for certain applications, especially considering robotics. It is well supported, predictable, easy to transfer, easy to debug. I personally have the *Electron Asset tracker* and I haven't seen a board that is so well designed, documented and polished.
 - **Dell Chromebook 13** for personal laptop. It runs coreboot without the main ME modules.
 - **Netgear R6100** for my home WiFi router. It's fast, cheap and has plenty of RAM and NAND storage.
+- I run a vanilla **Google Pixel 1** with stock Google software and very few apps. I am getting too old to find phone hacking fun. 
