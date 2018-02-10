@@ -3,11 +3,11 @@ layout: post
 title: The insane amount of backward compatibility in Google Maps
 ---
 
-I still keep a couple of old favorite phones. Sometimes I use one of them as my primary device for fun. Phones are among the fastest evolving markets, even a year seems like an eternity. One of the biggest challenges with using old phones is the software: they don't run modern software. And old software isn't compatible with new websites, frameworks, encryption standards, APIs. Use an old device, and you will find yourself unable to get anything done. Every app crashes or complains that it can't connect to the server. Even with iOS 10 on iPhone 5, you may notice that many sites and apps have started dropping support for it -- and the iPhone 5 is only 5 years old.
+I still keep a couple of my favorite old smartphones. Sometimes I use one of them as my primary device for fun. Phones are among the fastest evolving markets, even a year makes a whole lot of differences. One of the biggest challenges with using old phones is the software: they don't run modern software. And old software isn't compatible with new websites, frameworks, encryption standards, APIs. Use an old device, and you will find yourself unable to get anything done. Every app crashes or complains that it can't connect to the server. Even with Apple who is doing a fantastic job of keeping their phones updated, you may notice that many sites and apps have started dropping support for the iPhone 5, which is still a totally capable device.
 
 But there is always an unlikely app that consistently works on all of my devices, regardless of their OS and how old they are: *Google Maps*.
 
-Google Maps still works today on Android 1.0, the earliest version available (Maps actually still works with some of the the <1.0 beta versions). Even with 1.0 I believe Maps was only a prototype app. If I recall correctly, Google didn't have any official real device to run Android 1.0. That was back all the way in 2007.
+Google Maps still works today on Android 1.0, the earliest version available (Maps actually still works with some of the the beta versions before that). I believe Maps was only a prototype app in Android 1.0. If I recall correctly, Google didn't have any official real device to run Android 1.0. That was back all the way in 2007.
 
 ![Google Maps Android 1.0](/assets/posts-images/gmaps/android10.png) ![Google Maps Android 1.0](/assets/posts-images/gmaps/android11.png)
 
