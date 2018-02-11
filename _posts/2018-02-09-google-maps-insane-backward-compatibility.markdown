@@ -11,7 +11,7 @@ Google Maps still works today on Android 1.0, the earliest version available (Ma
 
 ![Google Maps Android 1.0](/assets/posts-images/gmaps/android10.png) ![Google Maps Android 1.0](/assets/posts-images/gmaps/android11.png)
 
-But then, you say, Android is Google's OS for Pete's sake. How about iOS? Google Maps for iOS 1.0, released late 2012, still works just fine. That was the first version of Google Maps ever released as a standalone app after Apple ditched Google's map solution on iOS:
+But then, you say, Android is Google's OS for Pete's sake. How about iOS? Google Maps for iOS, version 1.0, released late 2012, still works just fine. That was the first version of Google Maps ever released as a standalone app after Apple ditched Google's map solution on iOS:
 
 ![Google Maps iOS 7](/assets/posts-images/gmaps/ios70.png) ![Google Maps iOS 7](/assets/posts-images/gmaps/ios71.png)
 
@@ -46,3 +46,5 @@ I noticed that the only other product I see running well on old devices is Googl
 I hope regardless of what feature or architectural change happens to Maps to the future, the team keep testing and maintaining this legendary compatibility in Google Maps. We'll never know how valuable it is until we're lost in the middle of nowhere. In that moment, we'd be so thankful to find out that Google Maps still works on our ancient phone that is left in the glovebox. If that has the potential to save a life so [a tragedy wouldn't happen again](https://en.wikipedia.org/wiki/James_Kim#Snowbound), I'd think it can make a case.
 
 Disclaimer: Except for the Android 1.0 app and the midlet were run emulated on software, everything else ran on real hardware. I do not expect that to make   any difference on real hardware.
+
+*Tip*: If you want to view the full sized pictures, get any picture URL then put the "full_" in front of the filename. Please blame my bad webdesign skills.
