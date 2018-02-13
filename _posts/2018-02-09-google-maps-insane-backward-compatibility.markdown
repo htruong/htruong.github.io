@@ -52,4 +52,4 @@ Disclaimer: Except for the Android 1.0 app and the midlet were run emulated on s
 .
 
 
-*Plug: I am looking for a job in the US and worldwide in August 2018. If you know someone who is looking for a passionate engineer who is experienced in interdisciplinary science research, high-performance software engineering/GPU, security and embedded hardware knowledge with an observant pair of eyes and the stubborness to make 2007 hardware work in 2017 and hack novel problems, please feel free to email/refer. [My resume (PDF)](/resume.pdf).*
+<!-- *Plug: I am looking for a job in the US and worldwide in August 2018. If you know someone who is looking for a passionate engineer who is experienced in interdisciplinary science research, high-performance software engineering/GPU, security and embedded hardware knowledge with an observant pair of eyes and the stubborness to make 2007 hardware work in 2017 and hack novel problems, please feel free to email/refer. [My resume (PDF)](/resume.pdf).* -->
