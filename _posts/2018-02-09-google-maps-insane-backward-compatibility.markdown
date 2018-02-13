@@ -47,7 +47,7 @@ I hope regardless of what feature or architectural change happens to Maps to the
 
 Disclaimer: Except for the Android 1.0 app and the midlet were run emulated on software, everything else ran on real hardware. I do not expect that to make   any difference on real hardware.
 
-*Tip*: I dont't hink you'd want to, but if you want to view the full sized pictures, get any picture URL then put the "full_" in front of the filename. Please blame my bad webdesign skills. :)
+*Tip*: If you want to get the full sized pictures to repost on your blog or something, get any picture URL then put the "full_" in front of the filename.
 
 .
 
