@@ -53,4 +53,4 @@ Timeline:
 - 12/06/2017: Domain is transferred back to Google
 - 12/20/2017: Concur security got in touch and assured me that improvements will be implemented on their side as well
 
-*Plug: I am looking for a job in the US and worldwide in August 2018 after finishing my postdoc at NCSU. If you are or you know someone who is looking for a passionate engineer who is experienced in interdisciplinary science research, high-performance software engineering and embedded hardware knowledge with security in mind to hack novel problems and can sponsor a h1b visa, please feel free to connect. [My resume (PDF)](/resume.pdf).*
+*Plug: I am looking for a job in the US and worldwide in August 2018. If you are or you know someone who is looking for a passionate engineer who is experienced in interdisciplinary science research, high-performance software engineering and embedded hardware knowledge with security in mind to hack novel problems and can sponsor a h1b visa, please feel free to connect. [My resume (PDF)](/resume.pdf).*
