@@ -713,6 +713,15 @@ $button-size: 1.5rem;
 	}
 }
 
+.page-nav {
+	.prev, .next {
+		display: block;
+		padding: 0.2em 0;
+	}
+	.next {
+		text-align: right;
+	}
+}
 /*
    Browser upgrade alert
    ========================================================================== */
