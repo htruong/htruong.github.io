@@ -47,4 +47,6 @@ I hope regardless of what feature or architectural change happens to Maps to the
 
 Disclaimer: Except for the Android 1.0 app and the midlet were run emulated on software, everything else ran on real hardware. I do not expect that to make   any difference on real hardware.
 
-*Tip*: If you want to view the full sized pictures, get any picture URL then put the "full_" in front of the filename. Please blame my bad webdesign skills.
+*Tip*: I dont't hink you'd want to, but if you want to view the full sized pictures, get any picture URL then put the "full_" in front of the filename. Please blame my bad webdesign skills. :)
+
+*Plug: I am looking for a job in the US and worldwide in August 2018. If you know someone who is looking for a passionate engineer who is experienced in interdisciplinary science research, high-performance software engineering, security and embedded hardware knowledge with an observant pair of eyes to hack novel problems, please feel free to email. [My resume (PDF)](/resume.pdf).*
