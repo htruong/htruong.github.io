@@ -7,7 +7,7 @@ I still keep a couple of my favorite old smartphones. Sometimes I use one of the
 
 But there is always an unlikely app that consistently works on all of my devices, regardless of their OS and how old they are: *Google Maps*.
 
-Google Maps still works today on Android 1.0, the earliest version available (Maps actually still works with some of the beta versions before that). I believe Maps was only a prototype app in Android 1.0. If I recall correctly, Google didn't have any official real device to run Android 1.0. That was back all the way in 2007.
+Google Maps still works today on Android 1.0, the earliest version available (Maps actually still works with some of the beta versions before that). I believe Maps was only a prototype app in Android 1.0. ~~If I recall correctly, Google didn't have any official real device to run Android 1.0.~~ (Not true - See comments). That was back all the way in 2007.
 
 ![Google Maps Android 1.0](/assets/posts-images/gmaps/android10.png) ![Google Maps Android 1.0](/assets/posts-images/gmaps/android11.png)
 
