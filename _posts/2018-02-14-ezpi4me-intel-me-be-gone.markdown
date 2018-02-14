@@ -3,8 +3,6 @@ layout: post
 title: EzPi4ME - Getting rid of the Intel ME, for mere mortals
 ---
 
-# [EzPi4ME - Getting rid of the Intel ME, for mere mortals](https://github.com/htruong/ezpi4me/)
-
 _The easiest, and most straightforward method to get rid of the Intel ME._
 
 This project helps you create a Raspberry Pi image that can clean the 
