@@ -8,7 +8,7 @@ _The easiest, and most straightforward method to get rid of the Intel ME._
 This project helps you create a Raspberry Pi image that can clean the 
 Intel ME blob from your machine. In other words, "me-cleaner for dummies."
 
-Github project: https://github.com/htruong/ezpi4me/
+[Github project where you can download it](https://github.com/htruong/ezpi4me/)
 
 What is the Intel Management Engine/Intel ME?
 --
@@ -25,13 +25,14 @@ what the Intel ME is capable of.
 Why did I do this? 
 --
 
+I want to make me_cleaner more widely accessible. 
 Freedom from binary blobs shouldn't be hard or expensive.
 
 This is after a person told me, "you need to make it easy for us mere mortals."
 
 One doesn't need to be an electrical engineer to do be able to clean 
-the ME on your computer. Just run some simple commands and connect 6 wires to 
-a Raspberry Pi.
+the ME on your computer. Now you just need to run some simple commands and connect 
+6 wires to a Raspberry Pi. Bam, 10 minutes, done.
 
 I've been thinking about this project for over a year, but prototyping was easy 
 because I can just carry a customized Pi image with me. Now, to release
@@ -175,3 +176,4 @@ FAQs
 --
 
 [Please view the FAQs on Github](https://github.com/htruong/ezpi4me#faqs).
+
