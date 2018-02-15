@@ -8,7 +8,8 @@ _The easiest, and most straightforward method to get rid of the Intel ME._
 This project helps you create a Raspberry Pi image that can clean the 
 Intel ME blob from your machine. In other words, "me-cleaner for dummies."
 
-[Github project where you can download it](https://github.com/htruong/ezpi4me/)
+[Github project where you can download it](https://github.com/htruong/ezpi4me/).
+
 
 What is the Intel Management Engine/Intel ME?
 --
@@ -29,9 +30,9 @@ What exactly does this process do to eliminate the Intel ME?
 
 The ME firmware is very big, so the code doesn't reside on the coprocessor hardware. The firmware has to be fed to the coprocessor from somewhere. That somewhere is, in practice, a region of the flash chip of the computer. The ME firmware takes something like 512K-3MB in that 8MB chip. There is a hardware watchdog on the coprocessor that checks if the operation of the ME firmware after the computer is "on" for half an hour. If it realizes that the ME is not operational at all, it will reset the CPU. When the firmware runs, it sets certain (hidden/privileged) registers or memory values to the correct values signaling to the watchdog that it's operational, and thus makes the hardware watchdog happy.
 
-The problem is you can't just feed the coprocessor a totally bogus ME code. Before the coprocessor runs the code, it will check certain signatures and if the signature doesn't match, the coprocessor won't run it. The me-cleaner software changes the firmware in an extremely clever way: the botched code still passes some minimum security requirements, the coprocessor still executes it, and it still flags the ME as somewhat operational, and thus the watchdog is still happy.
+The problem is you can't just feed the coprocessor a totally bogus ME code. Before the coprocessor runs the code, it will check certain signatures and if the signature doesn't match, the coprocessor won't run it. The me-cleaner software changes the firmware in a clever way: the botched code still passes some minimum security requirements, the coprocessor still executes it, and it still flags the ME as somewhat operational, and thus the watchdog is still happy.
 
-Now the layout of the firmware has also one more tidbit. On the firmware, you can mark a certain region of the chip to be extremely critical, to prevent that region from ever be written on. In the factory firmware, the ME region is often marked as extremely critical, that's why you can't just change the ME firmware from the machine itself (even when you can update and flash a new firmware from the machine itself).
+Now the layout of the firmware has also one more tidbit. On the firmware, you can mark a certain critical regions of the chip to be read-only, to prevent that region from ever be written on. In the factory firmware, the ME region is often marked as read only, that's why you can't just change the ME firmware from the machine itself (even when you can update and flash a new firmware from the machine itself).
 
 In short, an analogy of that that is like you can't install and run the anti-virus from an infected computer - if the virus itself is smart enough, it could prevent any anti-virus being run. You'd have to start with a clean computer, and plug the infected HDD in, and clean it from there. The Raspberry Pi is acting as the "clean" computer to clean the virus here.
 
