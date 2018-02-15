@@ -13,7 +13,9 @@ Please look at my [Google Scholar Profile](https://scholar.google.com/citations?
 Active Public Projects
 ---
 
-- [High-altitude Balloon](http://hab.education/) - Collaborating with Dustin Mayfield-Jones, Derek Sigler, Don Bindner, et al. Yes we launch balloons to near-space. Please join our [Facebook group](https://www.facebook.com/groups/981422375217977/). We are planning to teach too. We're looking for people with the same passion: If you are interested, you're strongly encouraged to join.
+- [EzPi4ME](https://github.com/htruong/ezpi4me) - Easy Raspberry Pi image creation for removing the Intel ME. Make it dead simple for you to disable Intel ME on Chromebooks and Thinkpads. Experimental. Use with extrme care.
+
+- [High-altitude Balloon](http://hab.education/) - Collaborating with Dustin Mayfield-Jones, Derek Sigler, Don Bindner, et al. Yes we launch balloons to near-space. We're looking for people with the same passion: If you are interested, we are pretty open to anyone.
 
 Past/Abandoned/Minimally maintained Projects
 ---
