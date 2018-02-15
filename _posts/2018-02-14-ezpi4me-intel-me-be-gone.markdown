@@ -56,16 +56,6 @@ by releasing a 2GB blob and tell everyone to run it). I finally got up my butt
 and did it. Every script is extremely simple and can be audited quickly.
 
 
-Tested platforms
---
-
-This pipeline has been tested to work on a Dell Chromebook 7310. That's all I have.
-
-It should work with many other Chromebooks and Thinkpads, but have not been 
-verified. If you succeeded cleaning your ME with this method, please send me 
-an email.
-
-
 Beware
 --
 
@@ -81,121 +71,20 @@ a 1.8V chip to the 3.3V Raspberry Pi, the process is entirely undoable.
 Instructions
 --
 
-You will need hardware-wise: a Raspberry Pi (Pi 0 WH is the easiest and cheap),
-a Ponoma SOIC-8 clip and 6 female2female jumper wires, and a microUSB cable.
-You'll also need a microSD card >= 2GB. If you really want to be cheap, buy a 
-Pi 0 original for $5 in Microcenter, but then you'll have to solder the headers.
+[Please view the detailed Instructions on Github](https://github.com/htruong/ezpi4me#instructions).
 
-The Bill of Materials should about less than $50 in total. More likely than not
-you already have everything here, except for the SOIC-8 clip.
+All you need are the following components:
 
 ![Raspberry Pi 0 WH](https://i.imgur.com/OcKklYys.jpg)
 ![Female2Female](https://i.imgur.com/SOQtFips.jpg)
 ![SOIC clip](https://i.imgur.com/ovZ6Ao0s.jpg)
 ![MicroSD](https://i.imgur.com/qwgiGlJs.jpg)
 
-Have the "target" computer to clean. Open it up, make sure that it has a SOIC-8
-flash chip. **MAKE VERY SURE** the chip is 3.3V or 3.3V-tolerant. Many 
-Chromebooks use 3.3V chips.
-
-If you use the Pi 0, you'll need a "spare" computer that can be used to control it,
-alternatively you can attach a set of keyboard/HDMI cables/monitor to type to the
-Raspberry Pi. 
-
-The spare computer can run Linux or Windows, doesn't matter. 
-I'm not sure about Macs, you'll need to install drivers on Mac to get it to talk
-to the Pi via USB-serial. Easier just to boot your Mac with a live Linux distro.
-
-Prepare the image
---
-
-Now you can run the script in this repo in any Linux distro to 
-create a ezpi4me image. Some of live distros are alright. Don't use Windows.
-
-If you want to also flash coreboot at the same time you clean the ME, you need 
-to put the ROM file you prepared to the folder `coreboot` 
-and name it `coreboot.bin`. It will be copied to `/home/pi/coreboot.rom`.
-
-Fedora:
-
-    $ sudo dnf install qemu-user-static kpartx parted 
-    $ sudo systemctl restart systemd-binfmt.service
-    $ sudo ./make-ezpi4me.sh
-    
-Debian/Ubuntu:
-
-    $ sudo apt install qemu-user-static kpartx parted 
-    $ sudo ./make-ezpi4me.sh
-    
-Write the image, should be named `ezpi4me.img` to the micro-SD card. 
-
-    $ sudo dd if=ezpi4me.img of=/dev/Your_MicroSD_card
-
-Wirings and flash the hardware
---
-
-Wire the SOIC clip to the Pi according to this guide: 
-https://www.flashrom.org/RaspberryPi
-
-All Chromebooks I'm aware of so far has the same wiring scheme:
-
-	              ┌───── Little "dot" on the chip
-	              │ 
-	             ╔═════════╗
-	    CS#    1═╣o        ╠═8    VCC
-	   MISO    2═╣         ╠═7    ---
-	    ---    3═╣         ╠═6    SCLK
-	    GND    4═╣         ╠═5    MOSI
-	             ╚═════════╝
-
-    RPi header  SPI flash
-    25          GND
-    24          CS#
-    25          SCK
-    21          MISO/DO
-    19          MOSI/DI
-    17          VCC 
-
-
-If you're confused, I have a video here: 
-https://www.youtube.com/watch?v=YnUPf3e0ZFM
-
-You do not need to wire pin 3 and pin 7 on the clip.
-
-Now, you have two ways to proceed:
-
-- Easiest: You need another linux/windows computer. Plug the micro-USB to the 
-Pi 0 using the USB OTG port on the Pi 0 (NOT PWR) -- that's the middle, not the 
-outermost micro-USB port. Now install `screen` (Linux) or Putty (Win). On Linux:
-
-        $ sudo screen /dev/ttyUSB0 115200
-        or
-        $ sudo screen /dev/ttyACM0 115200
-    
-On Windows, use Putty to create a new connection to connect to whatever COM port
-that shows up in Device Manager.
-
-Press Enter a couple of times so it shows the login prompt after you connect.
-
-**Note: The first boot is slow. It might take 10-15 minutes before the login 
-prompt shows up. It won't have debug text. Be patient.**
-
-- Alternatively, you can use a USB-OTG cable, a mini-HDMI to HDMI adapter, 
-a USB keyboard, to connect to the Pi Zero directly. You'll need to type on it.
-
-Later versions of ezpi4me might do everything automatically for you without 
-requiring you to type, but I'd rather have you see and control the process now.
-
-
-
-Connect the chip on the "target" to the SOIC clip. Make sure leg #1 matches :)
+You'll need to **MAKE VERY SURE** the chip in your machine is 3.3V.
 
 ![Connect](https://i.imgur.com/a9rcEy6.jpg)
 
-Log in with username pi, and password raspberry.
-Anyway, now you're at the command line. ezpi4me has the following utilities.
-
-Run them in this order:
+EzPi4ME provides the following tools:
 
     $ sudo ezpi4me-check-chip  <-- checks if you see the chip
     $ sudo ezpi4me-rom-backup  <-- backs up the current ROM from the chip
