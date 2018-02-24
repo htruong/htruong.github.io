@@ -619,19 +619,14 @@ $button-size: 1.5rem;
 
 /* Related articles list */
 .related-articles {
-	@include grid(12,10);
-	@include prefix(12,1);
-	@include suffix(12,1);
+	@include grid(12,11);
+	@include prefix(12,0.5);
+	@include suffix(12,0.5);
 	margin-bottom: 2em;
 	@media #{$small} {
-		@include grid(12,6);
-		@include prefix(12,3);
-		@include suffix(12,3);
-	}
-	@media #{$x-large} {
-		@include grid(12,4.5);
-		@include prefix(12,4);
-		@include suffix(12,3.5);
+		@include grid(12,9.5);
+		@include prefix(12,2.5);
+		@include suffix(12,0);
 	}
 	h4 {
 		text-transform: uppercase;
@@ -651,6 +646,19 @@ $button-size: 1.5rem;
 		text-align: right;
 	}
 }
+
+.disqus_thread {
+    a {
+        text-decoration: none;
+		display: block;
+		padding: 2em;
+        text-align: center;
+        border-radius: 0.5em;
+        background-color: gray;
+        color: white;
+    }
+}
+
 /*
    Browser upgrade alert
    ========================================================================== */

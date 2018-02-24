@@ -1,24 +1,31 @@
 {% if site.owner.disqus-shortname %}
 
+<div class="disqus_thread" id="showdisqus_button">
+  <a href="#" onclick="return disqus()">Show Disqus Comments</a> 
+</div>
+
 <script>
-    /**
-     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-     */
-    
     var disqus_config = function () {
         this.page.url = "{{ page.url | prepend: site.baseurl | prepend: site.url }}";  // Replace PAGE_URL with your page's canonical URL variable
         this.page.identifier = "{{ page.url }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
-    
-    (function() {  // DON'T EDIT BELOW THIS LINE
+    var disqus_loaded = false;
+
+    function disqus() {
+        if (disqus_loaded) return false;
+        
+        disqus_loaded = true;
+        var disqus_btn = document.getElementById("showdisqus_button");
+        disqus_btn.style.display = "none";
+        
         var d = document, s = d.createElement('script');
         
         s.src = '//{{ site.owner.disqus-shortname }}.disqus.com/embed.js';
         
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
-    })();
+        return false;
+    };
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<noscript>If you want to view <a href="https://disqus.com/?ref_noscript" rel="nofollow">Disqus comments</a>, you need to turn Javascript on.</noscript>
 {% endif %}
