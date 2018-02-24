@@ -36,8 +36,8 @@ Two-Factor sign in. Featured on [Hackaday](http://hackaday.com/2011/02/27/google
 
 - *Unikey Legacy*. A Unikey Vietnamese Keyboard Driver distribution for
 easier installation, deployment, update and maintenance for end-users
-and system administrators. Fixes some Unikey's annoying behaviors. [Download](/downloads/UnikeyLegacy.msi) - NEW: Fixed link.
+and system administrators. Fixes some Unikey's annoying behaviors. Very fast. [Download](/downloads/UnikeyLegacy.msi) - NEW: Fixed link.
 
-- *Viet Lunar Calendar*. This gadget displays corresponding Lunar date corresponding to today or any solar date. [Download](/downloads/VietnameseLunarCalendar.gadget) - NEW: Fixed link.
+- *Viet Lunar Calendar*. This gadget displays corresponding Lunar date corresponding to today or any solar date. Works with Windows Vista (also 7, maybe?). [Download](/downloads/VietnameseLunarCalendar.gadget) - NEW: Fixed link.
 
 - *1911 player*. Lightweight, static HTML5 player, to stream music from the Raspberry Pi. [Code](https://github.com/htruong/1911-player).
