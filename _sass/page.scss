@@ -28,7 +28,7 @@ body {
 	@include suffix(12,1);
 	margin-bottom: 1em;
 	float: none;
-	display: block;
+	display: none;
 	@include font-rem(24);
 	@media #{$small} {
 		@include grid(12,2);
@@ -62,7 +62,8 @@ body {
 		list-style-type: none;
 	}
 	li {
-		display: block;
+		display: inline;
+		margin-right: 25px;
 		list-style-type: none;
 		border-bottom: 1px solid lighten($black,80);
 		border-bottom: 1px solid fade($black,10);
@@ -71,19 +72,16 @@ body {
 			border-bottom: 0 solid transparent;
 		}
 		@media #{$small} {
-			display: inline;
-			margin-right: 25px;
 			white-space: nowrap;
 			border-bottom: 0 solid transparent;
 		}
 		a {
-			display: block;
+			display: inline;
 			padding: 10px 0;
 			decoration: none;
 			border-bottom: 0 solid transparent;
 			@include transition(all .2s);
 			@media #{$small} {
-				display: inline;
 				padding: 0;
 			}
 		}
@@ -245,7 +243,7 @@ $button-size: 1.5rem;
 	@include container;
 	@include clearfix;
 	clear: both;
-	margin-top: 2em;
+	margin-top: 0.5em;
 	h1 {
 		margin-top: 0;
 	}
@@ -267,12 +265,12 @@ $button-size: 1.5rem;
 /* Index listing specific styling */
 #index {
 	@include container;
-	@include grid(12,10);
-	@include prefix(12,1);
-	@include suffix(12,1);
+	@include grid(12,11);
+	@include prefix(12,0.5);
+	@include suffix(12,0.5);
 	margin-bottom: 2em;
 	@media #{$small} {
-		@include grid(12,8);
+		@include grid(12,9.5);
 		@include prefix(12,0);
 		@include suffix(12,0);
 	}
@@ -292,7 +290,7 @@ $button-size: 1.5rem;
 			}
 		}
 		p {
-			@include font-rem(17);
+			// @include font-rem(17);
 			margin: .1em 0;
 		}
 	}
@@ -638,18 +636,13 @@ $button-size: 1.5rem;
 		@include font-rem(14);
 	}
 	footer {
-		@include grid(12,10);
-		@include prefix(12,1);
-		@include suffix(12,1);
+		@include grid(12,11);
+		@include prefix(12,0.5);
+		@include suffix(12,0.5);
 		@media #{$small} {
-			@include grid(12,6);
-			@include prefix(12,3);
-			@include suffix(12,3);
-		}
-		@media #{$x-large} {
-			@include grid(12,4.5);
-			@include prefix(12,4);
-			@include suffix(12,3.5);
+			@include grid(12,9.5);
+			@include prefix(12,2.5);
+			@include suffix(12,0);
 		}
 	}
 }
