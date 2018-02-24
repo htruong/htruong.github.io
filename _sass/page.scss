@@ -638,11 +638,19 @@ $button-size: 1.5rem;
 }
 
 .page-nav {
+    a {
+        display: inline-block;
+        border-radius: 0.5em;
+        background-color: #eee;
+        padding: 10px 10px;
+        margin: 5px 0;
+        text-decoration: none;
+    }
 	.prev, .next {
-		display: block;
-		padding: 0.2em 0;
 	}
+	
 	.next {
+        float: right;
 		text-align: right;
 	}
 }
