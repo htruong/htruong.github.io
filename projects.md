@@ -4,12 +4,6 @@ title : "Projects"
 hidetitle : true
 ---
 
-Publications
----
-
-Please look at my [Google Scholar Profile](https://scholar.google.com/citations?user=ZTuFnawAAAAJ&hl=en&oi=sra) for a list of my publications.
-
-
 Active Projects
 ---
 
@@ -41,3 +35,10 @@ and system administrators. Fixes some Unikey's annoying behaviors. Very fast. [D
 - *Viet Lunar Calendar*. This gadget displays corresponding Lunar date corresponding to today or any solar date. Works with Windows Vista (also 7, maybe?). [Download](/downloads/VietnameseLunarCalendar.gadget) - NEW: Fixed link.
 
 - *1911 player*. Lightweight, static HTML5 player, to stream music from the Raspberry Pi. [Code](https://github.com/htruong/1911-player).
+
+
+Publications
+---
+
+Please look at my [Google Scholar Profile](https://scholar.google.com/citations?user=ZTuFnawAAAAJ&hl=en&oi=sra) for a list of my publications.
+

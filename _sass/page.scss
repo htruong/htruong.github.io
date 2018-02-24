@@ -63,7 +63,6 @@ body {
 	}
 	li {
 		display: inline;
-		margin-right: 25px;
 		list-style-type: none;
 		border-bottom: 1px solid lighten($black,80);
 		border-bottom: 1px solid fade($black,10);
@@ -77,13 +76,10 @@ body {
 		}
 		a {
 			display: inline;
-			padding: 10px 0;
-			decoration: none;
-			border-bottom: 0 solid transparent;
-			@include transition(all .2s);
-			@media #{$small} {
-				padding: 0;
-			}
+			padding: 10px 20px;
+			margin-right: 1em;
+			text-decoration: none;
+			border-bottom: 1px solid gray;
 		}
 	}
 }
@@ -209,32 +205,12 @@ $button-size: 1.5rem;
 	top: 3px;
 	line-height: 0;
 }
-// When JavaScript is disabled, we hide the toggle button
 .no-js .nav .navtoggle {
 	display: none;
 }
-// When JavaScript is disabled, we show the menu
+
 .no-js .nav ul {
 	max-height: 30em;
-	overflow: hidden;
-}
-// When JavaScript is enabled, we hide the menu
-.js .nav ul {
-	max-height: 0;
-	overflow: hidden;
-	@media #{$small} {
-		max-height: 30em;
-	}
-}
-// Displaying the menu when the user has clicked on the button
-.js .nav .active + ul {
-	max-height: 30em;
-	overflow: hidden;
-	-webkit-transition: max-height .4s;
-	-moz-transition: max-height .4s;
-	-o-transition: max-height .4s;
-	-ms-transition: max-height .4s;
-	transition: max-height .4s;
 }
 
 /* Main content */
@@ -282,7 +258,7 @@ $button-size: 1.5rem;
 	}
 	article {
 		h2 {
-			margin-bottom: 4px;
+			margin-top: 0.5em;
 			@include font-rem(20);
 			&.link-post {
 				margin-bottom: 0px + $doc-line-height;

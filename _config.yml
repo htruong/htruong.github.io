@@ -1,6 +1,6 @@
 # Site wide configuration
 
-title:            The Pensieve
+title:            Huan Truong's Pensieve
 locale:           en_US
 domain:           tnhh.net
 url:              https://www.tnhh.net
@@ -53,9 +53,9 @@ defaults:
 
 # Site owner
 owner:
-  name: "- h. (Huan Truong)"
+  name: "Huan Truong"
   avatar: bio-photo.jpg
-  bio: "The Pensieve"
+  bio: "Basically a hacker"
   email: webreg@tnhh.net
   disqus-shortname: tnhh
   twitter: huant
