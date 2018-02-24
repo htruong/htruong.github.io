@@ -1,18 +1,15 @@
 ---
 layout : "page"
-title : "Projects"
-hidetitle : true
+title : "Projects &amp; Research"
 ---
 
-Active Projects
----
+**Active projects**
 
 - [EzPi4ME](https://github.com/htruong/ezpi4me) - Easy Raspberry Pi image creation for removing the Intel ME. Make it dead simple for you to disable Intel ME on Chromebooks and Thinkpads. Experimental. Use with extrme care.
 
 - [High-altitude Balloon](http://hab.education/) - Collaborating with Dustin Mayfield-Jones, Derek Sigler, Don Bindner, et al. Yes we launch balloons to near-space. We're looking for people with the same passion: If you are interested, we are pretty open to anyone.
 
-Past/Abandoned/Minimally maintained Projects
----
+**Minimally maintained projects**
 
 - [*Oryza*](https://github.com/htruong/oryza) blogging-as-a-service. As a server, it enables hosting and deploying multiple blogs/sites hosted on the git version control system. As a client, it generates a static site from a jekyll-like site structure. Runs on Windows, OS X, Linux. 
 
@@ -37,8 +34,7 @@ and system administrators. Fixes some Unikey's annoying behaviors. Very fast. [D
 - *1911 player*. Lightweight, static HTML5 player, to stream music from the Raspberry Pi. [Code](https://github.com/htruong/1911-player).
 
 
-Publications
----
+**Research and publications**
 
 Please look at my [Google Scholar Profile](https://scholar.google.com/citations?user=ZTuFnawAAAAJ&hl=en&oi=sra) for a list of my publications.
 
