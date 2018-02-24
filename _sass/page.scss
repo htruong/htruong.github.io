@@ -44,19 +44,16 @@ body {
 
 /* Top navigation links */
 .top-navigation {
-	@include grid(12,10);
-	@include prefix(12,1);
-	@include suffix(12,1);
+	@include grid(12,11);
+	@include prefix(12,0.5);
+	@include suffix(12,0.5);
 	margin-bottom: 1em;
 	float: none;
 	display: block;
 	@media #{$small} {
-		@include grid(12,9);
-		@include prefix(12,0);
+		@include grid(12,9.5);
+		@include prefix(12,2.5);
 		@include suffix(12,0);
-	}
-	@media #{$x-large} {
-		@include grid(12,8);
 	}
 	ul {
 		margin: 0;
@@ -255,20 +252,14 @@ $button-size: 1.5rem;
 	.post,
 	.page {
 		@include container;
-		@include grid(12,10);
-		@include prefix(12,1);
-		@include suffix(12,1);
+		@include grid(12,11);
+		@include prefix(12,0.5);
+		@include suffix(12,0.5);
 		margin-bottom: 2em;
 		@media #{$small} {
-			@include grid(12,8);
+			@include grid(12,9.5);
 			@include prefix(12,0);
 			@include suffix(12,0);
-		}
-		@media #{$large} {
-		@include grid(12,6);
-		}
-		@media #{$x-large} {
-			@include grid(12,5);
 		}
 	}
 }
@@ -284,12 +275,6 @@ $button-size: 1.5rem;
 		@include grid(12,8);
 		@include prefix(12,0);
 		@include suffix(12,0);
-	}
-	@media #{$large} {
-		@include grid(12,6);
-	}
-	@media #{$x-large} {
-		@include grid(12,5);
 	}
 	h3 {
 		margin: 0;
@@ -331,12 +316,6 @@ $button-size: 1.5rem;
 		@media #{$small} {
 			left: 25%;
 		}
-		@media #{$large} {
-			border-width: 20px;
-		}
-		@media #{$x-large} {
-			left: 33.333333333%;
-		}
 	}
 	img {
 		width: 100%;
@@ -350,9 +329,6 @@ $button-size: 1.5rem;
 		@media #{$small} {
 			left: 25%;
 			margin-left: 0;
-		}
-		@media #{$x-large} {
-			@include prefix(12,1);
 		}
 		h1, h2 {
 			color: $white;
@@ -389,12 +365,6 @@ $button-size: 1.5rem;
   &:visited {
     color: $black;
   }
-  &:hover {
-    @include scale(1.1);
-  }
-  &:active {
-    @include translate(0, 2px);
-  }
   .fa {
 		margin-right: 5px;
 	}
@@ -404,21 +374,21 @@ $button-size: 1.5rem;
 .article-author-side {
 	display: none;
 	.bio-photo {
-		max-width: 110px;
+		max-width: 100%;
 		@include rounded(150px);
 		border: 3px solid #eee;
 		box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);  
 	}
 	@media #{$small} {
 		display: block;
-		@include grid(12,2);
-		@include prefix(12,0.5);
-		@include suffix(12,0.5);
+		@include grid(12,2.25);
+		@include prefix(12,0.10);
+		@include suffix(12,0.15);
 		h3,
 		p,
 		.author-social {
 			display: block;
-			max-width: 125px;
+			/*max-width: 125px;*/
 		}
 		h3 {
 			margin-top: 10px;
@@ -436,12 +406,8 @@ $button-size: 1.5rem;
 		.bio-photo,
 		p,
 		.author-social {
-			max-width: 150px;
+			/*max-width: 150px;*/
 		}
-	}
-	@media #{$x-large} {
-		@include grid(12,1.5);
-		@include prefix(12,2);
 	}
 }
 

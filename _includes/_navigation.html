@@ -5,15 +5,10 @@
 	<div class="top-navigation">
 		<nav id="site-nav" class="nav">
 		    <ul>
-		    	<li><a class="root" href="{{ site.url }}/">Blog</a></li>
+		    	<li><a class="root" href="/">Blog</a></li>
 		        {% for link in site.data.navigation %}
-				    {% if link.url contains 'http' %}
-				        {% assign domain = '' %}
-				        {% else %}
-				        {% assign domain = site.url %}
-				    {% endif %}
-				    <li><a href="{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>{{ link.title }}</a></li>
-				{% endfor %}
+			<li><a href="{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>{{ link.title }}</a></li>
+			{% endfor %}
 		    </ul>
 		</nav>
 	</div><!-- /.top-navigation -->
