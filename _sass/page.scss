@@ -64,15 +64,9 @@ body {
 	li {
 		display: inline;
 		list-style-type: none;
-		border-bottom: 1px solid lighten($black,80);
-		border-bottom: 1px solid fade($black,10);
 		@include font-rem(16);
-		&:last-child {
-			border-bottom: 0 solid transparent;
-		}
 		@media #{$small} {
 			white-space: nowrap;
-			border-bottom: 0 solid transparent;
 		}
 		a {
 			display: inline;
