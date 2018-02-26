@@ -33,4 +33,6 @@ In the last couple of weeks, I have been working hard on projects and ideas that
 
 I truly want to to make Crankshaft a great project. I have some time now (I don't have money, but I think I will figure it out soon). Foremost, Crankshaft is what I want to see myself to be - fun, useful and is a joy to know. That is how I want to see more of myself and the world. And I think I have some power to shape it, however small, every day. In the next days or so I will work on my thesis code, figure out how to get a phone I can debug CrankShaft with. All thanks to the little emails and comments I receive from people. It was the bridge over troubled water.
 
-*Sail on silver girl, sail on by...*
+I'm writing this because I think maybe I was the sole bitter psychopath, lonely, crazy person in this world. But maybe if you see my story reflects some on yourself, don't give up hope and creativity. I think all is well.
+
+*[Sail on silver girl, sail on by...](https://www.youtube.com/watch?v=H_a46WJ1viA)*
