@@ -11,6 +11,7 @@ logo_h:           60
 logo_w:           151
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 
 # Jekyll configuration
 
