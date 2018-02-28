@@ -23,6 +23,7 @@ sass:
   style: compressed
 gems:
   - jekyll-feed
+  - jekyll-sitemap
 
 kramdown:
   auto_ids: true
