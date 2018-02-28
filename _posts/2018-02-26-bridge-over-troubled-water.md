@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Bridge over troubled water
+published: false
 ---
 
 Maybe you're reading this because you stumbled upon some of my recent projects or blog posts that got really popular for one reason or another. I was fortunate to be able to strike some of the right notes for many hackers with my recent semi-interesting blog posts about Google, or my Raspberry Pi-related projects. Or other reasons, I don't know. In the last month, I made it to Hacker News, Reddit, and Slashdot front page. I guess one of my bucket list items is to make it to Slashdot (although Slashdot isn't as big of a deal like it once was, it was mainly nostalgia). So life mission accomplished.
