@@ -64,7 +64,7 @@
     <a class="prev" href="/">All Posts</a>
   {% endif %}
   -->
-  <a class="prev" href="/">All Posts</a>
+  {% if page.category %}<a class="prev" href="/topic/{{ page.category }}">{{ page.category }}</a>{% else %}<a class="prev" href="/">All Posts</a>{% endif %}
 </div>
 
       </footer>

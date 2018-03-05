@@ -1,7 +1,6 @@
 ---
 published: true
 title: Harry Potter and The Little Indie Translation
-layout: post
 ---
 Reading [How Three Kids With No Experience Beat Square And Translated Final Fantasy V Into English](http://kotaku.com/how-three-kids-beat-the-odds-and-translated-final-fanta-1794628286) brings back my memories. 
 

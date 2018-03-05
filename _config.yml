@@ -46,12 +46,31 @@ page_layout: page
 # Format titles with titlecase?
 titlecase: true
 
+collections:
+  my_categories:
+    output: true
+    permalink: /topic/:name/
+
 defaults:
--   
+-
   scope:
+    path: ""
     type: pages
   values:
     permalink: /:path/:basename:output_ext
+    layout: page
+-
+  scope:
+    path: ""
+    type: posts
+  values:
+    layout: post
+-
+  scope:
+    path: ""
+    type: my_categories
+  values:
+    layout: blog_by_category
 
 # Site owner
 owner:
