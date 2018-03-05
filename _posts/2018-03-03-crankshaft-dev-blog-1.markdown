@@ -23,8 +23,10 @@ There are some shortcomings too:
 - My nicknames are associated with my real names, so I cannot remain anonymous anymore.
 - I wish I didn't miss the Pi Jam in Raleigh just today. I was not thinking about it. I was busy developing software, you know?
 - I really need to brush up my chops on making videos: I like my videos to be goofy and fun, but now it's just goofy.
-- I really like to have someone as a duo at least in helping me developing and managing this project. I know, it's "mah baby" kinda idea, but I know too well that I'm just a nerd who has no idea managing a project and make it do the impossible. Years ago, at 18 when I had [my first project](/posts/Harry-Potter-and-me.html), I had a 16 year old girl who asked to jump in and offered help with communicating with people. She turned out to be great )later she got into a top management/business college in the UK). I think there are people who are born to lead and attract others. Although I wish I had that ability, but now I'm content that that person is not me.
+- I really like to have someone as a duo at least in helping me developing and managing this project. I know, it's "mah baby" kinda idea, but I know too well that I'm just a nerd who has no idea managing a project and make it do the impossible. Years ago, at 18 when I had [my first project](/posts/Harry-Potter-and-me.html), I had a 16 year old girl who asked to jump in and offered help with communicating with people. She turned out to be a great leader (later she got into a top management/business college in the UK). I think there are people who are born to lead and attract others. Although I wish I had that ability, but now I'm content that that person is not me.
 
 But really, what I have learned and the level of optimism I got through this project is incredible. I wish to keep my head up and continue making progress maintaining this project and earning people's trust. Overall, I feel like I want to keep going every day and contributing my small part to make the world a more pleasant place to be in.
 
 And all is well.
+
+**Plug**: I'm looking for a job soon. Please let me know if you know someone is hiring hackers like me. Thanks!
