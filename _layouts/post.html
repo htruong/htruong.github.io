@@ -8,6 +8,8 @@
 </head>
 
 <body class="post">
+{% assign category = site.my_categories | where: "slug", page.category %}
+{% assign category = category[0] %}
 
 {% include _browser-upgrade.html %}
 
@@ -37,7 +39,7 @@
       {% if page.link %}
         <h1>{{ page.title }} <a href="{{ page.link }}"> &rightarrow; </a></h1>
       {% else %}
-        <h1><!-- <a href="{{ site.url }}{{ page.url }}" rel="bookmark" title="{{ page.title }}">#</a> -->{{ page.title }}</h1>
+        <h1>{% if page.category %}<a class="post-category" style="background-color:{{ category.color }}" href="/topic/{{ page.category }}">{{ page.category }}</a> / {% endif %}{{ page.title }}</h1>
       {% endif %}
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
