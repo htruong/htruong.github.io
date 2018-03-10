@@ -173,6 +173,10 @@ pre {
 article {
 	padding-bottom: 0.5em;
 	
+    h1 {
+        line-height: 1.4;
+    }
+    
 	h2 {
 		padding-bottom: 2px;
 	}
@@ -182,6 +186,7 @@ article {
 	}
 	
 	p {
-		    line-height: 125%;
+		    line-height: 1.4;
+            margin-bottom: 0.5em;
 	}
 }
