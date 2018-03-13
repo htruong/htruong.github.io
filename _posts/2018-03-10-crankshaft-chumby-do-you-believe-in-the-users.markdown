@@ -6,7 +6,7 @@ category: crankshaft
 
 From day one, I have been always envisioning Crankshaft to be the software package that is easy ("turnkey") for the end user and powerful for the developers. Crankshaft has [proved to be turnkey](https://photos.google.com/share/AF1QipP3hcflM2fty5ziB_yuFl1_4hJL2r1LlWdvdUgCROp0DqsgiTJgm5lJUoDY6aO5aA?key=SmkydlU1eVFEb20xOHFJX0ZZUk9KY3NGR2dlcVhB) [for many users](https://github.com/htruong/crankshaft/issues/2) and I've also [made it fun for newbies to customize it](https://github.com/htruong/crankshaft/wiki/Customizing-Crankshaft), but with the [dev mode introduced last week](https://github.com/htruong/crankshaft/wiki/Crankshaft-dev-mode), I think I have executed my very first baby step in making that a dream for developers. That inspiration came from my many years being a hacker, and a single ill-fated product that affected me the most profound way: The Chumby. 
 
-The sentence I remembered the most from it was: "Do you believe in the Users?"
+The sentence I remembered the most from it was: "Do you believe in the Users?" (In turn, from the movie Tron, I think.)
 
 ![Inforcast, or Chumby, it doesn't matter](/assets/posts-images/crankshaft-post-2/infocast-1.jpg)
 
@@ -14,7 +14,7 @@ _I still keep my Chumby. It still works. Wait a sec, it's not a Chumby, isn't it
 
 This will be a trip down my memory lane, and not everything is relevant, so I hope you have some free time to read this. First, a disclaimer: the information, and opinions expressed in this blog were solely mine and in no way representative of anyone else's view.
 
-**Do you believe in your Customers?**
+**Apple: Do you believe in your Customers?**
 
 When Steve Jobs did [the infamous funeral for OS 9](https://www.youtube.com/watch?v=G1SLCAiGkVQ), Apple ran an advertisement for OS X on the Macintosh that advertised it as a powerful UNIX machine:
 
@@ -26,7 +26,7 @@ Being born in Vietnam in a middle-class family, I only knew Macs through compute
 
 ![mac os x sudo with great power](/assets/posts-images/crankshaft-post-2/TigerSudoCommand.png)
 
-_Tiger used to warn its users this. I don't think newer versions of macOS does this anymore. [Source](http://jf.omnis.ch/archives/2005/05/sudo-in-tiger.html)_
+_Tiger used to warn its users this. I don't think newer versions of macOS do this anymore. [Source](http://jf.omnis.ch/archives/2005/05/sudo-in-tiger.html)_
 
 Surely I was somewhat fluent with Linux at that point but somehow I always associated that message with OS X (I think because I would log in as root when I wanted to do stuff on my Linux boxes). I knew at that point I had a powerful tool that just worked normally but also trusted me to break it when I wanted it to. It was memorizing.
 
