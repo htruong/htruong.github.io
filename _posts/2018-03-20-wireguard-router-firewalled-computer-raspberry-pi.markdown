@@ -4,7 +4,7 @@ title: "Accessing a firewalled computer/Raspberry Pi with Wireguard and OpenWRT,
 ---
 
 Suppose you have a computer or Raspberry Pi named Alice behind a school/corp firewall. You have a router running OpenWRT called Bob at home you can open ports. You wish to to access remotely from home.
-Suppose you're a n00b in networking and routing stuff and too lazy to learn it properly like me. You know how superficially how a router and subnetting works. You know how to set up your home network so each computer has an IP, you can probably do some port forwarding and Dynamic DNS, but don't know exactly what the heck all the routing lingos mean.
+Suppose you're a n00b in networking and routing stuff and too lazy to learn it properly like me. You know superficially how a router works. You know how to set up your home network, you can probably do some port forwarding and Dynamic DNS, but don't know exactly what the heck all the routing lingos mean.
 
 I have a computer behind a campus firewall that I want to connect to from my home. 
 I can always VPN in using Cisco VPN, but I don't like having to open the VPN client and figure out how to not route all my traffic through the campus VPN (I guess I can do it on Linux with enough dedication, I can't easily make it happen on my Windows/Mac clients).
