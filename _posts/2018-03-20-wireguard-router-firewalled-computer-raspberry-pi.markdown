@@ -4,6 +4,7 @@ title: "Accessing a firewalled computer/Raspberry Pi with Wireguard and OpenWRT,
 ---
 
 Suppose you have a computer or Raspberry Pi named Alice behind a school/corp firewall you wish to to access remotely from home. You have a router running OpenWRT called Bob at home you can open ports. You want to have an automated/easy way to access it.
+I've been trying OpenVPN and all kinds of stuff. I'm a n00b in networking and routing stuff amd I'm too lazy to learn it properly, so it all makes all the routing lingos even more confusing. 
 
 If you're not happy with the current firewall/VPN affair, use Wireguard. 
 [It's really quite magical](https://lwn.net/Articles/748582/). 
@@ -14,19 +15,20 @@ However, there are two shortcomings with reverse-SSH.
 First, it doesn't route UDP and I have to be explicit about ports I want to forward. 
 Second, it's a pain to set up. 
 
-Wireguard solves all of those elegantly and it's very performant.
 
-Plus it's integrated with systemd so you have easy startup configure. Wireguard really just works.
+Wireguard solves all of those elegantly and it's very performant. Plus it's integrated with systemd so you have easy startup configure. Wireguard really just works.
 
 So, let's get down to getting Wireguard to work.
 
-**Installing Wireguard the easy way**
+**Installing Wireguard on router Bob**
 
 Get OpenWRT latest stable version (don't get the dev version) - currently it's still named LEDE now, that's before the name change. Install `luci-app-wireguard` and `luci-proto-wireguard`.
 
+**Installing Wireguard on computer Alice**
+
 On Alice, install Wireguard [by whatever mean that you need to](https://www.wireguard.com/install/).
 
-**If Alice was a Raspberry Pi**
+If Alice is a Raspberry Pi, then do the following:
 
 1. Go to [The Wireguard Install page](https://www.wireguard.com/install/), then look at the section Debian (module, tools).
 2. Click on the Module link. Download the "all" arch package to the
@@ -39,7 +41,7 @@ features of the armhf arch in Debian, if you download and install the armhf pack
 Now we have to make a "fake" armhf package from the armel package. It's just
 userland tools, it doesn't matter if it's less performant.
 
-```
+```bash
 $ mkdir wireguard-tools-repack
 
 $ cd wireguard-tools-repack
@@ -58,16 +60,18 @@ $ ar r ../wireguard-tools_blah_armel.deb control.tar.xz
 
 Then `dpkg -i` the repacked file. Now dpkg won't complain no more.
 
-Now generate two keypairs for the computer and the router:
+**Generate key pairs**
 
-```
+Now generate two keypairs for the computer and the router. Do it on the computer.
+
+```bash
 $ wg keygen | tee alice_key.priv | wg pubkey | tee alice_key.pub
 $ wg keygen | tee bob_key.priv | wg pubkey | tee bob_key.pub
 ```
 
-Note that when I say `alice_key.priv`, it just means paste whatever that is in `alice_key.priv`, not the filename.
+Note that from now when I say `alice_key.priv`, it *always* means pasting whatever that is in `alice_key.priv`, not the filename.
 
-**Configure the router Bob**
+**Configure router Bob**
 
 Go to the router's Luci interface:
 
@@ -80,16 +84,19 @@ and whatever IPs you want to access pass through computer X (as if X
 was your VPN provider) -- like something inside its firewalled
 network.
 4. "Firewall Settings" tab: Assign firewall-zone: WAN.
+5. Remember to port-forward port 4500/UDP on Bob to itself.
 
 Done for the router. Restart it. Watch what it does on Status > Wireguard.
 
 **Configure the computer Alice**
 
-`$ sudo vim /etc/wireguard/wg0.conf`
+```bash
+$ sudo vim /etc/wireguard/wg0.conf
+```
 
 Type in:
 
-```
+```ini
 [Interface]
 Address = 192.168.2.2/24
 ListenPort = 58601
@@ -104,15 +111,19 @@ PersistentKeepalive = 25
 
 Try it:
 
-`$ wg-quick up wg0`
+```bash
+$ wg-quick up wg0
+```
 
 See if it works:
 
-`$ sudo wg`
+```bash
+$ sudo wg
+```
 
 If you're happy:
 
-```
+```bash
 $ wg-quick down wg0
 
 $ sudo systemctl enable wg-quick@wg0

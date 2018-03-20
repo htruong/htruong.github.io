@@ -9,7 +9,6 @@ pre.highlight {
 .highlight {
 	background-color: #eee;
 	font-family: $code-font;
-	@include font-rem(12);
 	line-height: 1.5;
 	color: #333332;
 	margin-bottom: 1.5em;
