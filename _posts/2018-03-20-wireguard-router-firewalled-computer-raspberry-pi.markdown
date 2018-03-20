@@ -16,13 +16,13 @@ Services such as [r3mot3.it makes it zero-configuration](https://www.remot3.it/w
 
 You need to use Wireguard like me. Wireguard solves all of those elegantly and it's very performant. Plus it's integrated with systemd so you have easy startup configuration. [It's really quite magical and just works](https://lwn.net/Articles/748582/). 
 
-So, let's get down to getting Wireguard to work.
+So, let's get down to it.
 
-**Installing Wireguard on router Bob**
+**Install Wireguard on router Bob**
 
 Get OpenWRT latest stable version (don't get the dev version) - currently it's still named LEDE now, it hasn't released a version after the name change to OpenWRT. Install `luci-app-wireguard` and `luci-proto-wireguard`.
 
-**Installing Wireguard on computer Alice**
+**Install Wireguard on computer Alice**
 
 On Alice, install Wireguard [by whatever mean that you need to](https://www.wireguard.com/install/). On most Linux system it's just a couple of commands just like the page says.
 
@@ -56,7 +56,7 @@ Architecture: armel
 $ ar r ../wireguard-tools_blah_armel.deb control.tar.xz
 ```
 
-Then `dpkg -i` the repacked file. Now dpkg won't complain no more.
+Then `dpkg -i` the repacked deb file. Now dpkg won't complain no more.
 
 **Generate key pairs**
 
@@ -75,7 +75,7 @@ Go to the router's Luci interface:
 
 1. Network -> Interfaces -> Add new interfaces -> Protocol -> WireGuard VPN, name it `wg0`. Next.
 2. "General Setup" tab: Common Configuration -> Private key:
-`bob_key.priv`. Listen Port `4500` (like Cisco Anyconnect). IP Addresses: `192.168.2.1/24` (not
+`bob_key.priv`. Listen Port `4500`. IP Addresses: `192.168.2.1/24` (not
 your LAN subnet).
 3. Peers -> Pubkey -> Pub key: `alice_key.pub`. Allowed IPs: `192.168.2.2/32`
 -- and whatever IPs you want to access pass through Alice (as if Alice
@@ -84,7 +84,7 @@ network.
 4. "Firewall Settings" tab: Assign firewall-zone: `WAN`.
 5. Remember to port-forward port `4500/UDP` on Bob to the router itself.
 
-We use port `4500` to disguise the traffic as Cisco VPN - most firewalls allows outgoing UDP connections to port 4500.
+We use port 4500 to disguise the traffic as Cisco VPN - most firewalls allow outgoing UDP connections to that port.
 
 Done for the router. Restart it. Watch what it does on Status > Wireguard.
 
