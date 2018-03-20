@@ -7,14 +7,14 @@ Suppose you have a computer or Raspberry Pi named Alice behind a school/corp fir
 Suppose you're a n00b in networking and routing stuff and too lazy to learn it properly like me. You know how superficially how a router and subnetting works. You know how to set up your home network so each computer has an IP, you can probably do some port forwarding and Dynamic DNS, but don't know exactly what the heck all the routing lingos mean.
 
 I have a computer behind a campus firewall that I want to connect to from my home. 
-I can always VPN in, but I don't like having to open the VPN client and figure out how to not route all my traffic through the campus VPN.
+I can always VPN in using Cisco VPN, but I don't like having to open the VPN client and figure out how to not route all my traffic through the campus VPN (I guess I can do it on Linux with enough dedication, I can't easily make it happen on my Windows/Mac clients).
 Normally, I do the [reverse-SSH/autossh](https://blog.devolutions.net/2017/3/what-is-reverse-ssh-port-forwarding) kinda thing to reverse-open a port on the home router. 
 However, there are two shortcomings with reverse-SSH. 
 First, it doesn't route UDP and I have to be explicit about ports I want to forward. 
 Second, it's a pain to set up. 
 Services such as [r3mot3.it makes it zero-configuration](https://www.remot3.it/web/index.html), but it's a proxying service so it's slow.
 
-You need to use Wireguard like me. Wireguard solves all of those elegantly and it's very performant. Plus it's integrated with systemd so you have easy startup configure. [It's really quite magical and just works](https://lwn.net/Articles/748582/). 
+You need to use Wireguard like me. Wireguard solves all of those elegantly and it's very performant. Plus it's integrated with systemd so you have easy startup configuration. [It's really quite magical and just works](https://lwn.net/Articles/748582/). 
 
 So, let's get down to getting Wireguard to work.
 
@@ -36,7 +36,7 @@ Pi. Install `dkms` and `raspberrypi-kernel-headers`. Then `dpkg -i` the
 Pi (armel, not armhf - the Raspberry Pi's CPU doesn't have some of the
 features of the armhf arch in Debian, if you download and install the armhf package, it will crash).
 
-Now we have to make a "fake" armhf package from the armel package. It's just
+Now we have to make a "fake" armhf wireguard-tools package from the armel package. They are just
 userland tools, it doesn't matter if they are a bit less performant.
 
 ```bash
@@ -83,6 +83,8 @@ was your VPN provider. For example, like something else inside its firewalled
 network.
 4. "Firewall Settings" tab: Assign firewall-zone: `WAN`.
 5. Remember to port-forward port `4500/UDP` on Bob to the router itself.
+
+We use port `4500` to disguise the traffic as Cisco VPN - most firewalls allows outgoing UDP connections to port 4500.
 
 Done for the router. Restart it. Watch what it does on Status > Wireguard.
 
