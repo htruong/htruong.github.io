@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Accessing a firewalled Computer or Raspberry Pi remotely with Wireguard and OpenWRT the easy way"
+title: "Accessing a firewalled computer/Raspberry Pi with Wireguard and OpenWRT, the easy way"
 ---
 
 Suppose you have a computer or Raspberry Pi named Alice behind a school/corp firewall you wish to to access remotely from home. You have a router running OpenWRT called Bob at home you can open ports. You want to have an automated/easy way to access it.
