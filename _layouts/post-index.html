@@ -34,8 +34,8 @@
   </div>
   <div id="index">
 	  <!--<h1>{{ page.title }}</h1>-->
-	  <div><p><a href="/feed.xml"><img src="/asset
-s/xml.gif" alt="RSS XML" /></a> <strong>Blog posts</strong>:</p></div>
+	  <div><h2><a href="/feed.xml"><img src="/asset
+s/xml.gif" alt="RSS XML" /></a> Blog posts</h2></div>
     {% for post in site.posts %}
 
     {% assign category = site.my_categories | where: "slug", post.category %}
