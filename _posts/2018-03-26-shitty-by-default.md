@@ -10,7 +10,7 @@ I've just read the Facebook Newsroom PR article titled "[Fact Check: Your Call a
 
 Do you see any problem with this screenshot? I would know that dialog has two buttons, one is to opt-in, one is to opt-out. But my mom wouldn't know. My dad wouldn't know. My brother wouldn't know.  To 99% of everyone, that dialog has one button.
 
-This is the epitome of "we're shitty by default, but if you know your way around our system, then you're fine." 
+This is the epitome of "we're shitty by default, but if you know your way around our system, then you're fine."
 
 That's the kind of pattern I've learned to hate, especially being a Vietnamese citizen.
 
@@ -20,6 +20,6 @@ I am 30 now and left to study in the US from that little developing country ten 
 
 But that is one thing I knew I hate about that socialist-by-name society: It's provides you with choices against you by default. When I moved to the US, I learned people don't necessarily have to act that way. That was a huge relief for me, given [I am genetically not good at predicting people's intentions](/posts/personal-genetics-and-me.html). But I am worried that the US is moving towards that way, first in the virtual space. And in the past few years, I think the tide is moving towards real life too. People are given the shitty defaults with stuff that fucks with them. Unless! Unless you do dodgy stuff you aren't comfortable with. Unless you know how to dance that dance to push the right button, to say the right magic words.
 
-I think that "unless" is very important. It separates good people with bad people, and people that make the world better and the people who make the world bend over for their interests. I wouldn't want to dance around that shit if I had a choice, even when I knew how to dance around that shit.
+I think that "unless" is very important. It separates good people with bad people, and people that make the world better and the people who make the world bend over for their interests. That "fact check" sorry piece of PR is no more than the shitty society that exploits their own citizens, and drown the people who with less knowledge and experience who need to float the most. I wouldn't want to dance around that shit if I had a choice, even when I knew how to dance around that shit.
 
 But that's just me.
