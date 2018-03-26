@@ -4,7 +4,7 @@ title: "Fact Check: Shitty by default"
 ---
 
 
-I just read the Facebook Newsroom PR article titled "[Fact Check: Your Call and SMS History](https://newsroom.fb.com/news/2018/03/fact-check-your-call-and-sms-history/)." It explains the facts about "we mine your data, but with your permission, you agreed to it yourself, you said it so yourself, man!" thing. And by that, they posted a huge screenshot explaining their side of the story, the opt-in screen:
+I've just read the Facebook Newsroom PR article titled "[Fact Check: Your Call and SMS History](https://newsroom.fb.com/news/2018/03/fact-check-your-call-and-sms-history/)." It explains the facts about "we mine your data, but with your permission, you agreed to it yourself, you said it so yourself, man!" thing. And by that, they posted a huge screenshot explaining their side of the story, the opt-in screen:
 
 ![Opt the fuck in](/assets/posts-images/fb_horse-shit_screen.png "Proof!")
 
