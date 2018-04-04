@@ -7,7 +7,7 @@ title : "Projects &amp; Research"
 
 - [Crankshaft](http://getcrankshaft.com) - Crankshaft is a turn-key GNU/Linux distribution for the Raspberry Pi that transforms it to an Android Auto headunit. Android then displays your apps to the big 7 inches screen of the RPi and gives you a car-optimized interface and experience so you can drive distraction-free. 
 
-- [Hackable hardware list](/hackable.html) - A list of consumer devices that are ubiquitous, cheap and have significant hacking values, many accidentally and unintended by the manufacturers.
+- [Hackable hardware list](https://github.com/htruong/hackable-consumer-hardware) - A list of consumer devices that are ubiquitous, cheap and have significant hacking values, many accidentally and unintended by the manufacturers.
 
 - [EzPi4ME](https://github.com/htruong/ezpi4me) - Easy Raspberry Pi image creation for removing the Intel ME. Make it dead simple for you to disable Intel ME on Chromebooks and Thinkpads. Experimental. Use with extreme care.
 
