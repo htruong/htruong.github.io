@@ -31,7 +31,7 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   enable_coderay: false
-
+  smart_quotes: ["apos", "apos", "quot", "quot"]
 
 # Octopress
 
