@@ -11,18 +11,18 @@ category: vietnamese
 
 BKED (pronounced `buh-ked`, `e` as in `kept`) was the de-facto text editor in Vietnam in the 80s-90s. It stands for Bach Khoa EDitor (Polytechnic Editor, for those who don't understand Vietnamese). It carries two meanings by that name. First, the name explains its origin, the University of Polytechnic (now renamed to Hanoi University of Science and Technology). Second, the name suggests it can edit many types of documents.
 
-BKED runs on MS-DOS and [looks just like edit.com](https://i.imgur.com/RZN50oS.jpg), except for it displays and allows the user to input text in Vietnamese. It has nothing really quite special at the first glance.
+BKED runs on MS-DOS and looks just like Microsft Editor aka `edit.com`, except for it displays and allows the user to input text in Vietnamese. It has nothing really quite special at the first glance.
 
 
 ![](/assets/posts-images/bked/bked1.png)
 
-_BKED, the ordinary editor._
+_BKED, the ordinary editor UI._
 
 Nowadays, we take for granted that we interact with any computer program using a Graphical User Interface - the GUI. However to use those kinds of interfaces we have to have complicated and fast hardware and sophisticated software that can draw stuff extremely quickly onto the screen. Older computers and programs don't do that. They just tell the hardware what text it wants displayed on the screen, and the hardware will display those texts. More advanced programs use what is called a Textual User Interface - the TUI -- basically the pseudo-GUI. The interface of the program edit.com you see below is a TUI. It looks like a GUI that has dialog boxes and buttons, but it's actually just different characters being displayed on the screen with different colors and shapes. For example, in the scroll bar you see there has a scroll up button. That scroll up button is actually just a character that display the `↑` symbol. In the olden days, coding for a commandline interface or a TUI is much easier compared to coding a GUI, because no one was around to make ready-to-use "widgets" for you, like a button with the word OK written inside it. If you want to have a GUI, you have to draw every pixel of that button on the screen, and you better be able to instruct the computer to do it very quickly. Doing that with no hardware support is extremely hard. If you want to have a TUI, you just tell the computer to put a character that stands for the `↑` symbol there -- you don't have to care about how the graphics card does it.
 
 ![](/assets/posts-images/bked/msedit.png)
 
-_Edit.com - the MS Editor - a TUI._
+_Edit.com - the Microsoft Editor's UI._
 
 Text displaying is a complicated business by itself already. Old (and new, to an extent) computers store text by encoding each character in the text into a number between 1 and 255. For example, the English alphabet has 26 characters (52 including capitalized characters). The rule according to which computers encode all the characters are encoded in American computers is called the [ASCII table](https://www.asciitable.com/). There are two parts of the ASCII table. First, the base table is coded with numbers 1-127 and has most usual things you need to use such as characters, numbers, and symbols. The rest, called the extended table, is coded with numbers from 128-255 has table-drawing characters and some other languages' symbols, for example the character `ñ` in Spanish, or the symbol `↑`, or character `|` to draw a part of the box or a table cell. The Vietnamese alphabet is Latin-extended, and it needs about 100 or so extra characters (capitalized characters included) besides the standard Latin alphabet. Thankfully, the extended ASCII table was just barely enough to hold the extended Vietnamese alphabet.
 
@@ -35,16 +35,15 @@ One of BKED's rivaling editors called VietRES did just that. With some other [Te
 
 _Backslashes no mo. [Yen all the way](https://superuser.com/questions/1167662/why-is-windows-10-displaying-as-%C2%A5-on-the-command-line/1167665)._
 
-Two years ago, I thought about BKED and realized that BKED had no problems drawing tables. It could even display bold and italic characters at the same time alongside with regular characters, which isn't possible with ordinary text-only programs. When I tried to run it in DOSBox, it was clear that BKED did something really clever to get around that limitation. I thought it might have used the [secondary font](http://webpages.charter.net/danrollins/techhelp/0155.HTM) to extend the number of characters it could display simultaneously to 512. If my suspicition turned out to be true then that is already very clever. 
+Two years ago, I thought about BKED and realized that BKED had no problems drawing tables. It could even display bold and italic characters at the same time alongside with regular characters, which isn't possible with ordinary text-only programs. When I tried to run it in DOSBox, it was clear that BKED did something really unusual to get around that limitation. I thought it might have used the [secondary font](http://webpages.charter.net/danrollins/techhelp/0155.HTM) to extend the number of characters it could display simultaneously to 512. If my suspicition turned out to be true then that is already very clever. 
 
 ![](/assets/posts-images/bked/bked2.png)
 
-So I updated my status on Facebook praising what Dr. Quach Tuan Ngoc, the author, did. Dr. Ngoc somehow was a friend of a friend of mine, saw that and chimed in. 
+So I updated my status on Facebook [1] praising what Dr. Quach Tuan Ngoc, the author, did. Dr. Ngoc somehow was a friend of a friend of mine, saw that and chimed in. 
 
 He said his editor doesn't run in textmode. 
 
 When I heard that, my mind was blown! It turns out, BKED is not a TUI program, it is a full-blown GUI that runs in Hercules/CGA/EGA/VGA graphics and just pretends to be a TUI. It draws every single pixel in its GUI with no acceleration whatsoever. It had to do it very quickly and economically -- computers in Vietnam at the time were all old secondhand ones imported from the US recycling centers and such. Now as I looked at it more, it was no surprise to me it could also do quite sophisticated mathematical formulas and chart drawing.
-
 
 ![](/assets/posts-images/bked/bked3.jpg)
 
@@ -60,7 +59,7 @@ Dr. Ngoc's work and contribution were well paid off -- he is now a very high-ran
 
 
 
-Update: I no longer have a Facebook account.
+1: I no longer have a Facebook account.
 
 
 
