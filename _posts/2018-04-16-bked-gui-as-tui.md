@@ -9,7 +9,7 @@ category: vietnamese
 
 .
 
-BKED (pronounce `buh-ked`, `e` as in `kept`) was the de-facto text editor in Vietnam in the 80s-90s. It stands for Bach Khoa EDitor (Polytechnic Editor, for those who don't understand Vietnamese). It carries two meanings by that name. First, the name explains its origin, the University of Polytechnic (now renamed as Hanoi University of Science and Technology). Second, the name suggests it can edit many types of documents.
+BKED (pronounced `buh-ked`, `e` as in `kept`) was the de-facto text editor in Vietnam in the 80s-90s. It stands for Bach Khoa EDitor (Polytechnic Editor, for those who don't understand Vietnamese). It carries two meanings by that name. First, the name explains its origin, the University of Polytechnic (now renamed as Hanoi University of Science and Technology). Second, the name suggests it can edit many types of documents.
 
 BKED runs on MS-DOS and [looks just like edit.com](https://i.imgur.com/RZN50oS.jpg), except for it displays and allows the user to input text in Vietnamese. It has nothing really quite special at the first glance.
 
