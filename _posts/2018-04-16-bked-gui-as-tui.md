@@ -13,13 +13,13 @@ BKED (pronounced `buh-ked`, `e` as in `kept`) was the de-facto text editor in Vi
 
 BKED runs on MS-DOS and [looks just like edit.com](https://i.imgur.com/RZN50oS.jpg), except for it displays and allows the user to input text in Vietnamese. It has nothing really quite special at the first glance.
 
-![](https://www.techsignin.com/wp-content/uploads/2016/05/xBKED-bach-khoa-editor-screenshot-2.png.pagespeed.ic.9AfJugv6PF.png)
+![](/assets/posts-images/bked/bked1.png)
 
-_BKED. Picture credits: Techsignin.com._
+_BKED, the ordinary editor._
 
 Nowadays, we take for granted that we interact with any computers program using a Graphical User Interface - the GUI. However to use those kinds of interfaces we have to have complicated and fast hardware and sophisticated software that can draw stuff on the screen. Older computers and programs don't do that. They just tell the hardware what text it wants displayed on the screen, and the hardware will display those texts for you. More advanced programs use what is called a Textual User Interface - the TUI -- basically the pseudo-GUI. The interface of the program edit.com you see below is a TUI. It looks like a GUI that has dialog boxes and buttons, but it's actually just different characters being displayed on the screen with different colors and shapes. For example, in the scroll bar, you see there is a scroll up button there, but it's actually just a character that display the `↑` symbol. In the olden days, coding for a commandline interface or a TUI is much easier compared to coding a GUI, because no one is around to make ready-to-use "widgets", like a button with OK written inside it,  for you. If you want to have a GUI, you have to draw every pixel of that button on the screen, and you better be able to instruct the computer to do it very quickly, which is extremely hard. If you want to have a TUI, you just tell the computer to put a character that stands for the `↑` symbol there -- you don't have to care about how the graphics card does it.
 
-![](http://thewindowsclub.thewindowsclubco.netdna-cdn.com/wp-content/uploads/2010/02/ms-dos-edit-600x317.png)
+![](/assets/posts-images/bked/msedit.png)
 
 _Edit.com - the MS Editor - a TUI._
 
@@ -29,17 +29,22 @@ Consequently, the obvious way to solve the problem of displaying any other langu
 
 BKED's rivaling editor, called VietRES, did just that. With some other [Terminate-and-stay-Resident](https://en.wikipedia.org/wiki/Terminate_and_stay_resident_program) tricks, VietRES made it possible for any text or TUI program on DOS to display and accept Vietnamese. However, it has a drawback that is it messed up the TUI of many programs because it had to override almost all of the extended ASCII characters, most notably box-drawing characters. It seemed to be an inevitable problem if you ever want to display Vietnamese characters with just ASCII: Either you can display boxes and tables and weird symbols, or you can display Vietnamese, but not both. The problem carried on up to Windows ME. Our Windows-based Vietnamese support program at that time overwrote the MS Sans Serif font and turned every `®` in every software install package to an `â`. Many other character sets had this problem, for example, in Japanese, the `\` was turned into the `¥` symbol.
 
-![](https://i.stack.imgur.com/zOD0C.png)
+![](/assets/posts-images/bked/yen.png)
 
 _Backslashes no mo. [Yen all the way](https://superuser.com/questions/1167662/why-is-windows-10-displaying-as-%C2%A5-on-the-command-line/1167665)._
 
-Two years ago, I thought about BKED and realized that BKED had no problems drawing tables. It could even display bold and italic characters at the same time alongside with regular characters, which isn't possible with ordinary text-only programs. When I tried to run it on DOSBox, it was clear that BKED did something really clever to get around that limitation. I thought it might have used the [secondary table](http://webpages.charter.net/danrollins/techhelp/0155.HTM) to extend the number of characters it could display to 512, which is pretty clever already. So I updated my status on Facebook praising whatever the author, Dr. Quach Tuan Ngoc, did. Dr. Ngoc, now an old man, somehow is a friend of a friend of mine, saw that and chimed in. 
+Two years ago, I thought about BKED and realized that BKED had no problems drawing tables. It could even display bold and italic characters at the same time alongside with regular characters, which isn't possible with ordinary text-only programs. When I tried to run it on DOSBox, it was clear that BKED did something really clever to get around that limitation. I thought it might have used the [secondary table](http://webpages.charter.net/danrollins/techhelp/0155.HTM) to extend the number of characters it could display to 512, which, if true, is pretty clever already. 
+
+![](/assets/posts-images/bked/bked2.png)
+
+
+So I updated my status on Facebook praising whatever the author, Dr. Quach Tuan Ngoc, did. Dr. Ngoc, now an old man, somehow is a friend of a friend of mine, saw that and chimed in. 
 
 He said his editor doesn't run in textmode. 
 
 When I heard that, my mind was blown! It turns out, BKED is not a TUI program, it is a full-blown GUI that runs in Hercules/CGA/EGA/VGA graphics and just pretends to be a TUI. It draws every single pixel in its GUI with no acceleration whatsoever. It had to do it very quickly and economically -- computers in Vietnam at the time were all old secondhand ones imported from the US recycling centers and such. Now as I looked at it more, it was no surprise to me it could also do quite sophisticated mathematical formulas and chart drawing.
 
-![](https://i.imgur.com/ofhE0TG.jpg)
+![](/assets/posts-images/bked/bked3.jpg)
 
 _BKED isn't limited to ASCII 256 characters thanks to having a GUI in disguise._
 
