@@ -35,8 +35,16 @@ Two years ago, I thought about BKED and realized that BKED had no problems drawi
 
 He said his editor doesn't run in textmode. 
 
-When I heard that, my mind was blown! It is not a TUI program, it is a full-blown GUI that runs in Hercules/CGA/EGA/VGA graphics and just pretends to be a TUI. It draws every single character in its GUI. It had to do it very quickly and economically -- computers in Vietnam at the time were all old secondhand ones imported from the US recycling centers and such. Now as I looked at it more, it was no surprise to me it could also do quite [sophisticated mathematical formulas and chart drawing](https://i.imgur.com/ofhE0TG.jpg). Thanks to its flexibility, the editor was used to typeset the whole suite of national textbooks on every subject in the 90s.
+When I heard that, my mind was blown! It is not a TUI program, it is a full-blown GUI that runs in Hercules/CGA/EGA/VGA graphics and just pretends to be a TUI. It draws every single character in its GUI. It had to do it very quickly and economically -- computers in Vietnam at the time were all old secondhand ones imported from the US recycling centers and such. Now as I looked at it more, it was no surprise to me it could also do quite sophisticated mathematical formulas and chart drawing.
 
-The author also wrote several other college-level textbooks. One of which was on Turbo Pascal: Indeed that book was the first I read on programming and Pascal was the first language I learned when I was 12. I remember his book spent a lot of chapters talking about graphics mode in Pascal and how to draw the Vietnamese national flag. It was quite amazing to see a waving flag at the time with a simple Pascal code. He might have been one of the first people to have done which we call now [the demoscene](https://en.wikipedia.org/wiki/Demoscene).
+![](https://i.imgur.com/ofhE0TG.jpg)
+
+_BKED isn't limited to ASCII 256 characters thanks to having a GUI in disguise._
+
+And BKED does all of that with less than 100KB. It takes less space to store the whole BKED program than to store the single small image you saw above. 
+
+Thanks to its flexibility, the editor was used to typeset the whole suite of national textbooks on every subject in the 90s.
+
+The author of BKED also wrote several other college-level textbooks. One of which was on Turbo Pascal: Indeed that book was the first I read on programming and Pascal was the first language I learned when I was 12. I remember his book spent a lot of chapters talking about graphics mode in Pascal and how to draw the Vietnamese national flag. It was quite amazing to see a waving flag at the time with a simple Pascal code. He might have been one of the first people to have done which we call now [the demoscene](https://en.wikipedia.org/wiki/Demoscene).
 
 Dr. Ngoc's work and contribution were well paid off -- he is now a very high-ranking official in the National Ministry of Education.
