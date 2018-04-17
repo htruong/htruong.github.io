@@ -4,4 +4,4 @@ name: Vietnamese
 color: '#aa0000'
 ---
 
-My Vietnamese writings.
+Vietnamese-related posts. Some are written in Vietnamese.
