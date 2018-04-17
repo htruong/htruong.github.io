@@ -47,6 +47,6 @@ And BKED does all of that with less than 100KB. It takes less space to store the
 
 Thanks to its flexibility, the editor was used to typeset the whole suite of national textbooks on every subject in the 90s.
 
-The author of BKED also wrote several other college-level textbooks. One of which was on Turbo Pascal: Indeed that book was the first I read on programming and Pascal was the first language I learned when I was 12. I remember his book spent a lot of chapters talking about graphics mode in Pascal and how to draw the Vietnamese national flag. It was quite amazing to see a waving flag at the time with a simple Pascal code. He might have been one of the first people to have done which we call now [the demoscene](https://en.wikipedia.org/wiki/Demoscene).
+The author of BKED also wrote several other college-level textbooks. One of which was on Turbo Pascal: Indeed that book was the first I read on programming and Pascal was the first language I learned when I was 12. I remember his book has several chapters talking about graphics mode in Pascal -- now it makes perfect sense. One of his exercises in one of the chapters was on drawing an animated Vietnamese national flag. It was quite amazing to see a waving flag at the time with a simple Pascal code. He might have been one of the first people in Vietnam to have done which we call now [the demoscene](https://en.wikipedia.org/wiki/Demoscene).
 
 Dr. Ngoc's work and contribution were well paid off -- he is now a very high-ranking official in the National Ministry of Education.
