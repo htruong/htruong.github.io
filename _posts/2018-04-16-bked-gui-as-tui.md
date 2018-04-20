@@ -4,7 +4,7 @@ title: "Tech wonder: BKED -- The Poly-edit program"
 category: vietnamese
 ---
 
-**Blurp**: _**Vietnamese Tech Wonders** is a series of blog posts about technological wonders made by Vietnamese people. This series will be written in English, and published on my blog as a special topic (by the red tag). The stories here tell tales technological advances and hacks by Vietnamese engineers that you might find interesting as a programmer. If you have a story, please feel free to reach out to me, I am constantly looking for wonderful stories to tell._
+**Blurp**: _**Vietnamese Tech Wonders** is a series of blog posts about technological wonders made by Vietnamese people. This series will be written in English, and published on my blog as a special topic (by the red tag). The stories here tell lesser-known technological advances and achievements by Vietnamese engineers, especially before Vietnam opened up to the world. If you have a story, please feel free to reach out to me, I am constantly looking for wonderful stories to tell._
 
 ---
 
