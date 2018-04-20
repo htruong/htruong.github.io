@@ -4,8 +4,7 @@ title: "Tech wonder: BKED -- The Poly-edit program"
 category: vietnamese
 ---
 
-**Blurp**: _**Vietnamese Tech Wonders** is a series of blog posts about technological wonders made by Vietnamese people. This series will be written in English, and published on my blog as a special topic (by the red tag) and [maintained on my Github repository](https://github.com/htruong/vietnamese_tech_wonders/). I suspect that part of the reason that some people think that [the world don't know much about the Vietnamese people and its tech industry](https://huyenchip.com/vietnamese/) wasn't because the country lacks talents. I hope that it is because there has been not many people who were willing to document those stories internationally, partly due to being isolated until 1995. So I'm here to blog about amazing stories and hacks by Vietnamese engineers that you might find interesting as a programmer or a tech person, whether you're Vietnamese or otherwise. If you have a story, please feel free to reach out to me, I am constantly looking for wonderful stories to tell._
-
+**Blurp**: _**Vietnamese Tech Wonders** is a series of blog posts about technological wonders made by Vietnamese people. This series will be written in English, and published on my blog as a special topic (by the red tag). The stories here tell tales technological advances and hacks by Vietnamese engineers that you might find interesting as a programmer. If you have a story, please feel free to reach out to me, I am constantly looking for wonderful stories to tell._
 
 ---
 
@@ -41,7 +40,7 @@ Two years ago, I thought about BKED and realized that BKED had no problems drawi
 
 So I updated my status on Facebook [1] praising what Dr. Quach Tuan Ngoc, the author, did. Dr. Ngoc somehow was a friend of a friend of mine, saw that and chimed in. 
 
-He said his editor doesn't run in textmode. 
+*He said his editor doesn't run in textmode.*
 
 When I heard that, my mind was blown! It turns out, BKED is not a TUI program, it is a full-blown GUI that runs in Hercules/CGA/EGA/VGA graphics and just pretends to be a TUI. It draws every single pixel in its GUI with no acceleration whatsoever. It had to do it very quickly and economically -- computers in Vietnam at the time were all old secondhand ones imported from the US recycling centers and such. Now as I looked at it more, it was no surprise to me it could also do quite sophisticated mathematical formulas and chart drawing.
 
@@ -57,7 +56,7 @@ The author of BKED also wrote several other college-level textbooks. One of whic
 
 Dr. Ngoc's work and contribution were well paid off -- he is now a very high-ranking official in the National Ministry of Education.
 
-
+--
 
 1: I no longer have a Facebook account.
 
