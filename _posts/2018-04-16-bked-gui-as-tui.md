@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Tech wonder: BKED -- The Poly-edit program"
+title: "Tech wonder: BKED - The Poly-edit program that rendered text the hard way"
 category: vietnamese
 ---
 
