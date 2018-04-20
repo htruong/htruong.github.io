@@ -42,6 +42,8 @@ So I updated my status on Facebook [1] praising what Dr. Quach Tuan Ngoc, the au
 
 *He said his editor doesn't run in textmode.*
 
+Holy shit.
+
 When I heard that, my mind was blown! It turns out, BKED is not a TUI program, it is a full-blown GUI that runs in Hercules/CGA/EGA/VGA graphics and just pretends to be a TUI. It draws every single pixel in its GUI with no acceleration whatsoever. It had to do it very quickly and economically -- computers in Vietnam at the time were all old secondhand ones imported from the US recycling centers and such. Now as I looked at it more, it was no surprise to me it could also do quite sophisticated mathematical formulas and chart drawing.
 
 ![](/assets/posts-images/bked/bked3.jpg)
