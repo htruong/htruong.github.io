@@ -10,10 +10,10 @@ One of the challenges while making Crankshaft was the amount of work that is not
 If commit is anything to be trusted as a quantitative measurement of the amount of work, then here is a primitive idea. I tried to tag every commit as either `[docs]` or `[script]` or something neither, and it turned out I have made about the same amount of commits in each category:
 
 ```
-htruong2@elsa:~/development/crankshaft$ git shortlog  | grep "\[docs\]" | wc -l
+htruong2@elsa:~/code/crankshaft$ git shortlog  | grep "\[docs\]" | wc -l
 51
 
-htruong2@elsa:~/development/crankshaft$ git shortlog  | grep "\[script\]" | wc -l
+htruong2@elsa:~/code/crankshaft$ git shortlog  | grep "\[script\]" | wc -l
 59
 ```
 
