@@ -9,7 +9,7 @@ One of the challenges while making [Crankshaft](http://getcrankshaft.com/) was t
 
 If commit is anything to be trusted as a quantitative measurement of the amount of work, then here is a primitive idea. I tried to tag every commit as either documentation or scripting/code or something neither, and it turned out I have made about the same amount of commits in each category:
 
-```
+```bash
 htruong2@elsa:~/code/crankshaft$ git shortlog  | grep "\[docs\]" | wc -l
 51
 
