@@ -7,7 +7,7 @@ category: crankshaft
 
 One of the challenges while making [Crankshaft](http://getcrankshaft.com/) was the amount of work that is not code. Basically, making Crankshaft means to answer emails, take care of the forums on Reddit, tag issues, documenting features, and getting people on board. It turned out that a feature that isn't well documented and no one uses is a waste of time implementing. So every time I created a feature, I had to spend just as much time testing. After that, I have to spend that amount of time writing about the feature, updating the wiki so users can understand and use it.
 
-If commit is anything to be trusted as a quantitative measurement of the amount of work, then here is a primitive idea. I tried to tag every commit as either documentation or scripting/code or something neither, and it turned out I have made about the same amount of commits in each category:
+If the number of commits is anything to be trusted as a quantitative measurement of the amount of work, then here is a primitive idea. I tried to tag every commit as either documentation or scripting/code or something neither, and it turned out I have made about the same amount of commits in each category:
 
 ```bash
 htruong2@elsa:~/code/crankshaft$ git shortlog  | grep "\[docs\]" | wc -l
