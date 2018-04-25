@@ -326,16 +326,19 @@ $button-size: 1.5rem;
 
 .post-category, .post-category:visited, .post-category:hover, .rss-button {
 	color: white;
-	padding: 0.05em 0.5em;
 	text-decoration: none;
-	font-size: 0.9em;
 	font-weight: bold;
 	display: inline-block;
 	text-align: center;
 }
 
-h2 .post-category {
-	padding: 0.25em 1em;
+article .post-category {
+	padding: 0.05em 0.5em;
+	font-size: 0.9em;
+}
+
+h2 .post-category, h2 .rss-button {
+	padding: 0.25em 0.75em;
 }
 
 .rss-button {
