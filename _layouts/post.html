@@ -39,7 +39,7 @@
       {% if page.link %}
         <h1>{{ page.title }} <a href="{{ page.link }}"> &rightarrow; </a></h1>
       {% else %}
-        <h1>{% if page.category %}<a class="post-category" style="background-color:{{ category.color }}" href="/topic/{{ page.category }}">{{ page.category }}</a> / {% endif %}{{ page.title }}</h1>
+        <h1>{% if page.category %}<a class="post-category category-{{category.slug}}" href="/topic/{{ page.category }}">{{ page.category }}</a> / {% endif %}{{ page.title }}</h1>
       {% endif %}
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">

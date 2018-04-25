@@ -75,7 +75,7 @@ defaults:
 # Site owner
 owner:
   name: "Huan Truong"
-  avatar: bio-photo.jpg
+  avatar: /images/bio-photo.jpg
   bio: "Basically a hacker"
   email: 
   disqus-shortname: tnhh

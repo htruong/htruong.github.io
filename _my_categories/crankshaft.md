@@ -1,7 +1,6 @@
 ---
 slug: crankshaft
 name: Crankshaft
-color: '#1abc9c'
 ---
 
 

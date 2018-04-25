@@ -35,7 +35,7 @@
   <div id="index">
 	  <!--<h1>{{ page.title }}</h1>-->
 	  <div><h2><!--<a href="/feed.xml"><img src="/asset
-s/xml.gif" alt="RSS XML" /></a>--> Blog posts in <span class="post-category" style="background-color:{{ page.color }}">{{ page.name }}</span></h2></div>
+s/xml.gif" alt="RSS XML" /></a>--> Blog posts in <span class="post-category category-{{ page.slug }}">{{ page.name }}</span></h2></div>
     <div>{{ content }}</div>
     {% if site.categories[page.slug] %}
     {% for post in site.categories[page.slug] %}

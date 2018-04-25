@@ -324,13 +324,34 @@ $button-size: 1.5rem;
 	}
 }
 
-.post-category, .post-category:visited, .post-category:hover {
+.post-category, .post-category:visited, .post-category:hover, .rss-button {
 	color: white;
-	background-color: lightgrey;
-	padding: 0.05em 1em;
+	padding: 0.05em 0.5em;
 	text-decoration: none;
 	font-size: 0.9em;
 	font-weight: bold;
+	display: inline-block;
+	text-align: center;
+}
+
+h2 .post-category {
+	padding: 0.25em 1em;
+}
+
+.rss-button {
+	margin-bottom: 2px;
+	background-color: orange;
+	font-size: 16px;
+}
+
+.category-vietnamese {
+	background-color: #aa0000;
+	min-width: 80px;
+}
+
+.category-crankshaft {
+	background-color: #1abc9c;
+	min-width: 80px;
 }
 
 /* Default social media links in author sidebar */

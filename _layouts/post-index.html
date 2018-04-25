@@ -34,8 +34,7 @@
   </div>
   <div id="index">
 	  <!--<h1>{{ page.title }}</h1>-->
-	  <div><h2><a href="/feed.xml"><img src="/asset
-s/xml.gif" alt="RSS XML" /></a> Blog posts</h2></div>
+	  <div><h2><a class="rss-button" href="/feed.xml">RSS</a> Blog posts</h2></div>
     {% for post in site.posts %}
 
     {% assign category = site.my_categories | where: "slug", post.category %}
@@ -43,9 +42,9 @@ s/xml.gif" alt="RSS XML" /></a> Blog posts</h2></div>
 
       <article>
         {% if post.link %}
-          <p>{{ post.date | date: '%m/%Y' }}:{% if post.category %} <a class="post-category" href="/topic/{{ post.category }}" style="background-color:{{ category.color }}">{{ post.category }}</a>{% endif %} <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> <a href="{{ post.link }}" target="_blank" title="{{ post.title }}"><i class="fa fa-link"></i></a></p>
+          <p>{{ post.date | date: '%m/%Y' }}:{% if post.category %} <a class="post-category category-{{category.slug}}" href="/topic/{{ post.category }}">{{ post.category }}</a>{% endif %} <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> <a href="{{ post.link }}" target="_blank" title="{{ post.title }}"><i class="fa fa-link"></i></a></p>
         {% else %}
-          <p>{{ post.date | date: '%m/%Y' }}:{% if post.category %} <a class="post-category" href="/topic/{{ post.category }}" style="background-color:{{ category.color }}">{{ post.category }}</a>{% endif %} <a href="{{ post.url }}">{{ post.title }}</a></p>
+          <p>{{ post.date | date: '%m/%Y' }}:{% if post.category %} <a class="post-category category-{{category.slug}}" href="/topic/{{ post.category }}">{{ post.category }}</a>{% endif %} <a href="{{ post.url }}">{{ post.title }}</a></p>
         {% endif %}
       </article>
     {% endfor %}
