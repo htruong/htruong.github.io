@@ -13,8 +13,7 @@ After two weeks working with it, here are my impressions:
 - The kit is generally well put together. The board looks very high-quality. It's called the Voice Bonnet.
 
 - The documentation is severely lacking. So extreme to the point that there isn't a single document detailing what each pin does on the HAT. This probably 
-will be improved over time, but given what I saw for the v1: it was not great 
-- not beyond the bare-bones. There were no schematic, even on an overview level.
+will be improved over time, but given what I saw for the v1: it was not great - not beyond the bare-bones. There were no schematic, even on an overview level.
 There was no datasheet.
 
 - The tutorials were easy to follow and worked just as expected. 
