@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "I don't give a s*** if my nudes are leaked"
+title: "'I don't care if my pictures are leaked'"
 ---
 
 Warning: This blog entry has strong languages. If you're offended by gender matters, please refrain yourself from reading.
