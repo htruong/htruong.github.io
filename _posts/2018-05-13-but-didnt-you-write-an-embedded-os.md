@@ -22,9 +22,11 @@ The trend of using hard technology is prevalent in tech-savvy people. Just today
 
 Recently, a close friend of mine who is a founder of a small company back home asked me to advise him on making a website/app to have "Uber for X" (X being his non-tech business). Upon talking, I realized if he wants to compete by making a good website/app, it's both hard and expensive to do. If his tech model turns out to be relatively successful, a medium-sized company in tech will be able to easily copy his model and out-compete him. Perhaps all he wants to do only need a website to advertise but he doesn't need a website or an app to execute. All he needs is an Excel spreadsheet and a relatively competent secretary to manage that spreadsheet and call people with demand and supply. But when you have a hammer that is Uber, the supply-and-demand problem starts to look like a nail, even when you don't have millions of people using it in real-time.
 
+And I see the same trend in Machine learning, Big data, AI, Cryptocurrency, Internet of Things, Social networks, Decentralized networks, etc. Everything in life, however trivial, is a nail that can be solved with those fancy hammers. So we can have a tablet juxtaposed on a fridge, a bluetooth speaker integrated to a salt shaker, a subscription model for juicers, and machine learning for all kinds of social problems.
+
 I enjoy hard problems a lot. In the last couple of years, working on CUDA kernels to do parallel string comparison is one of the topics I busted my chops on. Some problems are extremely hard and need really clever algorithms and tuning to solve. But alongside with those, there are problems that only need a generally good idea to solve with very little hard code required. 
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Google: 90% of our engineers use the software you wrote (Homebrew), but you can’t invert a binary tree on a whiteboard so fuck off.</p>&mdash; Max Howell (@mxcl) <a href="https://twitter.com/mxcl/status/608682016205344768?ref_src=twsrc%5Etfw">June 10, 2015</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-And that's the moment of enlightenment: Writing dumb scripts maybe my niche as a person who "wrote an embedded OS."
+And that's the moment of enlightenment: Writing dumb scripts may become my niche as a person who "wrote an embedded OS."
