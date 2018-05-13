@@ -6,7 +6,7 @@ title: "'But didn't you write an embedded OS?'"
 
 ![Containers](https://imgs.xkcd.com/comics/containers.png)
 
-I have been job hunting in the last 2 months or so. Thankfully, I am settled with a great choice now, and it seemed like I had more luck than the average job applicant. But among the handful of companies that I had the pleasure to interview with, I had my fair share of interesting moments.
+I have been job hunting in the last 2 months or so. Thankfully, I am settled with a company I admire now, and it seemed like I had more luck than the average job applicant. But among the handful of companies that I had the pleasure to interview with, I had my fair share of interesting moments.
 
 The very first interview I had with a startup company was one of them. I mentioned in the resume I sent that I made an distro for the Raspberry Pi called Crankshaft, which is related to the work that they are doing and got a phone interview appointment. We chatted for a bit to introduce ourselves to each other. After 30 minutes, I was asked whether I was in front of a computer (implying it will be a live coding exercise) out of the blue. To set the record straight, I'm totally happy to do live coding exercises, and I understand companies are fed up with impostors who "inflated" their experiences on their resume. However, in that instance, there was no indication it was coming even in the interview appointment email. Nonetheless, I figured I can swallow it. After all, I have been programming for more than a half of my life. I figured being able to code spontaneously shows that I am a fearless ninja warrior when it comes to programming :^).
 
