@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "#1: Do you believe in yourself?"
+title: "Do you believe in yourself?"
 category: crankshaft
 ---
 

@@ -1,10 +1,8 @@
 ---
 layout: post
-title: "#3: Crankshaft + Facebook = Announcing Carbook"
+title: "Crankshaft + Facebook = Announcing Carbook"
 category: crankshaft
 ---
-
-
 
 Today, after two months of negotiation, we're proud to announce the acquisition of [Crankshaft](http://getcrankshaft.com) by Facebook. We hope that you're just excited as we are when it comes to the new era of smart cars. Crankshaft's vision is and has always been to connect all the dumb cars in the world, just as Facebook's mission, connect all smart people in the world. 
 
@@ -42,3 +40,9 @@ Please look out for the whitepaper we'll release in the next week for our ICO. W
 Warmest regards,
 
 - Huan Truong, Carbook and K3's Product Manager.
+
+.
+
+_Edit: For people who are confused by this post, please note the date of publication._
+
+

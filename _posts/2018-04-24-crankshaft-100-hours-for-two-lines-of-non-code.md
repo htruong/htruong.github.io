@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "#4: 100 hours for two lines of non-code"
+title: "100 hours for two lines of non-code"
 category: crankshaft
 ---
 

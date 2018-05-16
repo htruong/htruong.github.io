@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "#2: My Chumby hacking story: Do you believe in the Users?"
+title: "My Chumby hacking story: Do you believe in the Users?"
 category: crankshaft
 ---
 
