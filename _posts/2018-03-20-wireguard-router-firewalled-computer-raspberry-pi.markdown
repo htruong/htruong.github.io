@@ -63,8 +63,8 @@ Then `dpkg -i` the repacked deb file. Now dpkg won't complain no more.
 Now generate two keypairs for the computer and the router. Do it on the computer Alice.
 
 ```bash
-$ wg keygen | tee alice_key.priv | wg pubkey | tee alice_key.pub
-$ wg keygen | tee bob_key.priv | wg pubkey | tee bob_key.pub
+$ wg genkey | tee alice_key.priv | wg pubkey | tee alice_key.pub
+$ wg genkey | tee bob_key.priv | wg pubkey | tee bob_key.pub
 ```
 
 Note that from now when I say `alice_key.priv`, it *always* means pasting whatever that is in `alice_key.priv`, not the filename.
@@ -80,7 +80,7 @@ your LAN subnet).
 3. Peers -> Pubkey -> Pub key: `alice_key.pub`. Allowed IPs: `192.168.2.2/32`
 -- and whatever IPs you want to access pass through Alice (as if Alice
 was your VPN provider. For example, like something else inside its firewalled
-network.
+network. Check "Route Allowed IPs."
 4. "Firewall Settings" tab: Assign firewall-zone: `WAN`.
 5. Remember to port-forward port `4500/UDP` on Bob to the router itself.
 
