@@ -28,6 +28,19 @@ article img {
 	-ms-interpolation-mode: bicubic;
 }
 
+article ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 1em;
+}
+
+article ul > li:before {
+    display: inline-block;
+    content: "–";
+    width: 1em;
+    margin-left: -1em;
+}
+
 svg:not(:root) {
 		overflow: hidden;
 }
