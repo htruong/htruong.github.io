@@ -3,7 +3,7 @@ layout: post
 title: "Shoving an Arduino into a pillow"
 ---
 
-Yesterday my friend sent me a link to [a giant Enter button](https://bluecrate.com/products/giant-enter-button) that sells for $18. He probably saw it on Facebook or something and thought I would find it funny. I thought the price was reasonable and it makes a good gag gift. Since I've just watched [a video about how many things that seem original are actually made in China](https://youtu.be/RDd10-poMm8?t=902), I wonder whether this is an original idea. So after 5 minutes of searching, I found the same product on [Alibaba](https://m.alibaba.com/product/60704020208/Factory-supply-giant-enter-button-for.html) for as low as $3 and as high as $5.
+Yesterday my friend sent me a link to [a giant Enter button](https://bluecrate.com/products/giant-enter-button) that sells for $18. He probably saw it on Facebook or something and thought I would find it funny. I thought the price was reasonable and it makes a good gag gift. Since I've just watched [a video about how many things that seem original are actually made in China](https://youtu.be/RDd10-poMm8?t=845), I wonder whether this is an original idea. So after 5 minutes of searching, I found the same product on [Alibaba](https://m.alibaba.com/product/60704020208/Factory-supply-giant-enter-button-for.html) for as low as $3 and as high as $5.
 
 ![](/assets/posts-images/giant-enter-button-1.png) ![](/assets/posts-images/giant-enter-button-2.png)
 
