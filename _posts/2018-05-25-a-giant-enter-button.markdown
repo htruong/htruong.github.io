@@ -45,11 +45,11 @@ The conversation at the place that resells it probably went like this:
 - That's hilarious! Let's buy it -- by the way, I'd share the cost with you.
 - Don't bother, it's 5 bucks. But wait, we have to buy 20 of them. What do we do with the rest?
 - It's so cheap, I don't care, just give one to everyone in the office. I'd pay 20 for one even.
-- Chad, come look, we think we are gonna buy this for everyone in the office. This giant button is like 5 bucks. It's hillarious.
+- Chad, come look, we think we are gonna buy this for everyone in the office. This giant button is like 5 bucks. It's hilarious.
 
 [Chad the manager came and look. 5 minutes later...]
 
-- Hey Diane, can you add this to our product catalogue, also can you create a new advertisement campaign for this as a gag gift? Just don't mention anything about the anti stress pillow crap. Remember to negotiate for a good drop shipping price before you put it online. Also -- Justin, how much did you say you're willing to pay?
+- Hey Diane, can you add this to our product catalog, also can you create a new advertisement campaign for this as a gag gift? Just don't mention anything about the anti-stress pillow crap. Remember to negotiate a good drop shipping price before you put it online. Also – Justin, how much did you say you're willing to pay?
 - 20.
 - OK. Diane, make it 17.99 so it doesn't start with 2. Can you guys help Diane with some funny poses?
 
