@@ -4,7 +4,7 @@ title: "The forgotten shameful hacker"
 ---
 
 
-When I used the word hacker nowadays, what I usually mean by that is a person who is able to pull a fun trick on a piece of hardware or software to make it do something unintended. That is fun and cool. That's the geeky definition of being a hacker - the kind we are peroud of admitting being. But in one period of my life, I used to be the kind of hacker that TV reporters mentioned: the popularist meaning of hacker. The bad one.
+When I used the word hacker nowadays, what I usually mean by that is a person who is able to pull a fun trick on a piece of hardware or software to make it do something unintended. That is fun and cool. That's the geeky definition of being a hacker - the kind we are proud of admitting being. But in one period of my life, I used to be the kind of hacker that TV reporters mentioned: the popularist meaning of hacker. The bad one.
 
 I remember being a 14 year old in 2001 or so, I had someone sending me an email asking if I was the one who sent spams from his free hosting service. The person who asked me that question was the sysadmin of a company. He informed me that he was fired from work because he hosted his server on the same infrastructure. I felt incredibly guilty and apologized to him. He, a Christian (a minority in Vietnam), said to me that's fine, just not do that in the future and pay it forward. He forgave me, and that was that. I never shared that story with anyone. I didn't understand what it felt like to be fired from a great job then.
 
