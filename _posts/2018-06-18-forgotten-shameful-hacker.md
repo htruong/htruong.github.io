@@ -31,5 +31,5 @@ At that point, I said something like:
 
 And continued on with her textbook lessons. I usually love the education in the US and look up to many professors. But for that alone, I know that time, having someone who wore that pair of shoes would help. A person that doesn't know how to hack into a system wouldn't understand the thought process and the nuances of being a young and stupid hacker. They really are among us and they keep coming. But just as you hardly ever see any Kung Fu master hurting other people for fun, and so do any true hacker.
 
-But I haven't contacted the friend I mentioned earlier. I am wondering if he, at a corner of the world, would think the same way I do now. I don't know. I didn't give myself the chance to know the adult person of his.
+But I haven't contacted the person I mentioned earlier. I am wondering if he, at a corner of the world, would think the same way I do now. I don't know. I didn't give myself the chance to know the adult person of his.
 
