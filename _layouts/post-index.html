@@ -34,8 +34,7 @@
   </div>
   <div id="index">
 	  <!--<h1>{{ page.title }}</h1>-->
-	  <div><h2><a class="rss-button" href="/feed.xml">RSS</a> Blog posts</h2></div>
-	  <div><h3><a target="_blank" href="https://spiderum.com/nguoi-dung/wasabi">🇻🇳Vietnamese blog</a></h3></div>
+	  <div><h2><a class="rss-button" href="/feed.xml">RSS</a> Blog posts (<a target="_blank" href="https://spiderum.com/nguoi-dung/wasabi">🇻🇳Vietnamese</a>)</h2></div>
     {% for post in site.posts %}
 
     {% assign category = site.my_categories | where: "slug", post.category %}
