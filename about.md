@@ -5,9 +5,10 @@ title : "About"
 
 My name is Huan Truong, the proper name is Trương NH Huân (hence the web address).
 
-I believe science and technology can change lives positively -- I am a proponent of Free Software and Open Science. I am also interested in the arts, cultures, languages. I lead a team to translate two Harry Potter books to Vietnamese as a high school student, and somehow didn't get sued. Since then, it got me to believe it's actually possible to push the boundary of what's possible in life a little bit by ad-hoc hacks that disturbs the status quo. Hence, I am "basically a hacker." Everything on this blog is a joke, I'm actually a dog.
+I believe science and technology can change lives positively -- I am a proponent of Free Software and Open Science. I am also interested in the arts, cultures, languages. I am a giant nerd.
 
-Every year, I try to give a short log of what that year has brought me and what got me impressed: [2017](/posts/favorite-things-2017.html).
+Professionally, my day job is software developer at Tesla.
+
 
 More about me:
 
