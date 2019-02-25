@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Hacking Amazon dash buttons, the hard way, with OpenWRT"
+title: "Hacking Amazon dash buttons with OpenWRT"
 ---
 
 
