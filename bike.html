@@ -76,13 +76,16 @@ title : "Bike tracking"
 					var lat = parseFloat(gpslocation[0]);
 					var lon = parseFloat(gpslocation[1]);
 					var alt = parseFloat(gpslocation[2]);
-					var timestamp = Date.parse(val.published_at);
 					*/
-
-					var point = JSON.parse(val.data);
-					var lat = point.lat;
-					var lon = point.lon;
-					var alt = point.a;
+					try {
+						var point = JSON.parse(val.data);
+						var lat = point.lat;
+						var lon = point.lon;
+						var alt = point.a;
+						var timestamp = Date.parse(val.published_at);
+					} catch(e) {
+						console.log("error while parsing json blob: " + e);
+					}
 
 					if (lat == 0.0 || lon == 0.0 || alt == 0.0) {
 						return;
