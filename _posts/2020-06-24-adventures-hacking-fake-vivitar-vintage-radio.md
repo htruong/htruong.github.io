@@ -19,7 +19,7 @@ First, I gutted the radio and saw that it has a main PCB with the LED panel dire
 
 ![Disassembled radio](/assets/posts-images/fake-radio-hack/radio-disassembled.jpg)
 
-The chip on the PCB isn’t something I recognized. Luckily, the knob and the hard buttons are on a separate breakout board and are connected to the mainboard via a connector.
+The chip on the PCB isn't something I recognized. Luckily, the knob and the hard buttons are on a separate breakout board and are connected to the mainboard via a connector.
 
 ![Main PCB](/assets/posts-images/fake-radio-hack/main-pcb.jpg)
 
@@ -37,9 +37,9 @@ I was surprised when the amp produced a very annoying hum. The hum was extremely
 
 ### Google AIY voice hat
 
-After giving up on the Audio Injector Zero + Amp solution, I tried a different route: Drive the speaker directly with the Google AIY voice bonnet hat. Because the Google AIY sound card doesn’t provide an easy way to set up on a plain raspbian, I just got their distro and started from there.
+After giving up on the Audio Injector Zero + Amp solution, I tried a different route: Drive the speaker directly with the Google AIY voice bonnet hat. Because the Google AIY sound card doesn't provide an easy way to set up on a plain raspbian, I just got their distro and started from there.
 
-The speaker was hum-free after switching to the Google AIY soundcard. The tradeoff was that the Google Voice Bonnet V2 sound card made the stack quite a bit thicker. It has a female row of pins soldered on it, so I couldn’t solder it directly on top of the Pi Zero.
+The speaker was hum-free after switching to the Google AIY soundcard. The tradeoff was that the Google Voice Bonnet V2 sound card made the stack quite a bit thicker. It has a female row of pins soldered on it, so I couldn't solder it directly on top of the Pi Zero.
 
 ![Sound cards](/assets/posts-images/fake-radio-hack/sound-cards.jpg)
 
@@ -113,7 +113,7 @@ I could test the Arduino implementation right on my development computer with `x
 
 ## The fake VFD LED screen
 
-The screen was the part that I had the most doubt about being able to control, because I have never worked with such a device before. Before trying to reverse-engineer it, I tried to look up similar 7-segment LED screens online hoping to find something similar. Those screens often have more than 8 pins (1 for the ground, 7 for each segment, and some more to select the digit. This one is nothing like that: It has only 7 pins. I wanted to give it up and just buy another screen that has a datasheet to save myself from trouble but I couldn’t find anything that would fit into the original cutout for the screen. So I had to bite the bullet and hack the LED screen (I had nothing better to do in the craziness of the pandemic).
+The screen was the part that I had the most doubt about being able to control, because I have never worked with such a device before. Before trying to reverse-engineer it, I tried to look up similar 7-segment LED screens online hoping to find something similar. Those screens often have more than 8 pins (1 for the ground, 7 for each segment, and some more to select the digit. This one is nothing like that: It has only 7 pins. I wanted to give it up and just buy another screen that has a datasheet to save myself from trouble but I couldn't find anything that would fit into the original cutout for the screen. So I had to bite the bullet and hack the LED screen (I had nothing better to do in the craziness of the pandemic).
 
 ### General workings
 
@@ -125,9 +125,9 @@ First, I was really annoyed because the screen is yet another custom device I ha
 
 ### Control the LED screen programmatically
 
-The question then became how to control this LED screen programmatically. It was clear to me I can’t possibly draw every segment by toggling the pins on and off in one whole sweep. Then I realized that I need to think of the LED screen like an [analog TV screen](https://www.youtube.com/watch?v=r38nVmxBfvM). Thus, each of the pins can be thought of as a horizontal scanline -- except they are not on the same “line”! This might be quite obvious to those who have dealt with CRTs in the past (which I have not), but it might be hard to imagine for those who grew up with LCDs.
+The question then became how to control this LED screen programmatically. It was clear to me I can't possibly draw every segment by toggling the pins on and off in one whole sweep. Then I realized that I need to think of the LED screen like an [analog TV screen](https://www.youtube.com/watch?v=r38nVmxBfvM). Thus, each of the pins can be thought of as a horizontal scanline -- except they are not on the same “line”! This might be quite obvious to those who have dealt with CRTs in the past (which I have not), but it might be hard to imagine for those who grew up with LCDs.
 
-Let’s say I want to draw the screen with segment 17, 18, and 11 lit up. That means I have to do two sweeps. First, pull pin 1 to GND and pull pin 2 to V_LED to light up segment 18. Then, pull pin 4 to GND and pull pin 1 and 7 to V_LED to light up segment 17 and 11 at once. Do it fast enough, and my eyes won’t be able to tell we are flashing them!
+Let's say I want to draw the screen with segment 17, 18, and 11 lit up. That means I have to do two sweeps. First, pull pin 1 to GND and pull pin 2 to V_LED to light up segment 18. Then, pull pin 4 to GND and pull pin 1 and 7 to V_LED to light up segment 17 and 11 at once. Do it fast enough, and my eyes won't be able to tell we are flashing them!
 
 I had to set up a matrix of the screen buffer of what segments I want to draw. Then I needed a function that goes around and pulls one of the 7 pins to GND. It needs to pull whatever pins that are responsible for the ON segments in that matrix to VCC. Whatever pin that I give it VCC, it will need to have 150K resistance to prevent LED burnout. I needed half of that resistance on each pin (VCC and GND), because the GND pin rotates throughout.
 
@@ -205,7 +205,7 @@ In slow motion, it looks quite trippy:
 
 ## Putting 1+1 together was not that easy
 
-I wanted the Arduino Pro Micro to handle both the LED screen drawing and the multimedia buttons, because I didn’t want to waste an extra Arduino board (Moreover, if I had used two Arduino boards I would have also needed a USB hub since the Pi 0 only has one USB port, and I don’t think I have space inside the radio compartment for it). My loop function looks like so:
+I wanted the Arduino Pro Micro to handle both the LED screen drawing and the multimedia buttons, because I didn't want to waste an extra Arduino board (Moreover, if I had used two Arduino boards I would have also needed a USB hub since the Pi 0 only has one USB port, and I don't think I have space inside the radio compartment for it). My loop function looks like so:
 
 ```cpp
 void loop() {
@@ -216,7 +216,7 @@ void loop() {
 
 Each procedure has to run pretty fast in the loop. How fast? For the screen to not flicker, I need it to refresh at 30Hz minimum. That means each “scanline” needs to take less than 4ms, as 1000(ms) / 30 (refreshes) / 7 (scanlines/refresh) = 4 ms/scanline.
 
-But life ain’t that easy! I could clearly see the flickerings in my LCD when I added `kbd_read` to the loop.
+But life ain't that easy! I could clearly see the flickerings in my LCD when I added `kbd_read` to the loop.
 
 ### Optimizing the button handling procedure
 
@@ -241,7 +241,7 @@ void kbd_loop() {
 ### Optimizing the screen drawing function
 
 
-Although not as important, the `scr_draw` function runs in a loop and it’s quite complex; it better be fast. I tried to give myself the exercise of accelerating the screen draw function. The `pinMode` and `digitalWrite` functions are not very performant. It turns out there’s a better way to do it: you can write to a set of PORT and DDR registers to set the values of a set of rows at once. Because of the pin layouts of the Pro Micro, I only have as many as 6 of them on the same PORT, and one has to be another. I settled with 6 of them on PORTB and 1 of them on PORTE (pin 7), so the fast draw function looks like so:
+Although not as important, the `scr_draw` function runs in a loop and it's quite complex; it better be fast. I tried to give myself the exercise of accelerating the screen draw function. The `pinMode` and `digitalWrite` functions are not very performant. It turns out there's a better way to do it: you can write to a set of PORT and DDR registers to set the values of a set of rows at once. Because of the pin layouts of the Pro Micro, I only have as many as 6 of them on the same PORT, and one has to be another. I settled with 6 of them on PORTB and 1 of them on PORTE (pin 7), so the fast draw function looks like so:
 
 ```cpp
 static const byte SCR_PORTE_POS = 6;
@@ -285,9 +285,9 @@ Now, everything worked and my screen (finally) no longer flickered!
 
 ### Controlling the LCD screen from the Raspberry Pi
 
-Next, I needed some way of communicating with the LCD screen from the Pi 0 to give it data to display. To make things easy, I set up a 115200 TTL serial connection and parsed the commands. For simplicity, the commands all have a fixed format and length `CXNNNN`. C is character C to signify the start of command, then X to signify command, then NNNN to signify the parameters. For example, to set the time to 14:00, I would have to send `CT1400`. It was quite trivial so I have nothing to write about it. 
+Next, I needed some way of communicating with the LCD screen from the Pi 0 to give it data to display. To make things easy, I set up a 115200 TTL serial connection and parsed the commands. For simplicity, the commands all have a fixed format and length `CXNNNN`. C is character C to signify the start of command, then X to signify command, then NNNN to signify the parameters. For example, to set the time to 14:00, I would have to send `CT1400`. It was quite trivial so I have nothing to write about it, other than this requires me to code up and track how many characters I have received and decide when to process the whole command. This task can be achieved through a quick-and-dirty [state machine](https://en.wikipedia.org/wiki/Finite-state_machine) -- a very important concept if you need to have any hope in tracking what state the system is in.
 
-The only thing I have to admit was that I didn’t understand how the switch statement works in C. Apparently, this is illegal:
+The only thing I have to admit was that I didn't understand how the switch statement works in C. Apparently, this is illegal:
 
 ```cpp
 static const byte SER_CMD_FIXED_LENGTH = 6;
@@ -316,7 +316,7 @@ It was because I redeclared `my_var`. Apparently everything in the switch statem
 
 I plugged in the contraption through a USB power sniffer-thingie and saw that the Arduino Pro Micro and the fake VFD LED screen consumped 0.02 A. Could I possibly squeeze more power from it? I tried everything I could with hardware timers/interrupts and nothing really drove down the power consumption. 
 
-In a desperate attempt to optimize the power consumption, I found out that there was a project called [Low-Power](https://github.com/rocketscream/Low-Power). It uses the hardware watchdog timer to keep the microcontroller in a special low power state and that shaves around 0.01A from total power consumption. However, the wakeup interval is very weird, the fastest I could do was 15ms. That’s four times slower than my slowest acceptable refresh rate (4ms/scanline). And rightfully so, it was really slow and made the screen flicker. But for some obscure reason that I don’t understand, the timer fires every 15ms when there are no USB data lines connected. However, as soon as you have USB data lines connected, the timer fires at 1ms. I don’t know why so, but it worked to my advantage, so I couldn’t complain. My loop function looks like so:
+In a desperate attempt to optimize the power consumption, I found out that there was a project called [Low-Power](https://github.com/rocketscream/Low-Power). It uses the hardware watchdog timer to keep the microcontroller in a special low power state and that shaves around 0.01A from total power consumption. However, the wakeup interval is very weird, the fastest I could do was 15ms. That's four times slower than my slowest acceptable refresh rate (4ms/scanline). And rightfully so, it was really slow and made the screen flicker. But for some obscure reason that I don't understand, the timer fires every 15ms when there are no USB data lines connected. However, as soon as you have USB data lines connected, the timer fires at 1ms. I don't know why so, but it worked to my advantage, so I couldn't complain. My loop function looks like so:
 
 ```cpp
 void loop() {
@@ -331,7 +331,7 @@ void loop() {
 }
 ```
 
-Note that the `millis()` function no longer returns the correct number of milliseconds passed. So, I had to manually count the number of milliseconds in a variable and make sure that each of the procedures I called doesn’t consume more than 1 ms. I had to eliminate all calls of `delay()` in the code, because that would not only make the screen flicker, but also surely mess up the counter. That was also tedious and inconvenient but quite trivial.
+Note that the `millis()` function no longer returns the correct number of milliseconds passed. So, I had to manually count the number of milliseconds in a variable and make sure that each of the procedures I called doesn't consume more than 1 ms. I had to eliminate all calls of `delay()` in the code, because that would not only make the screen flicker, but also surely mess up the counter. That was also tedious and inconvenient but quite trivial.
 
 And with that, I was able to drive down the power consumption of the Arduino to 0.01A. Fantastic!
 
@@ -342,9 +342,9 @@ I need the Pi as my fake radio to do three things for now:
 
 1. Play my songs through Airplay from my iPhone: [Shairport-sync](https://github.com/mikebrady/shairport-sync) is an excellent project.
 2. Handle multimedia buttons: [Triggerhappy](https://blog.0x79.com/raspberry-pi-volume-keys-with-triggerhappy.html) does the job.
-3. Tell the Arduino the time, as the Arduino doesn’t know itself.
+3. Tell the Arduino the time, as the Arduino doesn't know itself.
 
-Items 1 and 2 are pretty self-explanatory. For part 3, I was getting really lazy and sloppy. So while I could do things more efficiently and less error-prone, I just assume that the device comes up on the Pi as `/dev/ttyACM0` and this simple cron script syncs the time from the Pi to the Arduino every hour and at startup. I have found the Arduino to be surprisingly accurate, it doesn’t drift more than a minute after 24 hours, so it doesn’t need the Pi to tell it the time that often. 
+Items 1 and 2 are pretty self-explanatory. For part 3, I was getting really lazy and sloppy. So while I could do things more efficiently and less error-prone, I just assume that the device comes up on the Pi as `/dev/ttyACM0` and this simple cron script syncs the time from the Pi to the Arduino every hour and at startup. I have found the Arduino to be surprisingly accurate, it doesn't drift more than a minute after 24 hours, so it doesn't need the Pi to tell it the time that often. 
 
 ```bash
 #CTXXX sets the time
