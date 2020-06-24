@@ -7,7 +7,9 @@ title : "My venture in hacking a fake vintage radio"
 
 For a year or so I have owned a nice fake-vintage radio/bluetooth speaker that originally caught my eye for sale in a FedEx office. The front has a quite nice VFD-style LED to show the status, a volume knob and four hard buttons. It has Bluetooth, USB, AUX and FM input. The radio and bluetooth was not bad, but there was nothing to be impressed about. It was definitely not "smart."
 
-Since it was very inexpensive, I decided to hack it to make it a bit smarter: to do AirPlay and be a smart alarm clock and whatever else I could think of. Since it was cheap, I had nothing to lose and everything to win. I thought putting a Raspberry Pi 0 or something in it would be nice. My original plan was to somehow figure out how to hijack all the external components and control them to make the front and back of the radio as neat-looking as possible. At least I hoped to hijack the speaker, the volume knob, and the buttons. The problem I foresaw was that those components are often not documented and there was little chance that I could get a datasheet for them. I was very worried that I might have to give up the fake-VFD LED screen.
+I decided to hack it to make it a bit smarter: to do AirPlay and be a smart alarm clock and whatever else I could think of. Since it was inexpensive, I had nothing to lose and everything to win. I thought putting a Raspberry Pi 0 or something in it would be nice. 
+
+My original plan was to somehow figure out how to hijack all the external components and control them to make the front and back of the radio as neat-looking as possible. At least I hoped to hijack the speaker, the volume knob, and the buttons. The problem I foresaw was that those components are often not documented and there was little chance that I could get a datasheet for them. I was very worried that I might have to give up the fake-VFD LED screen.
 
 It turns out that I had to spend a year hacking it on and off. Here goes.
 
