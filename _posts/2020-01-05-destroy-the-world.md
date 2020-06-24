@@ -14,3 +14,5 @@ The other day my sweet friend of 15 years spent half a day lecturing me about ho
 Now as I am aware of it, I am contemplating actually destroying the Earth by buying nice clothes in 2020 to offset my negative carbons.
 
 Regardless, I think when I die, no one will remember me because of my wonderful taste of fashion, just like pretty much everything else about me. I figure in an ever more competitive world, it's hard to be a legendary icon.
+
+PS: You should know that I wrote this back in January as a satire. I didn't know beforehand that the world actually burns in hell in 2020.
