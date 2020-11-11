@@ -32,7 +32,9 @@ Next steps
 
 2. Please use the company's website. Please don't use LinkedIn job postings.
 
-3. You don't have to let me know that you want to apply for a posting. Please email me personally after you've applied for the job and include the URL of that job posting. I am personally much less active on LinkedIn and Facebook.
+3. You don't have to let me know that you want to apply for a posting. Please email me personally and we can talk about your relevant experiences after you've applied for the job and include the URL of that job posting. I am personally much less active on LinkedIn and Facebook.
+
+At the end of the day, I hope you the best of luck. I hope this post does not come to you as arrogant, I'm describing a process I know. I hope you have fun at work and life like I do. I hope that you will be my co-worker, and better yet, my boss, one day.
 
 FAQs
 --
