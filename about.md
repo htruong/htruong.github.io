@@ -7,7 +7,7 @@ My name is Huan Truong, the proper name is Trương NH Huân (hence the web addr
 
 I believe science and technology can change lives positively -- I am a proponent of Free Software and Open Science. I am also interested in the arts, cultures, languages. I am a giant nerd.
 
-Professionally, my day job is software developer at Tesla.
+Professionally, my day job is software developer at Tesla. If you want me to refer you for a job, [please read this](/refer.html).
 
 
 More about me:
