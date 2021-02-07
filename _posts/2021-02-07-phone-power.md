@@ -1,6 +1,6 @@
 ---
 layout : "post"
-title : "Your phone and the power you have"
+title : "Your phone vs. Supercomputers"
 ---
 
 Today, I looked up how many [floating point operations per second](https://en.wikipedia.org/wiki/FLOPS) (FLOPS) that an iPhone can do. It turns out the A14 chip in the iPhone [can do about 11 TFlOPS according to Apple](https://www.forbes.com/sites/moorinsights/2020/10/15/apple-claims-the-iphone-12s-a14-bionic-challenges-laptops-but-gives-no-details/). Let's give Apple the benefits of the doubt and not get too deep into how they got that number, and put it to perspective and compare the iPhone with the [Top 500 Supercomputers](https://en.wikipedia.org/wiki/History_of_supercomputing) in the world over the years:
@@ -17,3 +17,5 @@ Reflecting on that, I figured:
 - On the other hand, I don't need to have the most whizz-bang computer or phone to make programs that do amazing things. Writing programs for older hardware can be a pleasure. Supporting older hardware makes programs I create more accessible to a larger part of the human population.
 - As a programmer, when I complain about the phone or any computer I have is not powerful enough for whatever I want to do, it's much more likely it's me doing something wrong.
 - The world changes faster than my mind conceives. I need to be humble about what I know. Things I know to be fast becomes slow sooner than I expect. In the same realm, maybe ideas that I know to be good become bad sooner than I expect. Those ideas are not necessarily limited to technology: Maybe ideas in science, humanities, and society also envolve that way. It is just harder to put into numbers like TFLOPS.
+
+We have the most power computer in our pocket. Doing something amazing with it should be something that is on our mind. All that power just to push one more ads is a fucking stupid and disgusting idea.
