@@ -18,4 +18,4 @@ Reflecting on that, I figured:
 - As a programmer, when I complain about the phone or any computer I have is not powerful enough for whatever I want to do, it's much more likely it's me doing something wrong.
 - The world changes faster than my mind conceives. I need to be humble about what I know. Things I know to be fast becomes slow sooner than I expect. In the same realm, maybe ideas that I know to be good become bad sooner than I expect. Those ideas are not necessarily limited to technology: Maybe ideas in science, humanities, and society also envolve that way. It is just harder to put into numbers like TFLOPS.
 
-We have the most power computer in our pocket. Doing something amazing with it should be something that is on our mind. All that power just to push one more ads is a fucking stupid and disgusting idea.
+We have the most power computer in our pocket. Doing something amazing with that power should constantly be a question on our mind. All that power just to push one more ads is a fucking stupid and disgusting idea.
