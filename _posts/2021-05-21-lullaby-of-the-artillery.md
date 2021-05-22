@@ -17,36 +17,36 @@ It's not hard to see the parallel between Trinh and Dylan. Dylan wrote "Blowing 
 
 Here is the translation of the banned lyrics that I listened to since I was 3 on the radio cassette player. Strange enough, it was a lullaby, to me, at least.
 
->Night after night fall shells t'wards town
-A sweeper stops her broom to hear
-As shells do fly, a mother wakes
-As shells do fly, a child's soft cry
-Bright flares burst open above the mountains
+>Night after night fall shells t'wards town\
+>A sweeper stops her broom to hear\
+>As shells do fly, a mother wakes\
+>As shells do fly, a child's soft cry\
+>Bright flares burst open above the mountains
 
->Night after night fall shells t'wards town
-A sweeper stops her broom to hear
-Each round's dark trip, a child in fright
-A shelter hit--O! Horrid sight
-Each night keeps flashing the face of our land
+>Night after night fall shells t'wards town\
+>A sweeper stops her broom to hear\
+>Each round's dark trip, a child in fright\
+>A shelter hit--O! Horrid sight\
+>Each night keeps flashing the face of our land
 
->O! Tons of bombs fall on the gate
-The bombs like rain fall on our fields
-A house burns red at the end of the lane
-Grenades, claymores the trucks haul down
-Such endless stores they bring through town
-Our mothers' bones lie everywhere
+>O! Tons of bombs fall on the gate\
+>The bombs like rain fall on our fields\
+>A house burns red at the end of the lane\
+>Grenades, claymores the trucks haul down\
+>Such endless stores they bring through town\
+>Our mothers' bones lie everywhere
 
->Night after night fall shells t'wards town
-A sweeper stops her broom to hear
-Night after night, the future quakes
-As shells like empty prayers repeat
-A child half-living each night waits listening
+>Night after night fall shells t'wards town\
+>A sweeper stops her broom to hear\
+>Night after night, the future quakes\
+>As shells like empty prayers repeat\
+>A child half-living each night waits listening
 
->Night after night fall shells t'wards town
-A sweeper stops her broom to hear
-Each night, the rounds, they sing for us
-Familiar sounds, like sad refrains
-What child will ever see home again.
+>Night after night fall shells t'wards town\
+>A sweeper stops her broom to hear\
+>Each night, the rounds, they sing for us\
+>Familiar sounds, like sad refrains\
+>What child will ever see home again.
 
 _(Translated by Rich Fuller)_
 
