@@ -76,7 +76,7 @@ defaults:
 owner:
   name: "Huan Truong"
   avatar: /images/bio-photo.jpg
-  bio: "Hacks and stuff"
+  bio: "Notes from a developer"
   email: 
   disqus-shortname: tnhh
   twitter: #huant
@@ -90,7 +90,7 @@ owner:
   bing-verify:
   github: htruong
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
-  linkedin: huantruong 
+  linkedin: #huantruong 
   xing: #username
   instagram: #username
   lastfm: #username
