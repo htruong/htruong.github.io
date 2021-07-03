@@ -39,9 +39,11 @@ I thought it would be possible to do such a latency test for Vietnamese IME acro
 
 Since I don't type fast enough or consistently enough, I thought to make a piece of hardware to type for me. My initial thought was to use an Arduino to send the keystrokes. However, since I have a Raspberry Pico laying around, I decided it's time for me to learn Raspberry Pi Pico. I modified the tinyUSB's HID composite example so that when I hold the button on the Pico, the Pico will send the HID keys as follows: `### Tieengs Vieetj thaatj giauf vaf ddepj<Enter>`, where `###` is the sequence number, it increases by one for each line. The leading number is typed by the microcontroller itself to help me keep track of how many lines have been typed since I started holding the button. With the help of the IME on the host computer, the computer will output something like `012 Tiếng Việt thật giàu và đẹp`. 
 
-Sending keys to the computer via the HID protocol is not straightforward. Ben Eater mentioned that USB is a polling protocol. The host computer checks for the key on the keyboard every so often. TinyUSB library allows the guest device to configure that interval. I configured it to the highest frequency possible -- that is `1000Hz` (the host computer is supposed to poll every `1ms`). It means that theoretically, I can send 1000 keyboard events every second. Now we have to send a key-up event for each key-down event so that halves the number of keyboard events we can send to 500 events per sec.
+Next is to figure out how fast should we make the keyboard type. Sending keys to the computer via the HID protocol is not straightforward. Ben Eater mentioned that USB is a polling protocol. The host computer checks for the key on the keyboard every so often. TinyUSB library allows the guest device to configure that interval. I configured it to the highest frequency possible -- that is `1000Hz` (the host computer is supposed to poll every `1ms`). It means that theoretically, I can send 1000 keyboard events every second. Now we have to send a key-up event for each key-down event so that halves the number of keyboard events we can send to 500 events per sec.
 
-Other than polling rate, there are other interesting tidbits as well. It seems that the [standard HID protocol allows us to specify 6 simultaneous keyboard scancodes](https://www.devever.net/~hl/usbnkro) on every poll (event). So with effort, we can stress the system to `500*6=3000` keystrokes per second. However, I decided 500 keystrokes per second is probably a good start.
+Other than polling rate, there are other interesting tidbits as well. It seems that the [standard HID protocol allows us to specify 6 simultaneous keyboard scancodes](https://www.devever.net/~hl/usbnkro) on every poll (event). So with effort, we can stress the system to `500*6=3000` keystrokes per second. However, I decided 500 keystrokes per second is probably good enough. 
+
+I don't think any human being can achieve the rate of 500 keystrokes per second consistently. However, we have to keep in mind that human keystrokes are very bursty, we can probably type a word we're familiar with really fast.
 
 So I tested it on a couple of systems. I have the following setups:
 
@@ -79,7 +81,7 @@ Remarks:
 Conclusion
 --
 
-It is easy to see that the keyboard feels slow is not just a subjective experience. It is true that with some programs/hardware, the computer can lag behind your keystrokes, especially when combined with a buggy or slow IME. 
+It is easy to see that the keyboard feels slow is not just a subjective experience. It is true that with some programs/hardware, the computer can lag behind your keystrokes and can even produce incorrect result when you type too fast. This issue is especially observable when combined with a buggy or slow IME. 
 
 Both macOS and Linux trailed behind Windows in terms of accuracy and performance even when compared to a very old Windows computer.
 
