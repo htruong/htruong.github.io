@@ -1,6 +1,6 @@
 ---
 layout : "post"
-title : "Investigating the outrageous claim of your computer not keeping up with your typing"
+title : "Is your computer too slow to keep up with your typing?"
 ---
 
 
