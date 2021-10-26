@@ -10,15 +10,15 @@ Occasionally, I get job referrals requests from friends and aspiring students. I
 
 As a rule of thumb, the recruiter will ask me if I can personally vouch for the applicant. I'm going to try my best to answer yes to the question if I have any reason to. So:
 
-1. **Are you looking for a Software Engineering job?** Generally, if you're not looking for SWE positions, I cannot refer you personally. As a side note, I am generally unable to evaluate works in the field of Machine Learning and Data Analyst. 
+1. **Are you looking for a Software Engineering job?** If you are not, I can't write too much about you personally, it means your chance doesn't generally improve compared to just applying it straight on their website. Additionally, I am unable to evaluate works in the field of Machine Learning and Data Analyst. 
 
-2. **Answering "yes" to any of the following questions will improve your chance of getting a personal referral email from me to the recruiter**. If I can't write you a personal referral letter, you'll have the same chance if you just go ahead and apply for the position without my referral.
+2. **Answering "yes" to any of the following questions will improve your chance of getting a personal referral email from me**:
 
 a. Do your projects have anything in common with what I do (System software, Linux)? Have we collaborated before?
 
-b. Do you have experience working on collaborative software projects?
+b. Do you have experience working on collaborative software projects or companies?
 
-c. Do you have a project that is critically received by the software community? For example, a project that gets on the front page of Hacker News, Slashdot, or Hackaday will do.
+c. Do you work on an important project that is critically received by the software community?
 
 d. Do you have a presence online, an interesting portfolio, or peer-reviewed research papers?
 
@@ -35,7 +35,7 @@ Next steps
 
 2. Please use the company's website. Please don't use LinkedIn job postings.
 
-3. You don't have to let me know that you want to apply for a posting. Please email me personally and we can talk about your relevant experiences after you've applied for the job and include the URL of that job posting. I am personally much less active on LinkedIn and Facebook.
+3. Send me the email that includes the URLs of all job postings you're planning to apply. I am personally much less active on LinkedIn and Facebook.
 
 At the end of the day, I hope you the best of luck. I hope this post does not come to you as arrogant, I'm describing a process that is "less fun" for me to you. I hope you have fun at work like I do. I hope that you will be my co-worker, and better yet, my boss, one day.
 
@@ -44,7 +44,7 @@ FAQs
 
 Here are some of the most common questions that I have received over the years:
 
-1. *Don't you get a bonus when referring me?* I do not get any bonus whatsoever when you get hired.
+1. *Don't you get a bonus when referring me?* I do, according to the new rules (But that doesn't mean that I will refer everyone to chase the bonus).
 
 2. *What if I don't hear anything back?* That means you're not selected. Please don't be discouraged because SV companies are very selective. They have thousands of applicants per day. It's highly likely that they missed you. I have failed many times before.
 
@@ -54,6 +54,6 @@ Here are some of the most common questions that I have received over the years:
 
 Here are some of the more awkward questions, but I think worth mentioning:
 
-1. *I am a Ph.D. student/Postdoc. I am not going to pursue academia.* There are no problems with that. However, you have to be willing to accept that you'll do something different and you will do the job that your employer wants you to do. It's unlikely you'll be hired to continue your doctoral research.
+1. *I am a Ph.D. student/Postdoc. I am not going to pursue academia. Is it a problem?* There are no problems with that. However, you have to be willing to accept that you'll do something different and you will do the job that your employer wants you to do. I don't know about ML/AI, but for general Engineering positions, it's unlikely you'll be hired to continue your doctoral research.
 
 2. *I am working on X, a highly valuable technology. Please let me know how to approach your boss/CEO.* I have no expertise to tell whether your claims are credible. I am a software engineer and not a manager. Please find another way to contact the person.
