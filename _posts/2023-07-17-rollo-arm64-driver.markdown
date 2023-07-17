@@ -3,11 +3,11 @@ layout : "post"
 title : "Notes on installing Rollo/Beeprt CUPS driver for Raspberry Pi OS (Arm64)"
 ---
 
-TLDR: If you just want your darn Rollo Thermal Printer to work and don't mind running some binary blobs from me with sudo permissions, then here comes the tarred driver: [`Rollo_arm64.tar.gz`](/downloads/Rollo_arm64.tar.gz). Just untar it, run `sudo ./install.sh`, then go to the CUPS admin interface, add new printer, pick the PPD file that you just extracted from this package. I also patched the PPD file to solve some typos from Rollo PPD definitions, you're welcome. 
+TLDR: If you just want your darn Rollo Thermal Printer to work with Raspberry Pi OS and don't mind running some binary blobs from me with sudo permissions, then here comes the tarred driver: [`Rollo_arm64.tar.gz`](/downloads/Rollo_arm64.tar.gz). Just untar it, run `sudo ./install.sh`, then go to the CUPS admin interface, add new printer, pick the PPD file that you just extracted from this package. I also patched the PPD file to solve some typos from Rollo PPD definitions, you're welcome. 
 
 If you want to not trust me with binary blobs, then read on.
 
-The long explanation: If you encounter errors complaining about "Filter errors" while trying to get the Rollo USB Thermal Printer to work with your Arm64 Raspberry Pi, it's because Rollo [released the driver for Arm32 only](https://www.rollo.com/driver-linux/), without being explicit about the driver being 32-bit only. I suppose they released this driver some time ago when Raspberry Pi OS was 32-bit.
+If you encounter errors complaining about "Filter errors" while trying to get the Rollo USB Thermal Printer to work with your Arm64 Raspberry Pi, it's because Rollo [released the driver for Arm32 only](https://www.rollo.com/driver-linux/), without being explicit about the driver being 32-bit only. I suppose they released this driver some time ago when Raspberry Pi OS was 32-bit.
 
 ```bash
 $ ./install.sh
@@ -22,4 +22,4 @@ So if you're looking for using the Raspberry Pi as a thermal print server, you s
 
 Hope that saved you some frustrations with their driver situation. 
 
-PS: Rollo is a good thermal printer, I have no problems with it. It has been one of my favorite tech items as I ship stuff for Ebay/friends from time to time and having it is very convenient. With this driver, I could print from my iPhone, which is very convenient.
+PS: Rollo is a good thermal printer, I have no problems with it. It has been one of my favorite tech items as I ship stuff for Ebay/friends from time to time and having it is very convenient. With this driver, I could print from my iPhone, which is nice.
