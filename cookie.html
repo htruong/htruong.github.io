@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Domain Cookie</title>
+</head>
+<body>
+    <h1>Set Cookie for tnhh.net and Subdomains</h1>
+    <h2>Internal use only, you have no business to be here</h2>
+    <p>But if you're here anyways, it's not exactly a problem, but you'll find this page to be useless.</p>
+    <input type="text" id="cookieName" placeholder="Cookie Name">
+    <input type="text" id="cookieValue" placeholder="Cookie Value">
+    <button onclick="setCookie()">Set Cookie</button>
+
+    <script>
+        function setCookie() {
+            const name = document.getElementById('cookieName').value;
+            const value = document.getElementById('cookieValue').value;
+            const expirationDate = new Date();
+            expirationDate.setMonth(expirationDate.getMonth() + 3);
+
+            document.cookie = `${name}=${value}; domain=.tnhh.net; path=/; expires=${expirationDate.toUTCString()}`;
+            alert('Cookie set successfully! Expires in 3 months.');
+        }
+    </script>
+</body>
+</html>
