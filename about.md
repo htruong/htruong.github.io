@@ -22,6 +22,6 @@ Notes:
 **More about me**
 
 - [Contact Information](/vc) - After importing my contact card, you can contact me by email, [tweet](https://twitter.com/huant), or give me a Signal message. I have a [Facebook account](https://www.facebook.com/horseradix), which I write in Vietnamese from time to time.
-- [Resume (PDF)](/resume.pdf) (outdated but too lazy to update).
+- [Resume (PDF)](/resume.pdf) (Dec 2025)
 - [Scholar Profile](https://scholar.google.com/citations?user=ZTuFnawAAAAJ&hl=en). [Publons Profile](https://publons.com/a/1402833/). [Orcid ID 0000-0003-1595-3202](https://orcid.org/0000-0003-1595-3202).
 - [Google "bug hunting" Profile](https://bughunter.withgoogle.com/profile/d5f16dfd-6636-4460-ac1b-24d6c9bbb4b2) I had it after selling a domain to Google `;^)`.
