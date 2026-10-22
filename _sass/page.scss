@@ -18,6 +18,8 @@ body {
 	font-family: $heading-font;
 	font-weight: 700;
 	text-transform: uppercase;
+	// Gorton Digital has no bold, so thicken the strokes a little
+	-webkit-text-stroke: 0.7px currentColor;
 	@include clearfix;
 }
 
@@ -68,12 +70,28 @@ body {
 		@media #{$small} {
 			white-space: nowrap;
 		}
+		// Keycap-style buttons
 		a {
-			display: inline;
-			padding: 10px 20px;
-			margin-right: 1em;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			box-sizing: border-box;
+			width: 5em;
+			height: 5em;
+			padding: 0.5em;
+			margin: 0 0.75em 0.75em 0;
+			vertical-align: top;
+			text-align: center;
+			line-height: 1.2;
+			white-space: normal;
 			text-decoration: none;
-			border-bottom: 1px solid gray;
+			border: 1px solid gray;
+			border-radius: 6px;
+			transition: background-color .15s;
+			&:hover,
+			&:focus {
+				background-color: #e6e6e6;
+			}
 		}
 	}
 }
@@ -324,6 +342,14 @@ $button-size: 1.5rem;
 	}
 }
 
+/* Month/year in post lists */
+.post-date {
+	font-family: $heading-font;
+	// Gorton has no tabular digits (its "1" is narrow), so pad every date to the widest one
+	display: inline-block;
+	min-width: 5.3em;
+}
+
 .post-category, .post-category:visited, .post-category:hover, .rss-button {
 	color: white;
 	text-decoration: none;
@@ -361,7 +387,6 @@ h2 .post-category, h2 .rss-button {
 .author-social {
   display: block;
   margin-bottom: 5px;
-  @include font-rem(14);
   color: $black;
   &:visited {
     color: $black;
@@ -392,7 +417,8 @@ h2 .post-category, h2 .rss-button {
 			/*max-width: 125px;*/
 		}
 		h3 {
-			margin-top: 10px;
+			// Lines the name's baseline up with the first h2 in the main column
+			margin-top: 1.35rem;
 			margin-bottom: 10px;
 		}
 		p {

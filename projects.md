@@ -3,15 +3,6 @@ layout : "page"
 title : "Projects &amp; Research"
 ---
 
-Active projects
---
-
-- [Crankshaft](http://getcrankshaft.com): Crankshaft is a turn-key GNU/Linux distribution for the Raspberry Pi that transforms it to an Android Auto headunit.
-- [Hackable hardware list](https://github.com/htruong/hackable-consumer-hardware): A list of consumer devices that are ubiquitous, cheap and have significant hacking values, many accidentally and unintended by the manufacturers.
-- [EzPi4ME](https://github.com/htruong/ezpi4me): Easy Raspberry Pi image creation for removing the Intel ME. Make it dead simple for you to disable Intel ME on Chromebooks and Thinkpads. Use with extreme care.
-- [High-altitude Balloon](http://hab.education/): Collaborating with Dustin Mayfield-Jones, Derek Sigler, Don Bindner, et al. Yes we launch balloons to near-space. 
-
-
 Research and publications
 --
 
@@ -21,6 +12,10 @@ Please look at my [Google Scholar Profile](https://scholar.google.com/citations?
 Minimally maintained projects
 --
 
+- [Crankshaft](http://getcrankshaft.com): Crankshaft is a turn-key GNU/Linux distribution for the Raspberry Pi that transforms it to an Android Auto headunit.
+- [Hackable hardware list](https://github.com/htruong/hackable-consumer-hardware): A list of consumer devices that are ubiquitous, cheap and have significant hacking values, many accidentally and unintended by the manufacturers.
+- [EzPi4ME](https://github.com/htruong/ezpi4me): Easy Raspberry Pi image creation for removing the Intel ME. Make it dead simple for you to disable Intel ME on Chromebooks and Thinkpads. Use with extreme care.
+- [High-altitude Balloon](http://hab.education/): Collaborating with Dustin Mayfield-Jones, Derek Sigler, Don Bindner, et al. Yes we launch balloons to near-space.
 - [Oryza](https://github.com/htruong/oryza) blogging-as-a-service. As a server, it enables hosting and deploying multiple blogs/sites hosted on the git version control system. As a client, it generates a static site from a jekyll-like site structure. Runs on Windows, OS X, Linux. 
 - [Truck Linux](http://talc.truman.edu/iso/truck-its/). D. Bindner, H. Truong. *Creating Thin-Client Workstations Using Ubuntu*. [Presentation](http://talc.truman.edu/iso/truck-its/Helix-2011.pdf). HELIX Conference. Missouri Research and Education Network. Mar 2011.
 - [Chumby Webkit+Qt4](http://www.engadget.com/2012/05/31/developer-runs-webkit-on-chumby/). Custom webkit backend for the Chumby internet enabled alarm clock. [Code](https://github.com/htruong/chumbyqt4).
