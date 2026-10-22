@@ -1,0 +1,111 @@
+---
+sitemap: false
+---
+
+// Styles /feed.xml when it is opened in a browser. The Atom elements are hidden;
+// only the XHTML (h:*) elements added to the feed for browsers are shown.
+
+@import "variables";
+
+@namespace atom url(http://www.w3.org/2005/Atom);
+@namespace h url(http://www.w3.org/1999/xhtml);
+
+@font-face {
+  font-family: 'Gorton Digital';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/assets/fonts/GortonDigital/GortonDigital-Medium.woff2) format('woff2');
+}
+
+atom|feed {
+  display: block;
+  max-width: 50em;
+  margin: 0 auto;
+  padding: 2em 1em;
+  background: $body-color;
+  color: $text-color;
+  font-family: $base-font;
+  font-size: 16px;
+}
+atom|feed > atom|*,
+atom|entry > atom|* {
+  display: none;
+}
+atom|entry {
+  display: block;
+}
+
+h|a {
+  color: $link-color;
+}
+
+h|h2 {
+  font-family: $heading-font;
+  font-weight: 300;
+  font-size: 1.556rem;
+  text-transform: uppercase;
+  margin: 1.3em 0 0.5em;
+}
+
+h|code {
+  font-family: $code-font;
+  font-size: 0.9em;
+  padding: 2px 6px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  word-break: break-all;
+}
+
+// Same keycap links as the site's top navigation
+h|div.nav h|a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 5em;
+  height: 5em;
+  padding: 0.5em;
+  margin: 0 0.75em 0.75em 0;
+  vertical-align: top;
+  text-align: center;
+  line-height: 1.2;
+  font-family: $heading-font;
+  font-size: 0.889rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  -webkit-text-stroke: 0.7px currentColor;
+  border: 1px solid gray;
+  border-radius: 6px;
+  transition: background-color .15s;
+  &:hover,
+  &:focus {
+    background-color: #e6e6e6;
+  }
+  &.rss {
+    color: $white;
+    background-color: $rss-color;
+    border-color: darken($rss-color, 10);
+    &:hover,
+    &:focus {
+      background-color: darken($rss-color, 10);
+    }
+  }
+}
+
+// Date column, then title and excerpt sharing one left edge
+h|div.row {
+  display: grid;
+  grid-template-columns: 5.3em 1fr;
+  column-gap: 0.3em;
+  margin: 0 0 1.25em;
+  line-height: 1.4;
+}
+
+h|p.excerpt {
+  margin: 0.25em 0 0;
+}
+
+h|span.post-date {
+  font-family: $heading-font;
+}

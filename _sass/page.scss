@@ -92,6 +92,16 @@ body {
 			&:focus {
 				background-color: #e6e6e6;
 			}
+			// Traditional orange feed badge
+			&.rss {
+				color: $white;
+				background-color: $rss-color;
+				border-color: darken($rss-color, 10);
+				&:hover,
+				&:focus {
+					background-color: darken($rss-color, 10);
+				}
+			}
 		}
 	}
 }
@@ -351,6 +361,7 @@ $button-size: 1.5rem;
 }
 
 .post-category, .post-category:visited, .post-category:hover, .rss-button {
+	font-family: $heading-font;
 	color: white;
 	text-decoration: none;
 	font-weight: bold;
