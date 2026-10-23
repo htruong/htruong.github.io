@@ -8,7 +8,7 @@
     <span class="tb-label">Title</span>
     <span class="tb-value">Huan Truong&rsquo;s Pensieve</span>
   </a>
-  <div class="tb-cell tb-doc">
+  <div class="tb-cell tb-doc{% unless include.sheet_no %} tb-doc-solo{% endunless %}">
     <span class="tb-label">Doc. no.</span>
     <span class="tb-value">{{ include.doc | default: 'TN-0000' }}</span>
   </div>
@@ -16,11 +16,6 @@
   <div class="tb-cell tb-sheet">
     <span class="tb-label">Sheet</span>
     <span class="tb-value">{{ include.sheet_no }} of {{ site.posts.size }}</span>
-  </div>
-  {% else %}
-  <div class="tb-cell tb-sheet">
-    <span class="tb-label">Scale</span>
-    <span class="tb-value">1&thinsp;:&thinsp;1</span>
   </div>
   {% endif %}
   <nav class="tb-nav" id="site-nav">

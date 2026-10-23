@@ -53,8 +53,8 @@ img {
   margin: 0 auto;
 }
 // Text starts at the text column; rules run the full width, over the
-// margin column, which holds the labels: years, section numbers, the
-// document number beside each title, the names of the rows at a post's end
+// margin column, which holds the labels: years, section numbers and the
+// names of the rows at a post's end
 @mixin text-column {
   @media #{$sheet-wide} {
     padding-left: $margin-col;
@@ -65,25 +65,6 @@ img {
 .doc-head,
 .doc-body {
   @include text-column;
-}
-.contents-head,
-.doc-head {
-  position: relative;
-  &[data-label]::before {
-    @media #{$sheet-wide} {
-      content: attr(data-label);
-      position: absolute;
-      left: 0;
-      top: 0.15rem;
-      max-width: $margin-col - 0.75rem;
-      @include label-text(0.625rem);
-      color: $ink-2;
-      overflow-wrap: anywhere;
-    }
-  }
-}
-.contents-head[data-label]::before {
-  top: 0.55rem;
 }
 
 /* Index of documents
@@ -607,7 +588,7 @@ img {
 }
 .see-also {
   .toc-page {
-    width: 5rem;
+    width: 5.5rem;
   }
 }
 .see-all {

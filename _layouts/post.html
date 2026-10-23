@@ -4,7 +4,7 @@ layout: sheet
 {% assign category = site.my_categories | where: "slug", page.category %}
 {% assign category = category[0] %}
 <article class="doc">
-  <header class="doc-head" data-label="TN-{{ page.date | date: '%y%m%d' }}">
+  <header class="doc-head">
     <dl class="doc-meta">
       <div><dt>Issued</dt><dd><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y-%m-%d' }}</time></dd></div>
       {% if page.modified %}<div><dt>Revised</dt><dd><time datetime="{{ page.modified | date: '%Y-%m-%d' }}">{{ page.modified | date: '%Y-%m-%d' }}</time></dd></div>{% endif %}
@@ -24,8 +24,8 @@ layout: sheet
     <section class="end-row">
       <h2 class="end-label">Rev.</h2>
       <ol class="revisions">
-        <li><span class="rev-id">A</span> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y-%m-%d' }}</time> <span>Issued</span></li>
-        {% if page.modified %}<li><span class="rev-id">B</span> <time datetime="{{ page.modified | date: '%Y-%m-%d' }}">{{ page.modified | date: '%Y-%m-%d' }}</time> <span>Revised</span></li>{% endif %}
+        <li><span class="rev-id">A</span> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y-%m-%d' }}</time></li>
+        {% if page.modified %}<li><span class="rev-id">B</span> <time datetime="{{ page.modified | date: '%Y-%m-%d' }}">{{ page.modified | date: '%Y-%m-%d' }}</time></li>{% endif %}
       </ol>
     </section>
 

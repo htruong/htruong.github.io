@@ -147,6 +147,13 @@ $sheet-narrow: "(max-width: 47.9375em)";
   .tb-doc {
     grid-area: doc;
   }
+  // Only a post has a sheet number; elsewhere the document number takes its cell too
+  .tb-doc-solo {
+    @media #{$sheet-wide} {
+      grid-column: 5 / -1;
+      border-right: 0;
+    }
+  }
   .tb-sheet {
     grid-area: sheet;
     border-right: 0;

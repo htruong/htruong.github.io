@@ -32,8 +32,8 @@ layout: null
 
   <h:div class="titleblock">
     <h:a class="tb-cell tb-title" href="{{ '/' | absolute_url }}"><h:span class="tb-label">Title</h:span><h:span class="tb-value">Huan Truong&#8217;s Pensieve</h:span></h:a>
-    <h:div class="tb-cell tb-doc"><h:span class="tb-label">Doc. no.</h:span><h:span class="tb-value">TN-FEED</h:span></h:div>
-    <h:div class="tb-cell tb-sheet"><h:span class="tb-label">Scale</h:span><h:span class="tb-value">1&#8201;:&#8201;1</h:span></h:div>
+    <h:div class="tb-cell tb-doc tb-doc-solo"><h:span class="tb-label">Doc. no.</h:span><h:span class="tb-value">TN-FEED</h:span></h:div>
+    
     <h:div class="tb-nav">
       <h:a class="tb-cell" href="{{ '/' | absolute_url }}"><h:span class="tb-label">Sec. 1</h:span><h:span class="tb-value">Blog</h:span></h:a>
       <h:a class="tb-cell" href="{{ '/projects.html' | absolute_url }}"><h:span class="tb-label">Sec. 2</h:span><h:span class="tb-value">Projects</h:span></h:a>
@@ -44,9 +44,9 @@ layout: null
   </h:div>
 
   <h:div class="feed-intro">
-    <h:div class="contents-head" data-label="TN-FEED">
+    <h:div class="contents-head">
       <h:h1>RSS feed</h:h1>
-      <h:p class="contents-meta">Latest {{ site.feed.posts_limit | default: 10 }} documents.</h:p>
+      <h:p class="contents-meta">Latest {{ site.feed.posts_limit | default: 10 }} documents</h:p>
     </h:div>
     <h:p>This is the Atom feed for {{ site.title | xml_escape }}. To subscribe, paste this page&#8217;s address into your feed reader:</h:p>
     <h:p><h:code>{{ page.url | absolute_url }}</h:code></h:p>
