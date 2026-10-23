@@ -187,9 +187,10 @@ body.desk-page {
 // An HP-45 (81 x 147 mm), put down on the paper's sprocket strip, clear of the print
 .calc {
   z-index: 3;
-  width: 9.9rem;
-  top: 10rem;
-  left: calc(50% + #{$paper-w / 2} - 1.1rem);
+  width: 12.5rem;
+  top: 9rem;
+  // on the sprocket strip, but never past the window's edge
+  left: unquote("min(50% + #{$paper-w / 2} - 2.6rem, 100% - 13.6rem)");
   transform: rotate(4deg);
   aspect-ratio: 810 / 1470;
   @include on-desk(1.2);
@@ -205,8 +206,8 @@ body.desk-page {
     top: 50%;
     left: 50%;
     // drawn at the large size rather than scaled up, so it stays sharp
-    width: calc(9.9rem * var(--zoom, 1));
-    margin: calc(-9.9rem * var(--zoom, 1) * 1470 / 810 / 2) 0 0 calc(-4.95rem * var(--zoom, 1));
+    width: calc(12.5rem * var(--zoom, 1));
+    margin: calc(-12.5rem * var(--zoom, 1) * 1470 / 810 / 2) 0 0 calc(-6.25rem * var(--zoom, 1));
     translate: none;
     transform: none;
     cursor: default;
@@ -496,7 +497,9 @@ body.desk-page {
 }
 .print-foot {
   margin-top: $line * 3;
-  p {
+  // (a div, not a p: a p can't hold the credits' <details>)
+  p,
+  .foot-line {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -516,33 +519,41 @@ body.desk-page {
     }
   }
 }
-// Credits fold out from the footer
-.print-foot .credits {
-  margin-top: 0.25rem;
-  @include printed(0.8125rem);
-  color: $ink-2;
-  summary {
+// Credits sit at the end of the footer line and fold out under it
+.print-foot {
+  position: relative;
+  &:has(.credits[open]) {
+    padding-bottom: $line * 3;
+  }
+  .credits {
     display: inline;
-    cursor: pointer;
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.2em;
-    list-style: none;
-    &::-webkit-details-marker {
-      display: none;
+    summary {
+      display: inline;
+      cursor: pointer;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.2em;
+      list-style: none;
+      &::-webkit-details-marker {
+        display: none;
+      }
+      &:hover {
+        color: $red;
+      }
     }
-    &:hover {
-      color: $red;
+    &[open] summary::after {
+      content: " \2212";
     }
   }
-  &[open] summary::after {
-    content: " \2212";
-  }
-  p {
-    display: block;
+  .credits-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: $line;
     max-width: 44em;
-    margin: 0.25rem 0 0;
+    text-align: left;
     text-transform: none;
+    @include printed(0.8125rem);
   }
 }
 
@@ -554,11 +565,11 @@ body.desk-page {
 }
 // A coffee ring where the mug stood: a photograph of a real one
 // (_tools/desk/coffee_ring.py), placed on each page by _includes/_stain.html.
-// An 85 mm mug at the desk's 2 px to the mm
+// Drawn large, next to the slide rule
 .stain {
   position: absolute;
   z-index: 2;
-  width: calc(10.9rem * var(--size, 1));
+  width: calc(14.5rem * var(--size, 1));
   aspect-ratio: 1;
   background: url("/assets/images/desk/coffee-ring.webp") center / contain no-repeat;
   transform: translate(0, -50%) rotate(var(--turn, 0deg));
@@ -566,7 +577,7 @@ body.desk-page {
   mix-blend-mode: multiply;
   pointer-events: none;
   @media #{$narrow} {
-    width: calc(7rem * var(--size, 1));
+    width: calc(9rem * var(--size, 1));
   }
 }
 // Pictures and videos lie on top of the stain, as if pasted in afterwards

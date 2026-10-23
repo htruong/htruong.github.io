@@ -27,11 +27,7 @@
       {% include _stain.html %}
       {{ content }}
       <footer class="print-foot">
-        <p><span>&copy; {{ site.time | date: '%Y' }} HUAN TRUONG &middot; <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a></span><span><a href="https://github.com/{{ site.owner.github }}">GITHUB</a> <a href="/vc">VCARD</a></span></p>
-        <details class="credits">
-          <summary>CREDITS</summary>
-          <p>The calculator, slide rule and punch cards are my drawings, made from measurements of photographs of real ones. The coffee ring is cut from <a href="https://commons.wikimedia.org/wiki/File:Coffee_Stain_P1000065.JPG">a photograph</a> by Nevit Dilmen (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>) and stays under that licence.</p>
-        </details>
+        <div class="foot-line"><span>&copy; {{ site.time | date: '%Y' }} HUAN TRUONG &middot; <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a></span><span><a href="https://github.com/{{ site.owner.github }}">GITHUB</a> <a href="/vc">VCARD</a> <details class="credits"><summary>CREDITS</summary><span class="credits-text">The calculator, slide rule and punch cards are my drawings, made from measurements of photographs of real ones. The coffee ring is cut from <a href="https://commons.wikimedia.org/wiki/File:Coffee_Stain_P1000065.JPG">a photograph</a> by Nevit Dilmen (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>) and stays under that licence.</span></details></span></div>
       </footer>
     </div>
   </main>
