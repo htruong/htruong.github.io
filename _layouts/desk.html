@@ -11,8 +11,8 @@
 <body class="desk-page {{ page.layout }}">
 <div class="desk">
   {% comment %} Drawings traced from photographs of the real things (_tools/desk; credits in the footer), at one scale {% endcomment %}
-  <img class="prop sliderule" src="/assets/images/desk/sliderule.svg" alt="" width="1709" height="290" loading="lazy" decoding="async">
-  {% if page.layout == 'post-index' %}<img class="prop calc" src="/assets/images/desk/hp45.svg" alt="" width="810" height="1470" decoding="async">{% endif %}
+  <img class="prop sliderule" data-prop="sliderule" draggable="false" src="/assets/images/desk/sliderule.svg" alt="" width="1709" height="290" loading="lazy" decoding="async">
+  {% if page.layout == 'post-index' %}<img class="prop calc" data-prop="calc" draggable="false" src="/assets/images/desk/hp45.svg" alt="" width="810" height="1470" decoding="async">{% endif %}
 
   <nav class="cards" id="site-nav" aria-label="Site">
     <a class="card" href="/"{% if here == '/' or page.layout == 'post' %} aria-current="page"{% endif %}><img src="/assets/images/desk/card-blog.svg" alt="" width="2230" height="973"><span class="card-name">Blog</span></a>
@@ -34,5 +34,6 @@
   </main>
 </div>
 {% include _scripts.html %}
+<script src="/assets/js/desk.js" defer></script>
 </body>
 </html>

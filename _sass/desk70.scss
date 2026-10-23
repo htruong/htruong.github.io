@@ -84,9 +84,24 @@ body.desk-page {
 
 .prop {
   position: absolute;
-  pointer-events: none;
+  // Props can be picked up and moved about (assets/js/desk.js)
+  translate: var(--dx, 0) var(--dy, 0);
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
   @media (max-width: 61.9375em) {
     display: none;
+  }
+  // Once moved, it lies on top of the paper; while held, it's lifted off the desk
+  &.is-moved {
+    z-index: 4;
+  }
+  &.is-held {
+    z-index: 5;
+    cursor: grabbing;
+    filter: drop-shadow(3px 8px 6px rgba(30, 32, 24, 0.3)) drop-shadow(8px 22px 24px rgba(30, 32, 24, 0.28));
   }
 }
 @mixin on-desk($lift: 1) {
