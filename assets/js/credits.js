@@ -1,9 +1,9 @@
 // CREDITS in the footer prints the credits: a short sheet comes up out of a
-// dot-matrix printer in front of the page, one line at a time, the head
-// striking out each line before the paper advances. Click anywhere (or press
+// line printer in front of the page, a whole line at a time, the paper
+// feeding up a line after each. Click anywhere (or press
 // Esc) and it goes away. Without this script the credits simply fold open.
 (function () {
-  var COLS = 46, CHAR_MS = 5, FEED_MS = 70;
+  var COLS = 46, LINE_MS = 140;
   var still = matchMedia('(prefers-reduced-motion: reduce)');
 
   function wrap(text, cols) {
@@ -52,14 +52,12 @@
     var i = 0;
     function next() {
       if (i >= all.length) { done = true; printer.classList.add('is-done'); return; }
-      var l = all[i++], el = addLine(l), n = 0;
-      if (still.matches || !l.t) { el.textContent = l.t || ' '; timer = setTimeout(next, still.matches ? 0 : FEED_MS); return; }
-      (function strike() {
-        n = Math.min(l.t.length, n + 2);
-        el.textContent = l.t.slice(0, n);
-        if (n < l.t.length) timer = setTimeout(strike, CHAR_MS * 2);
-        else timer = setTimeout(next, FEED_MS);
-      })();
+      var l = all[i++];
+      addLine(l).textContent = l.t || '\u00a0';
+      // the paper feeds up by the line just printed
+      if (!still.matches) paper.animate([{ transform: 'translate(-50%, 1.5rem)' }, { transform: 'translate(-50%, 0)' }],
+                                        { duration: 90, easing: 'ease-out' });
+      timer = setTimeout(next, still.matches ? 0 : LINE_MS);
     }
     requestAnimationFrame(function () { printer.classList.add('is-on'); next(); });
 

@@ -936,7 +936,7 @@ $under-pose: translate(-2.4rem, 0.8rem) rotate(1.9deg);
 }
 
 /* The credits, printed (assets/js/credits.js): a sheet that comes up out of a
-   dot-matrix printer at the foot of the window, a line at a time
+   printer at the foot of the window, a line at a time
    ========================================================================== */
 
 .printer {
@@ -988,14 +988,10 @@ $under-pose: translate(-2.4rem, 0.8rem) rotate(1.9deg);
   overflow: hidden;
   color: $ink;
   text-decoration: none;
-  // struck through a ribbon by a 9-pin head: each character a grid of dots
-  -webkit-mask: radial-gradient(circle, #000 0.62px, transparent 0.95px) 0 0 / 2px 2px;
-  mask: radial-gradient(circle, #000 0.62px, transparent 0.95px) 0 0 / 2px 2px;
-  text-shadow: 0 0 0.6px $ink;
+  text-shadow: 0 0 0.4px rgba(38, 37, 43, 0.55);
 }
 a.printer-line {
   color: $red;
-  text-shadow: 0 0 0.6px $red;
   &:hover {
     text-decoration: underline;
   }
