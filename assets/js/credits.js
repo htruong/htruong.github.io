@@ -3,7 +3,7 @@
 // feeding up a line after each. Click anywhere (or press
 // Esc) and it goes away. Without this script the credits simply fold open.
 (function () {
-  var COLS = 46, LINE_MS = 140;
+  var COLS = 46, LINE_MS = 140;   // COLS is set to the paper's width when printing
   var still = matchMedia('(prefers-reduced-motion: reduce)');
 
   function wrap(text, cols) {
@@ -19,7 +19,8 @@
 
   function lines(details) {
     var body = details.querySelector('.credits-text');
-    var out = [{ t: 'CREDITS.TXT' + new Array(COLS - 20).join(' ') + 'PAGE 0001' }, { t: '' }];
+    var head = 'CREDITS.TXT', page = 'PAGE 0001';
+    var out = [{ t: head + new Array(Math.max(2, COLS - head.length - page.length + 1)).join(' ') + page }, { t: '' }];
     wrap(body.textContent, COLS).forEach(function (t) { out.push({ t: t }); });
     out.push({ t: '' });
     Array.prototype.forEach.call(body.querySelectorAll('a'), function (a) {
@@ -33,14 +34,23 @@
 
   function print(details) {
     if (document.querySelector('.printer')) return;
-    var all = lines(details);
     var printer = document.createElement('div');
     printer.className = 'printer';
-    printer.innerHTML = '<div class="printer-paper"><div class="printer-lines"></div></div>' +
+    // the same continuous paper as the page: strips, holes and all
+    printer.innerHTML = '<div class="printout printer-paper"><div class="print-body printer-lines"></div></div>' +
                         '<div class="printer-bail"></div><p class="printer-hint">Click anywhere to dismiss</p>';
     document.body.appendChild(printer);
     var paper = printer.querySelector('.printer-paper'), box = printer.querySelector('.printer-lines');
-    var done = false, timer = null;
+    // as many columns as the paper holds, like the page under it
+    var probe = document.createElement('p');
+    probe.className = 'printer-line';
+    probe.style.cssText = 'position:absolute;visibility:hidden';
+    probe.textContent = '0000000000';
+    box.appendChild(probe);
+    var cs = getComputedStyle(box), inner = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+    COLS = Math.max(24, Math.floor(inner / (probe.getBoundingClientRect().width / 10)));
+    probe.remove();
+    var all = lines(details), done = false, timer = null;
 
     function addLine(l) {
       var el = document.createElement(l.href ? 'a' : 'p');

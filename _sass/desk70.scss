@@ -961,23 +961,23 @@ $under-pose: translate(-2.4rem, 0.8rem) rotate(1.9deg);
     transition: opacity 0.3s;
   }
 }
-.printer-paper {
+.printout.printer-paper {
+  // a .printout like the page, so the same size and paper; only placed here
   position: absolute;
+  z-index: 1;
   left: 50%;
   bottom: 1.4rem;
-  width: unquote("min(36rem, 100% - 1.5rem)");
-  box-sizing: border-box;
-  padding: $line $strip + 1.25rem 0;
+  width: calc(100% - 2rem);
+  max-width: $paper-w;
+  margin: 0;
   transform: translateX(-50%);
-  background-color: $paper;
-  // pin-feed holes down both strips, a hole every half inch
-  background-image:
-    radial-gradient(circle at #{$strip / 2} 50%, rgba(50, 52, 42, 0.55) 0, $desk-dark 0.36rem, rgba(0, 0, 0, 0.2) 0.4rem, transparent 0.42rem),
-    radial-gradient(circle at calc(100% - #{$strip / 2}) 50%, rgba(50, 52, 42, 0.55) 0, $desk-dark 0.36rem, rgba(0, 0, 0, 0.2) 0.4rem, transparent 0.42rem);
-  background-size: 100% $bar;
-  background-position: 0 100%;
-  box-shadow: 0 2px 3px rgba(30, 32, 24, 0.25), 4px 14px 30px -6px rgba(30, 32, 24, 0.5);
   pointer-events: auto;
+  @media #{$narrow} {
+    width: calc(100% - 1rem);
+  }
+  .print-body {
+    padding-bottom: $line;
+  }
 }
 .printer-line {
   display: block;
