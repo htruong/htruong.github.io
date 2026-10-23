@@ -9,7 +9,9 @@
 $doc-font-size: 18;
 $doc-line-height: 28;
 $paragraph-indent: false !default;
-$base-font: sans-serif;
+// Two faces: the serif for reading, Gorton ($heading-font) for keys and labels
+$text-font: "Source Serif 4", Georgia, "Times New Roman", serif;
+$base-font: $text-font;
 $heading-font: "Gorton Digital", Helvetica, Arial, sans-serif;
 $code-font: Monaco, "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
 $alt-font: $base-font;
