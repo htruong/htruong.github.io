@@ -1,0 +1,94 @@
+/* ==========================================================================
+   Keycap links: an old keyboard key seen from above. The face (::before)
+   sits high on the key, and edges (::after) run from its corners down to
+   the key's corners.
+   ========================================================================== */
+
+$keycap-edges: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M2 1.5L12 8M98 1.5L88 8M2 98.5L12 82M98 98.5L88 82' stroke='black' stroke-width='1.4' fill='none'/%3E%3C/svg%3E";
+// Same edges with the face pushed down and centred
+$keycap-edges-pressed: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M2 1.5L13 12M98 1.5L87 12M2 98.5L13 86M98 98.5L87 86' stroke='black' stroke-width='1.4' fill='none'/%3E%3C/svg%3E";
+
+@mixin keycap($line: gray, $skirt: #f2f2f2, $face: $white, $face-hover: #e6e6e6, $face-pressed: darken($face-hover, 8)) {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  // Shrinks on phones so all four keys stay on one row
+  width: unquote("min(5.75em, 21vw)");
+  height: unquote("min(5.75em, 21vw)");
+  // Centres the label on the face, which is 45% of the way down
+  padding: 0.35em 0.5em 0.85em;
+  margin: 0;
+  vertical-align: top;
+  text-align: center;
+  line-height: 1.2;
+  text-decoration: none;
+  border: 1px solid $line;
+  border-radius: 6px;
+  background-color: $skirt;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 8%;
+    right: 12%;
+    bottom: 18%;
+    left: 12%;
+    border: 1px solid $line;
+    border-radius: 4px;
+    background-color: $face;
+    transition: background-color .15s;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $line;
+    -webkit-mask: url($keycap-edges) 0 0 / 100% 100% no-repeat;
+    mask: url($keycap-edges) 0 0 / 100% 100% no-repeat;
+  }
+  &:hover::before,
+  &:focus::before {
+    background-color: $face-hover;
+  }
+
+  // Pressed: the face sinks to the middle of the key and the label follows
+  &:active {
+    padding-top: 0.55em;
+    padding-bottom: 0.65em;
+    &::before {
+      top: 12%;
+      right: 13%;
+      bottom: 14%;
+      left: 13%;
+      background-color: $face-pressed;
+      transition: none;
+    }
+    &::after {
+      -webkit-mask-image: url($keycap-edges-pressed);
+      mask-image: url($keycap-edges-pressed);
+    }
+  }
+}
+
+// A row of keys, spaced like a real keyboard
+$keycap-gap: 0.3em;
+@mixin keycap-row() {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $keycap-gap;
+  margin-bottom: 0.75em;
+}
+
+// Traditional orange feed badge
+@mixin keycap-rss() {
+  @include keycap(darken($rss-color, 15), darken($rss-color, 8), $rss-color, darken($rss-color, 5), darken($rss-color, 10));
+  color: $white;
+}
