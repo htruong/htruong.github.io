@@ -15,8 +15,10 @@ from photographs of the real things, not made up:
   and the script refuses to write the file if any number touches a tick:
   `python3 render_rule.py ../../assets/images/desk/sliderule.svg`.
 - Punch card: blank IBM 5081 scan by Rjluna2, CC BY-SA 4.0 (Commons); `trace_card.py`
-  takes the outline and the digit grid from it and punches labels in IBM 029 code:
-  `python3 trace_card.py ../../assets/images/desk BLOG PROJECTS BIO RSS COMMENTS`.
+  took the outline and the digit grid from it. `render_card.py` draws the card from that
+  layout and punches each label in IBM 029 code; it refuses to write a card if the
+  keypunch print, the column numbers or the IBM mark would run into a hole:
+  `python3 render_card.py ../../assets/images/desk BLOG PROJECTS BIO RSS COMMENTS`.
 
 The scripts read the straightened photos (`hp45-cut.png`, `card-cut.png`) they were
 traced from; those aren't kept here.
