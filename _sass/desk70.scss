@@ -357,10 +357,18 @@ $under-pose: translate(-2.4rem, 0.8rem) rotate(1.9deg);
   inset: 0 0 auto;
   height: min(100%, 160vh);
   display: block;
-  background-color: $paper;
-  background-image: repeating-linear-gradient(to bottom, transparent 0 $bar * 2, $green $bar * 2 $bar * 3);
-  background-position: 0 $line * 6;
-  background-clip: content-box;
+  // the whole sheet is paper: pin-feed holes in its strips, green bars between
+  $hole: rgba(50, 52, 42, 0.55) 0, $desk-dark 0.36rem, rgba(0, 0, 0, 0.2) 0.4rem, transparent 0.42rem;
+  background-image:
+    radial-gradient(circle at #{$strip / 2} 50%, $hole),
+    radial-gradient(circle at calc(100% - #{$strip / 2}) 50%, $hole),
+    repeating-linear-gradient(to bottom, transparent 0 $bar * 2, $green $bar * 2 $bar * 3),
+    linear-gradient($paper, $paper);
+  background-size: 100% $bar, 100% $bar, auto, auto;
+  background-repeat: repeat-y, repeat-y, repeat, no-repeat;
+  background-position: 0 0, 0 0, 0 $line * 6, 0 0;
+  background-origin: border-box, border-box, content-box, border-box;
+  background-clip: border-box, border-box, content-box, border-box;
   padding: 0 $strip;
   box-sizing: border-box;
   box-shadow: 0 1px 1px rgba(30, 32, 24, 0.2), 2px 8px 18px -6px rgba(30, 32, 24, 0.45);
@@ -638,7 +646,7 @@ $under-pose: translate(-2.4rem, 0.8rem) rotate(1.9deg);
   aspect-ratio: 1;
   background: url("/assets/images/desk/coffee-ring.webp") center / contain no-repeat;
   transform: translate(0, -50%) rotate(var(--turn, 0deg));
-  opacity: 0.85;
+  opacity: 0.42;
   mix-blend-mode: multiply;
   pointer-events: none;
   @media #{$narrow} {
