@@ -28,20 +28,28 @@ layout: null
   <!-- Browsers only: fit the styled feed to phone screens -->
   <h:meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <h:div class="navigation-strip">
-    <h:div class="nav" ontouchstart="">
-      <h:a href="{{ '/' | absolute_url }}">Blog</h:a>
-      <h:a href="{{ '/projects.html' | absolute_url }}">Pro-<h:br/>jects</h:a>
-      <h:a href="{{ '/about.html' | absolute_url }}">Bio</h:a>
-      <h:a class="rss" href="{{ page.url | absolute_url }}">RSS</h:a>
+  <h:div class="zones" aria-hidden="true"><h:span>8</h:span><h:span>7</h:span><h:span>6</h:span><h:span>5</h:span><h:span>4</h:span><h:span>3</h:span><h:span>2</h:span><h:span>1</h:span></h:div>
+
+  <h:div class="titleblock">
+    <h:a class="tb-cell tb-title" href="{{ '/' | absolute_url }}"><h:span class="tb-label">Title</h:span><h:span class="tb-value">Huan Truong&#8217;s Pensieve</h:span><h:span class="stamp" aria-hidden="true">For tinkering only</h:span></h:a>
+    <h:div class="tb-cell tb-doc"><h:span class="tb-label">Doc. no.</h:span><h:span class="tb-value">TN-FEED</h:span></h:div>
+    <h:div class="tb-cell tb-rev"><h:span class="tb-label">Rev.</h:span><h:span class="tb-value">{{ site.time | date: '%y.%m' }}</h:span></h:div>
+    <h:div class="tb-nav">
+      <h:a class="tb-cell" href="{{ '/' | absolute_url }}"><h:span class="tb-label">Sec. 1</h:span><h:span class="tb-value">Blog</h:span></h:a>
+      <h:a class="tb-cell" href="{{ '/projects.html' | absolute_url }}"><h:span class="tb-label">Sec. 2</h:span><h:span class="tb-value">Projects</h:span></h:a>
+      <h:a class="tb-cell" href="{{ '/about.html' | absolute_url }}"><h:span class="tb-label">Sec. 3</h:span><h:span class="tb-value">Bio</h:span></h:a>
+      <h:a class="tb-cell tb-rss" href="{{ page.url | absolute_url }}" aria-current="page"><h:span class="tb-label">Sec. 4</h:span><h:span class="tb-value">RSS</h:span></h:a>
     </h:div>
+    <h:div class="tb-cell tb-drawn"><h:span class="tb-label">Drawn by</h:span><h:span class="tb-value"><h:span class="tb-author">Huan Truong</h:span> <h:a href="https://github.com/{{ site.owner.github }}">Github</h:a> <h:a href="{{ '/vc' | absolute_url }}">vCard</h:a></h:span></h:div>
   </h:div>
 
-  <h:div class="intro">
-    <h:h2>RSS feed</h:h2>
-    <h:p>This is the RSS feed for {{ site.title | xml_escape }}. To subscribe, paste this page's address into your feed reader:</h:p>
+  <h:div class="feed-intro">
+    <h:div class="contents-head">
+      <h:h1>RSS feed</h:h1>
+      <h:p class="contents-meta">Latest {{ site.feed.posts_limit | default: 10 }} documents. <h:a href="{{ '/' | absolute_url }}">All documents &#8594;</h:a></h:p>
+    </h:div>
+    <h:p>This is the Atom feed for {{ site.title | xml_escape }}. To subscribe, paste this page&#8217;s address into your feed reader:</h:p>
     <h:p><h:code>{{ page.url | absolute_url }}</h:code></h:p>
-    <h:p>Latest posts below. <h:a href="{{ '/' | absolute_url }}">See all posts</h:a>.</h:p>
   </h:div>
 
   {% assign posts = site.posts | where_exp: "post", "post.draft != true" %}
@@ -70,10 +78,10 @@ layout: null
     {% if post_summary and post_summary != empty %}
     <summary type="html"><![CDATA[{{ post_summary | strip_html | normalize_whitespace }}]]></summary>
     {% endif %}
-    <h:div class="row">
-      <h:span class="post-date">{{ post.date | date: '%m/%Y' }}</h:span>
-      <h:div class="post">
-        <h:a href="{{ post.url | absolute_url }}">{{ post_title }}</h:a>
+    <h:div class="feed-row">
+      <h:span class="feed-date">{{ post.date | date: '%b %Y' }}</h:span>
+      <h:div class="feed-post">
+        <h:a class="feed-title" href="{{ post.url | absolute_url }}">{{ post_title }}</h:a>
         {% if post_summary and post_summary != empty %}
         <h:p class="excerpt">{{ post_summary | strip_html | normalize_whitespace | truncatewords: 40 | xml_escape }}</h:p>
         {% endif %}
@@ -81,4 +89,7 @@ layout: null
     </h:div>
   </entry>
   {% endfor %}
+
+  <h:div class="feed-end"><h:p class="end-mark">End of feed</h:p></h:div>
+  <h:div class="zones" aria-hidden="true"><h:span>8</h:span><h:span>7</h:span><h:span>6</h:span><h:span>5</h:span><h:span>4</h:span><h:span>3</h:span><h:span>2</h:span><h:span>1</h:span></h:div>
 </feed>

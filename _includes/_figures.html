@@ -1,0 +1,4 @@
+{% comment %}
+  Turns each image paragraph Markdown makes (<p><img … /></p>) into a numbered
+  figure captioned with the image's alt text. Pass html=content.
+{% endcomment %}{% assign parts = include.html | split: '<p><img ' %}{{ parts[0] }}{% for part in parts offset: 1 %}{% assign tag = part | split: '/>' | first %}{% assign after = part | remove_first: tag | remove_first: '/>' %}{% assign inside = after | split: '</p>' | first %}{% assign rest = after | remove_first: inside | remove_first: '</p>' %}{% assign alt = '' %}{% if tag contains 'alt="' %}{% assign alt = tag | split: 'alt="' | last | split: '"' | first %}{% endif %}<figure class="fig"><img {{ tag }}/><figcaption>{{ alt }}</figcaption></figure>{% assign inside_text = inside | strip %}{% if inside_text != '' %}<p>{{ inside }}</p>{% endif %}{{ rest }}{% endfor %}

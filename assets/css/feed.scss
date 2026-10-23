@@ -3,147 +3,103 @@ sitemap: false
 ---
 
 // Styles /feed.xml when it is opened in a browser. The Atom elements are hidden;
-// only the XHTML (h:*) elements added to the feed for browsers are shown.
-
-@import "variables";
-@import "keycap";
-@import "label";
-@import "paper";
+// only the XHTML (h:*) elements added to the feed for browsers are shown. The
+// feed element itself is the drawing sheet, with the same title block as the site.
+// Namespaces must come before any rule, so before the imports.
 
 @namespace atom url(http://www.w3.org/2005/Atom);
 @namespace h url(http://www.w3.org/1999/xhtml);
 
 @import "fonts";
+@import "titleblock";
+@import "datasheet";
 
 atom|feed {
-  display: block;
-  padding-bottom: 2em;
-  background: $body-color;
-  color: $text-color;
-  font-family: $base-font;
+  @include sheet-frame;
+  background: $paper;
+  color: $ink;
+  font-family: $read-font;
   font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 atom|feed > atom|*,
 atom|entry > atom|* {
   display: none;
 }
-atom|entry {
+
+// The page column, shared by the intro and every entry
+h|div.feed-intro,
+atom|entry,
+h|div.feed-end {
   display: block;
-}
-
-// Page column; the header case is full width. The intro and the entries
-// are separate elements, stacked with no gaps to make one sheet of paper.
-$feed-date-width: 5.3em;
-$feed-gap: 0.8em;
-$feed-pad: 1em;
-h|div.intro,
-atom|entry {
-  max-width: 48em;
-  margin: 0 auto;
-  padding: 0 $feed-pad;
   box-sizing: border-box;
-  background-color: $paper-color;
-  border: solid rgba(0, 0, 0, 0.06);
-  border-width: 0 1px;
-}
-h|div.intro {
-  margin-top: 1.5em;
-  padding-top: $paper-pad-top;
-  padding-bottom: $notebook-rule;
-  border-top-width: 1px;
-}
-// Ruled, with the red margin line between the date and the post. The blank
-// line after each post is padding, so the rules carry on through it.
-atom|entry {
-  padding-bottom: $notebook-rule;
-  @include notebook-ruled(calc(#{$feed-pad} + #{$feed-date-width} + #{$feed-gap} / 2));
-}
-atom|entry:last-of-type {
-  border-bottom-width: 1px;
-  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.12);
-}
-
-h|div.navigation-strip {
-  @include keyboard-case;
-  padding: 2em 1em 1.75em;
-}
-
-h|a {
-  color: $link-color;
-}
-
-h|h2 {
-  font-family: $heading-font;
-  font-weight: 300;
-  font-size: 1.556rem;
-  text-transform: uppercase;
-  margin: 1.3em 0 0.5em;
-}
-
-h|code {
-  font-family: $code-font;
-  font-size: 0.9em;
-  padding: 2px 6px;
-  border: 1px solid gray;
-  border-radius: 4px;
-  word-break: break-all;
-}
-
-// Same keycap links as the site's top navigation
-h|div.nav {
-  @include keycap-row;
-  @include keyboard-grille-flanks;
-  max-width: 48em;
+  width: 100%;
+  max-width: calc(#{$index-column} + 3rem);
   margin: 0 auto;
-}
-h|div.nav h|a {
-  @include keycap;
-  font-family: $heading-font;
-  font-size: 0.889rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  -webkit-text-stroke: 0.7px currentColor;
-  &.rss {
-    @include keycap-rss;
-    margin-left: auto;
+  padding: 0 1.5rem;
+  @media #{$sheet-narrow} {
+    padding: 0 1rem;
   }
 }
+h|div.feed-intro {
+  padding-top: 2.75rem;
+  padding-bottom: 1rem;
+  @media #{$sheet-narrow} {
+    padding-top: 1.75rem;
+  }
+  > h|p {
+    max-width: $measure;
+    margin: 1rem 0 0;
+    font-size: 1.0625rem;
+  }
+  h|code {
+    display: inline-block;
+    padding: 0.35rem 0.6rem;
+    border: 1px solid $ink;
+    background: $paper-hi;
+    font-family: $mono-font;
+    font-size: 0.875rem;
+    overflow-wrap: anywhere;
+  }
+}
+h|div.feed-end {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  flex: 1 0 auto;
+}
 
-// Date column, then title and excerpt sharing one left edge
-// Every line sits on a rule
-h|div.row {
+// One entry: date in the margin, then title and excerpt
+h|div.feed-row {
   display: grid;
-  grid-template-columns: $feed-date-width 1fr;
-  column-gap: $feed-gap;
-  line-height: $notebook-rule;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  padding: 0.9rem 0 1rem;
+  border-bottom: 1px solid $rule;
+  @media #{$sheet-narrow} {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0.3rem;
+  }
 }
-
+h|span.feed-date {
+  display: block;
+  padding-top: 0.3rem;
+  @include label-text(0.8125rem);
+  color: $ink-2;
+}
+h|a.feed-title {
+  font-size: 1.1875rem;
+  font-weight: 650;
+  line-height: 1.3;
+  color: $ink;
+  text-decoration: none;
+  &:hover {
+    color: $accent;
+  }
+}
 h|p.excerpt {
-  margin: 0;
+  max-width: 38rem;
+  margin: 0.35rem 0 0;
+  color: $ink-2;
+  font-size: 1rem;
+  line-height: 1.55;
 }
-
-// Written in the margin, against the margin line
-h|span.post-date {
-  font-family: $heading-font;
-  color: lighten($text-color, 20);
-  text-align: right;
-  align-self: start;
-}
-
-// Phones: the date goes above the title so both get the full width
-@media (max-width: 37.5em) {
-  h|div.navigation-strip {
-    padding-top: 1em;
-  }
-  h|div.row {
-    grid-template-columns: 1fr;
-  }
-  // The date sits above the post here, so no margin line through the text
-  atom|entry {
-    @include notebook-ruled;
-  }
-  h|span.post-date {
-    text-align: left;
-  }
-}
-

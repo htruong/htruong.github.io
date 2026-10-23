@@ -1,65 +1,22 @@
-<!doctype html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
-<head>
-{% include _head.html %}
-</head>
-
-<body class="post-index">
-
-{% include _browser-upgrade.html %}
-
-{% include _navigation.html %}
-
-{% if page.image.feature %}
-  <div class="image-wrap">
-  <img src=
-    {% if page.image.feature contains 'http' %}
-      "{{ page.image.feature }}"
-    {% else %}
-      "{{ site.url }}/images/{{ page.image.feature }}"
-    {% endif %}
-  alt="{{ page.title }} feature image">
-  {% if page.image.credit %}
-    <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
-  {% endif %}
-  </div><!-- /.image-wrap -->
-{% endif %}
-
-<div id="main" role="main">
-  <div class="article-author-side">
-    {% include _author-bio.html %}
-  </div>
-  <div id="index">
-	  <!--<h1>{{ page.title }}</h1>-->
-	  <div><h2>Blog posts<!-- (<a target="_blank" href="https://spiderum.com/nguoi-dung/wasabi">🇻🇳Vietnamese</a>)--></h2></div>
-    <div class="notebook">
-    {% for post in site.posts %}
-
-    {% assign category = site.my_categories | where: "slug", post.category %}
-    {% assign category = category[0] %}
-
-      <article>
-        {% if post.link %}
-          <p><span class="post-date">{{ post.date | date: '%m/%Y' }}</span>{% if post.category %} <a class="post-category category-{{category.slug}}" href="/topic/{{ post.category }}">{{ post.category }}</a>{% endif %} <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> <a href="{{ post.link }}" target="_blank" title="{{ post.title }}"><i class="fa fa-link"></i></a></p>
-        {% else %}
-          <p><span class="post-date">{{ post.date | date: '%m/%Y' }}</span>{% if post.category %} <a class="post-category category-{{category.slug}}" href="/topic/{{ post.category }}">{{ post.category }}</a>{% endif %} <a href="{{ post.url }}">{{ post.title }}</a></p>
-        {% endif %}
-      </article>
+---
+layout: sheet
+---
+{% assign years = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+<section class="contents">
+  <header class="contents-head">
+    <h1>Contents</h1>
+    <p class="contents-meta">{{ site.posts.size }} documents, {{ years.last.name }}&ndash;{{ years.first.name }}</p>
+  </header>
+  {% for year in years %}
+  <section class="year">
+    <h2 class="year-no">{{ year.name }}</h2>
+    <ol class="toc">
+    {% for post in year.items %}
+      {% assign category = site.my_categories | where: "slug", post.category %}
+      {% assign category = category[0] %}
+      <li><a href="{{ post.url }}"><span class="toc-title">{{ post.title }}{% if post.category %} <span class="part">{{ category.name | default: post.category }}</span>{% endif %}</span><span class="toc-leader" aria-hidden="true"></span><span class="toc-page">{{ post.date | date: '%b' }}</span></a></li>
     {% endfor %}
-    </div><!-- /.notebook -->
-  </div><!-- /#index -->
-</div><!-- /#main -->
-
-<div class="footer-wrap">
-  <footer>
-    {% include _footer.html %}
-  </footer>
-</div><!-- /.footer-wrap -->
-
-{% include _scripts.html %}
-
-</body>
-</html>
+    </ol>
+  </section>
+  {% endfor %}
+</section>

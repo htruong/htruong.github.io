@@ -1,0 +1,585 @@
+/* ==========================================================================
+   The site as a technical manual: an index of documents, and each post a
+   document with a header, numbered sections, figures and listings.
+   Sheet, title block and tokens are in titleblock.scss.
+   ========================================================================== */
+
+$column: 40rem;
+$index-column: 46rem;
+$measure: none;
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: $paper;
+  color: $ink;
+  font-family: $read-font;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+::selection {
+  background: rgba(179, 52, 27, 0.2);
+}
+a {
+  color: $ink;
+}
+:focus-visible {
+  outline: 2px solid $accent;
+  outline-offset: 2px;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+#main {
+  display: block;
+  flex: 1 0 auto;
+  padding: 2.75rem 1.5rem 3.5rem;
+  @media #{$sheet-narrow} {
+    padding: 1.75rem 1rem 2.5rem;
+  }
+}
+.doc,
+.contents {
+  max-width: $column;
+  margin: 0 auto;
+}
+// The index has a year column beside its lines, so it is a little wider
+.contents {
+  max-width: $index-column;
+}
+
+/* Index of documents
+   ========================================================================== */
+
+.contents-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid $ink;
+  h1 {
+    margin: 0;
+    @include label-text(1.625rem);
+    letter-spacing: 0.06em;
+  }
+}
+.contents-meta {
+  margin: 0;
+  @include label-text(0.75rem);
+  color: $ink-2;
+  a {
+    color: $ink;
+  }
+}
+.contents-intro {
+  margin-top: 1.25rem;
+  font-size: 1rem;
+  color: $ink-2;
+  p {
+    max-width: $measure;
+  }
+}
+
+.year {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  border-bottom: 1px solid $rule;
+  padding: 0.55rem 0 0.7rem;
+  @media #{$sheet-narrow} {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.year-no {
+  margin: 0;
+  padding-top: 0.3rem;
+  @include label-text(1.0625rem);
+  letter-spacing: 0.06em;
+  color: $ink;
+  @media #{$sheet-narrow} {
+    padding: 0.4rem 0 0.15rem;
+  }
+}
+
+/* A contents line: title, dot leader, "page" (the month) */
+.toc {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    margin: 0;
+  }
+  a {
+    display: flex;
+    align-items: baseline;
+    align-items: last baseline;
+    gap: 0.6rem;
+    padding: 0.3rem 0;
+    color: $ink;
+    text-decoration: none;
+    &:hover,
+    &:focus-visible {
+      .toc-title {
+        color: $accent;
+      }
+      .toc-leader {
+        background-image: radial-gradient(circle, $accent 0.9px, transparent 1.3px);
+      }
+    }
+  }
+}
+.toc-title {
+  flex: 0 1 auto;
+  font-size: 1.0625rem;
+  line-height: 1.35;
+  @media #{$sheet-narrow} {
+    font-size: 1rem;
+  }
+}
+.toc-leader {
+  flex: 1 1 1.5rem;
+  min-width: 1.5rem;
+  height: 4px;
+  position: relative;
+  top: -0.3em;
+  background-image: radial-gradient(circle, $ink-2 0.9px, transparent 1.3px);
+  background-size: 6px 4px;
+  background-repeat: repeat-x;
+  background-position: right center;
+}
+.toc-page {
+  flex: none;
+  min-width: 2.25rem;
+  text-align: right;
+  @include label-text(0.8125rem);
+  color: $ink-2;
+}
+// Narrow: the month moves to the left of the title and the leaders go
+@media #{$sheet-narrow} {
+  .toc a {
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .toc-leader {
+    display: none;
+  }
+  .toc-page {
+    order: -1;
+    min-width: 2.4rem;
+    text-align: left;
+  }
+  .see-also .toc-page {
+    min-width: 4.6rem;
+  }
+}
+
+/* Topics as part codes */
+.part {
+  display: inline-block;
+  margin-left: 0.35em;
+  padding: 0.2em 0.35em 0.15em;
+  border: 1px solid currentColor;
+  @include label-text(0.625rem);
+  color: $ink-2;
+  vertical-align: 0.15em;
+  white-space: nowrap;
+}
+.part-big {
+  margin-left: 0.5em;
+  font-size: 0.875rem;
+  vertical-align: 0.25em;
+  color: $accent;
+}
+
+/* A document (post or page)
+   ========================================================================== */
+
+.doc-head {
+  padding-bottom: 1.25rem;
+  border-bottom: 2px solid $ink;
+  h1 {
+    max-width: $measure;
+    margin: 0;
+    font-family: $read-font;
+    font-size: 2.5rem;
+    font-weight: 650;
+    line-height: 1.12;
+    letter-spacing: -0.012em;
+    text-wrap: balance;
+    @media #{$sheet-narrow} {
+      font-size: 1.875rem;
+    }
+  }
+}
+.doc-extlink {
+  color: $accent;
+  text-decoration: none;
+}
+// Metadata as a row of little title-block cells
+.doc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  > div {
+    margin: 0 -1px -1px 0;
+    padding: 0.3rem 0.6rem 0.4rem;
+    border: 1px solid $ink;
+  }
+  dt {
+    @include label-text(0.5625rem);
+    color: $ink-2;
+    margin-bottom: 0.2rem;
+  }
+  dd {
+    margin: 0;
+    @include label-text(0.8125rem);
+    letter-spacing: 0.04em;
+    a {
+      color: $accent;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* Reading text */
+.doc-body {
+  counter-reset: sec fig listing;
+  padding-top: 0.5rem;
+  font-size: 1.125rem;
+  line-height: 1.65;
+  overflow-wrap: break-word;
+  @media #{$sheet-narrow} {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+  > p,
+  > ul,
+  > ol,
+  > blockquote,
+  > dl,
+  > h1,
+  > h2,
+  > h3,
+  > h4 {
+    max-width: $measure;
+  }
+  p {
+    margin: 0 0 1.1em;
+  }
+  a {
+    color: $ink;
+    text-decoration: underline;
+    text-decoration-color: $accent;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+    &:hover {
+      color: $accent;
+    }
+  }
+  strong,
+  b {
+    font-weight: 650;
+  }
+
+  // Numbered sections: 1, 1.1
+  h1,
+  h2,
+  h3 {
+    font-family: $read-font;
+    font-weight: 650;
+    line-height: 1.25;
+    text-wrap: balance;
+  }
+  h1,
+  h2 {
+    counter-increment: sec;
+    counter-reset: sub;
+    margin: 2.4em 0 0.7em;
+    padding-top: 0.55em;
+    border-top: 1px solid $ink;
+    font-size: 1.5rem;
+    &::before {
+      content: counter(sec);
+      display: inline-block;
+      min-width: 1.9rem;
+      color: $accent;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+  }
+  h3 {
+    counter-increment: sub;
+    margin: 1.8em 0 0.5em;
+    font-size: 1.1875rem;
+    &::before {
+      content: counter(sec) "." counter(sub);
+      display: inline-block;
+      min-width: 2.6rem;
+      color: $accent;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+  }
+  h4,
+  h5,
+  h6 {
+    margin: 1.6em 0 0.4em;
+    @include label-text(0.875rem);
+    letter-spacing: 0.06em;
+  }
+  > :first-child {
+    margin-top: 0.5rem;
+  }
+  // A page whose content starts with its own title
+  > h1:first-child {
+    counter-increment: none;
+    margin: 0 0 1.5rem;
+    padding: 0 0 1.25rem;
+    border-top: 0;
+    border-bottom: 2px solid $ink;
+    font-size: 2.5rem;
+    line-height: 1.12;
+    @media #{$sheet-narrow} {
+      font-size: 1.875rem;
+    }
+    &::before {
+      content: none;
+    }
+  }
+  // Straight under the header rule: no second rule
+  > h2:first-child {
+    margin-top: 1.25rem;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  ul,
+  ol {
+    padding-left: 1.4em;
+    margin: 0 0 1.1em;
+  }
+  li {
+    margin-bottom: 0.3em;
+  }
+  ul > li::marker {
+    content: "\2013\00a0\00a0";
+    color: $ink-2;
+  }
+  ol > li::marker {
+    color: $ink-2;
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+
+  blockquote {
+    margin: 1.5em 0;
+    padding: 0.1em 0 0.1em 1.1em;
+    border-left: 2px solid $ink;
+    color: $ink-2;
+    font-style: italic;
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  hr {
+    height: 0;
+    margin: 2.5em 0;
+    border: 0;
+    border-top: 1px solid $ink;
+  }
+
+  table {
+    width: 100%;
+    margin: 1.5em 0;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+  }
+  th,
+  td {
+    padding: 0.4rem 0.6rem;
+    border: 1px solid $ink;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    @include label-text(0.6875rem);
+    background: $paper-hi;
+  }
+
+  // Figures: framed, numbered, captioned with the image's alt text
+  figure,
+  .fig {
+    counter-increment: fig;
+    margin: 2em 0;
+    padding: 0.6rem;
+    border: 1px solid $ink;
+    background: $paper-hi;
+    img {
+      display: block;
+      margin: 0 auto;
+      max-height: 75vh;
+      width: auto;
+      object-fit: contain;
+    }
+  }
+  figcaption {
+    margin: 0.6rem -0.6rem -0.6rem;
+    padding: 0.45rem 0.65rem 0.5rem;
+    border-top: 1px solid $ink;
+    @include label-text(0.6875rem);
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+    color: $ink;
+    &::before {
+      content: "Fig. " counter(fig);
+      margin-right: 0.9em;
+      color: $accent;
+    }
+  }
+  iframe {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin: 1.5em 0;
+    border: 1px solid $ink;
+    background: $ink;
+  }
+
+  // Code
+  code,
+  kbd {
+    font-family: $mono-font;
+    font-size: 0.84em;
+  }
+  :not(pre) > code {
+    padding: 0.08em 0.3em;
+    background: rgba(29, 28, 26, 0.07);
+    border-radius: 2px;
+    overflow-wrap: anywhere;
+  }
+  div.highlighter-rouge,
+  > pre {
+    counter-increment: listing;
+    margin: 1.75em 0;
+    border: 1px solid $ink;
+    background: $paper-hi;
+    &::before {
+      content: "Listing " counter(listing);
+      display: block;
+      padding: 0.35rem 0.65rem 0.4rem;
+      border-bottom: 1px solid $ink;
+      @include label-text(0.6875rem);
+      color: $ink-2;
+    }
+  }
+  .highlight {
+    margin: 0;
+    background: none;
+    border-radius: 0;
+    color: $ink;
+  }
+  pre {
+    margin: 0;
+    padding: 0.8rem 1rem;
+    overflow-x: auto;
+    font-size: 0.875rem;
+    line-height: 1.55;
+    code {
+      font-size: inherit;
+      white-space: pre;
+    }
+  }
+}
+
+/* End of a document
+   ========================================================================== */
+
+.doc-end {
+  margin-top: 3rem;
+}
+.end-mark {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 2.5rem;
+  @include label-text(0.6875rem);
+  letter-spacing: 0.12em;
+  color: $ink-2;
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    border-top: 1px solid $ink;
+  }
+}
+.doc-end-head {
+  margin: 0 0 0.25rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid $ink;
+  @include label-text(1rem);
+  letter-spacing: 0.06em;
+}
+.see-also {
+  margin-bottom: 2.5rem;
+  .toc {
+    padding-top: 0.3rem;
+  }
+  .toc-page {
+    min-width: 5rem;
+  }
+}
+.see-all {
+  margin: 0.6rem 0 0;
+  @include label-text(0.75rem);
+  a {
+    color: $accent;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.doc-comments {
+  .disqus_thread {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    margin: 1rem 0 0;
+  }
+}
+.doc-button {
+  display: inline-block;
+  padding: 0.65rem 1rem 0.6rem;
+  border: 1.5px solid $ink;
+  background: $paper-hi;
+  @include label-text(0.875rem);
+  color: $ink;
+  text-decoration: none;
+  box-shadow: 3px 3px 0 $ink;
+  transition: transform 0.08s, box-shadow 0.08s;
+  &:hover,
+  &:focus-visible {
+    background: $ink;
+    color: $paper;
+  }
+  &:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0 0 0 $ink;
+  }
+}
+.doc-button-note {
+  @include label-text(0.6875rem);
+  color: $ink-2;
+}

@@ -1,8 +1,8 @@
 {% if site.owner.disqus-shortname %}
-
-<div class="disqus_thread" id="showdisqus_button">
-  <a href="#" onclick="return disqus()">Comments</a> 
-</div>
+<p class="disqus_thread" id="showdisqus_button">
+  <a class="doc-button" href="#" onclick="return disqus()">Open comments</a>
+  <span class="doc-button-note">Loads Disqus</span>
+</p>
 
 <script>
     var disqus_config = function () {
@@ -13,15 +13,15 @@
 
     function disqus() {
         if (disqus_loaded) return false;
-        
+
         disqus_loaded = true;
         var disqus_btn = document.getElementById("showdisqus_button");
         disqus_btn.style.display = "none";
-        
+
         var d = document, s = d.createElement('script');
-        
+
         s.src = '//{{ site.owner.disqus-shortname }}.disqus.com/embed.js';
-        
+
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
         return false;

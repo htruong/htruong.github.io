@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+{% include _head.html %}
+</head>
+{% comment %} Every page is one drawing sheet: zone strips, the title block, the content, the footer block. {% endcomment %}
+{% if page.layout == 'post' %}
+  {% capture doc %}TN-{{ page.date | date: '%y%m%d' }}{% endcapture %}
+{% elsif page.layout == 'post-index' %}
+  {% assign doc = 'TN-INDEX' %}
+{% elsif page.layout == 'blog_by_category' %}
+  {% capture doc %}TN-{{ page.slug | upcase }}{% endcapture %}
+{% else %}
+  {% capture doc %}TN-{{ page.url | split: '/' | last | remove: '.html' | upcase | default: 'PAGE' }}{% endcapture %}
+{% endif %}
+<body class="{{ page.layout }}">
+<div class="sheet">
+  {% include _zones.html %}
+  {% include _navigation.html doc=doc %}
+  <main id="main" role="main">
+    {{ content }}
+  </main>
+  {% include _footer.html %}
+  {% include _zones.html %}
+</div>
+{% include _scripts.html %}
+</body>
+</html>

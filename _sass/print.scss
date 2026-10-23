@@ -2,15 +2,19 @@
    PRINT STYLES
    ========================================================================== */
 
-/* 
+/*
    Hide the following elements on print
    ========================================================================== */
 
 @media print {
-  .top-navigation, 
-  .social-share, 
-  .related-articles,
-  .google-ads {
+  .tb-nav,
+  .zones,
+  .doc-comments,
+  .see-also {
     display: none;
+  }
+  .sheet {
+    margin: 0;
+    min-height: 0;
   }
 }

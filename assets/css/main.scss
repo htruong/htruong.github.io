@@ -2,33 +2,13 @@
 sitemap: false
 ---
 
-/*
- *
- *  Minimal Mistakes
- *
- *  Designer: Michael Rose
- *  Twitter: http://twitter.com/mmistakes
- *
-*/
+// Huan Truong's Pensieve, drawn as a technical manual
 
-// Partials
 @import "variables";
-@import "grid";
 @import "mixins";
 @import "normalize";
-@import "site";
 @import "fonts";
-@import "typography";
 @import "syntax";
-@import "coderay";
-@import "elements";
-@import "forms";
-@import "keycap";
-@import "label";
-@import "paper";
-@import "page";
-@import "desk";
-//@import "vendor/font-awesome/font-awesome";
-@import "vendor/magnific-popup/magnific-popup";
-//@import "vendor/google/fonts";
+@import "titleblock";
+@import "datasheet";
 @import "print";

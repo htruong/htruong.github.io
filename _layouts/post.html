@@ -1,86 +1,44 @@
-<!doctype html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
-<head>
-{% include _head.html %}
-</head>
-
-<body class="post">
+---
+layout: sheet
+---
 {% assign category = site.my_categories | where: "slug", page.category %}
 {% assign category = category[0] %}
+<article class="doc">
+  <header class="doc-head">
+    <dl class="doc-meta">
+      <div><dt>Issued</dt><dd><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y-%m-%d' }}</time></dd></div>
+      {% if page.modified %}<div><dt>Revised</dt><dd><time datetime="{{ page.modified | date: '%Y-%m-%d' }}">{{ page.modified | date: '%Y-%m-%d' }}</time></dd></div>{% endif %}
+      {% if page.category %}<div><dt>Topic</dt><dd><a href="/topic/{{ page.category }}">{{ category.name | default: page.category }}</a></dd></div>{% endif %}
+      <div><dt>Reading</dt><dd>{{ content | number_of_words | divided_by: 230 | plus: 1 }} min</dd></div>
+    </dl>
+    <h1>{{ page.title }}{% if page.link %} <a class="doc-extlink" href="{{ page.link }}" aria-label="Linked page">&nearr;</a>{% endif %}</h1>
+  </header>
 
-{% include _browser-upgrade.html %}
-
-{% include _navigation.html %}
-
-{% if page.image.feature %}
-  <div class="image-wrap">
-  <img src=
-    {% if page.image.feature contains 'http' %}
-      "{{ page.image.feature }}"
-    {% else %}
-      "{{ site.url }}/images/{{ page.image.feature }}"
-    {% endif %}
-  alt="{{ page.title }} feature image">
-  {% if page.image.credit %}
-    <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
-  {% endif %}
-  </div><!-- /.image-wrap -->
-{% endif %}
-
-<div id="main" role="main">
-  <div class="article-author-side">
-    {% include _author-bio.html %}
+  <div class="article-wrap doc-body">
+    {% include _figures.html html=content %}
   </div>
-  <article class="post">
-    <div class="headline-wrap">
-      {% if page.link %}
-        <h1>{{ page.title }} <a href="{{ page.link }}"> &rightarrow; </a></h1>
-      {% else %}
-        <h1>{% if page.category %}<a class="post-category category-{{category.slug}}" href="/topic/{{ page.category }}">{{ page.category }}</a> / {% endif %}{{ page.title }}</h1>
-      {% endif %}
-    </div><!--/ .headline-wrap -->
-    <div class="article-wrap">
-      {{ content }}
-      <hr />
 
-      <footer role="contentinfo">
-        {% if page.share != false %}{% include _social-share.html %}{% endif %}
-        <p class="byline">Published <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.modified %}, last updated <time datetime="{{ page.modified | date: "%Y-%m-%d" }}">{{ page.modified | date: "%B %d, %Y" }}</time>{% endif %}.</p>
+  <footer class="doc-end">
+    <p class="end-mark"><span>End of document TN-{{ page.date | date: '%y%m%d' }}</span></p>
 
-  {% if site.owner.disqus-shortname and page.disable_comments != true %}
-    <section id="disqus_thread"></section><!-- /#disqus_thread -->
-    {% include _disqus_comments.html %}
-  {% endif %}
+    {% if site.related_posts.size > 0 %}
+    <section class="see-also">
+      <h2 class="doc-end-head">See also</h2>
+      <ol class="toc">
+      {% for post in site.related_posts limit:3 %}
+        <li><a href="{{ post.url }}"><span class="toc-title">{{ post.title }}</span><span class="toc-leader" aria-hidden="true"></span><span class="toc-page">{{ post.date | date: '%b %Y' }}</span></a></li>
+      {% endfor %}
+      </ol>
+      <p class="see-all"><a href="/">All documents &rarr;</a></p>
+    </section>
+    {% endif %}
 
-      </footer>
-
-
-    </div><!-- /.article-wrap -->
-
-  </article>
-  {% if site.related_posts.size > 0 %}
-  <div class="related-articles">
-  <h4>You might also enjoy</h4>
-    <ul>
-    {% for post in site.related_posts limit:3 %}
-      <li><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-    {% endfor %}
-    </ul>
-    <a class="related-all" href="/">All posts &rarr;</a>
-  </div><!-- /.related-articles -->
-  {% endif %}
-</div><!-- /#main -->
-
-<div class="footer-wrap">
-  <footer>
-    {% include _footer.html %}
+    {% if site.owner.disqus-shortname and page.disable_comments != true %}
+    <section class="doc-comments">
+      <h2 class="doc-end-head">Comments</h2>
+      <div id="disqus_thread"></div>
+      {% include _disqus_comments.html %}
+    </section>
+    {% endif %}
   </footer>
-</div><!-- /.footer-wrap -->
-
-{% include _scripts.html %}
-
-</body>
-</html>
+</article>

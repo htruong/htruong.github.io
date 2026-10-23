@@ -1,20 +1,37 @@
-<div class="navigation-strip">
-<div class="navigation-wrapper">
-	<div class="site-name brand-logo">
-		
-	</div><!-- /.site-name -->
-	<div class="top-navigation">
-		<nav id="site-nav" class="nav">
-		    <!-- ontouchstart: iOS Safari only shows :active (the pressed key) when a touch handler exists -->
-		    <ul ontouchstart="">
-		    	<li><a class="root" href="/">Blog</a></li>
-		        {% for link in site.data.navigation %}
-			<li><a href="{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>{{ link.title }}</a></li>
-			{% endfor %}
-			<li class="badge" aria-hidden="true">Pensieve</li>
-			<li class="rss"><a class="rss" href="/feed.xml">RSS</a></li>
-		    </ul>
-		</nav>
-	</div><!-- /.top-navigation -->
-</div><!-- /.navigation-wrapper -->
-</div><!-- /.navigation-strip -->
+{% comment %}
+  The page header is the title block of an engineering drawing.
+  Pass doc="…" for the document number shown in it.
+{% endcomment %}
+{% assign here = page.url | remove: 'index.html' %}
+<header class="titleblock" role="banner">
+  <a class="tb-cell tb-title" href="/">
+    <span class="tb-label">Title</span>
+    <span class="tb-value">Huan Truong&rsquo;s Pensieve</span>
+    <span class="stamp" aria-hidden="true">For tinkering only</span>
+  </a>
+  <div class="tb-cell tb-doc">
+    <span class="tb-label">Doc. no.</span>
+    <span class="tb-value">{{ include.doc | default: 'TN-0000' }}</span>
+  </div>
+  <div class="tb-cell tb-rev">
+    <span class="tb-label">Rev.</span>
+    <span class="tb-value">{{ site.time | date: '%y.%m' }}</span>
+  </div>
+  <nav class="tb-nav" id="site-nav">
+    <a class="tb-cell" href="/"{% if here == '/' or page.layout == 'post' or page.layout == 'blog_by_category' %} aria-current="page"{% endif %}>
+      <span class="tb-label">Sec. 1</span><span class="tb-value">Blog</span>
+    </a>
+    {% for link in site.data.navigation %}
+    <a class="tb-cell" href="{{ link.url }}"{% if here == link.url %} aria-current="page"{% endif %}>
+      <span class="tb-label">Sec. {{ forloop.index | plus: 1 }}</span><span class="tb-value">{{ link.title }}</span>
+    </a>
+    {% endfor %}
+    <a class="tb-cell tb-rss" href="/feed.xml">
+      <span class="tb-label">Sec. {{ site.data.navigation.size | plus: 2 }}</span><span class="tb-value">RSS</span>
+    </a>
+  </nav>
+  <div class="tb-cell tb-drawn">
+    <span class="tb-label">Drawn by</span>
+    <span class="tb-value"><span class="tb-author">Huan Truong</span> <a href="https://github.com/{{ site.owner.github }}">Github</a> <a href="/vc">vCard</a></span>
+  </div>
+</header>

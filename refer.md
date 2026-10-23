@@ -1,6 +1,7 @@
 ---
 layout : "page"
 title : "Personal job referring"
+hidetitle : true
 ---
 
 Personal job referring
