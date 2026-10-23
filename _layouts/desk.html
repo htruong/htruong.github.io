@@ -10,16 +10,16 @@
 {% assign here = page.url | remove: 'index.html' %}
 <body class="desk-page {{ page.layout }}">
 <div class="desk">
-  <img class="prop sliderule" src="/assets/images/desk/sliderule.svg" alt="" width="840" height="120">
-  {% if page.layout == 'post-index' %}{% include _calculator.html %}{% endif %}
-  {% if page.layout == 'post' %}<div class="prop pencil" aria-hidden="true"><span class="pencil-clip"></span></div>{% endif %}
+  {% comment %} Photographs, cut out and drawn at one scale (about 2 px to the mm): credits in the footer {% endcomment %}
+  <img class="prop sliderule" src="/assets/images/desk/sliderule.webp" alt="" width="1280" height="233" loading="lazy" decoding="async">
+  {% if page.layout == 'post-index' %}<img class="prop calc" src="/assets/images/desk/hp45.webp" alt="" width="320" height="581" decoding="async">{% endif %}
 
   <nav class="cards" id="site-nav" aria-label="Site">
-    <a class="card" href="/"{% if here == '/' or page.layout == 'post' %} aria-current="page"{% endif %}>{% include _punchcard.html label='Blog' %}<span class="card-name">Blog</span></a>
+    <a class="card" href="/"{% if here == '/' or page.layout == 'post' %} aria-current="page"{% endif %}><img src="/assets/images/desk/card-blog.webp" alt="" width="730" height="319"><span class="card-name">Blog</span></a>
     {% for link in site.data.navigation %}
-    <a class="card" href="{{ link.url }}"{% if here == link.url %} aria-current="page"{% endif %}>{% include _punchcard.html label=link.title %}<span class="card-name">{{ link.title }}</span></a>
+    <a class="card" href="{{ link.url }}"{% if here == link.url %} aria-current="page"{% endif %}><img src="/assets/images/desk/card-{{ link.title | downcase }}.webp" alt="" width="730" height="319"><span class="card-name">{{ link.title }}</span></a>
     {% endfor %}
-    <a class="card" href="/feed.xml">{% include _punchcard.html label='RSS' %}<span class="card-name">RSS</span></a>
+    <a class="card" href="/feed.xml"><img src="/assets/images/desk/card-rss.webp" alt="" width="730" height="319"><span class="card-name">RSS</span></a>
   </nav>
 
   <main class="printout" id="main" role="main">
@@ -28,6 +28,7 @@
       <footer class="print-foot">
         <p><span>&copy; {{ site.time | date: '%Y' }} HUAN TRUONG</span><span><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></span><span><a href="https://github.com/{{ site.owner.github }}">GITHUB</a> <a href="/vc">VCARD</a></span></p>
         <p><span>NO TRACKING. COMMENTS LOAD ONLY WHEN ASKED FOR.</span></p>
+        <p class="credits"><span>On the desk: <a href="https://commons.wikimedia.org/wiki/File:Vintage_Hewlett-Packard_Model_HP-45_Advanced_Scientific_Pocket_Calculator,_HP%27s_Third_Handheld_Electronic_Calculator,_Introduced_in_1973_and_Discontinued_in_1976_(11590594223).jpg">HP-45</a> photo by Joe Haupt, CC BY-SA 2.0; <a href="https://commons.wikimedia.org/wiki/File:Slide_Rule,_Mathematical,_Sally_Ride_-_DPLA_-_171e755a1928cea2b3ab75f7e08d4b46_(page_1).jpg">Sally Ride&rsquo;s slide rule</a>, Smithsonian, CC0; <a href="https://commons.wikimedia.org/wiki/File:Blank_ibm_5081_punch_card.jpg">IBM 5081 card</a> scan by Rjluna2, CC BY-SA 4.0. Cut out and punched here; the edited images are CC BY-SA too.</span></p>
       </footer>
     </div>
   </main>

@@ -2,8 +2,10 @@
 layout: desk
 ---
 {% comment %}
-  The index as a line-printer report: a page header, one line per document,
-  a control break with a subtotal after every year, and a grand total.
+  The index as a line-printer report: a page header, one line per document
+  (on a wide sheet a title longer than its field is cut at the field's edge,
+  as the printer would; the full title is in the link's title), a control break with a
+  subtotal after every year, and a grand total.
 {% endcomment %}
 {% assign years = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
 <header class="lp-head">
@@ -18,9 +20,7 @@ layout: desk
   <h2 class="visually-hidden">{{ year.name }}</h2>
   <ol class="lp-rows">
   {% for post in year.items %}
-    {% assign category = site.my_categories | where: "slug", post.category %}
-    {% assign category = category[0] %}
-    <li><a href="{{ post.url }}"><span class="c-seq">{{ seq | prepend: '000' | slice: -4, 4 }}</span><span class="c-date">{{ post.date | date: '%Y-%m' }}</span><span class="c-title">{{ post.title }}{% if post.category %} <span class="c-topic">[{{ category.name | default: post.category | upcase }}]</span>{% endif %}</span></a></li>
+    <li><a href="{{ post.url }}" title="{{ post.title | escape }}"><span class="c-seq">{{ seq | prepend: '000' | slice: -4, 4 }}</span><span class="c-date">{{ post.date | date: '%Y-%m' }}</span><span class="c-title">{{ post.title }}</span></a></li>
     {% assign seq = seq | minus: 1 %}
   {% endfor %}
   </ol>

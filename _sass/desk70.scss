@@ -1,8 +1,8 @@
 /* ==========================================================================
    An engineer's desk, about 1974. A steel desk with a linoleum top; on it the
    punch cards that are the navigation, the page itself printed on continuous
-   tractor-feed paper, a slide rule, and on the index a calculator left upside
-   down. All in one light, from the top left.
+   tractor-feed paper, a slide rule, and on the index a calculator. The
+   props are photographs (credits in the footer). One light, from the top left.
    ========================================================================== */
 
 $desk: #868b78;
@@ -94,149 +94,28 @@ body.desk-page {
           drop-shadow(#{3px * $lift} #{10px * $lift} #{14px * $lift} rgba(30, 32, 24, 0.25));
 }
 
-// The slide rule, half under the paper on the left
+// The props are cut-out photographs drawn at one scale, about 2 px to the mm
+// (the paper is 14 7/8 in wide), so they keep their real sizes to each other
+
+// Sally Ride's slide rule (12 3/4 in), half under the paper on the left
 .sliderule {
   z-index: 0;
-  width: 42rem;
+  width: 39.5rem;
   max-width: none;
-  height: auto;
-  top: 30rem;
-  left: calc(50% - #{$paper-w / 2} - 2.4rem - 21rem);
-  transform: rotate(86deg);
+  top: 31rem;
+  left: calc(50% - #{$paper-w / 2} - 3.25rem - 19.75rem);
+  transform: rotate(-86.5deg);
   @include on-desk(0.8);
 }
 
-// The calculator, upside down: 0.7734 reads hELLO from where you sit
+// An HP-45 (81 x 147 mm), put down across the paper's right-hand sprocket strip
 .calc {
   z-index: 3;
-  top: 9.5rem;
-  left: calc(50% + #{$paper-w / 2} - 1.5rem);
-  box-sizing: border-box;
-  width: 9.25rem;
-  padding: 0.85rem 0.7rem 1rem;
-  border-radius: 0.55rem 0.55rem 0.9rem 0.9rem;
-  background: linear-gradient(170deg, #3a3a39, #232323 60%, #1c1c1c);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), inset 0 -2px 0 rgba(0, 0, 0, 0.4);
-  transform: rotate(172deg);
-  transform-origin: 50% 40%;
+  width: 9.9rem;
+  top: 7.5rem;
+  left: calc(50% + #{$paper-w / 2} - 1.4rem);
+  transform: rotate(7deg);
   @include on-desk(1.2);
-}
-.calc-window {
-  padding: 0.45rem 0.4rem;
-  border-radius: 0.2rem;
-  background: linear-gradient(#1a0708, #2a0b0c);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.8), 0 0 0 1px #0c0c0c;
-}
-.led {
-  display: block;
-  width: 100%;
-  height: auto;
-  line {
-    stroke-width: 2.4;
-    stroke-linecap: round;
-  }
-  .on {
-    stroke: #ff3b2a;
-    fill: #ff3b2a;
-    filter: drop-shadow(0 0 1.5px rgba(255, 60, 40, 0.9));
-  }
-  .off {
-    stroke: rgba(255, 60, 40, 0.07);
-  }
-}
-.calc-keys {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0.42rem 0.3rem;
-  margin-top: 0.8rem;
-  i {
-    display: block;
-    height: 0.95rem;
-    border-radius: 0.14rem;
-    background: linear-gradient(#2e2e2e, #151515);
-    box-shadow: 0 1px 0 #000, inset 0 1px 0 rgba(255, 255, 255, 0.14);
-    color: #d8cfa6;
-    font: normal 0.34rem/0.95rem $label-font;
-    text-align: center;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    overflow: hidden;
-    white-space: nowrap;
-    sup {
-      font-size: 0.75em;
-      line-height: 0;
-    }
-  }
-  // From the Enter key down there are four keys to a row
-  .enter {
-    grid-column: span 2;
-    background: linear-gradient(#5a7fa6, #3e5f82);
-    color: #fff;
-  }
-  .op,
-  .n {
-    height: 1.3rem;
-    line-height: 1.3rem;
-    font-size: 0.5rem;
-  }
-  .n {
-    background: linear-gradient(#e9e6dc, #c9c4b5);
-    color: #1d1d1d;
-  }
-  .op {
-    background: linear-gradient(#5a7fa6, #3e5f82);
-    color: #fff;
-  }
-  .op {
-    grid-column: 1 / span 2;
-  }
-}
-.calc-badge {
-  display: block;
-  margin-top: 0.8rem;
-  color: #b7ad83;
-  font: normal 0.4rem/1 $label-font;
-  letter-spacing: 0.2em;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-// A drafting lead holder on the right of a printout
-.pencil {
-  z-index: 3;
-  top: 19rem;
-  left: calc(50% + #{$paper-w / 2} + 1.25rem);
-  width: 0.62rem;
-  height: 15.5rem;
-  border-radius: 0.1rem;
-  // Push button, blue barrel, knurled grip, brass tip
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.35), transparent 40%, rgba(0, 0, 0, 0.3)),
-    linear-gradient(to bottom, #2a2a2a 0, #2a2a2a 1.2rem, #4a6f8f 1.2rem, #42637f 11.2rem, #b9b8b2 11.2rem, #6f6e69 14.3rem, #c9b37c 14.3rem, #a88f55 100%);
-  transform: rotate(-16deg);
-  @include on-desk(1.1);
-  // The lead
-  &::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -0.75rem;
-    width: 2px;
-    height: 0.8rem;
-    margin-left: -1px;
-    background: linear-gradient(#3b3b3b, #111);
-    clip-path: polygon(0 0, 100% 0, 60% 100%, 40% 100%);
-  }
-}
-.pencil-clip {
-  position: absolute;
-  top: 1.6rem;
-  left: 0.45rem;
-  width: 0.2rem;
-  height: 4.2rem;
-  border-radius: 0 0 0.12rem 0.12rem;
-  background: linear-gradient(90deg, #f1f1ee, #8d8d88);
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 /* The punch cards: the navigation
@@ -247,85 +126,64 @@ body.desk-page {
   z-index: 2;
   display: flex;
   justify-content: center;
-  gap: 0.85rem;
-  max-width: $paper-w;
-  margin: 0 auto 1.6rem;
+  margin: 0 auto 1.4rem;
   @media #{$narrow} {
-    gap: 0.4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
     margin-bottom: 0.9rem;
   }
 }
+// IBM 5081 cards (7 3/8 x 3 1/4 in), fanned so each shows its punched columns
 .card {
   position: relative;
   display: block;
-  flex: 0 1 10.25rem;
-  min-width: 0;
+  flex: none;
+  width: 22.8rem;
   color: $ink;
   text-decoration: none;
   transition: transform 0.15s ease;
-  filter: drop-shadow(0 1px 1px rgba(30, 32, 24, 0.35)) drop-shadow(1px 4px 5px rgba(30, 32, 24, 0.22));
-  &:nth-child(1) { transform: rotate(-2.2deg) translateY(2px); }
-  &:nth-child(2) { transform: rotate(1.4deg); }
-  &:nth-child(3) { transform: rotate(-0.8deg) translateY(3px); }
-  &:nth-child(4) { transform: rotate(2.4deg) translateY(1px); }
+  filter: drop-shadow(0 1px 1px rgba(30, 32, 24, 0.4)) drop-shadow(1px 4px 5px rgba(30, 32, 24, 0.22));
+  & + & {
+    margin-left: -13.5rem;
+  }
+  img {
+    display: block;
+    width: 100%;
+  }
+  &:nth-child(1) { transform: rotate(-1.6deg) translateY(3px); }
+  &:nth-child(2) { transform: rotate(0.9deg); }
+  &:nth-child(3) { transform: rotate(-0.6deg) translateY(4px); }
+  &:nth-child(4) { transform: rotate(1.8deg) translateY(1px); }
   &:hover,
   &:focus-visible {
-    transform: rotate(0deg) translateY(-3px);
+    z-index: 1;
+    transform: rotate(0deg) translateY(-0.4rem);
   }
-  // The card in use is lifted off the pile
+  // The card in use is pulled up out of the fan
   &[aria-current] {
+    transform: rotate(0deg) translateY(-0.6rem);
     filter: drop-shadow(0 2px 2px rgba(30, 32, 24, 0.35)) drop-shadow(2px 9px 10px rgba(30, 32, 24, 0.3));
-    .card-stripe {
-      fill: $red;
+  }
+  @media #{$narrow} {
+    width: auto;
+    & + & {
+      margin-left: 0;
     }
   }
 }
-.card-art {
-  display: block;
-  width: 100%;
-  height: auto;
-  overflow: visible;
-  .card-stock {
-    fill: $stock;
-  }
-  .card-stripe {
-    fill: transparent;
-  }
-  .card-print {
-    font: 3.3px $print-font;
-    fill: rgba(120, 84, 40, 0.55);
-    text-anchor: middle;
-  }
-  .card-colno {
-    font: 2.4px $print-font;
-    fill: rgba(120, 84, 40, 0.6);
-    text-anchor: middle;
-  }
-  .card-label {
-    font: 600 5.4px $print-font;
-    fill: $ink;
-    text-anchor: middle;
-  }
-  // The holes show the desk through them
-  .card-holes rect {
-    fill: $desk-dark;
-  }
-}
-// The card's name, typed across its right half
+// The card's name, typed in the blank band beside its punches
 .card-name {
   position: absolute;
-  right: 7%;
-  bottom: 18%;
-  padding: 0.05em 0.3em;
-  background: rgba(239, 225, 185, 0.92);
-  font: 600 0.8125rem/1.2 $print-font;
-  letter-spacing: 0.04em;
+  left: 15%;
+  top: 9%;
+  font: 600 0.875rem/1 $print-font;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   @media #{$narrow} {
-    right: 4%;
-    bottom: 14%;
     font-size: 0.625rem;
-    letter-spacing: 0;
+    top: 8%;
+    left: 16%;
   }
 }
 
@@ -416,7 +274,7 @@ body.desk-page {
 /* Line-printer text: every line is exactly one printer line
    ========================================================================== */
 
-@mixin printed($size: 0.9375rem) {
+@mixin printed($size: 0.875rem) {
   font-family: $print-font;
   font-size: $size;
   font-weight: 400;
@@ -496,10 +354,12 @@ body.desk-page {
   li {
     margin: 0;
   }
+  // One printer line per document, so every line keeps to the paper's bars
   a {
     display: grid;
     grid-template-columns: 5ch 9ch minmax(0, 1fr);
     @include printed;
+    white-space: nowrap;
     color: $ink;
     text-decoration: none;
     &:hover,
@@ -516,14 +376,15 @@ body.desk-page {
   .c-date {
     color: $ink-2;
   }
-  .c-topic {
-    color: $red;
-    white-space: nowrap;
+  .c-title {
+    overflow: hidden;
   }
+  // A narrow sheet is a narrow carriage: long titles go on to the next line
   @media #{$narrow} {
     a {
       grid-template-columns: 8ch minmax(0, 1fr);
       @include printed(0.8125rem);
+      white-space: normal;
     }
     .c-seq {
       display: none;
@@ -843,29 +704,24 @@ body.desk-page {
   }
 }
 // Open comments: one more card, to feed in
+// One more card, punched COMMENTS, at the same scale as the others
 .doc-button {
-  display: inline-flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  box-sizing: border-box;
-  width: 12rem;
-  aspect-ratio: 200 / 88;
-  padding: 0.6rem 0.8rem;
-  background-color: $stock;
-  background-image:
-    radial-gradient(circle, rgba(120, 84, 40, 0.4) 0.6px, transparent 0.9px);
-  background-size: 0.47rem 0.36rem;
-  background-position: 0.4rem 0.8rem;
-  clip-path: polygon(0.55rem 0, 100% 0, 100% 100%, 0 100%, 0 0.55rem);
+  position: relative;
+  display: block;
+  width: 22.8rem;
+  max-width: 100%;
   color: $ink;
-  font: 600 0.875rem/1.2 $print-font;
-  text-transform: uppercase;
   text-decoration: none;
-  filter: drop-shadow(1px 3px 3px rgba(30, 32, 24, 0.3));
+  filter: drop-shadow(0 1px 1px rgba(30, 32, 24, 0.35)) drop-shadow(1px 4px 5px rgba(30, 32, 24, 0.2));
+  transform: rotate(-0.8deg);
   transition: transform 0.15s ease;
+  img {
+    display: block;
+    width: 100%;
+  }
   &:hover,
   &:focus-visible {
     color: $red;
-    transform: translateY(-2px) rotate(-1deg);
+    transform: rotate(0deg) translateY(-0.25rem);
   }
 }
