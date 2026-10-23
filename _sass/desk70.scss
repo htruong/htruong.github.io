@@ -169,11 +169,16 @@ body.desk-page {
   background: rgba(24, 26, 20, 0.62);
   p {
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 12%;
+    left: 50%;
+    bottom: 1.25rem;
+    max-width: calc(100% - 2rem);
+    box-sizing: border-box;
     margin: 0;
-    color: rgba(255, 255, 255, 0.85);
+    padding: 0.4rem 0.9rem;
+    border-radius: 0.4rem;
+    background: rgba(16, 17, 13, 0.8);
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.9);
     font: 0.875rem/1.4 $print-font;
     text-align: center;
   }
@@ -186,7 +191,31 @@ body.desk-page {
   top: 10rem;
   left: calc(50% + #{$paper-w / 2} - 1.1rem);
   transform: rotate(4deg);
+  aspect-ratio: 810 / 1470;
   @include on-desk(1.2);
+  > svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  // In use: upright, large, in the middle of the window, over everything
+  &.is-zoomed {
+    position: fixed;
+    z-index: 51;
+    top: 50%;
+    left: 50%;
+    // drawn at the large size rather than scaled up, so it stays sharp
+    width: calc(9.9rem * var(--zoom, 1));
+    margin: calc(-9.9rem * var(--zoom, 1) * 1470 / 810 / 2) 0 0 calc(-4.95rem * var(--zoom, 1));
+    translate: none;
+    transform: none;
+    cursor: default;
+    filter: drop-shadow(4px 12px 10px rgba(0, 0, 0, 0.35)) drop-shadow(10px 30px 40px rgba(0, 0, 0, 0.3));
+    .hp-key,
+    .hp-switch {
+      cursor: pointer;
+    }
+  }
 }
 
 /* The punch cards: the navigation

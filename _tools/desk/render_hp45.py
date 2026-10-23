@@ -41,51 +41,36 @@ for name in ('dark', 'black', 'orange', 'grey', 'cream'):
     f = C[name]['face']
     defs.append(f'<linearGradient id="k-{name}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{shade(f,1.16)}"/><stop offset=".55" stop-color="{f}"/><stop offset="1" stop-color="{shade(f,.86)}"/></linearGradient>')
 o.append('<defs>' + ''.join(defs) + '</defs>')
+o.append('<style>.hp-seg{fill:#ff3a26;fill-opacity:.018}.hp-seg.hp-lit{fill-opacity:1}'
+         '.hp-knob{transition:transform .12s ease}.hp-on .hp-knob{transform:translateX(44px)}'
+         '.hp-key{transition:transform .05s}.hp-key.hp-down{transform:translateY(3px)}</style>')
 
 # the case
 o.append(f'<rect width="{W}" height="{H}" rx="46" fill="url(#case)"/>')
 o.append(f'<rect width="{W}" height="{H}" rx="46" fill="url(#caseEdge)"/>')
 o.append(f'<rect x="1.5" y="1.5" width="{W-3}" height="{H-3}" rx="45" fill="none" stroke="#fff" stroke-opacity=".08" stroke-width="3"/>')
 
-# the display: a recessed window, red filter glass, the LED digits lit
+# the display: a recessed window behind red filter glass
 o.append('<rect x="64" y="34" width="682" height="168" rx="10" fill="#050505"/>')
 o.append('<rect x="80" y="50" width="650" height="132" rx="5" fill="url(#glass)"/>')
 o.append('<rect x="80" y="50" width="650" height="10" rx="5" fill="#fff" fill-opacity=".06"/>')
-# seven-segment digits: cell 36 wide, the HP-45 shows " 0.00" from the left after power-on
-SEG = {'0': 'abcdef'}
-def digit(x, y, ch, s=1.0):
+# fifteen seven-segment cells, all dark: the calculator is off. The page lights
+# segments by class (hp-on) when it's switched on (assets/js/desk.js)
+def cell(n, x, y, s=1.18):
     w, h, t = 22*s, 46*s, 5*s
     segs = {'a': (x+t, y, w-2*t, t), 'd': (x+t, y+h-t, w-2*t, t), 'g': (x+t, y+h/2-t/2, w-2*t, t),
             'f': (x, y+t, t, h/2-1.5*t), 'b': (x+w-t, y+t, t, h/2-1.5*t),
             'e': (x, y+h/2+t/2, t, h/2-1.5*t), 'c': (x+w-t, y+h/2+t/2, t, h/2-1.5*t)}
-    on = SEG.get(ch, '')
     cx, cy = x + w/2, y + h/2
-    # the digit leans forward a little, about its own centre
-    out = [f'<g transform="translate({cx:.1f} {cy:.1f}) skewX(-6) translate({-cx:.1f} {-cy:.1f})">']
+    # the digit leans forward a little, about its own centre; its point sits low after it
+    out = [f'<g class="hp-cell" data-cell="{n}" transform="translate({cx:.1f} {cy:.1f}) skewX(-6) translate({-cx:.1f} {-cy:.1f})">']
     for k, (sx, sy, sw, sh) in segs.items():
-        op = '1' if k in on else '.035'
-        out.append(f'<rect x="{sx:.1f}" y="{sy:.1f}" width="{sw:.1f}" height="{sh:.1f}" rx="{t/2:.1f}" fill="#ff3a26" fill-opacity="{op}"/>')
+        out.append(f'<rect class="hp-seg" data-seg="{k}" x="{sx:.1f}" y="{sy:.1f}" width="{sw:.1f}" height="{sh:.1f}" rx="{t/2:.1f}"/>')
+    out.append(f'<circle class="hp-seg" data-seg="p" cx="{x+w+5:.1f}" cy="{y+h-2:.1f}" r="4.5"/>')
     out.append('</g>')
     return out
 cells = 15; cx0 = 116; pitch = 41; y0 = 88
-lit = []; dim = []
-text = ' ' + D['display']   # the first cell is the sign
-i = 0; dot_after = None
-for ch in text:
-    if ch == '.':
-        dot_after = i - 1; continue
-    i += 1
-glyphs = [c for c in text if c != '.']
-for n in range(cells):
-    ch = glyphs[n] if n < len(glyphs) else ' '
-    segs = digit(cx0 + n*pitch, y0, ch, 1.18)
-    (lit if ch != ' ' else dim).extend(segs)
-o.append('<g>' + ''.join(dim) + '</g>')
-o.append('<g filter="url(#glow)">' + ''.join(lit))
-if dot_after is not None:
-    # the decimal point sits low between its digit and the next, under the slant
-    o.append(f'<circle cx="{cx0 + dot_after*pitch + 30:.1f}" cy="{y0+50}" r="4.5" fill="#ff3a26"/>')
-o.append('</g>')
+o.append('<g class="hp-display" filter="url(#glow)">' + ''.join(sum((cell(n, cx0 + n*pitch, y0) for n in range(cells)), [])) + '</g>')
 
 # the keyboard panel sits in a thin satin-metal frame (worn bright on the
 # photographed one; drawn as new); its top edge is a lip right under the display
@@ -96,13 +81,20 @@ o.append('<rect x="48" y="202" width="714" height="1236" rx="8" fill="none" stro
 o.append('<rect x="47" y="200" width="716" height="5" rx="2" fill="url(#satin)"/>')
 # power switch
 o.append(f'<text x="118" y="314" font-size="21" fill="#e8e5da" text-anchor="middle" letter-spacing="1">OFF</text><text x="288" y="314" font-size="21" fill="#e8e5da" text-anchor="middle" letter-spacing="1">ON</text>')
-o.append('<rect x="150" y="290" width="104" height="30" rx="5" fill="#0a0a0a"/><rect x="156" y="284" width="48" height="42" rx="5" fill="#3a3a39"/><rect x="156" y="284" width="48" height="8" rx="4" fill="#fff" fill-opacity=".15"/>')
-for i in range(6):
-    o.append(f'<rect x="{162+i*7}" y="296" width="3" height="20" fill="#1d1d1d"/>')
+o.append('<g class="hp-switch"><rect x="100" y="270" width="210" height="70" fill="#000" fill-opacity="0"/>'
+         '<rect x="150" y="290" width="104" height="30" rx="5" fill="#0a0a0a"/>'
+         '<g class="hp-knob"><rect x="156" y="284" width="48" height="42" rx="5" fill="#3a3a39"/><rect x="156" y="284" width="48" height="8" rx="4" fill="#fff" fill-opacity=".15"/>'
+         + ''.join(f'<rect x="{162+i*7}" y="296" width="3" height="20" fill="#1d1d1d"/>' for i in range(6)) + '</g></g>')
+
+# what each key is called on the page (data-key), by its legend
+KEY_ID = {'1/x': 'recip', 'ln': 'ln', 'e^x': 'exp', 'FIX': 'fix', '': 'shift', 'x^2': 'sq', '→P': 'polar',
+          'SIN': 'sin', 'COS': 'cos', 'TAN': 'tan', 'x⇄y': 'swap', 'R↓': 'roll', 'STO': 'sto', 'RCL': 'rcl',
+          '%': 'pct', 'ENTER ↑': 'enter', 'CHS': 'chs', 'EEX': 'eex', 'CLx': 'clx', '−': 'sub', '+': 'add',
+          '×': 'mul', '÷': 'div', '·': 'dot', 'Σ+': 'sigma', **{str(d): str(d) for d in range(10)}}
 
 def key(x, y, w, h, cls, text, shifted, shifted_anchor='middle'):
     face = C[cls]['face']; fg = C[cls]['legend']
-    g = [f'<g filter="url(#keyShadow)">',
+    g = [f'<g class="hp-key" data-key="{KEY_ID[text]}"><g filter="url(#keyShadow)">',
          f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="9" fill="{shade(face,.55)}"/>',   # the skirt
          f'<rect x="{x+4}" y="{y+1}" width="{w-8}" height="{h-15}" rx="7" fill="url(#k-{cls})"/>',  # the top face
          f'<rect x="{x+9}" y="{y+3}" width="{w-18}" height="2" rx="1" fill="#fff" fill-opacity=".28"/>',
@@ -111,6 +103,7 @@ def key(x, y, w, h, cls, text, shifted, shifted_anchor='middle'):
         size = 46 if text in '−+×÷' else 34 if len(text) <= 2 else 27 if len(text) <= 4 else 26
         weight = 500 if text.isdigit() or text in '·' else 600
         g.append(f'<text x="{x+w/2}" y="{y+(h-15)/2+size*.36:.1f}" font-size="{size}" font-weight="{weight}" fill="{fg}" text-anchor="middle">{legend(text,size)}</text>')
+    g.append('</g>')
     if shifted:
         sx = x + w/2 if shifted_anchor == 'middle' else x + w - 8
         g.append(f'<text x="{sx}" y="{y-11}" font-size="24" font-weight="600" fill="{C["gold"]}" text-anchor="{shifted_anchor}">{legend(shifted,24)}</text>')

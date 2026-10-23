@@ -1,6 +1,9 @@
-// The calculator and the slide rule can be picked up and put down somewhere
-// else on the desk, and the slide rule works: its slide and its cursor slide
-// along it. Where you leave everything is remembered in this browser.
+// The calculator and the slide rule on the desk. Drag either to nudge it about;
+// click it to pick it up and use it: it comes up level and large over a
+// dimmed desk. The slide rule's slide and cursor drag along it; the HP-45
+// switches on and calculates (assets/js/hp45.js). Esc or a click outside
+// puts it back (the rule slides in under the page). Where things are left is
+// remembered in this browser.
 (function () {
   function load(key) {
     try { return JSON.parse(localStorage.getItem('desk:' + key)); } catch (e) { return null; }
@@ -65,125 +68,205 @@
     };
   }
 
-  function plainProp(el) {
-    var m = movable(el);
-    draggable(el, function () { return m.start(); }, function (p, dx, dy) { m.move(dx, dy); }, function () { m.end(); });
-    el.addEventListener('dblclick', m.reset);
+  // A prop that can be picked up and used. use = {
+  //   fit(width, height): how much to enlarge it,
+  //   down(event): the part pressed while in use (or null), move(part, dx, dy), up(part),
+  //   hint: the line shown under it, under: slide back in under the page }
+  var EASE = 'cubic-bezier(.2, .7, .2, 1)';
+  function pickable(box, use) {
+    var m = movable(box);
+    var inUse = false, busy = false;
+    var scrim = document.createElement('div');
+    scrim.className = 'desk-scrim';
+    scrim.innerHTML = '<p></p>';
+    scrim.firstChild.textContent = use.hint;
+    var restAt = function () {
+      return { t: getComputedStyle(box).transform, r: box.getBoundingClientRect() };
+    };
+    function pickUp() {
+      if (inUse || busy) return;
+      busy = true;
+      var rest = restAt();
+      var w = parseFloat(getComputedStyle(box).width), h = parseFloat(getComputedStyle(box).height);
+      var k = use.fit(w, h);
+      document.body.appendChild(scrim);
+      box.style.setProperty('--zoom', k);
+      box.classList.add('is-zoomed');
+      // laid out at the large size (so it's drawn sharp), flown in from its place shrunk
+      var dx = rest.r.left + rest.r.width / 2 - innerWidth / 2, dy = rest.r.top + rest.r.height / 2 - innerHeight / 2;
+      box.animate([{ transform: 'translate(' + dx + 'px, ' + dy + 'px) ' + rest.t + ' scale(' + 1 / k + ')' }, { transform: 'none' }],
+                  { duration: 480, easing: EASE });
+      scrim.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 480 });
+      setTimeout(function () { inUse = true; busy = false; }, 480);
+    }
+    function putDown() {
+      if (!inUse || busy) return;
+      busy = true;
+      var k = parseFloat(box.style.getPropertyValue('--zoom')) || 1;
+      box.classList.remove('is-zoomed');
+      var rest = restAt();
+      box.classList.add('is-zoomed');
+      var dx = rest.r.left + rest.r.width / 2 - innerWidth / 2, dy = rest.r.top + rest.r.height / 2 - innerHeight / 2;
+      var fly = box.animate([{ transform: 'none' }, { transform: 'translate(' + dx + 'px, ' + dy + 'px) ' + rest.t + ' scale(' + 1 / k + ')' }],
+                            { duration: 420, easing: EASE, fill: 'forwards' });
+      scrim.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 420, fill: 'forwards' });
+      fly.onfinish = function () {
+        box.classList.remove('is-zoomed');
+        fly.cancel();
+        if (scrim.parentNode) scrim.parentNode.removeChild(scrim);
+        if (use.under) {
+          box.animate([{ translate: 'calc(var(--dx, 0px) - 3rem) var(--dy, 0px)' }, { translate: 'var(--dx, 0px) var(--dy, 0px)' }],
+                      { duration: 260, easing: 'ease-out' });
+        }
+        inUse = false; busy = false;
+        if (use.putDown) use.putDown();
+      };
+    }
+    var moved;
+    draggable(box, function (e) {
+      if (busy) return null;
+      if (!inUse) { moved = false; m.start(); return 'prop'; }
+      return use.down(e);
+    }, function (part, dx, dy) {
+      if (part === 'prop') {
+        if (!moved && Math.abs(dx) + Math.abs(dy) < 5) return;
+        moved = true;
+        return m.move(dx, dy);
+      }
+      if (use.move) use.move(part, dx, dy);
+    }, function (part) {
+      if (part === 'prop') { m.end(); if (!moved) pickUp(); }
+      else if (use.up) use.up(part);
+    });
+    scrim.addEventListener('click', putDown);
+    addEventListener('keydown', function (e) {
+      if (!inUse) return;
+      if (e.key === 'Escape') return putDown();
+      if (use.key && use.key(e)) e.preventDefault();
+    });
+    return { inUse: function () { return inUse; } };
   }
 
-  // The slide rule. On the desk, dragging it moves it and a click picks it up
-  // to use: it comes up level and large, and its slide and cursor drag along it
-  // (the pointer's travel is turned into the rule's own direction and units).
-  // Click off it or press Esc and it goes back and slides under the page.
-  function slideRule(svg) {
-    var drawing = svg.querySelector('svg');
-    var m = movable(svg);
-    var slide = svg.querySelector('.rule-slide'), cursor = svg.querySelector('.rule-cursor');
+  // The slide rule: its slide and cursor drag along it, the pointer's travel
+  // turned into the rule's own direction and units
+  function slideRule(box) {
+    var drawing = box.querySelector('svg');
+    var slide = box.querySelector('.rule-slide'), cursor = box.querySelector('.rule-cursor');
     var vb = drawing.viewBox.baseVal;
     // in drawing units: the slide out by up to a scale's length either way, the
     // cursor between the brackets
     var LIMIT = { slide: [-1340, 1340], cursor: [-933, 430] };
     var pos = load('sliderule-parts') || { slide: 0, cursor: 0 };
-    var zoomed = false, busy = false;
-    var scrim = document.createElement('div');
-    scrim.className = 'desk-scrim';
-    scrim.innerHTML = '<p>Drag the slide or the cursor. Double-click to reset. Esc or click outside to put it back.</p>';
     function show() {
       slide.setAttribute('transform', 'translate(' + pos.slide + ' 0)');
       cursor.setAttribute('transform', 'translate(' + pos.cursor + ' 0)');
     }
     show();
-    // the pointer's travel along the rule, in drawing units
     function along(dx, dy) {
-      var t = getComputedStyle(svg).transform, a = 1, b = 0;
+      var t = getComputedStyle(box).transform, a = 1, b = 0;
       if (t && t !== 'none') { var v = t.match(/-?[\d.]+(e-?\d+)?/g).map(Number); a = v[0]; b = v[1]; }
       var k2 = a * a + b * b || 1;   // rotation and scale: (a, b) is the rule's x axis on screen
-      return (dx * a + dy * b) / k2 * vb.width / parseFloat(getComputedStyle(svg).width);
+      return (dx * a + dy * b) / k2 * vb.width / parseFloat(getComputedStyle(box).width);
     }
-    var EASE = 'cubic-bezier(.2, .7, .2, 1)';
-    function restingTransform() {
-      return getComputedStyle(svg).transform;
-    }
-    function zoomIn() {
-      if (zoomed || busy) return;
-      busy = true;
-      var r0 = svg.getBoundingClientRect(), from = restingTransform();
-      var w = parseFloat(getComputedStyle(svg).width);
-      var k = Math.min(innerWidth * 0.94 / w, 2.6);
-      document.body.appendChild(scrim);
-      svg.classList.add('is-zoomed');
-      svg.style.setProperty('--zoom', k);
-      // where it was on the desk, relative to where it now sits (the middle of the window)
-      var dx = r0.left + r0.width / 2 - innerWidth / 2, dy = r0.top + r0.height / 2 - innerHeight / 2;
-      // it is laid out at the large size (so it's drawn sharp), and flown in from
-      // its place on the desk, shrunk to its size there
-      svg.animate([{ transform: 'translate(' + dx + 'px, ' + dy + 'px) ' + from + ' scale(' + 1 / k + ')' }, { transform: 'none' }],
-                  { duration: 480, easing: EASE });
-      scrim.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 480 });
-      setTimeout(function () { zoomed = true; busy = false; }, 480);
-    }
-    function zoomOut() {
-      if (!zoomed || busy) return;
-      busy = true;
-      var k = parseFloat(svg.style.getPropertyValue('--zoom')) || 1;
-      svg.classList.remove('is-zoomed');
-      var r1 = svg.getBoundingClientRect(), rest = restingTransform();
-      svg.classList.add('is-zoomed');
-      var dx = r1.left + r1.width / 2 - innerWidth / 2, dy = r1.top + r1.height / 2 - innerHeight / 2;
-      var fly = svg.animate([{ transform: 'none' }, { transform: 'translate(' + dx + 'px, ' + dy + 'px) ' + rest + ' scale(' + 1 / k + ')' }],
-                            { duration: 420, easing: EASE, fill: 'forwards' });
-      scrim.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 420, fill: 'forwards' });
-      fly.onfinish = function () {
-        svg.classList.remove('is-zoomed');
-        fly.cancel();
-        if (scrim.parentNode) scrim.parentNode.removeChild(scrim);
-        // and in under the edge of the paper
-        svg.animate([{ translate: 'calc(var(--dx, 0px) - 3rem) var(--dy, 0px)' }, { translate: 'var(--dx, 0px) var(--dy, 0px)' }],
-                    { duration: 260, easing: 'ease-out' });
-        zoomed = false; busy = false;
-        save('sliderule-parts', pos);
-      };
-    }
-    var from, moved;
-    draggable(svg, function (e) {
-      if (busy) return null;
-      if (!zoomed) { moved = false; m.start(); return 'rule'; }
-      var part = cursor.contains(e.target) ? 'cursor' : slide.contains(e.target) ? 'slide' : null;
-      if (part) from = pos[part];
-      return part;
-    }, function (part, dx, dy) {
-      if (part === 'rule') {
-        if (!moved && Math.abs(dx) + Math.abs(dy) < 5) return;
-        moved = true;
-        return m.move(dx, dy);
-      }
-      pos[part] = Math.min(LIMIT[part][1], Math.max(LIMIT[part][0], from + along(dx, dy)));
-      show();
-    }, function (part) {
-      if (part === 'rule') { m.end(); svg.classList.remove('is-moved'); if (!moved) zoomIn(); }
+    var from;
+    pickable(box, {
+      hint: 'Drag the slide or the cursor. Double-click to reset. Esc or click outside to put it back.',
+      under: true,
+      fit: function (w) { return Math.min(innerWidth * 0.94 / w, 2.6); },
+      down: function (e) {
+        var part = cursor.contains(e.target) ? 'cursor' : slide.contains(e.target) ? 'slide' : null;
+        if (part) from = pos[part];
+        return part;
+      },
+      move: function (part, dx, dy) {
+        pos[part] = Math.min(LIMIT[part][1], Math.max(LIMIT[part][0], from + along(dx, dy)));
+        show();
+      },
+      up: function () { save('sliderule-parts', pos); }
     });
-    svg.addEventListener('dblclick', function (e) {
-      if (!zoomed) return;
+    box.addEventListener('dblclick', function () {
+      if (!box.classList.contains('is-zoomed')) return;
       pos = { slide: 0, cursor: 0 }; show(); save('sliderule-parts', pos);
     });
-    scrim.addEventListener('click', zoomOut);
-    addEventListener('keydown', function (e) { if (e.key === 'Escape') zoomOut(); });
   }
 
+  // The HP-45: off until its switch is slid to ON, then an RPN calculator
+  var KEYS = { '0': '0', '1': '1', '2': '2', '3': '3', '4': '4', '5': '5', '6': '6', '7': '7', '8': '8', '9': '9',
+               '.': 'dot', ',': 'dot', '+': 'add', '-': 'sub', '*': 'mul', 'x': 'mul', '/': 'div',
+               'Enter': 'enter', 'Backspace': 'clx', 'Delete': 'clx', 'e': 'eex', 'n': 'chs', 's': 'swap' };
+  function calculator(box) {
+    var calc = new HP45(), on = false;
+    var cells = box.querySelectorAll('.hp-cell');
+    var sw = box.querySelector('.hp-switch');
+    function show() {
+      var shown = on ? calc.cells() : [];
+      Array.prototype.forEach.call(cells, function (cell, i) {
+        var c = shown[i] || { segs: '', dp: false };
+        Array.prototype.forEach.call(cell.querySelectorAll('.hp-seg'), function (seg) {
+          var s = seg.getAttribute('data-seg');
+          seg.classList.toggle('hp-lit', s === 'p' ? c.dp : c.segs.indexOf(s) >= 0);
+        });
+      });
+      box.querySelector('svg').classList.toggle('hp-on', on);
+    }
+    show();
+    function press(key) {
+      if (!on) return;
+      calc.press(key);
+      show();
+    }
+    pickable(box, {
+      hint: 'Slide the switch to ON, then calculate in RPN: 2 ENTER 3 +. Keys work too. Esc or click outside to put it down.',
+      fit: function (w, h) { return Math.min(innerHeight * 0.86 / h, innerWidth * 0.9 / w, 4); },
+      down: function (e) {
+        if (sw.contains(e.target)) return 'switch';
+        var k = e.target.closest && e.target.closest('.hp-key');
+        if (!k || !box.contains(k)) return null;
+        k.classList.add('hp-down');
+        press(k.getAttribute('data-key'));
+        return k;
+      },
+      up: function (part) {
+        if (part === 'switch') {
+          on = !on;
+          if (on) calc.reset();
+          show();
+        } else if (part.classList) {
+          part.classList.remove('hp-down');
+        }
+      },
+      key: function (e) {
+        var k = KEYS[e.key];
+        if (!k || e.metaKey || e.ctrlKey || e.altKey) return false;
+        var el = box.querySelector('.hp-key[data-key="' + k + '"]');
+        if (el && on) { el.classList.add('hp-down'); setTimeout(function () { el.classList.remove('hp-down'); }, 90); }
+        press(k);
+        return true;
+      }
+    });
+  }
+
+  // Swap the pictures of the live props for the drawings themselves, so their
+  // parts can move. Each goes in a plain box that carries its place and turn:
+  // Safari turns an <svg> about a different point than other browsers do.
+  var LIVE = { sliderule: slideRule, calc: window.HP45 ? calculator : null };
   Array.prototype.forEach.call(document.querySelectorAll('.prop[data-prop]'), function (el) {
-    if (el.getAttribute('data-prop') !== 'sliderule' || !window.fetch) return plainProp(el);
-    // Swap the picture of the rule for the drawing itself, so its parts can move.
-    // The drawing goes in a plain box that carries the rule's place and turn:
-    // Safari turns an <svg> about a different point than other browsers do.
+    var name = el.getAttribute('data-prop'), live = LIVE[name];
+    function plain() {
+      var m = movable(el);
+      draggable(el, function () { return m.start(); }, function (p, dx, dy) { m.move(dx, dy); }, function () { m.end(); });
+      el.addEventListener('dblclick', m.reset);
+    }
+    if (!live || !window.fetch) return plain();
     fetch(el.getAttribute('src')).then(function (r) { return r.text(); }).then(function (text) {
       var drawing = document.importNode(new DOMParser().parseFromString(text, 'image/svg+xml').documentElement, true);
       var box = document.createElement('div');
       box.className = el.className;
-      box.setAttribute('data-prop', 'sliderule');
+      box.setAttribute('data-prop', name);
       box.setAttribute('aria-hidden', 'true');
       box.appendChild(drawing);
       el.replaceWith(box);
-      slideRule(box);
-    }).catch(function () { plainProp(el); });
+      live(box);
+    }).catch(plain);
   });
 })();
