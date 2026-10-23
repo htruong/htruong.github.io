@@ -3,6 +3,11 @@ photo: the same eleven scales in the same order and colours (LL/1-LL/3 on top,
 CF CIF CI C on the slide, D LL3 LL2 LL1 below), the brackets, cursor, maker's
 mark and range notes. Every tick is placed by its scale's formula.
 
+The drawing comes in layers so the page can work it: the stators (the frame,
+with LL/1-LL/3 and D, LL3-LL2-LL1), the slide (CF, CIF, CI, C) in
+<g class="rule-slide">, the end brackets, and the cursor in <g class="rule-cursor">.
+The slide runs in an open channel, so the desk shows where it's pulled out.
+
 Each scale has a band of its own: ticks start at the band's edge, and numbers
 sit past the end of the longest tick, so a number never touches a tick; a
 number that would collide with its neighbour is left out.
@@ -48,7 +53,8 @@ def cd_values():
 CD_LABELS = {1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7', 8: '8', 9: '9', 10: '1',
              1.5: '1.5'}
 
-o = []
+LAYERS = {k: [] for k in ('body', 'slide', 'brackets', 'cursor')}
+o = LAYERS['body']
 TICKS, BOXES = [], []      # every tick segment and number box, for the overlap check
 def text(x, y, s, col, size=SIZE, anchor='middle', weight=400):
     o.append(f'<text x="{x:.1f}" y="{y:.1f}" font-size="{size}" fill="{col}" text-anchor="{anchor}" font-weight="{weight}">{s}</text>')
@@ -80,13 +86,13 @@ def scale(name, edge, d, col, pos, values, labels, sub=None):
     text(158, base, name, col, 13, 'end')
 
 H = 262
-o.append(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -14 {W} {H+28}" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">')
-o.append('<defs><linearGradient id="m" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dcdcd7"/><stop offset=".5" stop-color="#b4b3ae"/><stop offset="1" stop-color="#cfcfca"/></linearGradient>'
+HEAD = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -14 {W} {H+28}" width="{W}" height="{H+28}" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">']
+HEAD.append('<defs><linearGradient id="m" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dcdcd7"/><stop offset=".5" stop-color="#b4b3ae"/><stop offset="1" stop-color="#cfcfca"/></linearGradient>'
          '<linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7f6f1"/><stop offset="1" stop-color="#ebeae4"/></linearGradient></defs>')
-# stators and slide (the slide 80-170)
-o.append(f'<rect x="{BR}" y="0" width="{W-2*BR}" height="{H}" fill="url(#body)"/>')
-o.append(f'<rect x="{BR}" y="80" width="{W-2*BR}" height="90" fill="#f1f0ea"/>')
-o.append(f'<path d="M{BR} 80H{W-BR}M{BR} 170H{W-BR}" stroke="#c4c3bd" stroke-width="1.2"/>')
+# the two stators; the slide runs between them, y 80-170
+o.append(f'<rect x="{BR}" y="0" width="{W-2*BR}" height="80" fill="url(#body)"/>')
+o.append(f'<rect x="{BR}" y="170" width="{W-2*BR}" height="{H-170}" fill="url(#body)"/>')
+o.append(f'<path d="M{BR} 79.5H{W-BR}M{BR} 170.5H{W-BR}" stroke="#c4c3bd" stroke-width="1.2"/>')
 
 e = math.e
 # upper stator: LL/1, LL/2 hang from their edges; LL/3 rises from the slide's edge
@@ -99,6 +105,8 @@ scale('LL/1', 4, 1, RED, LL(100, True), ll1n, [(v, fmt(v)) for v in ll1n[:-1]])
 scale('LL/2', 30, 1, RED, LL(10, True), ll2n, [(v, fmt2(v)) for v in ll2n[1:-1]])
 scale('LL/3', 80, -1, RED, LL(1, True), ll3n, [(1/e, '1/e')] + [(v, fmt(v)) for v in ll3n[1:-1]])
 # the slide: CF and CIF hang from its top, CI below them, C rises from its bottom
+o = LAYERS['slide']
+o.append(f'<rect x="4" y="80.5" width="{W-8}" height="89" rx="2" fill="#f1f0ea" stroke="#d2d1cb" stroke-width="1"/>')
 cdv = cd_values()
 cfv = sorted(set([math.pi] + [v for v in cdv]))
 scale('CF', 80, 1, BLK, CF, cfv, [(math.pi, 'π')] + [(v, s) for v, s in CD_LABELS.items() if v != 1.5])
@@ -106,6 +114,7 @@ scale('CIF', 102, 1, RED, CIF, cdv, [(v, s) for v, s in CD_LABELS.items() if v !
 scale('CI', 124, 1, RED, CI, cdv, [(v, s) for v, s in CD_LABELS.items()])
 scale('C', 170, -1, BLK, C, cdv, list(CD_LABELS.items()) + [(math.pi, 'π')])
 # lower stator: D hangs from the slide's edge, then LL3, LL2, LL1
+o = LAYERS['body']
 scale('D', 170, 1, BLK, C, cdv, list(CD_LABELS.items()) + [(math.pi, 'π')])
 ll3 = [e, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 30, 40, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 22026]
 ll2 = [1.105, 1.11, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.5, e]
@@ -123,20 +132,24 @@ for y, s in [(212, '1.0 → 10.0'), (234, '0.1 → 1.0'), (256, '0.01 → 0.1')]
 o.append('<ellipse cx="1578" cy="118" rx="26" ry="16" fill="none" stroke="#b3352b" stroke-width="2"/>')
 text(1578, 124, 'POST', RED, 15, weight=700)
 text(1578, 152, '625 372', '#8a8984', 10)
-# end brackets with their rivets, and the slide's ends showing past them
+# end brackets with their rivets; each has a notch at the slide, where its end shows
+o = LAYERS['brackets']
+N = 30   # notch depth
+o.append(f'<path d="M0 -2H{BR}V{H+2}H0V170H{N}V80H0Z" fill="url(#m)" stroke="#9a9994" stroke-width="1.2" stroke-linejoin="round"/>')
+o.append(f'<path d="M{W-BR} -2H{W}V80H{W-N}V170H{W}V{H+2}H{W-BR}Z" fill="url(#m)" stroke="#9a9994" stroke-width="1.2" stroke-linejoin="round"/>')
 for x in (0, W - BR):
-    o.append(f'<rect x="{x}" y="-2" width="{BR}" height="{H+4}" rx="3" fill="url(#m)" stroke="#9a9994" stroke-width="1.2"/>')
     for ry in (20, H - 20): o.append(f'<circle cx="{x+BR/2}" cy="{ry}" r="5.5" fill="#d6d6d1" stroke="#8a8984"/>')
-o.append(f'<rect x="-6" y="84" width="28" height="82" rx="3" fill="#f1f0ea" stroke="#c9c8c2"/><rect x="{W-22}" y="84" width="28" height="82" rx="3" fill="#f1f0ea" stroke="#c9c8c2"/>')
 # the cursor (where the photo has it): glass in a metal frame, with a red hairline
+o = LAYERS['cursor']
 cx0, cx1 = 1021, 1191
 o.append(f'<rect x="{cx0}" y="-12" width="{cx1-cx0}" height="{H+24}" rx="5" fill="#ffffff" fill-opacity=".14" stroke="#a7a6a1" stroke-width="4"/>')
 o.append(f'<rect x="{cx0-4}" y="-13" width="{cx1-cx0+8}" height="14" rx="4" fill="url(#m)"/><rect x="{cx0-4}" y="{H-1}" width="{cx1-cx0+8}" height="14" rx="4" fill="url(#m)"/>')
 o.append(f'<path d="M{(cx0+cx1)/2} 2V{H-2}" stroke="#c33a2c" stroke-width="1"/>')
-o.append('</svg>')
 # no number may touch a tick (the box includes the 2 px either side)
 hits = [(b[4], round(t[0])) for b in BOXES for t in TICKS if b[0] <= t[0] <= b[1] and not (t[2] < b[2] or t[1] > b[3])]
 if hits:
     sys.exit(f'numbers touching ticks: {hits[:10]} ({len(hits)})')
-open(sys.argv[1], 'w').write('\n'.join(o))
+svg = HEAD + LAYERS['body'] + ['<g class="rule-slide">'] + LAYERS['slide'] + ['</g>'] + LAYERS['brackets'] \
+    + ['<g class="rule-cursor">'] + LAYERS['cursor'] + ['</g>', '</svg>']
+open(sys.argv[1], 'w').write('\n'.join(svg))
 print(f'{len(TICKS)} ticks, {len(BOXES)} numbers, none touching')

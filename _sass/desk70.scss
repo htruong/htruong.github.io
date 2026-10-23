@@ -116,11 +116,51 @@ body.desk-page {
 .sliderule {
   z-index: 0;
   width: 39.5rem;
+  height: auto;
+  aspect-ratio: 1709 / 290;
   max-width: none;
+  overflow: visible;
+  // It always goes back under the page (it is only on top while in use)
+  &.is-moved {
+    z-index: 0;
+  }
+  // In use: level, large, in the middle of the window, over everything
+  &.is-zoomed {
+    position: fixed;
+    z-index: 51;
+    top: 50%;
+    left: 50%;
+    margin: calc(-39.5rem * 290 / 1709 / 2) 0 0 -19.75rem;
+    translate: none;
+    transform: scale(var(--zoom, 1));
+    cursor: default;
+    filter: drop-shadow(4px 12px 10px rgba(0, 0, 0, 0.35)) drop-shadow(10px 30px 40px rgba(0, 0, 0, 0.3));
+    .rule-slide,
+    .rule-cursor {
+      cursor: ew-resize;
+    }
+  }
   top: 31rem;
   left: calc(50% - #{$paper-w / 2} - 3.25rem - 19.75rem);
   transform: rotate(-86.5deg);
   @include on-desk(0.8);
+}
+// Behind the rule in use
+.desk-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(24, 26, 20, 0.62);
+  p {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 12%;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+    font: 0.875rem/1.4 $print-font;
+    text-align: center;
+  }
 }
 
 // An HP-45 (81 x 147 mm), put down on the paper's sprocket strip, clear of the print
