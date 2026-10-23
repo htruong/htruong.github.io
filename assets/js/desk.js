@@ -115,7 +115,9 @@
       svg.style.setProperty('--zoom', k);
       // where it was on the desk, relative to where it now sits (the middle of the window)
       var dx = r0.left + r0.width / 2 - innerWidth / 2, dy = r0.top + r0.height / 2 - innerHeight / 2;
-      svg.animate([{ transform: 'translate(' + dx + 'px, ' + dy + 'px) ' + from }, { transform: 'scale(' + k + ')' }],
+      // it is laid out at the large size (so it's drawn sharp), and flown in from
+      // its place on the desk, shrunk to its size there
+      svg.animate([{ transform: 'translate(' + dx + 'px, ' + dy + 'px) ' + from + ' scale(' + 1 / k + ')' }, { transform: 'none' }],
                   { duration: 480, easing: EASE });
       scrim.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 480 });
       setTimeout(function () { zoomed = true; busy = false; }, 480);
@@ -128,7 +130,7 @@
       var r1 = svg.getBoundingClientRect(), rest = restingTransform();
       svg.classList.add('is-zoomed');
       var dx = r1.left + r1.width / 2 - innerWidth / 2, dy = r1.top + r1.height / 2 - innerHeight / 2;
-      var fly = svg.animate([{ transform: 'scale(' + k + ')' }, { transform: 'translate(' + dx + 'px, ' + dy + 'px) ' + rest }],
+      var fly = svg.animate([{ transform: 'none' }, { transform: 'translate(' + dx + 'px, ' + dy + 'px) ' + rest + ' scale(' + 1 / k + ')' }],
                             { duration: 420, easing: EASE, fill: 'forwards' });
       scrim.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 420, fill: 'forwards' });
       fly.onfinish = function () {

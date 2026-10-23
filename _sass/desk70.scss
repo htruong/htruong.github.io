@@ -143,9 +143,11 @@ body.desk-page {
     z-index: 51;
     top: 50%;
     left: 50%;
-    margin: calc(-39.5rem * 290 / 1709 / 2) 0 0 -19.75rem;
+    // drawn at the large size rather than scaled up, so it stays sharp
+    width: calc(39.5rem * var(--zoom, 1));
+    margin: calc(-39.5rem * var(--zoom, 1) * 290 / 1709 / 2) 0 0 calc(-19.75rem * var(--zoom, 1));
     translate: none;
-    transform: scale(var(--zoom, 1));
+    transform: none;
     cursor: default;
     filter: drop-shadow(4px 12px 10px rgba(0, 0, 0, 0.35)) drop-shadow(10px 30px 40px rgba(0, 0, 0, 0.3));
     .rule-slide,

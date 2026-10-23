@@ -70,7 +70,8 @@ def scale(name, edge, d, col, pos, values, labels, sub=None):
         x = X0 + p * L
         path.append(f'M{x:.2f} {edge}v{d*TICK[kind]}')
         TICKS.append((x, min(edge, edge + d*TICK[kind]), max(edge, edge + d*TICK[kind])))
-    o.append(f'<path d="{" ".join(path)}" stroke="{col}" stroke-width=".9" fill="none"/>')
+    # ticks are a hairline at any size (0.7 px on screen), however large the rule is drawn
+    o.append(f'<path d="{" ".join(path)}" stroke="{col}" stroke-width=".7" vector-effect="non-scaling-stroke" shape-rendering="geometricPrecision" fill="none"/>')
     # numbers: past the longest tick; cap height ~0.72 of the size
     base = edge + d*(TICK['label'] + GAP) + (SIZE*0.72 if d > 0 else 0)
     placed = []
