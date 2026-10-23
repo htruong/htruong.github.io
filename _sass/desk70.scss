@@ -346,6 +346,16 @@ body.desk-page {
   position: relative;
   // above the slide rule, which lies half under the pile
   z-index: 1;
+  // The page on top casts its shadow on the pile under it. (The printout
+  // can't cast its own: the mask that tears its bottom edge clips it.)
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    inset: 0 0 4px;
+    box-shadow: -2px 3px 6px rgba(30, 32, 24, 0.28), -6px 12px 26px -4px rgba(30, 32, 24, 0.35);
+    pointer-events: none;
+  }
   max-width: $paper-w;
   margin: 0 auto;
   isolation: isolate;
