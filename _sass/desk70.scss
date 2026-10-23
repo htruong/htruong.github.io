@@ -516,6 +516,35 @@ body.desk-page {
     }
   }
 }
+// Credits fold out from the footer
+.print-foot .credits {
+  margin-top: 0.25rem;
+  @include printed(0.8125rem);
+  color: $ink-2;
+  summary {
+    display: inline;
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    list-style: none;
+    &::-webkit-details-marker {
+      display: none;
+    }
+    &:hover {
+      color: $red;
+    }
+  }
+  &[open] summary::after {
+    content: " \2212";
+  }
+  p {
+    display: block;
+    max-width: 44em;
+    margin: 0.25rem 0 0;
+    text-transform: none;
+  }
+}
 
 /* A post: a letter-quality printout on plain continuous paper
    ========================================================================== */
