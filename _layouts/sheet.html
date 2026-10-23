@@ -3,7 +3,7 @@
 <head>
 {% include _head.html %}
 </head>
-{% comment %} Every page is one drawing sheet: a zone strip, the title block, the content, the footer block. {% endcomment %}
+{% comment %} Every page is one drawing sheet: zone strips, the title block, the content, the footer block. {% endcomment %}
 {% if page.layout == 'post' %}
   {% capture doc %}TN-{{ page.date | date: '%y%m%d' }}{% endcapture %}
 {% elsif page.layout == 'post-index' %}
@@ -13,21 +13,19 @@
 {% else %}
   {% capture doc %}TN-{{ page.url | split: '/' | last | remove: '.html' | upcase | default: 'PAGE' }}{% endcapture %}
 {% endif %}
-{% comment %} The date in the title block: a post's own, else the newest post's. A post is sheet n of all posts, oldest first. {% endcomment %}
+{% comment %} A post is sheet n of all posts, oldest first {% endcomment %}
 {% if page.layout == 'post' %}
-  {% assign date = page.date %}
   {% for post in site.posts %}{% if post.url == page.url %}{% assign sheet_no = site.posts.size | minus: forloop.index0 %}{% endif %}{% endfor %}
-{% else %}
-  {% assign date = site.posts.first.date %}
 {% endif %}
 <body class="{{ page.layout }}">
 <div class="sheet">
   {% include _zones.html %}
-  {% include _navigation.html doc=doc date=date %}
+  {% include _navigation.html doc=doc sheet_no=sheet_no %}
   <main id="main" role="main">
     {{ content }}
   </main>
-  {% include _footer.html sheet_no=sheet_no %}
+  {% include _footer.html %}
+  {% include _zones.html %}
 </div>
 {% include _scripts.html %}
 </body>

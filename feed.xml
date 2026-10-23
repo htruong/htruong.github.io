@@ -33,14 +33,14 @@ layout: null
   <h:div class="titleblock">
     <h:a class="tb-cell tb-title" href="{{ '/' | absolute_url }}"><h:span class="tb-label">Title</h:span><h:span class="tb-value">Huan Truong&#8217;s Pensieve</h:span></h:a>
     <h:div class="tb-cell tb-doc"><h:span class="tb-label">Doc. no.</h:span><h:span class="tb-value">TN-FEED</h:span></h:div>
-    <h:div class="tb-cell tb-date"><h:span class="tb-label">Date</h:span><h:span class="tb-value">{{ site.posts.first.date | date: '%Y-%m-%d' }}</h:span></h:div>
+    <h:div class="tb-cell tb-sheet"><h:span class="tb-label">Scale</h:span><h:span class="tb-value">1&#8201;:&#8201;1</h:span></h:div>
     <h:div class="tb-nav">
       <h:a class="tb-cell" href="{{ '/' | absolute_url }}"><h:span class="tb-label">Sec. 1</h:span><h:span class="tb-value">Blog</h:span></h:a>
       <h:a class="tb-cell" href="{{ '/projects.html' | absolute_url }}"><h:span class="tb-label">Sec. 2</h:span><h:span class="tb-value">Projects</h:span></h:a>
       <h:a class="tb-cell" href="{{ '/about.html' | absolute_url }}"><h:span class="tb-label">Sec. 3</h:span><h:span class="tb-value">Bio</h:span></h:a>
       <h:a class="tb-cell tb-rss" href="{{ page.url | absolute_url }}" aria-current="page"><h:span class="tb-label">Sec. 4</h:span><h:span class="tb-value">RSS</h:span></h:a>
     </h:div>
-    <h:div class="tb-cell tb-drawn"><h:span class="tb-label">Drawn by</h:span><h:span class="tb-value"><h:span class="tb-author">Huan Truong</h:span> <h:a href="https://github.com/{{ site.owner.github }}">Github</h:a> <h:a href="{{ '/vc' | absolute_url }}">vCard</h:a></h:span></h:div>
+    <h:div class="tb-cell tb-drawn"><h:span class="tb-label">Drawn by</h:span><h:span class="tb-value"><h:span class="tb-author">H. Truong</h:span> <h:a href="https://github.com/{{ site.owner.github }}">Github</h:a> <h:a href="{{ '/vc' | absolute_url }}">vCard</h:a></h:span></h:div>
   </h:div>
 
   <h:div class="feed-intro">
@@ -91,4 +91,5 @@ layout: null
   {% endfor %}
 
   <h:div class="feed-end"><h:p class="end-mark">End of feed</h:p></h:div>
+  <h:div class="zones" aria-hidden="true"><h:span>8</h:span><h:span>7</h:span><h:span>6</h:span><h:span>5</h:span><h:span>4</h:span><h:span>3</h:span><h:span>2</h:span><h:span>1</h:span></h:div>
 </feed>

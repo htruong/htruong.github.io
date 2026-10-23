@@ -63,9 +63,19 @@ $sheet-narrow: "(max-width: 47.9375em)";
       border-left: 0;
     }
   }
-  // A phone-sized sheet has no room for zones worth naming
+  // The strip along the bottom edge
+  &:last-child {
+    border-top: 1px solid $ink;
+    border-bottom: 0;
+  }
+  // Four zones on a narrow sheet
   @media #{$sheet-narrow} {
-    display: none;
+    span:nth-child(-n + 4) {
+      display: none;
+    }
+    span:nth-child(5) {
+      border-left: 0;
+    }
   }
 }
 
@@ -100,20 +110,19 @@ $sheet-narrow: "(max-width: 47.9375em)";
   grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-template-areas:
     "title title title title"
-    "nav nav nav nav";
+    "nav nav nav nav"
+    "doc doc sheet sheet";
   border-bottom: 1px solid $ink;
   @media #{$sheet-wide} {
     grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, 1.2fr) minmax(0, 0.9fr);
     grid-template-areas:
-      "title title title title doc date"
+      "title title title title doc sheet"
       "nav nav nav nav drawn drawn";
   }
   > .tb-cell:last-child {
     border-bottom: 0;
   }
-  // A phone gets the title and the sections; the rest is in the footer
-  .tb-doc,
-  .tb-date,
+  // A phone gets the title, the sections and the numbers; "Drawn by" is in the footer
   .tb-drawn {
     @media #{$sheet-narrow} {
       display: none;
@@ -137,9 +146,15 @@ $sheet-narrow: "(max-width: 47.9375em)";
   .tb-doc {
     grid-area: doc;
   }
-  .tb-date {
-    grid-area: date;
+  .tb-sheet {
+    grid-area: sheet;
     border-right: 0;
+  }
+  @media #{$sheet-narrow} {
+    .tb-doc,
+    .tb-sheet {
+      border-bottom: 0;
+    }
   }
   .tb-drawn {
     grid-area: drawn;

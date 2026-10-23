@@ -1,6 +1,6 @@
 {% comment %}
   The page header is the title block of an engineering drawing.
-  Pass doc="…" for the document number shown in it, and date=… for its date.
+  Pass doc="…" for the document number shown in it, and sheet_no=… on a post.
 {% endcomment %}
 {% assign here = page.url | remove: 'index.html' %}
 <header class="titleblock" role="banner">
@@ -12,10 +12,17 @@
     <span class="tb-label">Doc. no.</span>
     <span class="tb-value">{{ include.doc | default: 'TN-0000' }}</span>
   </div>
-  <div class="tb-cell tb-date">
-    <span class="tb-label">Date</span>
-    <span class="tb-value">{{ include.date | date: '%Y-%m-%d' }}</span>
+  {% if include.sheet_no %}
+  <div class="tb-cell tb-sheet">
+    <span class="tb-label">Sheet</span>
+    <span class="tb-value">{{ include.sheet_no }} of {{ site.posts.size }}</span>
   </div>
+  {% else %}
+  <div class="tb-cell tb-sheet">
+    <span class="tb-label">Scale</span>
+    <span class="tb-value">1&thinsp;:&thinsp;1</span>
+  </div>
+  {% endif %}
   <nav class="tb-nav" id="site-nav">
     <a class="tb-cell" href="/"{% if here == '/' or page.layout == 'post' or page.layout == 'blog_by_category' %} aria-current="page"{% endif %}>
       <span class="tb-label">Sec. 1</span><span class="tb-value">Blog</span>
@@ -31,6 +38,6 @@
   </nav>
   <div class="tb-cell tb-drawn">
     <span class="tb-label">Drawn by</span>
-    <span class="tb-value"><span class="tb-author">Huan Truong</span> <a href="https://github.com/{{ site.owner.github }}">Github</a> <a href="/vc">vCard</a></span>
+    <span class="tb-value"><span class="tb-author">H. Truong</span> <a href="https://github.com/{{ site.owner.github }}">Github</a> <a href="/vc">vCard</a></span>
   </div>
 </header>
