@@ -94,8 +94,8 @@ body.desk-page {
           drop-shadow(#{3px * $lift} #{10px * $lift} #{14px * $lift} rgba(30, 32, 24, 0.25));
 }
 
-// The props are cut-out photographs drawn at one scale, about 2 px to the mm
-// (the paper is 14 7/8 in wide), so they keep their real sizes to each other
+// The props are drawings traced from photographs of the real things, at one
+// scale, about 2 px to the mm (the paper is 14 7/8 in wide)
 
 // Sally Ride's slide rule (12 3/4 in), half under the paper on the left
 .sliderule {
@@ -108,13 +108,13 @@ body.desk-page {
   @include on-desk(0.8);
 }
 
-// An HP-45 (81 x 147 mm), put down across the paper's right-hand sprocket strip
+// An HP-45 (81 x 147 mm), put down on the paper's sprocket strip, clear of the print
 .calc {
   z-index: 3;
   width: 9.9rem;
-  top: 7.5rem;
-  left: calc(50% + #{$paper-w / 2} - 1.4rem);
-  transform: rotate(7deg);
+  top: 10rem;
+  left: calc(50% + #{$paper-w / 2} - 1.1rem);
+  transform: rotate(4deg);
   @include on-desk(1.2);
 }
 
@@ -123,15 +123,13 @@ body.desk-page {
 
 .cards {
   position: relative;
-  z-index: 2;
+  z-index: 0;
   display: flex;
   justify-content: center;
-  margin: 0 auto 1.4rem;
+  // Tucked under the top of the printout: only the punched, labelled top shows
+  margin: 0 auto -5.6rem;
   @media #{$narrow} {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-    margin-bottom: 0.9rem;
+    margin-bottom: -6.5vw;
   }
 }
 // IBM 5081 cards (7 3/8 x 3 1/4 in), fanned so each shows its punched columns
@@ -166,9 +164,9 @@ body.desk-page {
     filter: drop-shadow(0 2px 2px rgba(30, 32, 24, 0.35)) drop-shadow(2px 9px 10px rgba(30, 32, 24, 0.3));
   }
   @media #{$narrow} {
-    width: auto;
+    width: 34vw;
     & + & {
-      margin-left: 0;
+      margin-left: -13vw;
     }
   }
 }
@@ -181,9 +179,9 @@ body.desk-page {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   @media #{$narrow} {
-    font-size: 0.625rem;
-    top: 8%;
-    left: 16%;
+    font-size: 0.5625rem;
+    letter-spacing: 0.02em;
+    top: 9%;
   }
 }
 
@@ -240,23 +238,9 @@ body.desk-page {
     }
   }
 }
-// The index is a listing on green-bar paper, a green bar every three lines
-.post-index .printout {
-  background-image:
-    repeating-linear-gradient(to bottom, $green 0, $green $bar, transparent $bar, transparent $bar * 2),
-    repeating-linear-gradient(to bottom,
-      transparent 0, transparent calc(#{$page-len} - 0.75rem),
-      rgba(0, 0, 0, 0.035) calc(#{$page-len} - 0.75rem), transparent $page-len,
-      rgba(255, 255, 255, 0.5) $page-len, transparent calc(#{$page-len} + 0.75rem)),
-    $perforation;
-  background-size: 100% 100%, 100% $page-len, 7px $page-len;
-  background-position: 0 0, 0 0, 0 $page-len;
-  background-repeat: no-repeat, repeat-y, repeat;
-  // Green bars stop at the perforations of the pin-feed margins
-  background-clip: content-box, border-box, border-box;
-  background-origin: content-box, border-box, border-box;
-}
-
+// The index is a listing on green-bar paper. The bars are kept to the records:
+// every other document is printed on a green bar as tall as its lines, so a
+// title that runs on to a second line stays on its own bar
 .print-body {
   padding: $line * 2 1.75rem $line * 2;
   @media #{$narrow} {
@@ -354,12 +338,13 @@ body.desk-page {
   li {
     margin: 0;
   }
-  // One printer line per document, so every line keeps to the paper's bars
   a {
     display: grid;
     grid-template-columns: 5ch 9ch minmax(0, 1fr);
+    // The bar runs the full width of the paper between the sprocket strips
+    margin: 0 -1.75rem;
+    padding: 0 1.75rem;
     @include printed;
-    white-space: nowrap;
     color: $ink;
     text-decoration: none;
     &:hover,
@@ -376,15 +361,15 @@ body.desk-page {
   .c-date {
     color: $ink-2;
   }
-  .c-title {
-    overflow: hidden;
+  li:nth-child(odd) a {
+    background: $green;
   }
-  // A narrow sheet is a narrow carriage: long titles go on to the next line
   @media #{$narrow} {
     a {
       grid-template-columns: 8ch minmax(0, 1fr);
+      margin: 0 -0.75rem;
+      padding: 0 0.75rem;
       @include printed(0.8125rem);
-      white-space: normal;
     }
     .c-seq {
       display: none;
