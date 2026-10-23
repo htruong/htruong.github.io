@@ -33,10 +33,23 @@
     el.addEventListener('pointercancel', end);
   }
 
+  // How far each prop may be moved from where it lies, in px: it can be
+  // nudged about, but not lost off the desk or pushed out of sight under the
+  // paper (the slide rule lies to the paper's left, so it mustn't go right)
+  var REACH = {
+    sliderule: { left: -90, right: 24, up: -160, down: 160 },
+    calc: { left: -260, right: 60, up: -120, down: 260 }
+  };
+  function clamp(name, at) {
+    var r = REACH[name] || { left: -150, right: 150, up: -150, down: 150 };
+    var n = function (v) { return typeof v === 'number' && isFinite(v) ? v : 0; };
+    return { x: Math.min(r.right, Math.max(r.left, n(at.x))), y: Math.min(r.down, Math.max(r.up, n(at.y))) };
+  }
+
   // A prop moved about the desk, by translate (its rotation stays in the CSS)
   function movable(el) {
     var name = el.getAttribute('data-prop');
-    var at = load(name) || { x: 0, y: 0 };
+    var at = clamp(name, load(name) || {});
     function place() {
       el.style.setProperty('--dx', at.x + 'px');
       el.style.setProperty('--dy', at.y + 'px');
@@ -46,7 +59,7 @@
     var from;
     return {
       start: function () { from = { x: at.x, y: at.y }; el.classList.add('is-held', 'is-moved'); return true; },
-      move: function (dx, dy) { at = { x: from.x + dx, y: from.y + dy }; place(); },
+      move: function (dx, dy) { at = clamp(name, { x: from.x + dx, y: from.y + dy }); place(); },
       end: function () { el.classList.remove('is-held'); save(name, at); },
       reset: function () { at = { x: 0, y: 0 }; place(); save(name, at); }
     };
