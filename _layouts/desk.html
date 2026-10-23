@@ -22,6 +22,8 @@
     <a class="card" href="/feed.xml"><img src="/assets/images/desk/card-rss.svg" alt="" width="2230" height="973"><span class="card-name">RSS</span></a>
   </nav>
 
+  <div class="stack">
+  {% if page.layout == 'post' %}<a class="under-sheet" href="/" aria-label="Back to the listing of documents"><span>PENSIEVE.LST</span></a>{% endif %}
   <main class="printout" id="main" role="main">
     <div class="print-body">
       {% include _stain.html %}
@@ -31,6 +33,7 @@
       </footer>
     </div>
   </main>
+  </div>
 </div>
 {% include _scripts.html %}
 <script src="/assets/js/hp45.js" defer></script>

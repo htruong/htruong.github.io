@@ -339,19 +339,70 @@ body.desk-page {
     }
   }
 }
-// A document being put down on top of the one you're reading (assets/js/pages.js)
-.printout.is-arriving {
+// The printout lies on the desk with whatever was read before under it: on
+// a post, the listing it came from, a little askew. It's only paper (no
+// print), and clicking it brings the listing back (assets/js/pages.js)
+.stack {
+  position: relative;
+  // above the slide rule, which lies half under the pile
+  z-index: 1;
+  max-width: $paper-w;
+  margin: 0 auto;
+  isolation: isolate;
+}
+$under-pose: translate(-2.4rem, 0.8rem) rotate(1.9deg);
+.under-sheet {
+  position: absolute;
+  z-index: 0;
+  inset: 0 0 auto;
+  height: min(100%, 160vh);
+  display: block;
+  background-color: $paper;
+  background-image: repeating-linear-gradient(to bottom, transparent 0 $bar * 2, $green $bar * 2 $bar * 3);
+  background-position: 0 $line * 6;
+  background-clip: content-box;
+  padding: 0 $strip;
+  box-sizing: border-box;
+  box-shadow: 0 1px 1px rgba(30, 32, 24, 0.2), 2px 8px 18px -6px rgba(30, 32, 24, 0.45);
+  transform: $under-pose;
+  transform-origin: 50% 0;
+  transition: transform 0.25s ease;
+  text-decoration: none;
+  // The listing's name, at its top where it shows
+  span {
+    position: absolute;
+    top: $line * 2;
+    left: $strip + 1.75rem;
+    font: 400 0.875rem/#{$line} $print-font;
+    color: $ink-2;
+  }
+  &:hover,
+  &:focus-visible {
+    transform: translate(-3.4rem, 0.6rem) rotate(2.6deg);
+    span {
+      color: $red;
+    }
+  }
+  @media #{$narrow} {
+    display: none;
+  }
+}
+.under-sheet.is-rising {
+  transition: none;
+}
+// A document being put down on top of the one you're reading
+.stack.is-arriving {
   position: absolute;
   z-index: 6;
   left: 50%;
   width: calc(100% - 2rem);
-  max-width: $paper-w;
-  margin: 0;
-  transform: translate(-50%, 0);
+  transform: translateX(-50%);
   @media #{$narrow} {
     width: calc(100% - 1rem);
   }
-  box-shadow: 0 2px 3px rgba(30, 32, 24, 0.25), 4px 18px 34px -8px rgba(30, 32, 24, 0.55);
+  .printout {
+    box-shadow: 0 2px 3px rgba(30, 32, 24, 0.25), 4px 18px 34px -8px rgba(30, 32, 24, 0.55);
+  }
 }
 // The index is a listing on green-bar paper. The bars are kept to the records:
 // every other document is printed on a green bar as tall as its lines, so a
