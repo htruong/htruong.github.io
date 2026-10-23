@@ -339,6 +339,20 @@ body.desk-page {
     }
   }
 }
+// A document being put down on top of the one you're reading (assets/js/pages.js)
+.printout.is-arriving {
+  position: absolute;
+  z-index: 6;
+  left: 50%;
+  width: calc(100% - 2rem);
+  max-width: $paper-w;
+  margin: 0;
+  transform: translate(-50%, 0);
+  @media #{$narrow} {
+    width: calc(100% - 1rem);
+  }
+  box-shadow: 0 2px 3px rgba(30, 32, 24, 0.25), 4px 18px 34px -8px rgba(30, 32, 24, 0.55);
+}
 // The index is a listing on green-bar paper. The bars are kept to the records:
 // every other document is printed on a green bar as tall as its lines, so a
 // title that runs on to a second line stays on its own bar
