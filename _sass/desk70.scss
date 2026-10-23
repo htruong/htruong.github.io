@@ -184,13 +184,13 @@ body.desk-page {
   }
 }
 
-// An HP-45 (81 x 147 mm), put down on the paper's sprocket strip, clear of the print
+// An HP-45, put down beside the paper, clear of the print
 .calc {
   z-index: 3;
   width: 12.5rem;
-  top: 9rem;
-  // on the sprocket strip, but never past the window's edge
-  left: unquote("min(50% + #{$paper-w / 2} - 2.6rem, 100% - 13.6rem)");
+  top: 15rem;
+  // beside the paper, just over its edge, but never past the window's edge
+  left: unquote("min(50% + #{$paper-w / 2} + 0.6rem, 100% - 13.6rem)");
   transform: rotate(4deg);
   aspect-ratio: 810 / 1470;
   @include on-desk(1.2);
@@ -933,4 +933,98 @@ $under-pose: translate(-2.4rem, 0.8rem) rotate(1.9deg);
     color: $red;
     transform: rotate(0deg) translateY(-0.25rem);
   }
+}
+
+/* The credits, printed (assets/js/credits.js): a sheet that comes up out of a
+   dot-matrix printer at the foot of the window, a line at a time
+   ========================================================================== */
+
+.printer {
+  position: fixed;
+  z-index: 60;
+  inset: 0;
+  pointer-events: none;
+  // the room dims a little while it prints
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(24, 26, 20, 0.35);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  &.is-on::before {
+    opacity: 1;
+  }
+  &.is-off {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+}
+.printer-paper {
+  position: absolute;
+  left: 50%;
+  bottom: 1.4rem;
+  width: unquote("min(36rem, 100% - 1.5rem)");
+  box-sizing: border-box;
+  padding: $line $strip + 1.25rem 0;
+  transform: translateX(-50%);
+  background-color: $paper;
+  // pin-feed holes down both strips, a hole every half inch
+  background-image:
+    radial-gradient(circle at #{$strip / 2} 50%, rgba(50, 52, 42, 0.55) 0, $desk-dark 0.36rem, rgba(0, 0, 0, 0.2) 0.4rem, transparent 0.42rem),
+    radial-gradient(circle at calc(100% - #{$strip / 2}) 50%, rgba(50, 52, 42, 0.55) 0, $desk-dark 0.36rem, rgba(0, 0, 0, 0.2) 0.4rem, transparent 0.42rem);
+  background-size: 100% $bar;
+  background-position: 0 100%;
+  box-shadow: 0 2px 3px rgba(30, 32, 24, 0.25), 4px 14px 30px -6px rgba(30, 32, 24, 0.5);
+  pointer-events: auto;
+}
+.printer-line {
+  display: block;
+  margin: 0;
+  min-height: $line;
+  font: 400 0.875rem/#{$line} $print-font;
+  white-space: pre;
+  overflow: hidden;
+  color: $ink;
+  text-decoration: none;
+  // struck through a ribbon by a 9-pin head: each character a grid of dots
+  -webkit-mask: radial-gradient(circle, #000 0.62px, transparent 0.95px) 0 0 / 2px 2px;
+  mask: radial-gradient(circle, #000 0.62px, transparent 0.95px) 0 0 / 2px 2px;
+  text-shadow: 0 0 0.6px $ink;
+}
+a.printer-line {
+  color: $red;
+  text-shadow: 0 0 0.6px $red;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+// the printer's tear bar, which the paper comes up from behind
+.printer-bail {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: unquote("min(40rem, 100%)");
+  height: 1.6rem;
+  transform: translateX(-50%);
+  border-radius: 0.5rem 0.5rem 0 0;
+  background: linear-gradient(#4b4a45, #2c2b28);
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+.printer-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 0.25rem;
+  margin: 0;
+  transform: translateX(-50%);
+  font: 0.75rem/1.1rem $print-font;
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.printer.is-done .printer-hint {
+  opacity: 1;
 }
