@@ -31,7 +31,8 @@ o.append(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" font-fa
 defs = ['<linearGradient id="case" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c2c2b"/><stop offset=".04" stop-color="#1a1a1a"/><stop offset="1" stop-color="#0d0d0d"/></linearGradient>',
         '<linearGradient id="caseEdge" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".10"/><stop offset=".08" stop-color="#fff" stop-opacity="0"/><stop offset=".92" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".25"/></linearGradient>',
         '<linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbfbf8"/><stop offset=".45" stop-color="#c9c9c4"/><stop offset=".55" stop-color="#9b9b96"/><stop offset="1" stop-color="#dcdcd7"/></linearGradient>',
-        '<linearGradient id="lipShadow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".35"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient>',
+        '<linearGradient id="satin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8c8a84"/><stop offset=".5" stop-color="#76746e"/><stop offset="1" stop-color="#5e5c57"/></linearGradient>',
+        '<linearGradient id="lipShadow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".22"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient>',
         '<linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a0609"/><stop offset=".5" stop-color="#2c0305"/><stop offset="1" stop-color="#3a0507"/></linearGradient>',
         f'<linearGradient id="panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{shade(C["panel"],1.08)}"/><stop offset="1" stop-color="{shade(C["panel"],.9)}"/></linearGradient>',
         '<filter id="glow" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>',
@@ -86,14 +87,13 @@ if dot_after is not None:
     o.append(f'<circle cx="{cx0 + dot_after*pitch + 30:.1f}" cy="{y0+50}" r="4.5" fill="#ff3a26"/>')
 o.append('</g>')
 
-# the keyboard panel sits in a thin chrome frame; its top edge is the bright
-# lip right under the display, with the panel's shadow falling below it
+# the keyboard panel sits in a thin satin-metal frame (worn bright on the
+# photographed one; drawn as new); its top edge is a lip right under the display
 o.append('<rect x="48" y="202" width="714" height="1236" rx="8" fill="url(#panel)"/>')
-o.append('<rect x="48" y="206" width="714" height="9" fill="#171613"/>')       # the step down under the lip
-o.append('<rect x="48" y="215" width="714" height="18" fill="url(#lipShadow)"/>')
-o.append('<rect x="60" y="215" width="690" height="1.5" fill="#fff" fill-opacity=".10"/>')
-o.append('<rect x="48" y="202" width="714" height="1236" rx="8" fill="none" stroke="#b9b8b2" stroke-opacity=".7" stroke-width="3"/>')
-o.append('<rect x="46" y="199" width="718" height="7" rx="3" fill="url(#chrome)"/>')
+o.append('<rect x="48" y="205" width="714" height="5" fill="#25231f"/>')       # the step down under the lip
+o.append('<rect x="48" y="210" width="714" height="14" fill="url(#lipShadow)"/>')
+o.append('<rect x="48" y="202" width="714" height="1236" rx="8" fill="none" stroke="#6f6d67" stroke-opacity=".8" stroke-width="2.5"/>')
+o.append('<rect x="47" y="200" width="716" height="5" rx="2" fill="url(#satin)"/>')
 # power switch
 o.append(f'<text x="118" y="314" font-size="21" fill="#e8e5da" text-anchor="middle" letter-spacing="1">OFF</text><text x="288" y="314" font-size="21" fill="#e8e5da" text-anchor="middle" letter-spacing="1">ON</text>')
 o.append('<rect x="150" y="290" width="104" height="30" rx="5" fill="#0a0a0a"/><rect x="156" y="284" width="48" height="42" rx="5" fill="#3a3a39"/><rect x="156" y="284" width="48" height="8" rx="4" fill="#fff" fill-opacity=".15"/>')
@@ -131,8 +131,8 @@ for r, y in enumerate(L['rows']):
         else: x, w = L['x0'] + (c-1)*L['pitch'], L['w']
         o.append(key(x, y, w, L['h'], cls, text, shifted))
 
-# nameplate in its chrome frame
-o.append('<rect x="70" y="1352" width="670" height="66" rx="5" fill="url(#chrome)"/>')
+# nameplate in its satin-metal frame
+o.append('<rect x="70" y="1352" width="670" height="66" rx="5" fill="url(#satin)"/>')
 o.append('<rect x="76" y="1358" width="658" height="54" rx="3" fill="#0b0b0e"/>')
 o.append('<rect x="88" y="1364" width="86" height="42" rx="4" fill="#38ace4"/>')
 o.append('<text x="131" y="1395" font-size="27" font-style="italic" font-weight="700" fill="#0b0b0e" text-anchor="middle">hp</text>')
