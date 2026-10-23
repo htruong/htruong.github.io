@@ -60,7 +60,6 @@ body {
 	ul {
 		@include keycap-row;
 		margin-top: 0;
-		padding: 0;
 		clear: both;
 		list-style-type: none;
 	}
