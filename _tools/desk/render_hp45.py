@@ -31,6 +31,7 @@ o.append(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" font-fa
 defs = ['<linearGradient id="case" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c2c2b"/><stop offset=".04" stop-color="#1a1a1a"/><stop offset="1" stop-color="#0d0d0d"/></linearGradient>',
         '<linearGradient id="caseEdge" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".10"/><stop offset=".08" stop-color="#fff" stop-opacity="0"/><stop offset=".92" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".25"/></linearGradient>',
         '<linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbfbf8"/><stop offset=".45" stop-color="#c9c9c4"/><stop offset=".55" stop-color="#9b9b96"/><stop offset="1" stop-color="#dcdcd7"/></linearGradient>',
+        '<linearGradient id="lipShadow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".35"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient>',
         '<linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a0609"/><stop offset=".5" stop-color="#2c0305"/><stop offset="1" stop-color="#3a0507"/></linearGradient>',
         f'<linearGradient id="panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{shade(C["panel"],1.08)}"/><stop offset="1" stop-color="{shade(C["panel"],.9)}"/></linearGradient>',
         '<filter id="glow" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>',
@@ -46,7 +47,7 @@ o.append(f'<rect width="{W}" height="{H}" rx="46" fill="url(#caseEdge)"/>')
 o.append(f'<rect x="1.5" y="1.5" width="{W-3}" height="{H-3}" rx="45" fill="none" stroke="#fff" stroke-opacity=".08" stroke-width="3"/>')
 
 # the display: a recessed window, red filter glass, the LED digits lit
-o.append('<rect x="64" y="34" width="682" height="164" rx="10" fill="#050505"/>')
+o.append('<rect x="64" y="34" width="682" height="168" rx="10" fill="#050505"/>')
 o.append('<rect x="80" y="50" width="650" height="132" rx="5" fill="url(#glass)"/>')
 o.append('<rect x="80" y="50" width="650" height="10" rx="5" fill="#fff" fill-opacity=".06"/>')
 # seven-segment digits: cell 36 wide, the HP-45 shows " 0.00" from the left after power-on
@@ -85,10 +86,14 @@ if dot_after is not None:
     o.append(f'<circle cx="{cx0 + dot_after*pitch + 30:.1f}" cy="{y0+50}" r="4.5" fill="#ff3a26"/>')
 o.append('</g>')
 
-# chrome trim under the display, then the keyboard panel
-o.append('<rect x="56" y="206" width="698" height="12" rx="4" fill="url(#chrome)"/>')
-o.append('<rect x="44" y="228" width="722" height="1208" rx="12" fill="url(#panel)"/>')
-o.append('<rect x="44" y="228" width="722" height="1208" rx="12" fill="none" stroke="#a8a7a1" stroke-opacity=".55" stroke-width="3"/>')
+# the keyboard panel sits in a thin chrome frame; its top edge is the bright
+# lip right under the display, with the panel's shadow falling below it
+o.append('<rect x="48" y="202" width="714" height="1236" rx="8" fill="url(#panel)"/>')
+o.append('<rect x="48" y="206" width="714" height="9" fill="#171613"/>')       # the step down under the lip
+o.append('<rect x="48" y="215" width="714" height="18" fill="url(#lipShadow)"/>')
+o.append('<rect x="60" y="215" width="690" height="1.5" fill="#fff" fill-opacity=".10"/>')
+o.append('<rect x="48" y="202" width="714" height="1236" rx="8" fill="none" stroke="#b9b8b2" stroke-opacity=".7" stroke-width="3"/>')
+o.append('<rect x="46" y="199" width="718" height="7" rx="3" fill="url(#chrome)"/>')
 # power switch
 o.append(f'<text x="118" y="314" font-size="21" fill="#e8e5da" text-anchor="middle" letter-spacing="1">OFF</text><text x="288" y="314" font-size="21" fill="#e8e5da" text-anchor="middle" letter-spacing="1">ON</text>')
 o.append('<rect x="150" y="290" width="104" height="30" rx="5" fill="#0a0a0a"/><rect x="156" y="284" width="48" height="42" rx="5" fill="#3a3a39"/><rect x="156" y="284" width="48" height="8" rx="4" fill="#fff" fill-opacity=".15"/>')
