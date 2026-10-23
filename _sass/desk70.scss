@@ -127,6 +127,12 @@ body.desk-page {
   aspect-ratio: 1709 / 290;
   max-width: none;
   overflow: visible;
+  > svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
   // It always goes back under the page (it is only on top while in use)
   &.is-moved {
     z-index: 0;

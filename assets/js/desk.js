@@ -63,9 +63,10 @@
   // (the pointer's travel is turned into the rule's own direction and units).
   // Click off it or press Esc and it goes back and slides under the page.
   function slideRule(svg) {
+    var drawing = svg.querySelector('svg');
     var m = movable(svg);
     var slide = svg.querySelector('.rule-slide'), cursor = svg.querySelector('.rule-cursor');
-    var vb = svg.viewBox.baseVal;
+    var vb = drawing.viewBox.baseVal;
     // in drawing units: the slide out by up to a scale's length either way, the
     // cursor between the brackets
     var LIMIT = { slide: [-1340, 1340], cursor: [-933, 430] };
@@ -156,14 +157,18 @@
 
   Array.prototype.forEach.call(document.querySelectorAll('.prop[data-prop]'), function (el) {
     if (el.getAttribute('data-prop') !== 'sliderule' || !window.fetch) return plainProp(el);
-    // Swap the picture of the rule for the drawing itself, so its parts can move
+    // Swap the picture of the rule for the drawing itself, so its parts can move.
+    // The drawing goes in a plain box that carries the rule's place and turn:
+    // Safari turns an <svg> about a different point than other browsers do.
     fetch(el.getAttribute('src')).then(function (r) { return r.text(); }).then(function (text) {
-      var svg = new DOMParser().parseFromString(text, 'image/svg+xml').documentElement;
-      svg.setAttribute('class', el.getAttribute('class'));
-      svg.setAttribute('data-prop', 'sliderule');
-      svg.setAttribute('aria-hidden', 'true');
-      el.replaceWith(svg);
-      slideRule(svg);
+      var drawing = document.importNode(new DOMParser().parseFromString(text, 'image/svg+xml').documentElement, true);
+      var box = document.createElement('div');
+      box.className = el.className;
+      box.setAttribute('data-prop', 'sliderule');
+      box.setAttribute('aria-hidden', 'true');
+      box.appendChild(drawing);
+      el.replaceWith(box);
+      slideRule(box);
     }).catch(function () { plainProp(el); });
   });
 })();
