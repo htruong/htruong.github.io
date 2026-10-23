@@ -2,7 +2,7 @@
 layout: null
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/css" href="{{ '/assets/css/feed.css' | absolute_url }}"?>
+<?xml-stylesheet type="text/css" href="{{ '/assets/css/feed.css' | relative_url }}"?>
 {% comment %}
   Copied from jekyll-feed 0.17.0's template (the plugin skips its own feed when
   this file exists) so the feed can carry a CSS stylesheet instead of XSLT,
@@ -25,8 +25,11 @@ layout: null
   </author>
   {% endif %}
 
+  <!-- Browsers only: fit the styled feed to phone screens -->
+  <h:meta name="viewport" content="width=device-width, initial-scale=1"/>
+
   <h:div class="intro">
-    <h:div class="nav">
+    <h:div class="nav" ontouchstart="">
       <h:a href="{{ '/' | absolute_url }}">Blog</h:a>
       <h:a href="{{ '/projects.html' | absolute_url }}">Pro-<h:br/>jects</h:a>
       <h:a href="{{ '/about.html' | absolute_url }}">Bio</h:a>

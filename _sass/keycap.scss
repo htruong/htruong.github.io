@@ -25,6 +25,8 @@ $keycap-edges-pressed: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/
   text-align: center;
   line-height: 1.2;
   text-decoration: none;
+  // The pressed face is the tap feedback; drop Safari's grey tap overlay
+  -webkit-tap-highlight-color: transparent;
   border: 1px solid $line;
   border-radius: 6px;
   background-color: $skirt;

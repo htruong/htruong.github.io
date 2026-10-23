@@ -4,7 +4,8 @@
 	</div><!-- /.site-name -->
 	<div class="top-navigation">
 		<nav id="site-nav" class="nav">
-		    <ul>
+		    <!-- ontouchstart: iOS Safari only shows :active (the pressed key) when a touch handler exists -->
+		    <ul ontouchstart="">
 		    	<li><a class="root" href="/">Blog</a></li>
 		        {% for link in site.data.navigation %}
 			<li><a href="{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>{{ link.title }}</a></li>
