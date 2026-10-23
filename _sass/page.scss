@@ -12,6 +12,11 @@ body {
    Header
    ========================================================================== */
 
+// Full-width keyboard case behind the header
+.navigation-strip {
+	@include keyboard-case;
+}
+
 .navigation-wrapper {
 	@include container;
 	padding: 2em 0 1em;
@@ -59,6 +64,7 @@ body {
 	}
 	ul {
 		@include keycap-row;
+		@include keyboard-grille-flanks;
 		margin-top: 0;
 		clear: both;
 		list-style-type: none;

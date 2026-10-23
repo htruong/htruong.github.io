@@ -21,9 +21,7 @@ sitemap: false
 
 atom|feed {
   display: block;
-  max-width: 50em;
-  margin: 0 auto;
-  padding: 2em 1em;
+  padding-bottom: 2em;
   background: $body-color;
   color: $text-color;
   font-family: $base-font;
@@ -35,6 +33,19 @@ atom|entry > atom|* {
 }
 atom|entry {
   display: block;
+}
+
+// Page column; the header case is full width
+h|div.intro,
+atom|entry {
+  max-width: 48em;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+h|div.navigation-strip {
+  @include keyboard-case;
+  padding: 2em 1em 1.75em;
 }
 
 h|a {
@@ -61,6 +72,9 @@ h|code {
 // Same keycap links as the site's top navigation
 h|div.nav {
   @include keycap-row;
+  @include keyboard-grille-flanks;
+  max-width: 48em;
+  margin: 0 auto;
 }
 h|div.nav h|a {
   @include keycap;
@@ -90,7 +104,7 @@ h|p.excerpt {
 
 // Phones: the date goes above the title so both get the full width
 @media (max-width: 37.5em) {
-  atom|feed {
+  h|div.navigation-strip {
     padding-top: 1em;
   }
   h|div.row {

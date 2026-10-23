@@ -28,13 +28,16 @@ layout: null
   <!-- Browsers only: fit the styled feed to phone screens -->
   <h:meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <h:div class="intro">
+  <h:div class="navigation-strip">
     <h:div class="nav" ontouchstart="">
       <h:a href="{{ '/' | absolute_url }}">Blog</h:a>
       <h:a href="{{ '/projects.html' | absolute_url }}">Pro-<h:br/>jects</h:a>
       <h:a href="{{ '/about.html' | absolute_url }}">Bio</h:a>
       <h:a class="rss" href="{{ page.url | absolute_url }}">RSS</h:a>
     </h:div>
+  </h:div>
+
+  <h:div class="intro">
     <h:h2>RSS feed</h:h2>
     <h:p>This is the RSS feed for {{ site.title | xml_escape }}. To subscribe, paste this page's address into your feed reader:</h:p>
     <h:p><h:code>{{ page.url | absolute_url }}</h:code></h:p>

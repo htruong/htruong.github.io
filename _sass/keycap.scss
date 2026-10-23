@@ -96,6 +96,51 @@ $keyboard-case: #c4c2bc;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.25);
 }
 
+// Keyboard case, after the Apple Extended Keyboard II: a full-width band of
+// platinum plastic for the header (keyboard-case), with vent slats running
+// from each side of the key row out to the screen edges
+// (keyboard-grille-flanks, on the key row). The slats are exactly as tall
+// as the keys and start one key gap away from the row.
+$keyboard-platinum: lighten($keyboard-case, 9);
+$keyboard-slot-pitch: 12px;
+
+@mixin keyboard-case() {
+  overflow-x: clip;
+  background-color: $keyboard-platinum;
+  border-bottom: 1px solid darken($keyboard-case, 18);
+}
+
+@mixin keyboard-grille-flanks() {
+  position: relative;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    // Level with the keys: the row's padding plus its border
+    top: calc(0.4em + 1px);
+    bottom: calc(0.4em + 1px);
+    // One slot per tile, centred, so both ends of a run have the same margin
+    background-image: linear-gradient(90deg,
+      transparent 0 3.5px,
+      darken($keyboard-case, 18) 3.5px 7.5px,
+      lighten($keyboard-case, 10) 7.5px 8.5px,
+      transparent 8.5px);
+    background-size: $keyboard-slot-pitch 100%;
+    background-repeat: repeat-x;
+  }
+  // Runs off the screen edge; the keyboard case clips it
+  &::before {
+    right: calc(100% + #{$keycap-gap});
+    left: -100vw;
+    background-position: right top;
+  }
+  &::after {
+    left: calc(100% + #{$keycap-gap});
+    right: -100vw;
+    background-position: left top;
+  }
+}
+
 // Traditional orange feed badge
 @mixin keycap-rss() {
   @include keycap(darken($rss-color, 15), darken($rss-color, 8), $rss-color, darken($rss-color, 5), darken($rss-color, 10));
