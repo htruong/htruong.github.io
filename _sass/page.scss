@@ -402,8 +402,9 @@ h2 .post-category, h2 .rss-button {
   &:visited {
     color: $black;
   }
+  // Font Awesome isn't loaded, so the empty icon would only indent the text
   .fa {
-		margin-right: 5px;
+		display: none;
 	}
 }
 
@@ -430,7 +431,8 @@ h2 .post-category, h2 .rss-button {
 		h3 {
 			// Lines the name's baseline up with the first h2 in the main column
 			margin-top: 1.35rem;
-			margin-bottom: 10px;
+			// Puts the first link on the same baseline as the first post row
+			margin-bottom: 1.6rem;
 		}
 		p {
 			margin-bottom: 20px;
