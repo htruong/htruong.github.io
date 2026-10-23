@@ -71,6 +71,7 @@ h|div.nav h|a {
   -webkit-text-stroke: 0.7px currentColor;
   &.rss {
     @include keycap-rss;
+    margin-left: auto;
   }
 }
 

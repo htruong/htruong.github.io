@@ -67,6 +67,10 @@ body {
 	li {
 		display: inline;
 		list-style-type: none;
+		// RSS sits apart, at the far right of the row
+		&.rss {
+			margin-left: auto;
+		}
 		@include font-rem(16);
 		@media #{$small} {
 			white-space: nowrap;
