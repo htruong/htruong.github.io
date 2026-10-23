@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+{% include _head.html %}
+</head>
+{% comment %}
+  An engineer's desk, about 1974: the punch cards are the navigation, the page
+  is a printout on continuous tractor-feed paper, and a few things lie around it.
+{% endcomment %}
+{% assign here = page.url | remove: 'index.html' %}
+<body class="desk-page {{ page.layout }}">
+<div class="desk">
+  <img class="prop sliderule" src="/assets/images/desk/sliderule.svg" alt="" width="840" height="120">
+  {% if page.layout == 'post-index' %}{% include _calculator.html %}{% endif %}
+  {% if page.layout == 'post' %}<div class="prop pencil" aria-hidden="true"><span class="pencil-clip"></span></div>{% endif %}
+
+  <nav class="cards" id="site-nav" aria-label="Site">
+    <a class="card" href="/"{% if here == '/' or page.layout == 'post' %} aria-current="page"{% endif %}>{% include _punchcard.html label='Blog' %}<span class="card-name">Blog</span></a>
+    {% for link in site.data.navigation %}
+    <a class="card" href="{{ link.url }}"{% if here == link.url %} aria-current="page"{% endif %}>{% include _punchcard.html label=link.title %}<span class="card-name">{{ link.title }}</span></a>
+    {% endfor %}
+    <a class="card" href="/feed.xml">{% include _punchcard.html label='RSS' %}<span class="card-name">RSS</span></a>
+  </nav>
+
+  <main class="printout" id="main" role="main">
+    <div class="print-body">
+      {{ content }}
+      <footer class="print-foot">
+        <p><span>&copy; {{ site.time | date: '%Y' }} HUAN TRUONG</span><span><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></span><span><a href="https://github.com/{{ site.owner.github }}">GITHUB</a> <a href="/vc">VCARD</a></span></p>
+        <p><span>NO TRACKING. COMMENTS LOAD ONLY WHEN ASKED FOR.</span></p>
+      </footer>
+    </div>
+  </main>
+</div>
+{% include _scripts.html %}
+</body>
+</html>

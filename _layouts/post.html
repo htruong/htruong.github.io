@@ -1,55 +1,42 @@
 ---
-layout: sheet
+layout: desk
 ---
 {% assign category = site.my_categories | where: "slug", page.category %}
 {% assign category = category[0] %}
-<article class="doc">
-  <header class="doc-head">
-    <dl class="doc-meta">
-      <div><dt>Issued</dt><dd><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y-%m-%d' }}</time></dd></div>
-      {% if page.modified %}<div><dt>Revised</dt><dd><time datetime="{{ page.modified | date: '%Y-%m-%d' }}">{{ page.modified | date: '%Y-%m-%d' }}</time></dd></div>{% endif %}
-      {% if page.category %}<div><dt>Topic</dt><dd><a href="/topic/{{ page.category }}">{{ category.name | default: page.category }}</a></dd></div>{% endif %}
-      <div><dt>Reading</dt><dd>{{ content | number_of_words | divided_by: 230 | plus: 1 }} min</dd></div>
-    </dl>
-    <h1>{{ page.title }}{% if page.link %} <a class="doc-extlink" href="{{ page.link }}" aria-label="Linked page">&nearr;</a>{% endif %}</h1>
+{% for post in site.posts %}{% if post.url == page.url %}{% assign sheet_no = site.posts.size | minus: forloop.index0 %}{% endif %}{% endfor %}
+{% assign file = page.url | split: '/' | last | remove: '.html' | upcase %}
+<article class="doc-print">
+  <header class="lp-head">
+    <p><span>PENSIEVE.DOC</span><span class="lp-center">{{ file | truncate: 34, '…' }}</span><span>SEQ {{ sheet_no | prepend: '000' | slice: -4, 4 }}</span></p>
+    <p><span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y-%m-%d' }}</time></span>{% if page.category %}<span class="lp-center"><a href="/topic/{{ page.category }}">[{{ category.name | default: page.category | upcase }}]</a></span>{% endif %}<span>{{ content | number_of_words | divided_by: 230 | plus: 1 }} MIN</span></p>
   </header>
+
+  <h1 class="doc-title">{{ page.title }}{% if page.link %} <a class="doc-extlink" href="{{ page.link }}" aria-label="Linked page">&nearr;</a>{% endif %}</h1>
 
   <div class="article-wrap doc-body">
     {% include _figures.html html=content %}
   </div>
 
   <footer class="doc-end">
-    <p class="end-mark"><span>End of document TN-{{ page.date | date: '%y%m%d' }}</span></p>
-
-    <section class="end-row">
-      <h2 class="end-label">Rev.</h2>
-      <ol class="revisions">
-        <li><span class="rev-id">A</span> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y-%m-%d' }}</time></li>
-        {% if page.modified %}<li><span class="rev-id">B</span> <time datetime="{{ page.modified | date: '%Y-%m-%d' }}">{{ page.modified | date: '%Y-%m-%d' }}</time></li>{% endif %}
-      </ol>
-    </section>
+    <p class="lp-grand">*** END OF DOCUMENT {{ sheet_no | prepend: '000' | slice: -4, 4 }} ***</p>
 
     {% if site.related_posts.size > 0 %}
-    <section class="end-row see-also">
-      <h2 class="end-label">See also</h2>
-      <div>
-        <ol class="toc">
-        {% for post in site.related_posts limit:3 %}
-          <li><a href="{{ post.url }}"><span class="toc-title">{{ post.title }}</span><span class="toc-page">{{ post.date | date: '%b %Y' }}</span></a></li>
-        {% endfor %}
-        </ol>
-        <p class="see-all"><a href="/">All documents &rarr;</a></p>
-      </div>
+    <section class="see-also">
+      <h2 class="lp-label">SEE ALSO</h2>
+      <ol class="lp-rows">
+      {% for post in site.related_posts limit:3 %}
+        <li><a href="{{ post.url }}"><span class="c-date">{{ post.date | date: '%Y-%m' }}</span><span class="c-title">{{ post.title }}</span></a></li>
+      {% endfor %}
+      </ol>
+      <p class="see-all"><a href="/">&lt; ALL DOCUMENTS</a></p>
     </section>
     {% endif %}
 
     {% if site.owner.disqus-shortname and page.disable_comments != true %}
-    <section class="end-row doc-comments">
-      <h2 class="end-label">Comments</h2>
-      <div>
-        <div id="disqus_thread"></div>
-        {% include _disqus_comments.html %}
-      </div>
+    <section class="doc-comments">
+      <h2 class="lp-label">COMMENTS</h2>
+      <div id="disqus_thread"></div>
+      {% include _disqus_comments.html %}
     </section>
     {% endif %}
   </footer>

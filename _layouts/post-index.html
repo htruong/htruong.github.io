@@ -1,22 +1,30 @@
 ---
-layout: sheet
+layout: desk
 ---
+{% comment %}
+  The index as a line-printer report: a page header, one line per document,
+  a control break with a subtotal after every year, and a grand total.
+{% endcomment %}
 {% assign years = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
-<section class="contents">
-  <header class="contents-head">
-    <h1>Contents</h1>
-    <p class="contents-meta">{{ site.posts.size }} documents, {{ years.last.name }}&ndash;{{ years.first.name }}</p>
-  </header>
-  {% for year in years %}
-  <section class="year">
-    <h2 class="year-no">{{ year.name }}</h2>
-    <ol class="toc">
-    {% for post in year.items %}
-      {% assign category = site.my_categories | where: "slug", post.category %}
-      {% assign category = category[0] %}
-      <li><a href="{{ post.url }}"><span class="toc-title">{{ post.title }}{% if post.category %} <span class="part">{{ category.name | default: post.category }}</span>{% endif %}</span><span class="toc-page">{{ post.date | date: '%b' }}</span></a></li>
-    {% endfor %}
-    </ol>
-  </section>
+<header class="lp-head">
+  <p><span>PENSIEVE.LST</span><span class="lp-center">HUAN TRUONG&rsquo;S PENSIEVE</span><span>PAGE 0001</span></p>
+  <p><span>RUN {{ site.time | date: '%Y-%m-%d' }}</span><span class="lp-center">LISTING OF DOCUMENTS, {{ years.last.name }}&ndash;{{ years.first.name }}</span><span>LPT1</span></p>
+</header>
+<p class="lp-cols" aria-hidden="true"><span class="c-seq">SEQ</span><span class="c-date">DATE</span><span class="c-title">TITLE</span></p>
+<p class="lp-rule" aria-hidden="true"></p>
+{% assign seq = site.posts.size %}
+{% for year in years %}
+<section class="lp-group">
+  <h2 class="visually-hidden">{{ year.name }}</h2>
+  <ol class="lp-rows">
+  {% for post in year.items %}
+    {% assign category = site.my_categories | where: "slug", post.category %}
+    {% assign category = category[0] %}
+    <li><a href="{{ post.url }}"><span class="c-seq">{{ seq | prepend: '000' | slice: -4, 4 }}</span><span class="c-date">{{ post.date | date: '%Y-%m' }}</span><span class="c-title">{{ post.title }}{% if post.category %} <span class="c-topic">[{{ category.name | default: post.category | upcase }}]</span>{% endif %}</span></a></li>
+    {% assign seq = seq | minus: 1 %}
   {% endfor %}
+  </ol>
+  <p class="lp-total">** {{ year.name }} &middot; {{ year.items.size }} DOCUMENT{% if year.items.size != 1 %}S{% endif %}</p>
 </section>
+{% endfor %}
+<p class="lp-grand">*** GRAND TOTAL {{ site.posts.size }} DOCUMENTS &middot; END OF LISTING ***</p>

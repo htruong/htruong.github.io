@@ -18,7 +18,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="/assets/css/main.css">
+{% if page.layout == 'post' or page.layout == 'post-index' %}<link rel="stylesheet" href="/assets/css/desk.css">{% else %}<link rel="stylesheet" href="/assets/css/main.css">{% endif %}
 
 {% feed_meta %}
 
