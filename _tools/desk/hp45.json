@@ -1,0 +1,26 @@
+{
+  "_about": "The HP-45's keyboard as traced from Joe Haupt's photo (CC BY-SA 2.0): key order, widths, legends, the gold shifted functions above each key, and each key's colour class with the colour sampled from the photo. Units are px at 10 px to the mm (the case is 81 x 147 mm).",
+  "case": {"w": 810, "h": 1470},
+  "colours": {
+    "dark":   {"face": "#3a372c", "legend": "#f3f1e8"},
+    "black":  {"face": "#141515", "legend": "#f3f1e8"},
+    "orange": {"face": "#e79819", "legend": "#1a1a1a"},
+    "grey":   {"face": "#b2ac95", "legend": "#1a1a1a"},
+    "cream":  {"face": "#ece8c6", "legend": "#1a1a1a"},
+    "panel":  "#34312b",
+    "gold":   "#e3ac3e"
+  },
+  "upper": {"x0": 96, "pitch": 132, "w": 92, "h": 70, "rows": [371, 494, 619, 743], "keys": [
+    [["dark","1/x","y^x"], ["dark","ln","log"], ["dark","e^x","10^x"], ["dark","FIX","SCI"], ["orange","",""]],
+    [["dark","x^2","√x"], ["black","→P","→R"], ["black","SIN","SIN^-1"], ["black","COS","COS^-1"], ["black","TAN","TAN^-1"]],
+    [["grey","x⇄y","n!"], ["grey","R↓","x̄, s"], ["grey","STO","→D.MS"], ["grey","RCL","D.MS→"], ["dark","%","Δ%"]],
+    [["grey","ENTER ↑","DEG",2], ["grey","CHS","RAD"], ["grey","EEX","GRD"], ["grey","CLx","CLEAR"]]
+  ]},
+  "lower": {"op_x": 96, "op_w": 74, "x0": 231, "pitch": 187, "w": 108, "h": 74, "rows": [864, 987, 1111, 1230], "keys": [
+    [["grey","−",""], ["cream","7","cm/in"], ["cream","8","kg/lb"], ["cream","9","ltr/gal"]],
+    [["grey","+",""], ["cream","4",""], ["cream","5",""], ["cream","6",""]],
+    [["grey","×",""], ["cream","1",""], ["cream","2",""], ["cream","3",""]],
+    [["grey","÷",""], ["cream","0","LAST x"], ["cream","·","π"], ["cream","Σ+","Σ−"]]
+  ]},
+  "display": "0.00"
+}
