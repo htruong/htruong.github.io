@@ -1,23 +1,26 @@
 ---
-layout: sheet
+layout: desk
 ---
-<article class="doc">
-  {% unless page.hidetitle %}
-  <header class="doc-head">
-    <h1>{{ page.title }}</h1>
+{% comment %} A page: a printout like a post's, without a post's dates and sequence number {% endcomment %}
+{% assign file = page.url | split: '/' | last | remove: '.html' | upcase | default: 'INDEX' %}
+<article class="doc-print page-print">
+  <header class="lp-head">
+    <p><span>PENSIEVE.DOC</span><span class="lp-center">{{ file | truncate: 34, '…' }}</span><span>PAGE 0001</span></p>
   </header>
-  {% endunless %}
+
+  {% unless page.hidetitle %}<h1 class="doc-title">{{ page.title }}</h1>{% endunless %}
+
   <div class="article-wrap doc-body">
     {% include _figures.html html=content %}
   </div>
+
   {% if site.owner.disqus-shortname and page.comments == true %}
   <footer class="doc-end">
-    <section class="end-row doc-comments">
-      <h2 class="end-label">Comments</h2>
-      <div>
-        <div id="disqus_thread"></div>
-        {% include _disqus_comments.html %}
-      </div>
+    <p class="lp-grand">*** END OF {{ file }} ***</p>
+    <section class="doc-comments">
+      <h2 class="lp-label">COMMENTS</h2>
+      <div id="disqus_thread"></div>
+      {% include _disqus_comments.html %}
     </section>
   </footer>
   {% endif %}

@@ -22,3 +22,8 @@ from photographs of the real things, not made up:
 
 The scripts read the straightened photos (`hp45-cut.png`, `card-cut.png`) they were
 traced from; those aren't kept here.
+
+- Coffee ring: photo of a real one on a paper towel by Nevit Dilmen, CC BY-SA 3.0
+  (Commons, "Coffee Stain P1000065.JPG"). `coffee_ring.py` reads the stain's density
+  from its colour (the towel's grey emboss drops out), and writes it as coffee brown
+  with that density as alpha, multiplied onto a post's first page.

@@ -522,29 +522,31 @@ body.desk-page {
 
 .doc-print {
   position: relative;
-  // A coffee ring, where the mug stood on the first page
+  // A coffee ring, where the mug stood on the first page (posts only)
   &::before {
     content: "";
     position: absolute;
     z-index: 0;
-    top: -2.6rem;
-    right: -3.6rem;
-    width: 7.5rem;
-    height: 7.5rem;
-    border-radius: 50%;
-    // A dried ring, darker at its rim, with a second fainter one where the mug was set down twice
-    background:
-      radial-gradient(circle at 50% 50%, rgba(150, 98, 44, 0.07) 0 56%, rgba(132, 84, 38, 0.18) 61%, rgba(120, 72, 30, 0.5) 64%, rgba(132, 84, 38, 0.12) 66.5%, transparent 69%),
-      radial-gradient(circle at 41% 58%, transparent 0 59%, rgba(132, 84, 38, 0.16) 63.5%, transparent 67%);
+    top: -0.6rem;
+    right: -3.2rem;
+    width: 8.6rem;
+    height: 8.6rem;
+    // A real dried ring, from a photograph (_tools/desk/coffee_ring.py)
+    background: url("/assets/images/desk/coffee-ring.webp") center / contain no-repeat;
+    transform: rotate(-24deg);
+    opacity: 0.85;
     mix-blend-mode: multiply;
     pointer-events: none;
     @media #{$narrow} {
-      width: 5rem;
-      height: 5rem;
-      top: -1.6rem;
-      right: -2.4rem;
+      width: 5.5rem;
+      height: 5.5rem;
+      top: -0.4rem;
+      right: -1.6rem;
     }
   }
+}
+.page-print::before {
+  content: none;
 }
 .doc-title {
   position: relative;

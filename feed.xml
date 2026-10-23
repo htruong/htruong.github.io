@@ -28,28 +28,15 @@ layout: null
   <!-- Browsers only: fit the styled feed to phone screens -->
   <h:meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <h:div class="zones" aria-hidden="true"><h:span>8</h:span><h:span>7</h:span><h:span>6</h:span><h:span>5</h:span><h:span>4</h:span><h:span>3</h:span><h:span>2</h:span><h:span>1</h:span></h:div>
-
-  <h:div class="titleblock">
-    <h:a class="tb-cell tb-title" href="{{ '/' | absolute_url }}"><h:span class="tb-label">Title</h:span><h:span class="tb-value">Huan Truong&#8217;s Pensieve</h:span></h:a>
-    <h:div class="tb-cell tb-doc tb-doc-solo"><h:span class="tb-label">Doc. no.</h:span><h:span class="tb-value">TN-FEED</h:span></h:div>
-    
-    <h:div class="tb-nav">
-      <h:a class="tb-cell" href="{{ '/' | absolute_url }}"><h:span class="tb-label">Sec. 1</h:span><h:span class="tb-value">Blog</h:span></h:a>
-      <h:a class="tb-cell" href="{{ '/projects.html' | absolute_url }}"><h:span class="tb-label">Sec. 2</h:span><h:span class="tb-value">Projects</h:span></h:a>
-      <h:a class="tb-cell" href="{{ '/about.html' | absolute_url }}"><h:span class="tb-label">Sec. 3</h:span><h:span class="tb-value">Bio</h:span></h:a>
-      <h:a class="tb-cell tb-rss" href="{{ page.url | absolute_url }}" aria-current="page"><h:span class="tb-label">Sec. 4</h:span><h:span class="tb-value">RSS</h:span></h:a>
-    </h:div>
-    <h:div class="tb-cell tb-drawn"><h:span class="tb-label">Refs.</h:span><h:span class="tb-value"><h:a href="https://github.com/{{ site.owner.github }}">Github</h:a> <h:a href="{{ '/vc' | absolute_url }}">vCard</h:a></h:span></h:div>
-  </h:div>
-
-  <h:div class="feed-intro">
-    <h:div class="contents-head">
-      <h:h1>RSS feed</h:h1>
-      <h:p class="contents-meta">Latest {{ site.feed.posts_limit | default: 10 }} documents</h:p>
-    </h:div>
-    <h:p>This is the Atom feed for {{ site.title | xml_escape }}. To subscribe, paste this page&#8217;s address into your feed reader:</h:p>
-    <h:p><h:code>{{ page.url | absolute_url }}</h:code></h:p>
+  <h:div class="feed-top">
+    <h:header class="lp-head">
+      <h:p><h:span>FEED.XML</h:span><h:span class="lp-center">HUAN TRUONG&#8217;S PENSIEVE</h:span><h:span>PAGE 0001</h:span></h:p>
+      <h:p><h:span>RUN {{ site.time | date: '%Y-%m-%d' }}</h:span><h:span class="lp-center">ATOM FEED &#183; LATEST {{ site.feed.posts_limit | default: 10 }} DOCUMENTS</h:span><h:span><h:a href="{{ '/' | absolute_url }}">&lt; BLOG</h:a></h:span></h:p>
+    </h:header>
+    <h:p class="feed-note">This is the feed of {{ site.title | xml_escape }}. To follow it, paste this page&#8217;s address into your feed reader:</h:p>
+    <h:p class="feed-url"><h:code>{{ page.url | absolute_url }}</h:code></h:p>
+    <h:p class="lp-cols" aria-hidden="true"><h:span class="c-date">DATE</h:span><h:span class="c-title">TITLE AND OPENING LINES</h:span></h:p>
+    <h:p class="lp-rule" aria-hidden="true"></h:p>
   </h:div>
 
   {% assign posts = site.posts | where_exp: "post", "post.draft != true" %}
@@ -79,7 +66,7 @@ layout: null
     <summary type="html"><![CDATA[{{ post_summary | strip_html | normalize_whitespace }}]]></summary>
     {% endif %}
     <h:div class="feed-row">
-      <h:span class="feed-date">{{ post.date | date: '%b %Y' }}</h:span>
+      <h:span class="c-date">{{ post.date | date: '%Y-%m' }}</h:span>
       <h:div class="feed-post">
         <h:a class="feed-title" href="{{ post.url | absolute_url }}">{{ post_title }}</h:a>
         {% if post_summary and post_summary != empty %}
@@ -90,6 +77,8 @@ layout: null
   </entry>
   {% endfor %}
 
-  <h:div class="feed-end"><h:p class="end-mark">End of feed</h:p></h:div>
-  <h:div class="zones" aria-hidden="true"><h:span>8</h:span><h:span>7</h:span><h:span>6</h:span><h:span>5</h:span><h:span>4</h:span><h:span>3</h:span><h:span>2</h:span><h:span>1</h:span></h:div>
+  <h:div class="feed-end">
+    <h:p class="lp-grand">*** END OF FEED ***</h:p>
+    <h:p class="feed-foot"><h:span>&#169; {{ site.time | date: '%Y' }} HUAN TRUONG</h:span> <h:a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</h:a></h:p>
+  </h:div>
 </feed>

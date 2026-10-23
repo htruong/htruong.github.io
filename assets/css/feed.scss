@@ -2,105 +2,140 @@
 sitemap: false
 ---
 
-// Styles /feed.xml when it is opened in a browser. The Atom elements are hidden;
-// only the XHTML (h:*) elements added to the feed for browsers are shown. The
-// feed element itself is the drawing sheet, with the same title block as the site.
+// Styles /feed.xml when it is opened in a browser, as one more printout on the
+// desk. The Atom elements are hidden; only the XHTML (h:*) elements added to
+// the feed for browsers are shown. Entries have to stay children of the feed,
+// so the paper can't be a box around them: it is drawn on the feed's own
+// background (paper, pin-feed holes, perforations) and the entries are set in
+// a column on top of it.
 // Namespaces must come before any rule, so before the imports.
 
 @namespace atom url(http://www.w3.org/2005/Atom);
 @namespace h url(http://www.w3.org/1999/xhtml);
 
 @import "fonts";
-@import "titleblock";
-@import "datasheet";
+@import "desk70";
+
+$col: unquote("min(#{$paper-w}, 100% - 1rem)");
+// One tile as wide as the paper and one green bar tall: a pin-feed hole in the
+// middle of each strip (positions inside a gradient are relative to the tile,
+// so no arithmetic on the page's width is needed)
+@function holes($s) {
+  @return radial-gradient(circle at #{$s / 2} 50%, rgba(50, 52, 42, 0.55) 0, $desk-dark 0.36rem, rgba(0, 0, 0, 0.2) 0.4rem, transparent 0.42rem),
+          radial-gradient(circle at calc(100% - #{$s / 2}) 50%, rgba(50, 52, 42, 0.55) 0, $desk-dark 0.36rem, rgba(0, 0, 0, 0.2) 0.4rem, transparent 0.42rem);
+}
+// the paper, with a faint line where each strip tears off
+@function sheet($s) {
+  @return linear-gradient(to right, $paper calc(#{$s} - 1px), rgba(38, 37, 43, 0.18) calc(#{$s} - 1px) $s, $paper $s calc(100% - #{$s}),
+                          rgba(38, 37, 43, 0.18) calc(100% - #{$s}) calc(100% - #{$s} + 1px), $paper calc(100% - #{$s} + 1px));
+}
 
 atom|feed {
-  @include sheet-frame;
-  background: $paper;
+  display: block;
+  min-height: 100vh;
+  padding-bottom: 3rem;
+  background-color: $desk;
+  background-image: holes($strip), sheet($strip);
+  // (holes() is two layers, one per strip)
+  background-size: $col $bar, $col $bar, $col 100%;
+  background-position: center top, center top, center top;
+  background-repeat: repeat-y, repeat-y, no-repeat;
+  @media #{$narrow} {
+    background-image: holes(1.1rem), sheet(1.1rem);
+  }
   color: $ink;
-  font-family: $read-font;
+  font-family: $text-font;
   font-size: 16px;
-  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 atom|feed > atom|*,
-atom|entry > atom|* {
+atom|entry > atom|*,
+h|meta {
   display: none;
 }
 
-// The page column, shared by the intro and every entry
-h|div.feed-intro,
+// The column the print sits in, inside the pin-feed strips
+h|div.feed-top,
 atom|entry,
 h|div.feed-end {
   display: block;
   box-sizing: border-box;
-  width: 100%;
-  max-width: calc(#{$index-column} + 3rem);
+  width: $col;
   margin: 0 auto;
-  padding: 0 1.5rem;
-  @media #{$sheet-narrow} {
-    padding: 0 1rem;
+  padding: 0 calc(#{$strip} + 1.75rem);
+  @media #{$narrow} {
+    padding: 0 calc(1.1rem + 0.75rem);
   }
 }
-h|div.feed-intro {
-  padding-top: 2.75rem;
-  padding-bottom: 1rem;
-  @media #{$sheet-narrow} {
-    padding-top: 1.75rem;
-  }
-  > h|p {
-    @include text-column;
-    max-width: $measure;
-    margin: 1rem 0 0;
-    font-size: 1.0625rem;
-  }
+h|div.feed-top {
+  padding-top: $line * 2;
+}
+h|p.feed-note {
+  margin: 0;
+  @include printed;
+  color: $ink-2;
+}
+h|p.feed-url {
+  margin: 0 0 $line;
+  @include printed;
   h|code {
-    display: inline-block;
-    padding: 0.35rem 0.6rem;
-    border: 1px solid $ink;
-    background: $paper-hi;
-    font-family: $mono-font;
-    font-size: 0.875rem;
+    font: inherit;
+    color: $ink;
     overflow-wrap: anywhere;
   }
 }
-h|div.feed-end {
-  padding-top: 2rem;
-  padding-bottom: 3rem;
-  flex: 1 0 auto;
-}
-
-// One entry: date in the margin, then title and excerpt
-h|div.feed-row {
-  display: grid;
-  grid-template-columns: $margin-col minmax(0, 1fr);
-  padding: 0.9rem 0 1rem;
-  border-bottom: 1px solid $rule;
-  @media #{$sheet-narrow} {
-    grid-template-columns: minmax(0, 1fr);
-    row-gap: 0.3rem;
+h|p.lp-cols {
+  grid-template-columns: 9ch minmax(0, 1fr);
+  @media #{$narrow} {
+    grid-template-columns: 8ch minmax(0, 1fr);
   }
 }
-h|span.feed-date {
-  display: block;
-  padding-top: 0.3rem;
-  @include label-text(0.8125rem);
+
+// One entry: date, then title and its opening lines, every other one on a bar
+h|div.feed-row {
+  display: grid;
+  grid-template-columns: 9ch minmax(0, 1fr);
+  margin: 0 -1.75rem;
+  padding: 0 1.75rem;
+  @include printed;
+  @media #{$narrow} {
+    grid-template-columns: 8ch minmax(0, 1fr);
+    margin: 0 -0.75rem;
+    padding: 0 0.75rem;
+    @include printed(0.8125rem);
+  }
+}
+atom|entry:nth-of-type(odd) h|div.feed-row {
+  background: $green;
+}
+h|span.c-date {
   color: $ink-2;
 }
 h|a.feed-title {
-  font-size: 1.1875rem;
-  font-weight: 650;
-  line-height: 1.3;
   color: $ink;
+  font-weight: 600;
   text-decoration: none;
   &:hover {
-    color: $accent;
+    color: $red;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
   }
 }
 h|p.excerpt {
-  max-width: 38rem;
-  margin: 0.35rem 0 0;
+  margin: 0;
   color: $ink-2;
-  font-size: 1rem;
-  line-height: 1.55;
+}
+
+h|div.feed-end {
+  padding-bottom: $line * 2;
+}
+h|p.feed-foot {
+  margin: 0;
+  @include printed(0.8125rem);
+  color: $ink-2;
+  text-align: center;
+  h|a {
+    color: $ink-2;
+  }
 }
