@@ -8,6 +8,7 @@ sitemap: false
 @import "variables";
 @import "keycap";
 @import "label";
+@import "paper";
 
 @namespace atom url(http://www.w3.org/2005/Atom);
 @namespace h url(http://www.w3.org/1999/xhtml);
@@ -36,12 +37,36 @@ atom|entry {
   display: block;
 }
 
-// Page column; the header case is full width
+// Page column; the header case is full width. The intro and the entries
+// are separate elements, stacked with no gaps to make one sheet of paper.
+$feed-date-width: 5.3em;
+$feed-gap: 0.8em;
+$feed-pad: 1em;
 h|div.intro,
 atom|entry {
   max-width: 48em;
   margin: 0 auto;
-  padding: 0 1em;
+  padding: 0 $feed-pad;
+  box-sizing: border-box;
+  background-color: $paper-color;
+  border: solid rgba(0, 0, 0, 0.06);
+  border-width: 0 1px;
+}
+h|div.intro {
+  margin-top: 1.5em;
+  padding-top: $paper-pad-top;
+  padding-bottom: $notebook-rule;
+  border-top-width: 1px;
+}
+// Ruled, with the red margin line between the date and the post. The blank
+// line after each post is padding, so the rules carry on through it.
+atom|entry {
+  padding-bottom: $notebook-rule;
+  @include notebook-ruled(calc(#{$feed-pad} + #{$feed-date-width} + #{$feed-gap} / 2));
+}
+atom|entry:last-of-type {
+  border-bottom-width: 1px;
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.12);
 }
 
 h|div.navigation-strip {
@@ -91,17 +116,24 @@ h|div.nav h|a {
 }
 
 // Date column, then title and excerpt sharing one left edge
+// Every line sits on a rule
 h|div.row {
   display: grid;
-  // Date label (5.3em plus its padding), then the post
-  grid-template-columns: 6.1em 1fr;
-  column-gap: 0.3em;
-  margin: 0 0 1.25em;
-  line-height: 1.4;
+  grid-template-columns: $feed-date-width 1fr;
+  column-gap: $feed-gap;
+  line-height: $notebook-rule;
 }
 
 h|p.excerpt {
-  margin: 0.25em 0 0;
+  margin: 0;
+}
+
+// Written in the margin, against the margin line
+h|span.post-date {
+  font-family: $heading-font;
+  color: lighten($text-color, 20);
+  text-align: right;
+  align-self: start;
 }
 
 // Phones: the date goes above the title so both get the full width
@@ -111,16 +143,13 @@ h|p.excerpt {
   }
   h|div.row {
     grid-template-columns: 1fr;
-    row-gap: 0.15em;
+  }
+  // The date sits above the post here, so no margin line through the text
+  atom|entry {
+    @include notebook-ruled;
+  }
+  h|span.post-date {
+    text-align: left;
   }
 }
 
-h|span.post-date {
-  @include label-tape;
-  font-family: $heading-font;
-  min-width: 5.3em;
-  text-align: center;
-  // Keep the tape to one line high, at the start of the row
-  align-self: start;
-  justify-self: start;
-}

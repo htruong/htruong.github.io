@@ -38,6 +38,7 @@
 s/xml.gif" alt="RSS XML" /></a>--> Blog posts in <span class="post-category category-{{ page.slug }}">{{ page.name }}</span></h2></div>
     <div>{{ content }}</div>
     {% if site.categories[page.slug] %}
+    <div class="notebook">
     {% for post in site.categories[page.slug] %}
 
       <article>
@@ -49,6 +50,7 @@ s/xml.gif" alt="RSS XML" /></a>--> Blog posts in <span class="post-category cate
       </article>
     
     {% endfor %}
+    </div><!-- /.notebook -->
     {% else %}
       <p>There are no posts in this category.</p>
     {% endif %}
