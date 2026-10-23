@@ -31,9 +31,9 @@ layout: null
   <h:div class="zones" aria-hidden="true"><h:span>8</h:span><h:span>7</h:span><h:span>6</h:span><h:span>5</h:span><h:span>4</h:span><h:span>3</h:span><h:span>2</h:span><h:span>1</h:span></h:div>
 
   <h:div class="titleblock">
-    <h:a class="tb-cell tb-title" href="{{ '/' | absolute_url }}"><h:span class="tb-label">Title</h:span><h:span class="tb-value">Huan Truong&#8217;s Pensieve</h:span><h:span class="stamp" aria-hidden="true">For tinkering only</h:span></h:a>
+    <h:a class="tb-cell tb-title" href="{{ '/' | absolute_url }}"><h:span class="tb-label">Title</h:span><h:span class="tb-value">Huan Truong&#8217;s Pensieve</h:span></h:a>
     <h:div class="tb-cell tb-doc"><h:span class="tb-label">Doc. no.</h:span><h:span class="tb-value">TN-FEED</h:span></h:div>
-    <h:div class="tb-cell tb-rev"><h:span class="tb-label">Rev.</h:span><h:span class="tb-value">{{ site.time | date: '%y.%m' }}</h:span></h:div>
+    <h:div class="tb-cell tb-date"><h:span class="tb-label">Date</h:span><h:span class="tb-value">{{ site.posts.first.date | date: '%Y-%m-%d' }}</h:span></h:div>
     <h:div class="tb-nav">
       <h:a class="tb-cell" href="{{ '/' | absolute_url }}"><h:span class="tb-label">Sec. 1</h:span><h:span class="tb-value">Blog</h:span></h:a>
       <h:a class="tb-cell" href="{{ '/projects.html' | absolute_url }}"><h:span class="tb-label">Sec. 2</h:span><h:span class="tb-value">Projects</h:span></h:a>
@@ -91,5 +91,4 @@ layout: null
   {% endfor %}
 
   <h:div class="feed-end"><h:p class="end-mark">End of feed</h:p></h:div>
-  <h:div class="zones" aria-hidden="true"><h:span>8</h:span><h:span>7</h:span><h:span>6</h:span><h:span>5</h:span><h:span>4</h:span><h:span>3</h:span><h:span>2</h:span><h:span>1</h:span></h:div>
 </feed>

@@ -15,7 +15,7 @@ layout: sheet
     <h2 class="year-no">{{ year.name }}</h2>
     <ol class="toc">
     {% for post in year.items %}
-      <li><a href="{{ post.url }}"><span class="toc-title">{{ post.title }}</span><span class="toc-leader" aria-hidden="true"></span><span class="toc-page">{{ post.date | date: '%b' }}</span></a></li>
+      <li><a href="{{ post.url }}"><span class="toc-title">{{ post.title }}</span><span class="toc-page">{{ post.date | date: '%b' }}</span></a></li>
     {% endfor %}
     </ol>
   </section>

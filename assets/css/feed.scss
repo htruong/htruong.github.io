@@ -49,6 +49,7 @@ h|div.feed-intro {
     padding-top: 1.75rem;
   }
   > h|p {
+    @include text-column;
     max-width: $measure;
     margin: 1rem 0 0;
     font-size: 1.0625rem;
@@ -72,7 +73,7 @@ h|div.feed-end {
 // One entry: date in the margin, then title and excerpt
 h|div.feed-row {
   display: grid;
-  grid-template-columns: 5.5rem minmax(0, 1fr);
+  grid-template-columns: $margin-col minmax(0, 1fr);
   padding: 0.9rem 0 1rem;
   border-bottom: 1px solid $rule;
   @media #{$sheet-narrow} {

@@ -4,9 +4,11 @@
    Sheet, title block and tokens are in titleblock.scss.
    ========================================================================== */
 
-$column: 40rem;
+// One grid on every page: a margin column for years, section numbers and
+// labels, then the text column
 $index-column: 46rem;
-$measure: none;
+$margin-col: 5.5rem;
+$measure: 38rem;
 
 html {
   font-size: 100%;
@@ -47,12 +49,22 @@ img {
 }
 .doc,
 .contents {
-  max-width: $column;
+  max-width: $index-column;
   margin: 0 auto;
 }
-// The index has a year column beside its lines, so it is a little wider
-.contents {
-  max-width: $index-column;
+// Everything that isn't a margin note starts at the text column
+@mixin text-column {
+  @media #{$sheet-wide} {
+    padding-left: $margin-col;
+  }
+}
+.contents-head,
+.contents-intro,
+.doc-head,
+.doc-body,
+.see-also,
+.doc-comments {
+  @include text-column;
 }
 
 /* Index of documents
@@ -91,7 +103,7 @@ img {
 
 .year {
   display: grid;
-  grid-template-columns: 5.5rem minmax(0, 1fr);
+  grid-template-columns: $margin-col minmax(0, 1fr);
   border-bottom: 1px solid $rule;
   padding: 0.55rem 0 0.7rem;
   @media #{$sheet-narrow} {
@@ -109,7 +121,9 @@ img {
   }
 }
 
-/* A contents line: title, dot leader, "page" (the month) */
+/* A contents line: title, dot leader, "page" (the month). The leader is a
+   run of dots placed where the title's last line ends, clipped at the
+   column, so a wrapped title keeps its leader and the month on its last line */
 .toc {
   margin: 0;
   padding: 0;
@@ -118,67 +132,48 @@ img {
     margin: 0;
   }
   a {
-    display: flex;
-    align-items: baseline;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 0.75rem;
     align-items: last baseline;
-    gap: 0.6rem;
     padding: 0.3rem 0;
     color: $ink;
     text-decoration: none;
     &:hover,
     &:focus-visible {
-      .toc-title {
+      .toc-title,
+      .toc-title::after {
         color: $accent;
-      }
-      .toc-leader {
-        background-image: radial-gradient(circle, $accent 0.9px, transparent 1.3px);
       }
     }
   }
 }
 .toc-title {
-  flex: 0 1 auto;
+  position: relative;
+  overflow: hidden;
   font-size: 1.0625rem;
-  line-height: 1.35;
+  line-height: 1.4;
   @media #{$sheet-narrow} {
     font-size: 1rem;
   }
-}
-.toc-leader {
-  flex: 1 1 1.5rem;
-  min-width: 1.5rem;
-  height: 4px;
-  position: relative;
-  top: -0.3em;
-  background-image: radial-gradient(circle, $ink-2 0.9px, transparent 1.3px);
-  background-size: 6px 4px;
-  background-repeat: repeat-x;
-  background-position: right center;
+  &::after {
+    content: "................................................................................................................................................................";
+    position: absolute;
+    padding-left: 0.5em;
+    white-space: nowrap;
+    letter-spacing: 0.45em;
+    color: $ink-2;
+    opacity: 0.7;
+    pointer-events: none;
+  }
 }
 .toc-page {
-  flex: none;
+  // Left-aligned in a fixed column, so every leader stops at the same place
   min-width: 2.25rem;
-  text-align: right;
+  text-align: left;
+  white-space: nowrap;
   @include label-text(0.8125rem);
   color: $ink-2;
-}
-// Narrow: the month moves to the left of the title and the leaders go
-@media #{$sheet-narrow} {
-  .toc a {
-    align-items: baseline;
-    gap: 0.5rem;
-  }
-  .toc-leader {
-    display: none;
-  }
-  .toc-page {
-    order: -1;
-    min-width: 2.4rem;
-    text-align: left;
-  }
-  .see-also .toc-page {
-    min-width: 4.6rem;
-  }
 }
 
 /* Topics as part codes */
@@ -306,9 +301,7 @@ img {
   h2 {
     counter-increment: sec;
     counter-reset: sub;
-    margin: 2.4em 0 0.7em;
-    padding-top: 0.55em;
-    border-top: 1px solid $ink;
+    margin: 2.2em 0 0.7em;
     font-size: 1.5rem;
     &::before {
       content: counter(sec);
@@ -316,6 +309,10 @@ img {
       min-width: 1.9rem;
       color: $accent;
       font-variant-numeric: lining-nums tabular-nums;
+      @media #{$sheet-wide} {
+        margin-left: -$margin-col;
+        min-width: $margin-col;
+      }
     }
   }
   h3 {
@@ -328,6 +325,10 @@ img {
       min-width: 2.6rem;
       color: $accent;
       font-variant-numeric: lining-nums tabular-nums;
+      @media #{$sheet-wide} {
+        margin-left: -$margin-col;
+        min-width: $margin-col;
+      }
     }
   }
   h4,
@@ -359,8 +360,6 @@ img {
   // Straight under the header rule: no second rule
   > h2:first-child {
     margin-top: 1.25rem;
-    padding-top: 0;
-    border-top: 0;
   }
 
   ul,
@@ -579,7 +578,4 @@ img {
     box-shadow: 0 0 0 $ink;
   }
 }
-.doc-button-note {
-  @include label-text(0.6875rem);
-  color: $ink-2;
-}
+

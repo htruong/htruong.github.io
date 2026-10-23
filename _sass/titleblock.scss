@@ -63,18 +63,9 @@ $sheet-narrow: "(max-width: 47.9375em)";
       border-left: 0;
     }
   }
-  &:last-child {
-    border-top: 1px solid $ink;
-    border-bottom: 0;
-  }
-  // Four zones on a narrow sheet
+  // A phone-sized sheet has no room for zones worth naming
   @media #{$sheet-narrow} {
-    span:nth-child(-n + 4) {
-      display: none;
-    }
-    span:nth-child(5) {
-      border-left: 0;
-    }
+    display: none;
   }
 }
 
@@ -109,17 +100,24 @@ $sheet-narrow: "(max-width: 47.9375em)";
   grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-template-areas:
     "title title title title"
-    "nav nav nav nav"
-    "drawn drawn doc doc";
+    "nav nav nav nav";
   border-bottom: 1px solid $ink;
   @media #{$sheet-wide} {
-    grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, 1.35fr) minmax(0, 0.75fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, 1.2fr) minmax(0, 0.9fr);
     grid-template-areas:
-      "title title title title doc rev"
+      "title title title title doc date"
       "nav nav nav nav drawn drawn";
   }
   > .tb-cell:last-child {
     border-bottom: 0;
+  }
+  // A phone gets the title and the sections; the rest is in the footer
+  .tb-doc,
+  .tb-date,
+  .tb-drawn {
+    @media #{$sheet-narrow} {
+      display: none;
+    }
   }
   .tb-title {
     grid-area: title;
@@ -139,17 +137,9 @@ $sheet-narrow: "(max-width: 47.9375em)";
   .tb-doc {
     grid-area: doc;
   }
-  .tb-doc {
-    @media #{$sheet-narrow} {
-      border-right: 0;
-    }
-  }
-  .tb-rev {
-    grid-area: rev;
+  .tb-date {
+    grid-area: date;
     border-right: 0;
-    @media #{$sheet-narrow} {
-      display: none;
-    }
   }
   .tb-drawn {
     grid-area: drawn;
@@ -213,64 +203,43 @@ $sheet-narrow: "(max-width: 47.9375em)";
       }
     }
   }
-  .tb-rss .tb-value {
-    color: $accent;
-  }
-}
-
-/* A rubber stamp on the title block, as on a reference-only print */
-.stamp {
-  position: absolute;
-  top: 50%;
-  right: 1.4rem;
-  padding: 0.3rem 0.5rem 0.25rem;
-  border: 2px solid $accent;
-  outline: 1px solid $accent;
-  outline-offset: 2px;
-  @include label-text(0.6875rem);
-  letter-spacing: 0.14em;
-  color: $accent;
-  opacity: 0.85;
-  transform: translateY(-50%) rotate(-5deg);
-  // Uneven ink, like a real stamp
-  -webkit-mask-image: repeating-linear-gradient(77deg, #000 0 7px, rgba(0, 0, 0, 0.72) 7px 9px, #000 9px 15px);
-  mask-image: repeating-linear-gradient(77deg, #000 0 7px, rgba(0, 0, 0, 0.72) 7px 9px, #000 9px 15px);
-  pointer-events: none;
-  @media (max-width: 61.9375em) {
-    display: none;
-  }
 }
 
 /* The footer: one more row of cells along the bottom edge */
 .sheet-foot {
-  display: grid;
+  // Cells separated by 1px gaps over ink, so rows that wrap stay ruled
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
   flex: none;
   margin-top: auto;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 0.6fr);
   border-top: 2px solid $ink;
-  @media #{$sheet-wide} {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 2.6fr) minmax(0, 0.6fr);
-  }
+  background: $ink;
   .tb-cell {
-    border-bottom: 0;
-    &:last-child {
-      border-right: 0;
-    }
+    flex: 1 1 0;
+    border: 0;
+    background: $paper;
   }
-  // Narrow: the long tracking note gets its own row under the others
   .tb-wide {
-    @media #{$sheet-narrow} {
-      order: 1;
-      grid-column: 1 / -1;
-      border-right: 0;
-      border-top: 1px solid $ink;
+    flex-grow: 2.4;
+  }
+  .tb-sheet {
+    flex-grow: 0.5;
+  }
+  // The header's "Drawn by", which a phone's header has no room for
+  .tb-contact {
+    display: none;
+  }
+  @media #{$sheet-narrow} {
+    .tb-cell {
+      flex-basis: calc(50% - 1px);
     }
-    .tb-value {
-      font-family: $read-font;
-      font-size: 0.875rem;
-      letter-spacing: 0;
-      text-transform: none;
-      line-height: 1.4;
+    .tb-contact {
+      display: block;
+    }
+    .tb-wide {
+      flex-basis: 100%;
+      order: 1;
     }
   }
   .tb-value {

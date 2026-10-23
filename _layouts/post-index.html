@@ -14,7 +14,7 @@ layout: sheet
     {% for post in year.items %}
       {% assign category = site.my_categories | where: "slug", post.category %}
       {% assign category = category[0] %}
-      <li><a href="{{ post.url }}"><span class="toc-title">{{ post.title }}{% if post.category %} <span class="part">{{ category.name | default: post.category }}</span>{% endif %}</span><span class="toc-leader" aria-hidden="true"></span><span class="toc-page">{{ post.date | date: '%b' }}</span></a></li>
+      <li><a href="{{ post.url }}"><span class="toc-title">{{ post.title }}{% if post.category %} <span class="part">{{ category.name | default: post.category }}</span>{% endif %}</span><span class="toc-page">{{ post.date | date: '%b' }}</span></a></li>
     {% endfor %}
     </ol>
   </section>

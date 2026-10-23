@@ -1,21 +1,20 @@
 {% comment %}
   The page header is the title block of an engineering drawing.
-  Pass doc="…" for the document number shown in it.
+  Pass doc="…" for the document number shown in it, and date=… for its date.
 {% endcomment %}
 {% assign here = page.url | remove: 'index.html' %}
 <header class="titleblock" role="banner">
   <a class="tb-cell tb-title" href="/">
     <span class="tb-label">Title</span>
     <span class="tb-value">Huan Truong&rsquo;s Pensieve</span>
-    <span class="stamp" aria-hidden="true">For tinkering only</span>
   </a>
   <div class="tb-cell tb-doc">
     <span class="tb-label">Doc. no.</span>
     <span class="tb-value">{{ include.doc | default: 'TN-0000' }}</span>
   </div>
-  <div class="tb-cell tb-rev">
-    <span class="tb-label">Rev.</span>
-    <span class="tb-value">{{ site.time | date: '%y.%m' }}</span>
+  <div class="tb-cell tb-date">
+    <span class="tb-label">Date</span>
+    <span class="tb-value">{{ include.date | date: '%Y-%m-%d' }}</span>
   </div>
   <nav class="tb-nav" id="site-nav">
     <a class="tb-cell" href="/"{% if here == '/' or page.layout == 'post' or page.layout == 'blog_by_category' %} aria-current="page"{% endif %}>
