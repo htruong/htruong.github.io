@@ -24,11 +24,10 @@
 
   <main class="printout" id="main" role="main">
     <div class="print-body">
+      {% include _stain.html %}
       {{ content }}
       <footer class="print-foot">
-        <p><span>&copy; {{ site.time | date: '%Y' }} HUAN TRUONG</span><span><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></span><span><a href="https://github.com/{{ site.owner.github }}">GITHUB</a> <a href="/vc">VCARD</a></span></p>
-        <p><span>NO TRACKING. COMMENTS LOAD ONLY WHEN ASKED FOR.</span></p>
-        <p class="credits"><span>On the desk, drawn from: <a href="https://commons.wikimedia.org/wiki/File:Vintage_Hewlett-Packard_Model_HP-45_Advanced_Scientific_Pocket_Calculator,_HP%27s_Third_Handheld_Electronic_Calculator,_Introduced_in_1973_and_Discontinued_in_1976_(11590594223).jpg">HP-45</a> photo by Joe Haupt, CC BY-SA 2.0; <a href="https://commons.wikimedia.org/wiki/File:Slide_Rule,_Mathematical,_Sally_Ride_-_DPLA_-_171e755a1928cea2b3ab75f7e08d4b46_(page_1).jpg">Sally Ride&rsquo;s slide rule</a>, Smithsonian, CC0; <a href="https://commons.wikimedia.org/wiki/File:Blank_ibm_5081_punch_card.jpg">IBM 5081 card</a> scan by Rjluna2, CC BY-SA 4.0; <a href="https://commons.wikimedia.org/wiki/File:Coffee_Stain_P1000065.JPG">coffee ring</a> photo by Nevit Dilmen, CC BY-SA 3.0. The drawings are CC BY-SA too.</span></p>
+        <p><span>&copy; {{ site.time | date: '%Y' }} HUAN TRUONG &middot; <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a></span><span><a href="https://github.com/{{ site.owner.github }}">GITHUB</a> <a href="/vc">VCARD</a> <a href="/credits.html">CREDITS</a></span></p>
       </footer>
     </div>
   </main>

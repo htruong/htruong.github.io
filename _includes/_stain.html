@@ -1,0 +1,5 @@
+{% comment %}
+  A coffee ring for this page, placed by a hash of its URL, so every page has
+  its own and it never moves. The ring is drawn at the desk's scale, about
+  2 px to the mm: an 85 mm mug. Sets the style for .stain.
+{% endcomment %}{% assign chars = "abcdefghijklmnopqrstuvwxyz0123456789-_./" %}{% assign h = 7 %}{% assign letters = page.url | downcase | split: "" %}{% for ch in letters %}{% assign i = chars | split: ch | first | size %}{% assign h = h | times: 31 | plus: i | modulo: 1000003 %}{% endfor %}{% assign side = h | modulo: 2 %}{% assign x = h | divided_by: 2 | modulo: 13 %}{% assign y = h | divided_by: 18 | modulo: 46 %}{% assign turn = h | divided_by: 828 | modulo: 360 %}{% assign size = h | divided_by: 3 | modulo: 14 | plus: 94 | divided_by: 100.0 %}<div class="stain" aria-hidden="true" style="{% if side == 1 %}right{% else %}left{% endif %}: calc({{ x | minus: 6 }}rem / 2); top: {{ y | plus: 1 }}rem; --turn: {{ turn }}deg; --size: {{ size }}"></div>

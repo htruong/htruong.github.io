@@ -522,31 +522,30 @@ body.desk-page {
 
 .doc-print {
   position: relative;
-  // A coffee ring, where the mug stood on the first page (posts only)
-  &::before {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    top: -0.6rem;
-    right: -3.2rem;
-    width: 8.6rem;
-    height: 8.6rem;
-    // A real dried ring, from a photograph (_tools/desk/coffee_ring.py)
-    background: url("/assets/images/desk/coffee-ring.webp") center / contain no-repeat;
-    transform: rotate(-24deg);
-    opacity: 0.85;
-    mix-blend-mode: multiply;
-    pointer-events: none;
-    @media #{$narrow} {
-      width: 5.5rem;
-      height: 5.5rem;
-      top: -0.4rem;
-      right: -1.6rem;
-    }
+}
+// A coffee ring where the mug stood: a photograph of a real one
+// (_tools/desk/coffee_ring.py), placed on each page by _includes/_stain.html.
+// An 85 mm mug at the desk's 2 px to the mm
+.stain {
+  position: absolute;
+  z-index: 2;
+  width: calc(10.9rem * var(--size, 1));
+  aspect-ratio: 1;
+  background: url("/assets/images/desk/coffee-ring.webp") center / contain no-repeat;
+  transform: translate(0, -50%) rotate(var(--turn, 0deg));
+  opacity: 0.85;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  @media #{$narrow} {
+    width: calc(7rem * var(--size, 1));
   }
 }
-.page-print::before {
-  content: none;
+// Pictures and videos lie on top of the stain, as if pasted in afterwards
+.doc-body img,
+.doc-body iframe,
+.doc-body figure {
+  position: relative;
+  z-index: 3;
 }
 .doc-title {
   position: relative;
