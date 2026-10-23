@@ -40,13 +40,13 @@ layout: null
       <h:a class="tb-cell" href="{{ '/about.html' | absolute_url }}"><h:span class="tb-label">Sec. 3</h:span><h:span class="tb-value">Bio</h:span></h:a>
       <h:a class="tb-cell tb-rss" href="{{ page.url | absolute_url }}" aria-current="page"><h:span class="tb-label">Sec. 4</h:span><h:span class="tb-value">RSS</h:span></h:a>
     </h:div>
-    <h:div class="tb-cell tb-drawn"><h:span class="tb-label">Drawn by</h:span><h:span class="tb-value"><h:span class="tb-author">H. Truong</h:span> <h:a href="https://github.com/{{ site.owner.github }}">Github</h:a> <h:a href="{{ '/vc' | absolute_url }}">vCard</h:a></h:span></h:div>
+    <h:div class="tb-cell tb-drawn"><h:span class="tb-label">Refs.</h:span><h:span class="tb-value"><h:a href="https://github.com/{{ site.owner.github }}">Github</h:a> <h:a href="{{ '/vc' | absolute_url }}">vCard</h:a></h:span></h:div>
   </h:div>
 
   <h:div class="feed-intro">
-    <h:div class="contents-head">
+    <h:div class="contents-head" data-label="TN-FEED">
       <h:h1>RSS feed</h:h1>
-      <h:p class="contents-meta">Latest {{ site.feed.posts_limit | default: 10 }} documents. <h:a href="{{ '/' | absolute_url }}">All documents &#8594;</h:a></h:p>
+      <h:p class="contents-meta">Latest {{ site.feed.posts_limit | default: 10 }} documents.</h:p>
     </h:div>
     <h:p>This is the Atom feed for {{ site.title | xml_escape }}. To subscribe, paste this page&#8217;s address into your feed reader:</h:p>
     <h:p><h:code>{{ page.url | absolute_url }}</h:code></h:p>

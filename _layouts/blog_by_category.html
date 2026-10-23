@@ -3,7 +3,7 @@ layout: sheet
 ---
 {% assign posts = site.categories[page.slug] %}
 <section class="contents">
-  <header class="contents-head">
+  <header class="contents-head" data-label="TN-{{ page.slug | upcase }}">
     <h1>Contents <span class="part part-big">{{ page.name }}</span></h1>
     <p class="contents-meta">{{ posts.size | default: 0 }} documents in this topic. <a href="/">All documents &rarr;</a></p>
   </header>

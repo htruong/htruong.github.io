@@ -8,11 +8,17 @@
     <span class="tb-value"><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></span>
   </div>
   <div class="tb-cell tb-contact">
-    <span class="tb-label">Drawn by</span>
+    <span class="tb-label">Refs.</span>
     <span class="tb-value"><a href="https://github.com/{{ site.owner.github }}">Github</a> <a href="/vc">vCard</a></span>
   </div>
   <div class="tb-cell tb-wide">
     <span class="tb-label">Tracking</span>
-    <span class="tb-value">None. Disqus loads only if you open comments.</span>
+    <span class="tb-value">None. Comments load only when asked for.</span>
   </div>
+  {% if include.sheet_no %}
+  <div class="tb-cell tb-sheet">
+    <span class="tb-label">Sheet</span>
+    <span class="tb-value">{{ include.sheet_no }} of {{ site.posts.size }}</span>
+  </div>
+  {% endif %}
 </footer>

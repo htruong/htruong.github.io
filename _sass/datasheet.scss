@@ -52,20 +52,38 @@ img {
   max-width: $index-column;
   margin: 0 auto;
 }
-// Everything that isn't a margin note starts at the text column, rules too
+// Text starts at the text column; rules run the full width, over the
+// margin column, which holds the labels: years, section numbers, the
+// document number beside each title, the names of the rows at a post's end
 @mixin text-column {
   @media #{$sheet-wide} {
-    margin-left: $margin-col;
+    padding-left: $margin-col;
   }
 }
 .contents-head,
 .contents-intro,
 .doc-head,
-.doc-body,
-.see-also,
-.doc-comments,
-.end-mark {
+.doc-body {
   @include text-column;
+}
+.contents-head,
+.doc-head {
+  position: relative;
+  &[data-label]::before {
+    @media #{$sheet-wide} {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      top: 0.15rem;
+      max-width: $margin-col - 0.75rem;
+      @include label-text(0.625rem);
+      color: $ink-2;
+      overflow-wrap: anywhere;
+    }
+  }
+}
+.contents-head[data-label]::before {
+  top: 0.55rem;
 }
 
 /* Index of documents
@@ -156,7 +174,7 @@ img {
   position: relative;
   overflow: hidden;
   // Room for a few dots even when the last line is full
-  padding-right: 2rem;
+  padding-right: 1.25rem;
   font-size: 1.0625rem;
   line-height: 1.4;
   @media #{$sheet-narrow} {
@@ -174,9 +192,10 @@ img {
   }
 }
 .toc-page {
-  // Left-aligned in a fixed column, so every leader stops at the same place
+  // A fixed column, so every leader stops at the same place, set flush
+  // right with the rules
   width: 2.5rem;
-  text-align: left;
+  text-align: right;
   white-space: nowrap;
   @include label-text(0.8125rem);
   color: $ink-2;
@@ -196,6 +215,7 @@ img {
   .toc-page {
     order: -1;
     align-self: baseline;
+    text-align: left;
   }
 }
 
@@ -535,7 +555,7 @@ img {
   align-items: center;
   gap: 1rem;
   margin-top: 0;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
   @include label-text(0.6875rem);
   letter-spacing: 0.12em;
   color: $ink-2;
@@ -546,18 +566,46 @@ img {
     border-top: 1px solid $ink;
   }
 }
-.doc-end-head {
-  margin: 0 0 0.25rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid $ink;
-  @include label-text(1rem);
+// A row at the end: its name in the margin column, its content in the text column
+.end-row {
+  display: grid;
+  grid-template-columns: $margin-col minmax(0, 1fr);
+  padding: 0.75rem 0 1.25rem;
+  border-top: 1px solid $ink;
+  @media #{$sheet-narrow} {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0.4rem;
+  }
+}
+// The end mark's rule already opens the first row
+.end-mark + .end-row {
+  border-top: 0;
+  padding-top: 0;
+}
+.end-label {
+  margin: 0;
+  padding-top: 0.35rem;
+  padding-right: 0.5rem;
+  @include label-text(0.6875rem);
+  letter-spacing: 0.08em;
+  color: $ink;
+}
+.revisions {
+  margin: 0;
+  padding: 0.25rem 0 0;
+  list-style: none;
+  @include label-text(0.8125rem);
   letter-spacing: 0.06em;
+  color: $ink-2;
+  li {
+    display: flex;
+    gap: 1.25rem;
+  }
+  .rev-id {
+    color: $accent;
+  }
 }
 .see-also {
-  margin-bottom: 2.5rem;
-  .toc {
-    padding-top: 0.3rem;
-  }
   .toc-page {
     width: 5rem;
   }
@@ -575,11 +623,7 @@ img {
 }
 .doc-comments {
   .disqus_thread {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.5rem 1rem;
-    margin: 1rem 0 0;
+    margin: 0.25rem 0 0;
   }
 }
 .doc-button {

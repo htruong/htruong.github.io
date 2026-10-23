@@ -110,8 +110,7 @@ $sheet-narrow: "(max-width: 47.9375em)";
   grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-template-areas:
     "title title title title"
-    "nav nav nav nav"
-    "doc doc sheet sheet";
+    "nav nav nav nav";
   border-bottom: 1px solid $ink;
   @media #{$sheet-wide} {
     grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, 1.2fr) minmax(0, 0.9fr);
@@ -122,7 +121,9 @@ $sheet-narrow: "(max-width: 47.9375em)";
   > .tb-cell:last-child {
     border-bottom: 0;
   }
-  // A phone gets the title, the sections and the numbers; "Drawn by" is in the footer
+  // A phone gets the title and the sections; the rest is in the footer
+  .tb-doc,
+  .tb-sheet,
   .tb-drawn {
     @media #{$sheet-narrow} {
       display: none;
@@ -150,12 +151,7 @@ $sheet-narrow: "(max-width: 47.9375em)";
     grid-area: sheet;
     border-right: 0;
   }
-  @media #{$sheet-narrow} {
-    .tb-doc,
-    .tb-sheet {
-      border-bottom: 0;
-    }
-  }
+
   .tb-drawn {
     grid-area: drawn;
     border-bottom: 0;

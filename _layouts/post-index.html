@@ -3,7 +3,7 @@ layout: sheet
 ---
 {% assign years = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
 <section class="contents">
-  <header class="contents-head">
+  <header class="contents-head" data-label="TN-INDEX">
     <h1>Contents</h1>
     <p class="contents-meta">{{ site.posts.size }} documents, {{ years.last.name }}&ndash;{{ years.first.name }}</p>
   </header>
