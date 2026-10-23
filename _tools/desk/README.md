@@ -9,8 +9,11 @@ from photographs of the real things, not made up:
   `render_hp45.py` draws the calculator from the data:
   `python3 render_hp45.py ../../assets/images/desk/hp45.svg`.
 - Slide rule: Sally Ride's Post rule, Smithsonian, CC0 (Commons, DPLA 171e755a…, page 1),
-  deskewed; `trace_rule.py` takes the body, brackets, cursor and scale rows from it and
-  computes every tick from its scale's formula.
+  deskewed; `trace_rule.py` took the body, brackets, cursor and scale rows from it.
+  `render_rule.py` draws the same eleven scales, in the same order and colours, with
+  every tick from its scale's formula; numbers sit past the longest tick of their band,
+  and the script refuses to write the file if any number touches a tick:
+  `python3 render_rule.py ../../assets/images/desk/sliderule.svg`.
 - Punch card: blank IBM 5081 scan by Rjluna2, CC BY-SA 4.0 (Commons); `trace_card.py`
   takes the outline and the digit grid from it and punches labels in IBM 029 code:
   `python3 trace_card.py ../../assets/images/desk BLOG PROJECTS BIO RSS COMMENTS`.
