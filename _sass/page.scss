@@ -338,13 +338,34 @@ $button-size: 1.5rem;
 
 /* Month/year in post lists */
 .post-date {
+	@include label-tape;
 	font-family: $heading-font;
-	// Gorton has no tabular digits (its "1" is narrow), so pad every date to the widest one
+	// Gorton has no tabular digits (its "1" is narrow), so pad every date to
+	// the widest one; every label is then cut to the same length
 	display: inline-block;
 	min-width: 5.3em;
+	text-align: center;
+}
+
+/* Post lists: date, optional category badge, then the title, which wraps
+   in its own column and turns into label tape when hovered */
+#index article p {
+	display: flex;
+	align-items: baseline;
+	// Room for the title's tape, which reaches 0.4em past its text
+	gap: 0.7em;
+	> a:not(.post-category) {
+		@include label-link;
+		// Whole titles in capitals are too much to read down a list
+		text-transform: none;
+	}
+	.post-category {
+		flex: none;
+	}
 }
 
 .post-category, .post-category:visited, .post-category:hover, .rss-button {
+	@include label-tape-colored;
 	font-family: $heading-font;
 	color: white;
 	text-decoration: none;
@@ -354,7 +375,8 @@ $button-size: 1.5rem;
 }
 
 article .post-category {
-	padding: 0.05em 0.5em;
+	// Same tape thickness as the date labels
+	padding: 1px 0.5em;
 	font-size: 0.9em;
 }
 
@@ -380,12 +402,11 @@ h2 .post-category, h2 .rss-button {
 
 /* Default social media links in author sidebar */
 .author-social {
+  @include label-link;
   display: block;
   margin-bottom: 5px;
-  color: $black;
-  &:visited {
-    color: $black;
-  }
+  // Only as wide as the text, so the label hugs it
+  width: fit-content;
   // Font Awesome isn't loaded, so the empty icon would only indent the text
   .fa {
 		display: none;
@@ -416,7 +437,7 @@ h2 .post-category, h2 .rss-button {
 			// Lines the name's baseline up with the first h2 in the main column
 			margin-top: 1.35rem;
 			// Puts the first link on the same baseline as the first post row
-			margin-bottom: 1.6rem;
+			margin-bottom: calc(1.5rem + 1px);
 		}
 		p {
 			margin-bottom: 20px;
