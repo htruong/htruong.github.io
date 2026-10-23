@@ -23,7 +23,7 @@
   </nav>
 
   <div class="stack">
-  {% if page.layout == 'post' %}<a class="under-sheet" href="/" aria-label="Back to the listing of documents"><span>PENSIEVE.LST</span></a>{% endif %}
+  {% unless page.layout == 'post-index' %}<a class="under-sheet" href="/" aria-label="Back to the listing of documents"><span>PENSIEVE.LST</span></a>{% endunless %}
   <main class="printout" id="main" role="main">
     <div class="print-body">
       {% include _stain.html %}

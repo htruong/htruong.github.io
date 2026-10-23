@@ -339,8 +339,8 @@ body.desk-page {
     }
   }
 }
-// The printout lies on the desk with whatever was read before under it: on
-// a post, the listing it came from, a little askew. It's only paper (no
+// The printout lies on the desk on top of the listing of documents, a little
+// askew (every page but the listing itself has it under it). It's only paper (no
 // print), and clicking it brings the listing back (assets/js/pages.js)
 .stack {
   position: relative;
