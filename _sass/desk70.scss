@@ -91,7 +91,14 @@ body.desk-page {
   user-select: none;
   -webkit-user-select: none;
   -webkit-user-drag: none;
+  // The calculator needs a desk beside the paper; the slide rule still peeks
+  // out from under it on a tablet-sized window
   @media (max-width: 61.9375em) {
+    &.calc {
+      display: none;
+    }
+  }
+  @media #{$narrow} {
     display: none;
   }
   // Once moved, it lies on top of the paper; while held, it's lifted off the desk
@@ -141,7 +148,8 @@ body.desk-page {
     }
   }
   top: 31rem;
-  left: calc(50% - #{$paper-w / 2} - 3.25rem - 19.75rem);
+  // beside the paper, or tucked half under its left edge when the window is narrow
+  left: calc(max(50% - #{$paper-w / 2}, 1rem) - 3.25rem - 19.75rem);
   transform: rotate(-86.5deg);
   @include on-desk(0.8);
 }
